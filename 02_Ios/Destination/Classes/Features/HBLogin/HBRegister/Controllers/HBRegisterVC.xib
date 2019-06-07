@@ -73,7 +73,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Js-od-X49">
-                    <rect key="frame" x="60" y="204" width="294" height="40"/>
+                    <rect key="frame" x="60" y="194" width="294" height="40"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="register_password" translatesAutoresizingMaskIntoConstraints="NO" id="X8u-Y7-pNX">
                             <rect key="frame" x="0.0" y="0.0" width="18" height="18"/>
@@ -129,7 +129,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="exo-H9-sJZ">
-                    <rect key="frame" x="60" y="264" width="294" height="40"/>
+                    <rect key="frame" x="60" y="244" width="294" height="40"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="register_validation" translatesAutoresizingMaskIntoConstraints="NO" id="V7q-di-NcD">
                             <rect key="frame" x="0.0" y="0.0" width="18" height="18"/>
@@ -188,7 +188,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cti-6r-OZe">
-                    <rect key="frame" x="60" y="324" width="294" height="40"/>
+                    <rect key="frame" x="60" y="294" width="294" height="40"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="register_invite" translatesAutoresizingMaskIntoConstraints="NO" id="MKp-An-co0">
                             <rect key="frame" x="0.0" y="0.0" width="18" height="18"/>
@@ -231,7 +231,7 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jhU-QS-yeP">
-                    <rect key="frame" x="60" y="394" width="294" height="40"/>
+                    <rect key="frame" x="60" y="354" width="294" height="40"/>
                     <color key="backgroundColor" red="0.99607843139999996" green="0.45812182509999999" blue="0.33164883449999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="Spf-ls-0nm"/>
@@ -244,7 +244,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="点击注册即代表您请同意《用户协议》" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hv3-wU-LMf">
-                    <rect key="frame" x="90" y="444" width="264" height="30"/>
+                    <rect key="frame" x="90" y="404" width="264" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="hh7-H4-FAZ"/>
                     </constraints>
@@ -253,7 +253,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oSn-sI-0g7">
-                    <rect key="frame" x="60" y="446.5" width="25" height="25"/>
+                    <rect key="frame" x="60" y="406.5" width="25" height="25"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="25" id="28p-2P-WGY"/>
                         <constraint firstAttribute="width" constant="25" id="utc-0g-W6C"/>
@@ -272,7 +272,7 @@
                 <constraint firstItem="cti-6r-OZe" firstAttribute="width" secondItem="P5R-ZX-xU7" secondAttribute="width" id="1F4-rq-MNN"/>
                 <constraint firstItem="hv3-wU-LMf" firstAttribute="centerY" secondItem="oSn-sI-0g7" secondAttribute="centerY" id="7am-5a-3r7"/>
                 <constraint firstItem="exo-H9-sJZ" firstAttribute="width" secondItem="P5R-ZX-xU7" secondAttribute="width" id="8mz-fh-kdc"/>
-                <constraint firstItem="exo-H9-sJZ" firstAttribute="top" secondItem="2Js-od-X49" secondAttribute="bottom" constant="20" id="AVk-ul-gIq"/>
+                <constraint firstItem="exo-H9-sJZ" firstAttribute="top" secondItem="2Js-od-X49" secondAttribute="bottom" constant="10" id="AVk-ul-gIq"/>
                 <constraint firstItem="exo-H9-sJZ" firstAttribute="centerX" secondItem="P5R-ZX-xU7" secondAttribute="centerX" id="CLW-hm-Bm3"/>
                 <constraint firstItem="2Js-od-X49" firstAttribute="centerX" secondItem="P5R-ZX-xU7" secondAttribute="centerX" id="Eme-Ec-Ppl"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="P5R-ZX-xU7" secondAttribute="trailing" constant="60" id="H1b-He-gdm"/>
@@ -283,14 +283,14 @@
                 <constraint firstItem="jhU-QS-yeP" firstAttribute="centerX" secondItem="cti-6r-OZe" secondAttribute="centerX" id="NwT-hv-Mqt"/>
                 <constraint firstItem="hv3-wU-LMf" firstAttribute="trailing" secondItem="jhU-QS-yeP" secondAttribute="trailing" id="PCJ-3d-LRV"/>
                 <constraint firstItem="hv3-wU-LMf" firstAttribute="top" secondItem="jhU-QS-yeP" secondAttribute="bottom" constant="10" id="Pew-Jq-C1M"/>
-                <constraint firstItem="cti-6r-OZe" firstAttribute="top" secondItem="exo-H9-sJZ" secondAttribute="bottom" constant="20" id="RVS-ne-aXJ"/>
+                <constraint firstItem="cti-6r-OZe" firstAttribute="top" secondItem="exo-H9-sJZ" secondAttribute="bottom" constant="10" id="RVS-ne-aXJ"/>
                 <constraint firstItem="P5R-ZX-xU7" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="100" id="Ra9-vY-umb"/>
                 <constraint firstItem="hv3-wU-LMf" firstAttribute="leading" secondItem="oSn-sI-0g7" secondAttribute="trailing" constant="5" id="c73-WD-F1a"/>
-                <constraint firstItem="2Js-od-X49" firstAttribute="top" secondItem="P5R-ZX-xU7" secondAttribute="bottom" constant="20" id="dba-w7-iQE"/>
+                <constraint firstItem="2Js-od-X49" firstAttribute="top" secondItem="P5R-ZX-xU7" secondAttribute="bottom" constant="10" id="dba-w7-iQE"/>
                 <constraint firstItem="jhU-QS-yeP" firstAttribute="width" secondItem="cti-6r-OZe" secondAttribute="width" id="eSu-lp-59O"/>
                 <constraint firstItem="2Js-od-X49" firstAttribute="width" secondItem="P5R-ZX-xU7" secondAttribute="width" id="jVP-qo-j54"/>
                 <constraint firstItem="cti-6r-OZe" firstAttribute="height" secondItem="P5R-ZX-xU7" secondAttribute="height" id="qG6-Yr-eVP"/>
-                <constraint firstItem="jhU-QS-yeP" firstAttribute="top" secondItem="cti-6r-OZe" secondAttribute="bottom" constant="30" id="wJ7-SF-RWn"/>
+                <constraint firstItem="jhU-QS-yeP" firstAttribute="top" secondItem="cti-6r-OZe" secondAttribute="bottom" constant="20" id="wJ7-SF-RWn"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
             <point key="canvasLocation" x="137.68115942028987" y="78.348214285714278"/>
