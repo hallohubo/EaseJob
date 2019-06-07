@@ -150,6 +150,10 @@
 #define Dlog(fmt, ...)
 #endif
 
+#define ssRGBHex(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
+#define ssRGBHexAlpha(rgbValue,a) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:(a)]
+
 #define HDUMClick(p)        [MobClick event:p]
 #define HDVALUE(p0, p1)     (!p0 || [p0 isKindOfClass:[NSNull class]]? p1: p0)
 #define HDSTR(p)            HDVALUE(p, @"")

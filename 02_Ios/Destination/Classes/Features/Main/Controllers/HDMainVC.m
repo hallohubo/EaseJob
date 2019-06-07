@@ -9,6 +9,7 @@
 #import "HDMainVC.h"
 #import "HB3DScrollView.h"
 #import "HBInformationCell.h"
+#import "HBRegisterVC.h"
 
 #define BANNER_RATIO 0.557
 #define BANNER_MODEL @"BANNER_MODEL"
@@ -296,7 +297,7 @@
 {
     switch (sender.tag) {
         case 0:{//注册
-            
+            [self.navigationController pushViewController:[HBRegisterVC new] animated:YES];
             break;
         }
         case 1:{//投票
