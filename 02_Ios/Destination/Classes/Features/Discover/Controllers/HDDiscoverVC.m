@@ -119,9 +119,8 @@
 - (void)setup
 {
     self.navigationController.delegate = self;//设置导航控制器的代理为self
-    
-    vSearch.layer.cornerRadius = 15.f;
-    vSearch.layer.masksToBounds= YES;
+
+    [vSearch addBorderWidth:.1f color:nil cornerRadius:15.0];
     
     arBtn = @[btnAll, btnSimple, btnHighPrice, btnVIP];
 }

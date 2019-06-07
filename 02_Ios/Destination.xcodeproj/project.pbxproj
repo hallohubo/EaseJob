@@ -11,7 +11,6 @@
 		411FA69C22A120E60071B6A5 /* UICollectionView+HDRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 411FA69B22A120E60071B6A5 /* UICollectionView+HDRect.m */; };
 		411FA6A822A1D6800071B6A5 /* HDProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 411FA6A622A1D6800071B6A5 /* HDProfileVC.m */; };
 		411FA6A922A1D6800071B6A5 /* HDProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 411FA6A722A1D6800071B6A5 /* HDProfileVC.xib */; };
-		411FA6AD22A1D9320071B6A5 /* HDMainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 411FA6AB22A1D9320071B6A5 /* HDMainVC.m */; };
 		411FA6B622A1D98C0071B6A5 /* HDDiscoverVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 411FA6B422A1D98C0071B6A5 /* HDDiscoverVC.m */; };
 		411FA6B722A1D98C0071B6A5 /* HDDiscoverVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 411FA6B522A1D98C0071B6A5 /* HDDiscoverVC.xib */; };
 		411FA6BF22A1DA470071B6A5 /* HDMissionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 411FA6BD22A1DA470071B6A5 /* HDMissionVC.m */; };
@@ -176,10 +175,11 @@
 		C845CAD822A77155007379BF /* UINavigationController+Pop.m in Sources */ = {isa = PBXBuildFile; fileRef = C845CAD722A77155007379BF /* UINavigationController+Pop.m */; };
 		C845CADB22A772AF007379BF /* HDGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = C845CAD922A772AF007379BF /* HDGlobal.m */; };
 		C845CADE22A772F1007379BF /* HDUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C845CADD22A772F1007379BF /* HDUserModel.m */; };
-		C8B35FB322A668EF0022732D /* HBInformationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C8B35FB022A668EE0022732D /* HBInformationCell.m */; };
-		C8B35FB422A668EF0022732D /* HBInformationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8B35FB122A668EF0022732D /* HBInformationCell.xib */; };
+		C85A600122AA494B008D54FC /* HDMainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C85A5FFE22AA494B008D54FC /* HDMainVC.m */; };
+		C85A600222AA494B008D54FC /* HDMainVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C85A5FFF22AA494B008D54FC /* HDMainVC.xib */; };
+		C85A600622AA4964008D54FC /* HBInformationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C85A600322AA4963008D54FC /* HBInformationCell.xib */; };
+		C85A600722AA4964008D54FC /* HBInformationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C85A600522AA4964008D54FC /* HBInformationCell.m */; };
 		C8B74D6A22A8E1B600BCA2E6 /* HB3DScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C8B74D6922A8E1B600BCA2E6 /* HB3DScrollView.m */; };
-		C8C1E3CE22A7B17700FA6090 /* HDMainVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 411FA6AC22A1D9320071B6A5 /* HDMainVC.xib */; };
 		DA3A28492263213900D8D6C1 /* HLTokenModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3A28482263213900D8D6C1 /* HLTokenModel.m */; };
 		DA4EFC582248A12500062E14 /* myButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DA4EFC552248A12400062E14 /* myButton.m */; };
 		DA4EFC592248A12500062E14 /* myLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = DA4EFC562248A12500062E14 /* myLabel.m */; };
@@ -204,9 +204,6 @@
 		411FA6A522A1D6800071B6A5 /* HDProfileVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HDProfileVC.h; sourceTree = "<group>"; };
 		411FA6A622A1D6800071B6A5 /* HDProfileVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HDProfileVC.m; sourceTree = "<group>"; };
 		411FA6A722A1D6800071B6A5 /* HDProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HDProfileVC.xib; sourceTree = "<group>"; };
-		411FA6AA22A1D9320071B6A5 /* HDMainVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HDMainVC.h; sourceTree = "<group>"; };
-		411FA6AB22A1D9320071B6A5 /* HDMainVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HDMainVC.m; sourceTree = "<group>"; };
-		411FA6AC22A1D9320071B6A5 /* HDMainVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HDMainVC.xib; sourceTree = "<group>"; };
 		411FA6B322A1D98C0071B6A5 /* HDDiscoverVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HDDiscoverVC.h; sourceTree = "<group>"; };
 		411FA6B422A1D98C0071B6A5 /* HDDiscoverVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HDDiscoverVC.m; sourceTree = "<group>"; };
 		411FA6B522A1D98C0071B6A5 /* HDDiscoverVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HDDiscoverVC.xib; sourceTree = "<group>"; };
@@ -516,9 +513,12 @@
 		C845CADA22A772AF007379BF /* HDGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDGlobal.h; sourceTree = "<group>"; };
 		C845CADC22A772F1007379BF /* HDUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDUserModel.h; sourceTree = "<group>"; };
 		C845CADD22A772F1007379BF /* HDUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDUserModel.m; sourceTree = "<group>"; };
-		C8B35FB022A668EE0022732D /* HBInformationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBInformationCell.m; sourceTree = "<group>"; };
-		C8B35FB122A668EF0022732D /* HBInformationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HBInformationCell.xib; sourceTree = "<group>"; };
-		C8B35FB222A668EF0022732D /* HBInformationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBInformationCell.h; sourceTree = "<group>"; };
+		C85A5FFE22AA494B008D54FC /* HDMainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDMainVC.m; sourceTree = "<group>"; };
+		C85A5FFF22AA494B008D54FC /* HDMainVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HDMainVC.xib; sourceTree = "<group>"; };
+		C85A600022AA494B008D54FC /* HDMainVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDMainVC.h; sourceTree = "<group>"; };
+		C85A600322AA4963008D54FC /* HBInformationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HBInformationCell.xib; sourceTree = "<group>"; };
+		C85A600422AA4963008D54FC /* HBInformationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBInformationCell.h; sourceTree = "<group>"; };
+		C85A600522AA4964008D54FC /* HBInformationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBInformationCell.m; sourceTree = "<group>"; };
 		C8B74D6822A8E1B600BCA2E6 /* HB3DScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HB3DScrollView.h; sourceTree = "<group>"; };
 		C8B74D6922A8E1B600BCA2E6 /* HB3DScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HB3DScrollView.m; sourceTree = "<group>"; };
 		D1D528ADF624776ACA4E89E5 /* Pods-Destination.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Destination.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Destination/Pods-Destination.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1440,9 +1440,9 @@
 		BFB5E4C7215A5A4100985F62 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				C8B35FB222A668EF0022732D /* HBInformationCell.h */,
-				C8B35FB022A668EE0022732D /* HBInformationCell.m */,
-				C8B35FB122A668EF0022732D /* HBInformationCell.xib */,
+				C85A600022AA494B008D54FC /* HDMainVC.h */,
+				C85A5FFE22AA494B008D54FC /* HDMainVC.m */,
+				C85A5FFF22AA494B008D54FC /* HDMainVC.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1450,9 +1450,9 @@
 		BFB5E4C8215A5A4100985F62 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				411FA6AA22A1D9320071B6A5 /* HDMainVC.h */,
-				411FA6AB22A1D9320071B6A5 /* HDMainVC.m */,
-				411FA6AC22A1D9320071B6A5 /* HDMainVC.xib */,
+				C85A600422AA4963008D54FC /* HBInformationCell.h */,
+				C85A600522AA4964008D54FC /* HBInformationCell.m */,
+				C85A600322AA4963008D54FC /* HBInformationCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1706,8 +1706,8 @@
 				C828FF8E22A9E3D400CAA10C /* HBDiscoverCell.xib in Resources */,
 				BFB20AB02182A9D30007DE96 /* NJRoadInputView.xib in Resources */,
 				C829E42B22A968B5002EEFF8 /* HBRegisterVC.xib in Resources */,
+				C85A600222AA494B008D54FC /* HDMainVC.xib in Resources */,
 				411FA6C022A1DA470071B6A5 /* HDMIssionVC.xib in Resources */,
-				C8B35FB422A668EF0022732D /* HBInformationCell.xib in Resources */,
 				BF8805F321C4A35C0076283D /* NJPayContentView.xib in Resources */,
 				BF5EB0AE21803F4D0051BA80 /* NJShareCardCell.xib in Resources */,
 				BF41AA05217733BF004D155B /* NJMenuItemView.xib in Resources */,
@@ -1726,9 +1726,9 @@
 				BFB5E38B215A431000985F62 /* Main.storyboard in Resources */,
 				BF0A5CE821E2F2AF00BD1CF4 /* mdd.yqxsy.cn.cer in Resources */,
 				BF675798219ACA3200A74FDB /* ChinaProvince.plist in Resources */,
-				C8C1E3CE22A7B17700FA6090 /* HDMainVC.xib in Resources */,
 				411FA6B722A1D98C0071B6A5 /* HDDiscoverVC.xib in Resources */,
 				BF578AD5217438020067591A /* NJBankCell.xib in Resources */,
+				C85A600622AA4964008D54FC /* HBInformationCell.xib in Resources */,
 				BFB2016821E599B200A06FB4 /* NJValidationCodeLoginVC.xib in Resources */,
 				BF5EB0B721805D3A0051BA80 /* NJRewardListView.xib in Resources */,
 			);
@@ -1779,6 +1779,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C85A600122AA494B008D54FC /* HDMainVC.m in Sources */,
 				BF9DEDB221AD19E900C45B33 /* NJPhotoBrowserVC.m in Sources */,
 				411FA6B622A1D98C0071B6A5 /* HDDiscoverVC.m in Sources */,
 				BF5EB0B221805B740051BA80 /* NJRewardView.m in Sources */,
@@ -1794,7 +1795,6 @@
 				BFFED21021BE8AE80054831C /* NJShareConst.m in Sources */,
 				BFB5E43E215A446300985F62 /* NJCIQRCodeTool.m in Sources */,
 				BFB20AD02182BC2E0007DE96 /* NJLoginVC.m in Sources */,
-				C8B35FB322A668EF0022732D /* HBInformationCell.m in Sources */,
 				BF0B406E21E72399006267A9 /* UITextView+NJCommon.m in Sources */,
 				C845CADB22A772AF007379BF /* HDGlobal.m in Sources */,
 				BF578AD0217432D70067591A /* NJModalListView.m in Sources */,
@@ -1831,7 +1831,6 @@
 				BF95101F21D38805003EE1BD /* NJShareImageBottomView.m in Sources */,
 				BFB20AAB2182A9A90007DE96 /* NJAddRoadView.m in Sources */,
 				BFB5E43C215A446300985F62 /* NJCommonTool.m in Sources */,
-				411FA6AD22A1D9320071B6A5 /* HDMainVC.m in Sources */,
 				BFB5E430215A446300985F62 /* GTMBase64.m in Sources */,
 				DA3A28492263213900D8D6C1 /* HLTokenModel.m in Sources */,
 				BFA7E70C21AF7E7C003F103E /* NJCommentPopAnimator.m in Sources */,
@@ -1887,6 +1886,7 @@
 				BFD5658721DCF0E2005C6952 /* NJPhotoBrowserDrivenInteractiveTransition.m in Sources */,
 				C845CAD822A77155007379BF /* UINavigationController+Pop.m in Sources */,
 				BFB5E468215A446300985F62 /* NSString+NJNormal.m in Sources */,
+				C85A600722AA4964008D54FC /* HBInformationCell.m in Sources */,
 				BFE565E221AD17DB00E89202 /* NJPhotoBrowserItem.m in Sources */,
 				DAB8CA4222754308001EA577 /* HDTableView.m in Sources */,
 				C845CAC622A7630A007379BF /* HDHttpHelper.m in Sources */,

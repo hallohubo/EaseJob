@@ -12,6 +12,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HBRegisterVC">
             <connections>
+                <outlet property="btnRegister" destination="jhU-QS-yeP" id="Mhh-dL-cp0"/>
+                <outlet property="btnValidation" destination="MAe-aw-XgE" id="rzb-XY-NVe"/>
+                <outlet property="tfInvite" destination="kV9-E1-aOw" id="kZU-0L-krR"/>
+                <outlet property="tfPassword" destination="YTI-Be-09P" id="bSd-fB-dsk"/>
+                <outlet property="tfPhone" destination="vvG-xP-xcl" id="MxV-Ed-Wc5"/>
+                <outlet property="tfValidation" destination="gJa-kb-RV6" id="He8-jg-tJQ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -172,7 +178,7 @@
                                 <constraint firstAttribute="height" constant="18" id="rob-N9-ERf"/>
                             </constraints>
                         </imageView>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入邀请码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kV9-E1-aOw">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="邀请码，没有可不填" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kV9-E1-aOw">
                             <rect key="frame" x="31" y="-6" width="263" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="kDf-30-fKy"/>

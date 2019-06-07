@@ -9,6 +9,14 @@
 #import "HBRegisterVC.h"
 
 @interface HBRegisterVC ()
+{
+    IBOutlet UITextField    *tfPhone;
+    IBOutlet UITextField    *tfPassword;
+    IBOutlet UITextField    *tfValidation;
+    IBOutlet UITextField    *tfInvite;
+    IBOutlet UIButton       *btnValidation;
+    IBOutlet UIButton       *btnRegister;
+}
 
 @end
 
