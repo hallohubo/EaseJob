@@ -36,5 +36,6 @@
 - (void)setup
 {
     self.title = @"注册";
+    [btnRegister addBorderWidth:.1 color:nil cornerRadius:25.];
 }
 @end

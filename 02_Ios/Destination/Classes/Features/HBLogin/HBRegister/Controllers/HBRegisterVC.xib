@@ -79,7 +79,7 @@
                                 <constraint firstAttribute="height" constant="18" id="4qs-qF-NLD"/>
                             </constraints>
                         </imageView>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YTI-Be-09P">
+                        <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YTI-Be-09P">
                             <rect key="frame" x="31" y="-6" width="263" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="uZI-0Y-Mw4"/>
@@ -122,7 +122,7 @@
                                 <constraint firstAttribute="height" constant="18" id="9Gj-Mk-LdD"/>
                             </constraints>
                         </imageView>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入验证码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gJa-kb-RV6">
+                        <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入验证码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gJa-kb-RV6">
                             <rect key="frame" x="31" y="-6" width="173" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="Vnv-Hu-iK8"/>
@@ -178,7 +178,7 @@
                                 <constraint firstAttribute="height" constant="18" id="rob-N9-ERf"/>
                             </constraints>
                         </imageView>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="邀请码，没有可不填" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kV9-E1-aOw">
+                        <textField opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="邀请码，没有可不填" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kV9-E1-aOw">
                             <rect key="frame" x="31" y="-6" width="263" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="kDf-30-fKy"/>
