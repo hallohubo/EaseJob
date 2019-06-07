@@ -1,0 +1,26 @@
+//
+//  SmartCity.pch
+//  SmartCity
+//
+//  Created by TouchWorld on 2018/3/30.
+//  Copyright © 2018年 Redirect. All rights reserved.
+//
+#ifdef __OBJC__
+#define MAS_SHORTHAND
+
+#import "HDInstance.h"
+#import "HDHelper.h"
+#import "HDDateHelper.h"
+#import "HDStringHelper.h"
+#import "UIButton+WebCache.h"
+#import "NJConst.h"
+//#import "NetAPIManager.h"
+
+//hb import
+#import "UIView+LoadFromNib.h"
+#import <UIImage+AFNetworking.h>
+#import <SDWebImage/UIView+WebCache.h>
+#import "HDHttpHelper.h"
+#import "HDGlobal.h"
+
+#endif

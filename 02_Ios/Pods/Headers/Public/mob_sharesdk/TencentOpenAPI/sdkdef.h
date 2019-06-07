@@ -1,0 +1,1 @@
+../../../../mob_sharesdk/ShareSDK/Support/PlatformSDK/QQSDK/TencentOpenAPI.framework/Headers/sdkdef.h

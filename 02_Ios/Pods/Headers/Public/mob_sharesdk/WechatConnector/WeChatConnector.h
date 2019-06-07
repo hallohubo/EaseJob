@@ -1,0 +1,1 @@
+../../../../mob_sharesdk/ShareSDK/Support/PlatformConnector/WechatConnector.framework/Headers/WeChatConnector.h

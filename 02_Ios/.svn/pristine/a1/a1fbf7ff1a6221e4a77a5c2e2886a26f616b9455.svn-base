@@ -1,0 +1,60 @@
+//
+//  HDMainVC.m
+//  Destination
+//
+//  Created by hufan on 2019/6/1.
+//  Copyright © 2019 Redirect. All rights reserved.
+//
+
+#import "HDMainVC.h"
+#import "HD3DScrollView.h"
+
+@interface HDMainVC ()
+{
+    IBOutlet UILabel            *lbMessage;
+    IBOutlet UIView             *vHeadView;
+    IBOutlet NSLayoutConstraint *lcHeadViewHeight;
+    IBOutlet UIPageControl      *pageControl;
+    IBOutlet HD3DScrollView     *scv_banner;
+    IBOutlet UITableView        *tbv;
+    IBOutlet UIButton           *btnCheck;
+    
+    IBOutlet UIButton           *btnRegister;
+    IBOutlet UIButton           *btnVote;
+    IBOutlet UIButton           *btnAttention;
+    IBOutlet UIButton           *btnBrowse;
+    IBOutlet UIButton           *btnDownloa;
+    IBOutlet UIButton           *btnforward;
+    IBOutlet UIButton           *btnPost;
+    IBOutlet UIButton           *btnComment;
+    IBOutlet UIButton           *btnECommerce;
+    IBOutlet UIButton           *btnAll;
+    
+    NSArray                     *ar_bannerList;
+    NSMutableArray              *mar_pakageList;
+    NSMutableArray              *marOrderList;
+    
+    NSURLSessionDataTask        *task;
+    NSTimer                     *timer;
+    HDHUD                       *hud;
+}
+
+@end
+
+@implementation HDMainVC
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self setup];
+}
+
+#pragma mark - event
+
+
+#pragma mark - setter and getter
+- (void)setup
+{
+    self.title = @"首页";
+}
+
+@end

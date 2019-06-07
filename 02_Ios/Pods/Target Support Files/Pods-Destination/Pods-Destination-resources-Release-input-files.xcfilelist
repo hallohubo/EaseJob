@@ -1,0 +1,9 @@
+${PODS_ROOT}/Target Support Files/Pods-Destination/Pods-Destination-resources.sh
+${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle
+${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle
+${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle
+${PODS_ROOT}/TZImagePickerController/TZImagePickerController/TZImagePickerController/TZImagePickerController.bundle
+${PODS_ROOT}/UMCCommonLog/UMCommonLog/UMCommonLog.bundle
+${PODS_ROOT}/mob_sharesdk/ShareSDK/Support/Required/ShareSDK.bundle
+${PODS_ROOT}/mob_sharesdk/ShareSDK/Support/PlatformSDK/SinaWeiboSDK/WeiboSDK.bundle
+${PODS_ROOT}/mob_sharesdk/ShareSDK/Support/Optional/ShareSDKUI.bundle

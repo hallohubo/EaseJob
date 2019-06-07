@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HDLaunchAdVC">
+            <connections>
+                <outlet property="adImageV" destination="W6W-o0-8Fz" id="dHL-jr-aey"/>
+                <outlet property="jumpBtn" destination="ANE-mp-2Z1" id="4OV-Aa-Q2n"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jMp-CW-zz7">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="541"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W6W-o0-8Fz">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="541"/>
+                            <gestureRecognizers/>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ANE-mp-2Z1">
+                            <rect key="frame" x="289" y="480" width="62" height="31"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="62" id="I9A-eG-kZh"/>
+                                <constraint firstAttribute="width" secondItem="ANE-mp-2Z1" secondAttribute="height" multiplier="2:1" id="e9h-Mk-Up7"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <state key="normal" title="跳过" backgroundImage="imag_jump_back">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="jumpBtnClick:" destination="-1" eventType="touchUpInside" id="Nmo-Sd-BzR"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="ANE-mp-2Z1" secondAttribute="bottom" constant="30" id="44F-Zr-yRt"/>
+                        <constraint firstItem="W6W-o0-8Fz" firstAttribute="leading" secondItem="jMp-CW-zz7" secondAttribute="leading" id="CUL-SZ-vL2"/>
+                        <constraint firstAttribute="trailing" secondItem="W6W-o0-8Fz" secondAttribute="trailing" id="Q5D-fF-T0J"/>
+                        <constraint firstAttribute="bottom" secondItem="W6W-o0-8Fz" secondAttribute="bottom" id="fuS-HF-ThR"/>
+                        <constraint firstAttribute="trailing" secondItem="ANE-mp-2Z1" secondAttribute="trailing" constant="24" id="iMV-5O-QDh"/>
+                        <constraint firstItem="W6W-o0-8Fz" firstAttribute="top" secondItem="jMp-CW-zz7" secondAttribute="top" id="yz8-f2-bzM"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dwh-21-dgQ">
+                    <rect key="frame" x="0.0" y="541" width="375" height="126"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_open_logonew" translatesAutoresizingMaskIntoConstraints="NO" id="MUM-PE-Bds">
+                            <rect key="frame" x="126" y="29" width="123" height="71"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="123" id="75R-QA-Hug"/>
+                                <constraint firstAttribute="height" constant="71" id="Jxj-od-jQU"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="MUM-PE-Bds" firstAttribute="centerX" secondItem="Dwh-21-dgQ" secondAttribute="centerX" id="A2t-PE-pVn"/>
+                        <constraint firstAttribute="bottom" secondItem="MUM-PE-Bds" secondAttribute="bottom" constant="26" id="M5U-EK-pbA"/>
+                        <constraint firstAttribute="height" constant="126" id="wa8-K3-Gde"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <gestureRecognizers/>
+            <constraints>
+                <constraint firstItem="Dwh-21-dgQ" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="69m-dG-cgs"/>
+                <constraint firstItem="Dwh-21-dgQ" firstAttribute="top" secondItem="jMp-CW-zz7" secondAttribute="bottom" id="8gs-PW-Vro"/>
+                <constraint firstItem="jMp-CW-zz7" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="HSx-AN-Qf9"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="Dwh-21-dgQ" secondAttribute="trailing" id="LIu-pZ-pOd"/>
+                <constraint firstItem="Dwh-21-dgQ" firstAttribute="bottom" secondItem="Q5M-cg-NOt" secondAttribute="bottom" id="Tgg-II-pxy"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="jMp-CW-zz7" secondAttribute="trailing" id="WAT-95-TZh"/>
+                <constraint firstItem="jMp-CW-zz7" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="qgC-CI-moN"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <connections>
+                <outletCollection property="gestureRecognizers" destination="lYr-rX-ba4" appends="YES" id="BOd-zG-rUR"/>
+            </connections>
+        </view>
+        <tapGestureRecognizer id="lYr-rX-ba4">
+            <connections>
+                <action selector="adTapGesture:" destination="-1" id="bLg-Gb-pnY"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+    <resources>
+        <image name="imag_jump_back" width="60" height="30"/>
+        <image name="img_open_logonew" width="123" height="72.5"/>
+    </resources>
+</document>

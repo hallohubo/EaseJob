@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NJSelectLoginMethodVC">
+            <connections>
+                <outlet property="changeUrlBtn" destination="IRE-mV-MEN" id="8PX-QB-Ft2"/>
+                <outlet property="containerView" destination="qdo-6z-ZIP" id="8bp-UU-2XX"/>
+                <outlet property="phoneLoginBtn" destination="8pk-To-KHl" id="cfk-QQ-ArC"/>
+                <outlet property="shadowView" destination="hcM-QB-teq" id="MYx-mA-vGe"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="weixinLoginBtn" destination="4p6-ON-nqx" id="9By-LW-9a4"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qdo-6z-ZIP">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hcM-QB-teq">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <subviews>
+                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IRE-mV-MEN">
+                                    <rect key="frame" x="298" y="15" width="62" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="0JP-3D-K9k"/>
+                                        <constraint firstAttribute="width" constant="62" id="ZMw-Zn-aZ9"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <state key="normal" title="切换网络"/>
+                                    <connections>
+                                        <action selector="changeUrlClick:" destination="-1" eventType="touchUpInside" id="ALe-Sx-RI3"/>
+                                    </connections>
+                                </button>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qidonglogo" translatesAutoresizingMaskIntoConstraints="NO" id="yZR-fm-wBR">
+                                    <rect key="frame" x="83.5" y="198" width="208" height="101.5"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="101.5" id="Sqd-VL-xvG"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.34999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="IRE-mV-MEN" secondAttribute="trailing" constant="15" id="8ot-i1-QTz"/>
+                                <constraint firstItem="yZR-fm-wBR" firstAttribute="leading" secondItem="hcM-QB-teq" secondAttribute="leading" constant="83.5" id="Hk8-RO-c2T"/>
+                                <constraint firstItem="IRE-mV-MEN" firstAttribute="top" secondItem="hcM-QB-teq" secondAttribute="top" constant="15" id="a5l-ct-tRc"/>
+                                <constraint firstItem="yZR-fm-wBR" firstAttribute="top" secondItem="hcM-QB-teq" secondAttribute="top" constant="198" id="kRh-5U-Dkx"/>
+                                <constraint firstAttribute="trailing" secondItem="yZR-fm-wBR" secondAttribute="trailing" constant="83.5" id="xOg-Pc-CMb"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="hcM-QB-teq" firstAttribute="leading" secondItem="qdo-6z-ZIP" secondAttribute="leading" id="01C-zH-quW"/>
+                        <constraint firstAttribute="bottom" secondItem="hcM-QB-teq" secondAttribute="bottom" id="O4k-A6-qlI"/>
+                        <constraint firstItem="hcM-QB-teq" firstAttribute="top" secondItem="qdo-6z-ZIP" secondAttribute="top" id="e6m-fo-ROh"/>
+                        <constraint firstItem="hcM-QB-teq" firstAttribute="centerX" secondItem="qdo-6z-ZIP" secondAttribute="centerX" id="lYK-RE-MPE"/>
+                        <constraint firstAttribute="trailing" secondItem="hcM-QB-teq" secondAttribute="trailing" id="yJE-gP-0C0"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uGZ-C0-f9y">
+                    <rect key="frame" x="0.0" y="542" width="375" height="125"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="nUq-Au-fAh">
+                            <rect key="frame" x="38" y="0.0" width="299" height="43"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8pk-To-KHl">
+                                    <rect key="frame" x="0.0" y="0.0" width="127" height="43"/>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                    <state key="normal" title="手机登录"/>
+                                    <connections>
+                                        <action selector="phoneLoginBtnClick:" destination="-1" eventType="touchUpInside" id="OSW-Hy-yx3"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4p6-ON-nqx">
+                                    <rect key="frame" x="172" y="0.0" width="127" height="43"/>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                    <state key="normal" title="微信登录"/>
+                                    <connections>
+                                        <action selector="weixinLoginBtnClick:" destination="-1" eventType="touchUpInside" id="j4o-aL-COT"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="43" id="83O-iF-6f4"/>
+                            </constraints>
+                        </stackView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VYl-7D-hpC">
+                            <rect key="frame" x="107.5" y="66" width="160" height="30"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="登录即视为同意" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JbL-m6-5Zf">
+                                    <rect key="frame" x="0.0" y="0.0" width="86" height="30"/>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jfV-9k-Wjl">
+                                    <rect key="frame" x="86" y="0.0" width="74" height="30"/>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                                    <state key="normal" title="《用户协议》">
+                                        <color key="titleColor" red="0.91764705882352937" green="0.54117647058823526" blue="0.34509803921568627" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="userProtocolBtnClick:" destination="-1" eventType="touchUpInside" id="orL-Eh-XCf"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="jfV-9k-Wjl" firstAttribute="top" secondItem="VYl-7D-hpC" secondAttribute="top" id="03H-oe-wRW"/>
+                                <constraint firstAttribute="height" constant="30" id="0fh-4N-6rK"/>
+                                <constraint firstItem="jfV-9k-Wjl" firstAttribute="leading" secondItem="JbL-m6-5Zf" secondAttribute="trailing" id="1hD-2i-One"/>
+                                <constraint firstItem="JbL-m6-5Zf" firstAttribute="leading" secondItem="VYl-7D-hpC" secondAttribute="leading" id="7wi-41-2AK"/>
+                                <constraint firstAttribute="trailing" secondItem="jfV-9k-Wjl" secondAttribute="trailing" id="JF1-jC-BsU"/>
+                                <constraint firstAttribute="bottom" secondItem="JbL-m6-5Zf" secondAttribute="bottom" id="RoJ-bw-NPF"/>
+                                <constraint firstItem="JbL-m6-5Zf" firstAttribute="top" secondItem="VYl-7D-hpC" secondAttribute="top" id="TDP-bY-ckG"/>
+                                <constraint firstAttribute="bottom" secondItem="jfV-9k-Wjl" secondAttribute="bottom" id="rf7-Km-FsT"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="nUq-Au-fAh" firstAttribute="leading" secondItem="uGZ-C0-f9y" secondAttribute="leading" constant="38" id="411-nx-TXz"/>
+                        <constraint firstItem="nUq-Au-fAh" firstAttribute="top" secondItem="uGZ-C0-f9y" secondAttribute="top" id="BxK-ps-ddw"/>
+                        <constraint firstItem="VYl-7D-hpC" firstAttribute="top" secondItem="nUq-Au-fAh" secondAttribute="bottom" constant="23" id="Kwk-wX-UuV"/>
+                        <constraint firstItem="VYl-7D-hpC" firstAttribute="centerX" secondItem="uGZ-C0-f9y" secondAttribute="centerX" id="Wes-wI-Aie"/>
+                        <constraint firstAttribute="trailing" secondItem="nUq-Au-fAh" secondAttribute="trailing" constant="38" id="aAO-va-IWz"/>
+                        <constraint firstAttribute="height" constant="125" id="w0E-ao-JLo"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="qdo-6z-ZIP" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="4cI-LC-2F3"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="uGZ-C0-f9y" secondAttribute="bottom" id="8GH-G9-2cB"/>
+                <constraint firstAttribute="bottom" secondItem="qdo-6z-ZIP" secondAttribute="bottom" id="MR8-qj-vZG"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="uGZ-C0-f9y" secondAttribute="trailing" id="Osl-vT-IZQ"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="qdo-6z-ZIP" secondAttribute="trailing" id="aL1-S0-yqo"/>
+                <constraint firstItem="uGZ-C0-f9y" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="jXw-Qb-9p0"/>
+                <constraint firstItem="qdo-6z-ZIP" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="pUn-cH-9wE"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="138.40000000000001" y="137.18140929535232"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="qidonglogo" width="198" height="101.5"/>
+    </resources>
+</document>

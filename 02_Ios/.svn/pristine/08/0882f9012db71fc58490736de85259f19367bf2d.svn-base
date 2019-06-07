@@ -1,0 +1,181 @@
+PODS:
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
+    - AFNetworking/NSURLSession
+  - AliyunOSSiOS (2.10.7)
+  - ByebyeUnicode (1.1.0)
+  - CHTCollectionViewWaterfallLayout (0.9.7):
+    - CHTCollectionViewWaterfallLayout/ObjC (= 0.9.7)
+  - CHTCollectionViewWaterfallLayout/ObjC (0.9.7)
+  - CYLTabBarController (1.24.1):
+    - CYLTabBarController/Core (= 1.24.1)
+  - CYLTabBarController/Core (1.24.1)
+  - DZNEmptyDataSet (1.8.1)
+  - FLAnimatedImage (1.0.12)
+  - FMDB (2.7.5):
+    - FMDB/standard (= 2.7.5)
+  - FMDB/standard (2.7.5)
+  - FSCalendar (2.8.0)
+  - IQKeyboardManager (6.2.0)
+  - LXReorderableCollectionViewFlowLayout (0.2.1)
+  - Masonry (1.1.0)
+  - MJExtension (3.0.15.1)
+  - MJRefresh (3.1.15.7)
+  - mob_sharesdk (4.2.2):
+    - mob_sharesdk/ShareSDK (= 4.2.2)
+    - MOBFoundation
+  - mob_sharesdk/ShareSDK (4.2.2):
+    - MOBFoundation
+  - mob_sharesdk/ShareSDKExtension (4.2.2):
+    - mob_sharesdk/ShareSDK
+    - MOBFoundation
+  - mob_sharesdk/ShareSDKPlatforms/QQ (4.2.2):
+    - mob_sharesdk/ShareSDK
+    - MOBFoundation
+  - mob_sharesdk/ShareSDKPlatforms/SinaWeibo (4.2.2):
+    - mob_sharesdk/ShareSDK
+    - MOBFoundation
+  - mob_sharesdk/ShareSDKPlatforms/WeChatFull (4.2.2):
+    - mob_sharesdk/ShareSDK
+    - MOBFoundation
+  - mob_sharesdk/ShareSDKUI (4.2.2):
+    - mob_sharesdk/ShareSDK
+    - MOBFoundation
+  - MOBFoundation (3.2.1)
+  - PhotoBrowser (0.8.1)
+  - PhotoTweaks (1.0.3)
+  - SDCycleScrollView (1.75):
+    - SDWebImage (>= 4.0.0)
+  - SDWebImage (4.4.6):
+    - SDWebImage/Core (= 4.4.6)
+  - SDWebImage/Core (4.4.6)
+  - SGPagingView (1.5.6)
+  - SVProgressHUD (2.2.5)
+  - TZImagePickerController (3.1.9)
+  - UMCAnalytics (6.0.2):
+    - UMCCommon
+  - UMCCommon (2.0.0)
+  - UMCCommonLog (1.0.0)
+  - UMCPush (3.2.3):
+    - UMCCommon
+  - UMCSecurityPlugins (1.0.6)
+  - WebViewJavascriptBridge (6.0.3)
+  - YYCache (1.0.4)
+
+DEPENDENCIES:
+  - AFNetworking (~> 3.2.1)
+  - AliyunOSSiOS
+  - ByebyeUnicode
+  - CHTCollectionViewWaterfallLayout (~> 0.9.2)
+  - CYLTabBarController (~> 1.24.0)
+  - DZNEmptyDataSet (~> 1.8.1)
+  - FLAnimatedImage (~> 1.0.12)
+  - FMDB (~> 2.7.5)
+  - FSCalendar (~> 2.8.0)
+  - IQKeyboardManager (~> 6.2.0)
+  - LXReorderableCollectionViewFlowLayout (= 0.2.1)
+  - Masonry (~> 1.1.0)
+  - MJExtension (~> 3.0.15.1)
+  - MJRefresh (~> 3.1.15.3)
+  - mob_sharesdk (~> 4.2.0)
+  - mob_sharesdk/ShareSDKExtension
+  - mob_sharesdk/ShareSDKPlatforms/QQ
+  - mob_sharesdk/ShareSDKPlatforms/SinaWeibo
+  - mob_sharesdk/ShareSDKPlatforms/WeChatFull
+  - mob_sharesdk/ShareSDKUI
+  - MOBFoundation (~> 3.2.0)
+  - PhotoBrowser (= 0.8.1)
+  - PhotoTweaks (~> 1.0.3)
+  - SDCycleScrollView (~> 1.75)
+  - SDWebImage (~> 4.4.2)
+  - SGPagingView (~> 1.5.6)
+  - SVProgressHUD (~> 2.2.5)
+  - TZImagePickerController (= 3.1.9)
+  - UMCAnalytics (~> 6.0.1)
+  - UMCCommon (~> 2.0.0)
+  - UMCCommonLog (~> 1.0.0)
+  - UMCPush (~> 3.2.3)
+  - UMCSecurityPlugins (~> 1.0.6)
+  - WebViewJavascriptBridge (~> 6.0.3)
+  - YYCache (~> 1.0.4)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AFNetworking
+    - AliyunOSSiOS
+    - ByebyeUnicode
+    - CHTCollectionViewWaterfallLayout
+    - CYLTabBarController
+    - DZNEmptyDataSet
+    - FLAnimatedImage
+    - FMDB
+    - FSCalendar
+    - IQKeyboardManager
+    - LXReorderableCollectionViewFlowLayout
+    - Masonry
+    - MJExtension
+    - MJRefresh
+    - mob_sharesdk
+    - MOBFoundation
+    - PhotoBrowser
+    - PhotoTweaks
+    - SDCycleScrollView
+    - SDWebImage
+    - SGPagingView
+    - SVProgressHUD
+    - TZImagePickerController
+    - UMCAnalytics
+    - UMCCommon
+    - UMCCommonLog
+    - UMCPush
+    - UMCSecurityPlugins
+    - WebViewJavascriptBridge
+    - YYCache
+
+SPEC CHECKSUMS:
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  AliyunOSSiOS: 602b6a4e70e62a5f0a6431c20496343141d7e66f
+  ByebyeUnicode: 517bc2fc166129f2de7acdd31704b97f83eed5e9
+  CHTCollectionViewWaterfallLayout: 9d11068fafecac106695bb5a5d6d0f738483b598
+  CYLTabBarController: 46fa053a2fb165095e04792431ad91a759bb7f9f
+  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
+  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
+  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
+  FSCalendar: 3a5ed3636e2ba1b83ebebfcf0c2603105a6f5efe
+  IQKeyboardManager: 6194101620b73af5e67900b8f89707a99de0b804
+  LXReorderableCollectionViewFlowLayout: acd6fe9fd0800efc656266a345130a2f634abf85
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MJExtension: 19bc33ce2eee2d319760f5622562cf581a6ff756
+  MJRefresh: 697f8ec75ebdbe9207767bb682cf0f51b0d8a41f
+  mob_sharesdk: e36e88015480f4d0c28e99ef8875ce1e10ca3a9e
+  MOBFoundation: ce2ba976fd435b0cb06897466b2746e639895b7d
+  PhotoBrowser: afab1abad5dfc58609460d66fb27a166cafadf0d
+  PhotoTweaks: 17a448f451872fd9c3cc65ec5ca125ccd1b48d11
+  SDCycleScrollView: 884b88f0266dd4708a0e1934975c69cb971707b1
+  SDWebImage: 3f3f0c02f09798048c47a5ed0a13f17b063572d8
+  SGPagingView: 642091b0b1ea7d33d89301f6c4ad77f12793d311
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  TZImagePickerController: c3f7c505d23281e21e98df6dbeae372946caa28f
+  UMCAnalytics: 901960ede5a8a85f208bd37689ad3e607b433930
+  UMCCommon: 79b5a614c958db367113eed5740109d9a98e1223
+  UMCCommonLog: 05a2d5de21858e3d870551562cff405c1366d244
+  UMCPush: 628b5c61be5a5036cb31eb9b3a3ab8dce7521691
+  UMCSecurityPlugins: 0831a08f3988f3cea9f1d3a7626cd9bee4fef150
+  WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
+  YYCache: 8105b6638f5e849296c71f331ff83891a4942952
+
+PODFILE CHECKSUM: f3572baa77441d53b748aeaa2f37ee961ae9ec5c
+
+COCOAPODS: 1.5.3

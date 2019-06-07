@@ -1,0 +1,546 @@
+//
+//  NJPhotoCommentVC.m
+//  Destination
+//
+//  Created by TouchWorld on 2018/10/23.
+//  Copyright © 2018 Redirect. All rights reserved.
+//
+
+#import "NJPhotoCommentVC.h"
+#import "NJDiscoveryImageItem.h"
+#import <MJExtension.h>
+#import <MJRefresh.h>
+#import "NJDiscoveryCommentCell.h"
+#import "NJDiscoveryCommentItem.h"
+#import "NJCommentDetailToolView.h"
+#import "NJNewsInputView.h"
+#import <IQKeyboardManager.h>
+#import "NJCommentAnimationTransition.h"
+#import "NJTouristVC.h"
+#import "NJCommentHotWordItem.h"
+#import "NJCommentDetailVC.h"
+
+@interface NJPhotoCommentVC () <UITableViewDataSource, UITableViewDelegate>
+/********* tableView *********/
+@property(nonatomic,weak)UITableView * tableView;
+/********* <#注释#> *********/
+@property(nonatomic,strong)NSMutableArray<NJDiscoveryCommentItem *> * commentArrM;
+/********* 分页 *********/
+@property(nonatomic,assign)NSUInteger page;
+/********* <#注释#> *********/
+@property(nonatomic,strong)NJCommentDetailToolView * toolView;
+/********* <#注释#> *********/
+@property(nonatomic,strong)NJNewsInputView * commentInputView;
+/********* <#注释#> *********/
+@property(nonatomic,strong)NJCommentAnimationTransition * modalAnimationTranstion;
+
+/********* 选中的评论ID *********/
+@property(nonatomic,strong)NJDiscoveryCommentItem * selectedCommentItem;
+/********* 选中的评论ID的父ID *********/
+@property(nonatomic,strong)NJDiscoveryCommentItem * parentSelectedCommentItem;
+@end
+
+@implementation NJPhotoCommentVC
+static NSString * const CommentID = @"NJDiscoveryCommentCell";
+static CGFloat const toolViewHeight = 49.0;
+
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    [self setupInit];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [IQKeyboardManager sharedManager].enable = NO;
+    [IQKeyboardManager sharedManager].enableAutoToolbar = NO;
+}
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [IQKeyboardManager sharedManager].enable = YES;
+    [IQKeyboardManager sharedManager].enableAutoToolbar = YES;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    self.navigationController.delegate = nil;
+    self.modalAnimationTranstion = nil;
+}
+#pragma mark - 设置初始化
+- (void)setupInit
+{
+    self.page = 0;
+    self.view.backgroundColor = [UIColor whiteColor];
+    [self setupNaviBar];
+    
+    [self setupTableView];
+    
+    [self loadDatas];
+    
+    [self setupToolView];
+}
+
+#pragma mark - 导航条
+- (void)setupNaviBar
+{
+    if([self.imageItem.comm_num integerValue] > 0)
+    {
+        self.title = [NSString stringWithFormat:@"评论 %@", self.imageItem.comm_num];
+    }
+    else{
+        self.title = @"尚无评论";
+    }
+    
+    
+}
+
+#pragma mark - tableView
+- (void)setupTableView{
+    UITableView * tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
+    [self.view addSubview:tableView];
+    [tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(self.view).insets(UIEdgeInsetsMake(0, 0, toolViewHeight + HOME_INDICATOR_HEIGHT, 0));
+    }];
+    self.tableView = tableView;
+    
+    tableView.showsHorizontalScrollIndicator = NO;
+    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    tableView.backgroundColor = NJBgColor;
+    tableView.dataSource = self;
+    tableView.delegate = self;
+    tableView.sectionHeaderHeight = 0.1;
+    tableView.sectionFooterHeight = 0.1;
+    
+//    tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+    tableView.mj_header = [HLGifHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+
+    tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
+    
+    [tableView registerNib:[UINib nibWithNibName:NSStringFromClass([NJDiscoveryCommentCell class]) bundle:nil] forCellReuseIdentifier:CommentID];
+}
+
+#pragma mark - toolView
+- (void)setupToolView
+{
+    [self.view addSubview:self.toolView];
+    [self.toolView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.mas_equalTo(self.view);
+        make.height.mas_equalTo(toolViewHeight);
+        make.bottom.mas_equalTo(self.view).mas_offset(-HOME_INDICATOR_HEIGHT);
+    }];
+}
+
+#pragma mark - 网络请求
+- (void)loadDatas
+{
+    [self.tableView.mj_header beginRefreshing];
+    [self commentHotWordRequest];
+}
+
+- (void)loadNewData
+{
+    self.page = 0;
+    [self imageCommentDataRequest:NO];
+}
+
+- (void)loadMoreData
+{
+    self.page += 1;
+    [self imageCommentDataRequest:NO];
+}
+
+//图片评论数据
+- (void)imageCommentDataRequest:(BOOL)isScroll
+{
+<<<<<<< HEAD
+    [NetRequest imageCommentListWithImageID:[self.imageItem.mid stringValue] page:self.page completedBlock:^(id data, NSError *error) {
+        [self performSelector:@selector(loadDadelay) withObject:self afterDelay:1.5];
+=======
+    [NetRequest imageCommentListWithImageID:[self.imageItem.m_id stringValue] page:self.page completedBlock:^(id data, NSError *error) {
+        [self performSelector:@selector(loadDadelay) withObject:self afterDelay:DROP_down_time];
+>>>>>>> 6d88162660777a9463fbd652092af074d6b25fe7
+        //        [self.tableView.mj_header endRefreshing];
+        [self.tableView.mj_footer endRefreshing];
+        if(!error)
+        {
+            NSArray * dataArr = data[DictionaryKeyData];
+            NSArray<NJDiscoveryCommentItem *> * newCommentArr = [NJDiscoveryCommentItem mj_objectArrayWithKeyValuesArray:dataArr];
+            if(self.page == 0)
+            {
+                [self.commentArrM removeAllObjects];
+            }
+            
+            if(self.page > 0 && (newCommentArr == nil || newCommentArr.count == 0))
+            {
+                self.page -= 1;
+                [NJProgressHUD showInfoWithStatus:@"已经到底了"];
+                [NJProgressHUD dismissWithDelay:1.2];
+                return ;
+            }
+            
+            [self.commentArrM addObjectsFromArray:newCommentArr];
+            
+            [self.tableView reloadData];
+            if(isScroll && self.commentArrM.count > 0)
+            {
+                [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+            }
+            
+        }
+        else
+        {
+            NJLog(@"%@", error);
+        }
+    }];
+}
+
+//添加图片评论
+- (void)addDiscoveryCommentRequest:(NSString *)content
+{
+    NSString * ancestorID = @"0";
+    NSString * fatherID = @"0";
+    NSString * beUserID = @"0";
+    if(self.selectedCommentItem != nil)
+    {
+        if([self.selectedCommentItem.parent_comm_id integerValue] == 0)
+        {
+            ancestorID = [self.selectedCommentItem.comm_id stringValue];
+        }
+        else
+        {
+            ancestorID = [self.selectedCommentItem.parent_comm_id stringValue];
+        }
+        
+        fatherID = [self.selectedCommentItem.comm_id stringValue];
+        beUserID = [self.selectedCommentItem.c_user_id stringValue];
+    }
+    [NetRequest addImageCommendWithImageID:[self.imageItem.mid stringValue] content:content parent_comm_id:ancestorID be_user_id:beUserID father_id:fatherID completedBlock:^(id data, NSError *error) {
+        if(!error)
+        {
+            NJLog(@"评论成功");
+            NSDictionary * dataDic = data[DictionaryKeyData];
+            NJDiscoveryCommentItem * newItem = [NJDiscoveryCommentItem mj_objectWithKeyValues:dataDic];
+            
+            newItem.is_belong = @1;
+            
+            if(self.parentSelectedCommentItem == nil)
+            {
+                [self.commentArrM insertObject:newItem atIndex:0];
+            }
+            else
+            {
+                NSArray * childArr = self.parentSelectedCommentItem.child;
+                NSMutableArray * childArrM = [NSMutableArray arrayWithArray:childArr];
+                [childArrM insertObject:newItem atIndex:0];
+                self.parentSelectedCommentItem.child = [NSArray arrayWithArray:childArrM];
+                self.parentSelectedCommentItem.count = self.parentSelectedCommentItem.count == nil ? @0 : self.parentSelectedCommentItem.count;
+                NSInteger oldCount = [self.parentSelectedCommentItem.count integerValue];
+                self.parentSelectedCommentItem.count = @(oldCount + 1);
+                
+                [self.parentSelectedCommentItem calculateCellHeight];
+                [self.parentSelectedCommentItem calculateSubCellHeight];
+            }
+            
+            [self.tableView reloadData];
+            if(self.parentSelectedCommentItem == nil && self.commentArrM.count > 0)
+            {
+                [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+            }
+        }
+        else
+        {
+            NJLog(@"%@", error);
+        }
+    }];
+
+}
+
+//删除图片评论
+- (void)deleteImageCommentRequest:(NSString *)commentID
+{
+    [NetRequest deleteDiscoveryCommentWithCommentID:commentID type:@"2" completedBlock:^(id data, NSError *error) {
+        if(!error)
+        {
+            NJLog(@"%@", data[DictionaryKeyMsg]);
+        }
+        else
+        {
+            NJLog(@"%@", error);
+        }
+    }];
+}
+
+//添加图片评论点赞
+- (void)addImageCommentPraise:(NSString *)commendID
+{
+    [NetRequest imageCommentPraiseWithCommendID:commendID completedBlock:^(id data, NSError *error) {
+        if(!error)
+        {
+            NJLog(@"%@", data[DictionaryKeyMsg]);
+        }
+        else
+        {
+            NJLog(@"%@", error);
+        }
+    }];
+}
+
+//取消图片评论点赞
+- (void)cancelImageCommentPraise:(NSString *)commendID
+{
+    [NetRequest cancelDiscoveryCommentPraiseWithCommentID:commendID type:@"2" completedBlock:^(id data, NSError *error) {
+        if(!error)
+        {
+            NJLog(@"%@", data[DictionaryKeyMsg]);
+        }
+        else
+        {
+            NJLog(@"%@", error);
+        }
+    }];
+}
+
+//评论热词
+- (void)commentHotWordRequest
+{
+    [NetRequest commentHotWordWithCompletedBlock:^(id data, NSError *error) {
+        if(!error)
+        {
+            NSArray * dataArr = data[DictionaryKeyData];
+            NSArray<NJCommentHotWordItem *> * wordArr = [NJCommentHotWordItem mj_objectArrayWithKeyValuesArray:dataArr];
+            self.commentInputView.hotWordView.wordArr = wordArr;
+        }
+        else
+        {
+            NJLog(@"%@", error);
+        }
+    }];
+}
+
+#pragma mark - UITableViewDataSource方法
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.commentArrM.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NJWeakSelf;
+    NJDiscoveryCommentItem * item = self.commentArrM[indexPath.row];
+    NJDiscoveryCommentCell * cell = [tableView dequeueReusableCellWithIdentifier:CommentID forIndexPath:indexPath];
+    cell.item = item;
+    cell.praiseBlock = ^(NJDiscoveryCommentItem * _Nonnull item) {
+        [weakSelf discoveryCommentPraise:item];
+    };
+    cell.deleteCommentBlock = ^(NJDiscoveryCommentItem * _Nonnull item) {
+        [weakSelf deleteDiscoveryComment:item];
+    };
+    cell.iconImageVClock = ^(NSString * _Nonnull author) {
+        [weakSelf otherZone:author];
+    };
+    
+    //评论子评论
+    cell.subCellCommentBlock = ^(NJDiscoveryCommentItem * _Nonnull item, NJDiscoveryCommentItem * _Nonnull subItem) {
+        NSString * placeholder = [NSString stringWithFormat:@"回复 %@", subItem.nikename];
+        [weakSelf addSubComment:item subItem:subItem placeholder:placeholder];
+    };
+    //查看全部评论
+    cell.seeAllCommentBlock = ^(NJDiscoveryCommentItem * _Nonnull item) {
+        [weakSelf goToCommentDetailVC:item];
+    };
+    return cell;
+}
+
+#pragma mark - UITableViewDelegate方法
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NJDiscoveryCommentItem * item = self.commentArrM[indexPath.row];
+    NSString * placeholder = [NSString stringWithFormat:@"回复 %@", item.nikename];
+    [self addSubComment:item subItem:item placeholder:placeholder];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NJDiscoveryCommentItem * item = self.commentArrM[indexPath.row];
+    return item.cellHeight;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 0.1;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    return 0.1;
+}
+
+
+#pragma mark - 事件
+//点击输入view
+- (void)toolViewClick
+{
+    [self addSubComment:nil subItem:nil placeholder:@"说点什么吧..."];
+}
+
+- (void)postCommentation:(NSString *)content
+{
+    if(content.length == 0)
+    {
+        return;
+    }
+    
+    [self addDiscoveryCommentRequest:content];
+}
+
+//发现评论点赞
+- (void)discoveryCommentPraise:(NJDiscoveryCommentItem *)item
+{
+    if([item.is_prise isEqual:@"1"])
+    {
+        item.is_prise = @"0";
+        item.prise = @([item.prise integerValue] - 1);
+        [self cancelImageCommentPraise:[item.comm_id stringValue]];
+    }
+    else
+    {
+        item.is_prise = @"1";
+        item.prise = @([item.prise integerValue] + 1);
+        [self addImageCommentPraise:[item.comm_id stringValue]];
+    }
+    
+    [self refreshCommentViewWithItem:item];
+    
+}
+
+//根据item刷新view
+- (void)refreshCommentViewWithItem:(NJDiscoveryCommentItem *)item
+{
+    NSUInteger row = [self.commentArrM indexOfObject:item];
+    [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:row inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+}
+
+//删除发现评论
+- (void)deleteDiscoveryComment:(NJDiscoveryCommentItem *)item
+{
+    [LBXAlertAction showActionSheetWithTitle:@"确定删除此评论？" message:nil cancelButtonTitle:@"取消" destructiveButtonTitle:@"确定删除" otherButtonTitle:nil chooseBlock:^(NSInteger buttonIdx) {
+        NJLog(@"%ld", buttonIdx);
+        if(buttonIdx == 1)
+        {
+            [self deleteDiscoveryCommentAction:item];
+            
+        }
+    }];
+    
+}
+
+- (void)deleteDiscoveryCommentAction:(NJDiscoveryCommentItem *)item
+{
+    [self deleteImageCommentRequest:[item.comm_id stringValue]];
+    
+    NSUInteger row = [self.commentArrM indexOfObject:item];
+    [self.commentArrM removeObjectAtIndex:row];
+    [self.tableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:row inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+}
+
+//前往他人空间
+- (void)otherZone:(NSString *)author
+{
+    NJTouristVC * touristVC = [[NJTouristVC alloc] init];
+    touristVC.uID = author;
+    [self.navigationController pushViewController:touristVC animated:YES];
+}
+
+#pragma mark - 懒加载
+- (NSMutableArray<NJDiscoveryCommentItem *> *)commentArrM
+{
+    if(_commentArrM == nil)
+    {
+        _commentArrM = [NSMutableArray array];
+    }
+    return _commentArrM;
+}
+
+- (NJCommentDetailToolView *)toolView
+{
+    if(_toolView == nil)
+    {
+        _toolView = [[NJCommentDetailToolView alloc] init];
+        UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(toolViewClick)];
+        [_toolView addGestureRecognizer:tapGesture];
+    }
+    return _toolView;
+}
+
+- (NJNewsInputView *)commentInputView
+{
+    if(_commentInputView == nil)
+    {
+        NJWeakSelf;
+        _commentInputView = [NJNewsInputView inputView];
+        _commentInputView.postBtnBlock = ^(NSString *content) {
+            [weakSelf postCommentation:content];
+        };
+        
+    }
+    return _commentInputView;
+}
+
+- (NJCommentAnimationTransition *)modalAnimationTranstion
+{
+    if(_modalAnimationTranstion == nil)
+    {
+        _modalAnimationTranstion = [[NJCommentAnimationTransition alloc] init];
+    }
+    return _modalAnimationTranstion;
+}
+
+#pragma mark - 其他
+//添加评论（对子评论进行评论）
+- (void)addSubComment:(NJDiscoveryCommentItem *)item subItem:(NJDiscoveryCommentItem *)subItem placeholder:(NSString *)placeholder
+{
+    placeholder = placeholder == nil ? @"说点什么吧..." : placeholder;
+    self.parentSelectedCommentItem = item;
+    self.selectedCommentItem = subItem;
+    
+    self.commentInputView.placeholder = placeholder;
+    [self.commentInputView show];
+}
+
+- (void)goToCommentDetailVC:(NJDiscoveryCommentItem *)item
+{
+    NJWeakSelf;
+    self.navigationController.delegate = self.modalAnimationTranstion;
+    NJCommentDetailVC * commentDetailVC = [[NJCommentDetailVC alloc] init];
+    commentDetailVC.item = item;
+    commentDetailVC.type = NJCommentDetailTypePhoto;
+    commentDetailVC.deleteCommentBlock = ^(NJDiscoveryCommentItem * _Nonnull item) {
+        [weakSelf deleteDiscoveryCommentAction:item];
+    };
+    commentDetailVC.praiseCommentBlock = ^(NJDiscoveryCommentItem * _Nonnull item) {
+        [weakSelf refreshCommentViewWithItem:item];
+    };
+    commentDetailVC.refreshCommentBlock = ^(NJDiscoveryCommentItem * _Nonnull item) {
+        [weakSelf refreshCommentViewWithItem:item];
+    };
+    
+    
+    [self.navigationController pushViewController:commentDetailVC animated:YES];
+}
+//延迟1.5秒结束动画
+-(void)loadDadelay{
+    
+    [self.tableView.mj_header endRefreshing];
+    
+}
+@end

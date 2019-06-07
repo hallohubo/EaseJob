@@ -1,0 +1,294 @@
+//
+//  HDMainVC.m
+//  Destination
+//
+//  Created by hufan on 2019/6/1.
+//  Copyright © 2019 Redirect. All rights reserved.
+//
+
+#import "HDMainVC.h"
+#import "HD3DScrollView.h"
+#import "HBInformationCell.h"
+
+#define BANNER_RATIO 0.557
+
+@interface HDMainVC ()
+{
+    IBOutlet UILabel            *lbMessage;
+    IBOutlet UIView             *vHeadView;
+//    IBOutlet NSLayoutConstraint *lcHeadViewHeight;
+    IBOutlet UIPageControl      *pageControl;
+    IBOutlet HD3DScrollView     *scv_banner;
+    IBOutlet UIView             *vScrollviewContent;
+    IBOutlet UITableView        *tbv;
+    IBOutlet UIButton           *btnCheck;
+    
+    IBOutlet UIButton           *btnRegister;
+    IBOutlet UIButton           *btnVote;
+    IBOutlet UIButton           *btnAttention;
+    IBOutlet UIButton           *btnBrowse;
+    IBOutlet UIButton           *btnDownloa;
+    IBOutlet UIButton           *btnforward;
+    IBOutlet UIButton           *btnPost;
+    IBOutlet UIButton           *btnComment;
+    IBOutlet UIButton           *btnECommerce;
+    IBOutlet UIButton           *btnAll;
+    
+    NSArray                     *ar_bannerList;
+    NSMutableArray              *mar_pakageList;
+    NSMutableArray              *marOrderList;
+    
+//    NSURLSessionDataTask        *task;
+    NSTimer                     *timer;
+    HDHUD                       *hud;
+}
+
+@end
+
+@implementation HDMainVC
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    [self setup];
+    [self setTableHead];
+}
+
+#pragma mark UIScrollViewDelegate
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    if ([scrollView isEqual:scv_banner]) {
+        if (scv_banner.currentPage == ar_bannerList.count + 1) {
+            [scv_banner loadPageIndex:1 animated:NO];
+        }
+        if (scv_banner.currentPage == 0) {
+            [scv_banner loadPageIndex:ar_bannerList.count animated:NO];
+        }
+        int i = scrollView.contentOffset.x / (HDDeviceSize.width - 16.);
+        if (i > ar_bannerList.count + 1) {
+            pageControl.currentPage = i - 1;
+        }else{
+            pageControl.currentPage = i;
+        }
+        [self setAutoScrollStart];
+        return;
+    }else {
+        scv_banner.scrollEnabled = YES;
+    }
+}
+
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    if ([scrollView isEqual:tbv]) {
+        scv_banner.scrollEnabled = NO;
+    }else{
+       
+    }
+}
+#pragma mark - 3DScrollView event
+
+- (void)setAutoScrollStart
+{
+    if (timer) {
+        [timer invalidate];
+        timer = nil;
+    }
+    timer = [NSTimer scheduledTimerWithTimeInterval:3. target:self selector:@selector(bannerScroll) userInfo:nil repeats:YES];
+}
+
+- (void)bannerScroll
+{
+    [scv_banner loadNextPage:YES];
+}
+
+#pragma mark - UITableViewDelegate
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 100.;
+    
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return section == 0 ? 60. :.1;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    return 1;
+}
+
+//- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+//    UIView *v10 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.bounds.size.width, 1)];
+//    v10.backgroundColor = [UIColor groupTableViewBackgroundColor];
+//    UIView *v2 =  [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.bounds.size.width-20, 1)];
+//    v2.backgroundColor = HDCOLOR_WHITE;
+//    [v10 addSubview:v2];
+//    [v2 makeConstraints:^(MASConstraintMaker *make) {
+//        make.center.equalTo(v10);
+//        //make.size.equalTo(v);
+//        make.left.equalTo(v10).offset(10);
+//        make.top.equalTo(v10).offset(0);
+//    }];
+//
+//    return v10;
+//}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView *v60 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.bounds.size.width, 60)];
+    v60.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    UIView *v1 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, (tableView.bounds.size.width-20), 60)];
+    v1.backgroundColor = [UIColor whiteColor];
+    
+    [v60 addSubview:v1];
+    [v1 makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(v60);
+        //make.size.equalTo(v);
+        make.left.equalTo(v60).offset(10);
+        make.top.equalTo(v60).offset(0);
+    }];
+    
+    
+//    UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:v1.bounds byRoundingCorners:UIRectCornerTopLeft|UIRectCornerTopRight cornerRadii:CGSizeMake(10, 10)];
+//    CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
+//    maskLayer.frame = v1.bounds;
+//    maskLayer.path = maskPath.CGPath;
+//    v1.layer.mask = maskLayer;
+    
+    if (section == 0){
+        UILabel *lb = [[UILabel alloc] init];
+        [lb setFont:HDFONT];
+        [lb setText:@"热门资讯"];
+        [lb setBackgroundColor:[UIColor whiteColor]];
+        [v1 addSubview:lb];
+        [lb makeConstraints:^(MASConstraintMaker *make) {
+            make.centerY.equalTo(v1);
+            make.size.mas_equalTo(CGSizeMake(80, 30));
+            make.left.equalTo(v1).offset(20);
+        }];
+        
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
+        [button addTarget:self action:@selector(loadMoreInformation)
+         forControlEvents:UIControlEventTouchUpInside];
+        [button setTitle:@"更多资讯" forState:UIControlStateNormal];
+        [button setTintColor:[UIColor darkGrayColor]];
+        button.frame = CGRectMake(0, 0, 100., 30.0);
+        
+        [v1 addSubview:button];
+        [button makeConstraints:^(MASConstraintMaker *make) {
+            make.centerY.equalTo(v1.centerY);
+            make.right.equalTo(v1.mas_right).offset(-10);
+            make.size.mas_equalTo(CGSizeMake(80, 30));
+        }];
+        [v60 updateConstraints];
+    }
+    return v60;
+}
+
+#pragma mark - UITableViewDataSource
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 5;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *str = @"HBInformationCell";
+    HBInformationCell *cell = [tableView dequeueReusableCellWithIdentifier:str];
+    if(!cell){
+        cell = [HBInformationCell loadFromNib];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    }
+   
+    return cell;
+}
+
+- (void)setBannerView:(NSArray *)ar
+{
+    for (int i = 0; i < scv_banner.subviews.count; i++) {
+        UIView *v = scv_banner.subviews[i];
+        [v removeFromSuperview];
+        i = 0;
+    }
+    CGFloat height = (HDDeviceSize.width-20) * BANNER_RATIO;
+    pageControl.numberOfPages = ar.count;
+    pageControl.hidesForSinglePage = YES;
+    NSMutableArray *mar = [[NSMutableArray alloc] initWithArray:ar];
+    [mar insertObject:[ar lastObject] atIndex:0];
+    [mar addObject:[ar firstObject]];
+//    marHeadScrollImageList = [[NSMutableArray alloc] init];
+//    marHeadScrollImageList = mar;//used for geting the link when click image;
+//    for (int i = 0; i < mar.count; i++) {
+//        HDBannerModel *m = mar[i];
+//        UIImageView *imv = [[UIImageView alloc] initWithFrame:CGRectMake((HDDeviceSize.width-20) * i, 0, HDDeviceSize.width-20, height)];
+//        if ([m.ImageUrl isEqualToString:@"local"]) {//取写死本地的数据
+//            [imv setImage:HDIMAGE(@"main_banner")];//
+//        }else{
+//            [imv setImageWithURL:[NSURL URLWithString:m.ImageUrl] placeholderImage:HDIMAGE(@"main_banner")];
+//        }
+//        imv.userInteractionEnabled = YES;
+//        imv.contentMode     = UIViewContentModeScaleAspectFill;
+//        imv.clipsToBounds   = YES;
+//        imv.layer.cornerRadius  = 10.;
+//        imv.layer.masksToBounds = YES;
+//        imv.tag = i;
+//        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(goBannerDetail:)];
+//        [imv addGestureRecognizer:tap];
+//        [scv_banner addSubview:imv];//ar_bannerList
+//    }
+//    scv_banner.contentSize = CGSizeMake((HDDeviceSize.width-20) * mar.count, 10.);
+//    scv_banner.effect = HD3DScrollViewEffectNone;
+//    scv_banner.pagingEnabled = YES;
+//    [scv_banner loadPageIndex:1 animated:NO];
+//    [self setAutoScrollStart];
+}
+
+
+#pragma mark - event
+
+
+#pragma mark - setter and getter
+- (void)setup
+{
+    self.title = @"首页";
+    vScrollviewContent.layer.cornerRadius   = 10.f;
+    vScrollviewContent.layer.masksToBounds  = YES;
+}
+
+- (void)setTableHead
+{
+    CGFloat height = 250 + (HDDeviceSize.width) * BANNER_RATIO;
+    UIView *v = [[UIView alloc] initWithFrame:CGRectMake(0, 0, HDDeviceSize.width, height)];
+    [v addSubview:vHeadView];
+    [vHeadView makeConstraints:^(MASConstraintMaker *make){
+        make.size.equalTo(v);
+        make.center.equalTo(v);
+    }];
+    
+    tbv.tableHeaderView = v;
+}
+
+
+@end
+
+@implementation HDBannerModel
+
+
+
+@end
