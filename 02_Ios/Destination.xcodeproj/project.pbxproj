@@ -179,6 +179,7 @@
 		C85A600222AA494B008D54FC /* HDMainVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C85A5FFF22AA494B008D54FC /* HDMainVC.xib */; };
 		C85A600622AA4964008D54FC /* HBInformationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C85A600322AA4963008D54FC /* HBInformationCell.xib */; };
 		C85A600722AA4964008D54FC /* HBInformationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C85A600522AA4964008D54FC /* HBInformationCell.m */; };
+		C85A600B22ABD051008D54FC /* RSAUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = C85A600922ABD050008D54FC /* RSAUtil.m */; };
 		C8B74D6A22A8E1B600BCA2E6 /* HB3DScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C8B74D6922A8E1B600BCA2E6 /* HB3DScrollView.m */; };
 		DA3A28492263213900D8D6C1 /* HLTokenModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3A28482263213900D8D6C1 /* HLTokenModel.m */; };
 		DA4EFC582248A12500062E14 /* myButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DA4EFC552248A12400062E14 /* myButton.m */; };
@@ -519,6 +520,8 @@
 		C85A600322AA4963008D54FC /* HBInformationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HBInformationCell.xib; sourceTree = "<group>"; };
 		C85A600422AA4963008D54FC /* HBInformationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBInformationCell.h; sourceTree = "<group>"; };
 		C85A600522AA4964008D54FC /* HBInformationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBInformationCell.m; sourceTree = "<group>"; };
+		C85A600922ABD050008D54FC /* RSAUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSAUtil.m; sourceTree = "<group>"; };
+		C85A600A22ABD051008D54FC /* RSAUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSAUtil.h; sourceTree = "<group>"; };
 		C8B74D6822A8E1B600BCA2E6 /* HB3DScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HB3DScrollView.h; sourceTree = "<group>"; };
 		C8B74D6922A8E1B600BCA2E6 /* HB3DScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HB3DScrollView.m; sourceTree = "<group>"; };
 		D1D528ADF624776ACA4E89E5 /* Pods-Destination.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Destination.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Destination/Pods-Destination.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1065,6 +1068,7 @@
 		BFB5E39E215A446300985F62 /* Utilitys */ = {
 			isa = PBXGroup;
 			children = (
+				C85A600822ABD03B008D54FC /* RSA */,
 				C845CAC722A764B5007379BF /* LDEncrypt */,
 				BFB5E3AC215A446300985F62 /* LBXAlertAction */,
 				BFC13CEE21D21503006EE226 /* FMDB */,
@@ -1631,6 +1635,15 @@
 			path = LDEncrypt;
 			sourceTree = "<group>";
 		};
+		C85A600822ABD03B008D54FC /* RSA */ = {
+			isa = PBXGroup;
+			children = (
+				C85A600A22ABD051008D54FC /* RSAUtil.h */,
+				C85A600922ABD050008D54FC /* RSAUtil.m */,
+			);
+			path = RSA;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1878,6 +1891,7 @@
 				BF5B34E021F17D06006F2AE7 /* HDLaunchAdVC.m in Sources */,
 				BF5EB0A5218012D00051BA80 /* NJShareItemCell.m in Sources */,
 				BFB5E436215A446300985F62 /* UIAlertController+supportedInterfaceOrientations.m in Sources */,
+				C85A600B22ABD051008D54FC /* RSAUtil.m in Sources */,
 				BFB5E441215A446300985F62 /* NJNavigationController.m in Sources */,
 				BFF975F421B7D09400643521 /* NJLoginCarouseImageItem.m in Sources */,
 				BF5EB0B521805D310051BA80 /* NJRewardListView.m in Sources */,

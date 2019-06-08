@@ -25,7 +25,7 @@ static dispatch_once_t *onceToken_debug;
 @implementation HDHttpHelper
 
 + (NSString *)ip{
-    if ([HDGI.loginUser.TelPhone isEqualToString:@"15060672715"]) {
+    if ([HDGI.loginUser.RegMobile isEqualToString:@"15060672715"]) {
  
         return [NSString stringWithFormat:@"%@API/", HDDomain];//测试时用
     }
@@ -57,7 +57,7 @@ static dispatch_once_t *onceToken_debug;
     [_parameters setValue:HDSTR([HDHelper uuid])    forKey:@"IMEI"];
     [_parameters setValue:HDSTR(APPVERSION)         forKey:@"Version"];
     NSString *token = HDGI.loginUser.Token;
-    NSString *uid   = HDGI.loginUser.UID;
+    NSString *uid   = HDGI.loginUser.MID;
     Dlog(@"uid=%@",uid);
     if (token) {
         [_parameters setValue:token forKey:@"Token"];

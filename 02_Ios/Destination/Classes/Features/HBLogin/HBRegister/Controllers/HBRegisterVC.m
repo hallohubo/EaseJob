@@ -17,6 +17,7 @@
 #import <CYLTabBarController.h>
 #import "CYLTabBarControllerConfig.h"
 #import "AppDelegate.h"
+#import "RSAUtil.h"
 
 
 @interface HBRegisterVC ()
@@ -128,22 +129,37 @@
 
 #pragma mark - Http request
 
+- (void)getPublicKey:(void(^)(NSString *key))finishBlock //获取公钥
+{    __block NSString *str = [[NSString alloc] init];
+    HDHttpHelper *helper = [HDHttpHelper instance];
+    [NJProgressHUD show];
+    [helper postPath:@"Act102" object:nil finished:^(HDError *error, id object, BOOL isLast, id json) {
+        [NJProgressHUD dismiss];
+        if (error) {
+            [HDHelper say:error.desc];
+            return ;
+        }
+        str = [self URLDecodedString:json[@"PublicKey"]];
+        Dlog(@"RSA:%@", str);
+        finishBlock(str);
+    }];
+}
+
 - (void)getPhoneVeriCode //获取验证码
 {
     [LBXAlertAction sayWithTitle:@"提示" message:HDFORMAT(@"我们将下发短信验证码，请确认手机号：%@", tfPhone.text) buttons:@[@"取消", @"确认"] chooseBlock:^(NSInteger buttonIdx) {
         if (buttonIdx == 0) {
             return ;
         }
-        [self startTime];
-//        [self httpGetCode:tfPhone.text];
+        NSDictionary *dic = @{@"mobile": HDSTR(tfPhone.text), @"flag": @"1"};
+        [self httpGetCode:dic];
     }];
 }
 
-- (void)httpGetCode:(NSString *)mobile
+- (void)httpGetCode:(NSDictionary *)dicParam
 {
     HDHttpHelper *helper = [HDHttpHelper instance];
-    [helper.parameters addEntriesFromDictionary:@{@"mobile": HDSTR(mobile)}];
-    [helper.parameters addEntriesFromDictionary:@{@"flag": @"1"}];
+    [helper.parameters addEntriesFromDictionary:dicParam];
     [NJProgressHUD show];
     task = [helper postPath:@"Act103" object:nil finished:^(HDError *error, id object, BOOL isLast, id json) {
         [NJProgressHUD dismiss];
@@ -157,91 +173,80 @@
         [self startTime];
     }];
 }
-//获取验证码
-- (void)getVeriCode
+
+- (void)HttpPostRegisterRequest:(NSDictionary *)dicParam
 {
-    
-    //    NSMutableDictionary *postParams = [[NSMutableDictionary alloc]init];
-    //    [postParams setValue:[NSString stringWithFormat:@"%@",self.phoneNumberTextF.text] forKey:@"username"];
-    //    //4登录2注册(含微信注册) 1找回密码
-    //    [postParams setValue:[NSString stringWithFormat:@"%@",@"2"] forKey:@"type"];
-    //    [[NetAPIManager instance] postWithPath:@"User/getCode" parameters:postParams finished:^(HDError * _Nullable error, id object, BOOL isLast, id result) {
-    //        [NJProgressHUD dismiss];
-    //        if (error) {
-    //            [HDHelper say:error.desc];
-    //            return ;
-    //        }
-    //        [self startTime];
-    //
-    //
-    //    }];
-    //
-    //    [NetRequest getValidateCodeWithPhoneNumber:self.phoneNumberTextF.text    type:@"0" completedBlock:^(id data, NSError *error) {
-    //        if(!error)
-    //        {
-    //            [self startTime];
-    //        }
-    //        else
-    //        {
-    //            HDLog(@"%@", error);
-    //        }
-    //
-    //    }];
-    
-    
+    HDHttpHelper *helper = [HDHttpHelper instance];
+    [helper.parameters addEntriesFromDictionary:dicParam];
+    [NJProgressHUD show];
+    task = [helper postPath:@"Act104" object:nil finished:^(HDError *error, id object, BOOL isLast, id json) {
+        [NJProgressHUD dismiss];
+        if (error) {
+            [LBXAlertAction sayWithTitle:@"提示" message:error.desc buttons:@[ @"确认"] chooseBlock:nil];
+            return ;
+        }
+        NSDictionary *respons = json;
+        NSDictionary * dataDic = respons[DictionaryKeyData];
+        //字典转模型
+        HDLoginUserModel * model = [HDLoginUserModel mj_objectWithKeyValues:dataDic];
+        [model saveToLocal];
+        HDGI.loginUser = model;
+        [self goToTabBarVC];
+    }];
 }
 
+
 //注册
-- (void)postRegisterRequest
-{
-    
-    
-    //    NSMutableDictionary *postParams = [[NSMutableDictionary alloc]init];
-    //    [postParams setValue:[NSString stringWithFormat:@"%@",self.phoneNumberTextF.text] forKey:@"username"];
-    //    [postParams setValue:[NSString stringWithFormat:@"%@",self.pwdTextF.text] forKey:@"password"];
-    //    [postParams setValue:[NSString stringWithFormat:@"%@",self.codeTextF.text] forKey:@"code"];
-    //    [NJProgressHUD show];
-    //    [[NetAPIManager instance] postWithPath:@"User/register" parameters:postParams finished:^(HDError * _Nullable error, id object, BOOL isLast, id result) {
-    //        [NJProgressHUD dismiss];
-    //        if (error) {
-    //            [HDHelper say:error.desc];
-    //            return ;
-    //        }
-    //        NSDictionary *respons = result;
-    //        NSDictionary * dataDic = respons[DictionaryKeyData];
-    //        //字典转模型
-    ////        HLTokenModel * tokenmodel = [HLTokenModel mj_objectWithKeyValues:dataDic];
-    ////        NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
-    ////        [userDefaults setValue:tokenmodel.token forKey:NJUserDefaultLoginUserToken];
-    //        [self DataInit];
-    //
-    //    }];
-    
-    
-    //
-    //    [NJProgressHUD show];
-    //    [NetRequest userRegisterWithPhoneNumber:self.phoneNumberTextF.text code:self.codeTextF.text pwd:self.pwdTextF.text completedBlock:^(id data, NSError *error) {
-    //        [NJProgressHUD dismiss];
-    //        if(!error)
-    //        {
-    //            HDWeakSelf;
-    //            NSDictionary * dataDic = data[DictionaryKeyData];
-    //            NJUserItem * userItem = [NJUserItem mj_objectWithKeyValues:dataDic];
-    //            [NJLoginTool loginWithItem:userItem];
-    //
-    //            NSString * msgStr = data[DictionaryKeyMsg];
-    //            [NJProgressHUD showSuccess:msgStr];
-    //            [NJProgressHUD dismissWithDelay:1.2 completion:^{
-    //                [weakSelf goToTabBarVC];
-    //            }];
-    //
-    //        }
-    //        else
-    //        {
-    //            HDLog(@"%@", error);
-    //        }
-    //    }];
-}
+//- (void)postRegisterRequest
+//{
+//
+//
+//        NSMutableDictionary *postParams = [[NSMutableDictionary alloc]init];
+//        [postParams setValue:[NSString stringWithFormat:@"%@",self.phoneNumberTextF.text] forKey:@"username"];
+//        [postParams setValue:[NSString stringWithFormat:@"%@",self.pwdTextF.text] forKey:@"password"];
+//        [postParams setValue:[NSString stringWithFormat:@"%@",self.codeTextF.text] forKey:@"code"];
+//        [NJProgressHUD show];
+//        [[NetAPIManager instance] postWithPath:@"User/register" parameters:postParams finished:^(HDError * _Nullable error, id object, BOOL isLast, id result) {
+//            [NJProgressHUD dismiss];
+//            if (error) {
+//                [HDHelper say:error.desc];
+//                return ;
+//            }
+//            NSDictionary *respons = result;
+//            NSDictionary * dataDic = respons[DictionaryKeyData];
+//            字典转模型
+//            HLTokenModel * tokenmodel = [HLTokenModel mj_objectWithKeyValues:dataDic];
+//            NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
+//            [userDefaults setValue:tokenmodel.token forKey:NJUserDefaultLoginUserToken];
+//            [self DataInit];
+//
+//        }];
+//
+//
+//    //
+//    //    [NJProgressHUD show];
+//    //    [NetRequest userRegisterWithPhoneNumber:self.phoneNumberTextF.text code:self.codeTextF.text pwd:self.pwdTextF.text completedBlock:^(id data, NSError *error) {
+//    //        [NJProgressHUD dismiss];
+//    //        if(!error)
+//    //        {
+//    //            HDWeakSelf;
+//    //            NSDictionary * dataDic = data[DictionaryKeyData];
+//    //            NJUserItem * userItem = [NJUserItem mj_objectWithKeyValues:dataDic];
+//    //            [NJLoginTool loginWithItem:userItem];
+//    //
+//    //            NSString * msgStr = data[DictionaryKeyMsg];
+//    //            [NJProgressHUD showSuccess:msgStr];
+//    //            [NJProgressHUD dismissWithDelay:1.2 completion:^{
+//    //                [weakSelf goToTabBarVC];
+//    //            }];
+//    //
+//    //        }
+//    //        else
+//    //        {
+//    //            HDLog(@"%@", error);
+//    //        }
+//    //    }];
+//}
 -(void)DataInit{
     
     //    NSString * deviceToken = (NSString *)[FileCacheTool unCacheObjectWithKey:NJUserDefaultDeviceToken];
@@ -345,23 +350,26 @@
     }
     
     [self.view endEditing:YES];
-    
-    [self postRegisterRequest];
-    
+   
+    [self getPublicKey:^(NSString *key) {
+        NSString *strPasswordKey  =[RSAUtil encryptString:tfPassword.text publicKey:key];
+        Dlog(@"resultLogin=%@",strPasswordKey);
+        
+        NSDictionary *dic = @{@"mobile":HDSTR(tfPhone.text),@"pwd":HDSTR(strPasswordKey), @"validCode":HDSTR(tfValidation.text), @"inviteCode":HDSTR(tfInvite.text)};
+
+        [self HttpPostRegisterRequest:dic];
+    }];
 }
 
 - (IBAction)getVeriCodeBtnClick:(UIButton *)sender
 {
     
-    if(tfPhone.text.length == 0)
-    {
+    if(tfPhone.text.length == 0) {
         [NJProgressHUD showError:@"手机号不能为空"];
         [NJProgressHUD dismissWithDelay:1.2];
         return;
     }
-    
-    if(tfPhone.text.length != 11)
-    {
+    if(tfPhone.text.length != 11) {
         [NJProgressHUD showError:@"手机号格式不正确"];
         [NJProgressHUD dismissWithDelay:1.2];
         return;
@@ -448,6 +456,12 @@
     HDLog(@"%s", __func__);
 }
 
+- (NSString *)URLDecodedString:(NSString*)str
+{
+    NSString *decodedString = (__bridge_transfer NSString*)CFURLCreateStringByReplacingPercentEscapesUsingEncoding(NULL, (__bridge CFStringRef)str,CFSTR(""),CFStringConvertNSStringEncodingToEncoding(NSUTF8StringEncoding));
+    return decodedString;
+}
+
 - (void)checkLoginBtnEnable
 {
     if(tfPhone.text.length == 0 || tfValidation.text.length == 0 || tfPassword.text.length == 0 || !btnSelect.selected || tfInvite.text.length == 0) {
@@ -470,5 +484,14 @@
     [UIView transitionFromView:self.navigationController.view toView:tabBarController.view duration:UIViewAnimationTrantitionTime options:UIViewAnimationOptionTransitionFlipFromRight | UIViewAnimationOptionCurveEaseInOut completion:^(BOOL finished) {
         [UIApplication sharedApplication].keyWindow.rootViewController = tabBarController;
     }];
+}
+
+- (void)setNavigationBarStyle{
+    [self.navigationController.navigationBar setBackgroundImage:HDIMAGE(@"theme") forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
+    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:
+                         [UIColor whiteColor], NSForegroundColorAttributeName, [UIFont boldSystemFontOfSize:14.0f], NSFontAttributeName, nil];
+    [self.navigationController.navigationBar setTitleTextAttributes:dic];
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
 }
 @end
