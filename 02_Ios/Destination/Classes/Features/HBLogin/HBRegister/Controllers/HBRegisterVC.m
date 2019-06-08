@@ -186,9 +186,8 @@
             return ;
         }
         NSDictionary *respons = json;
-        NSDictionary * dataDic = respons[DictionaryKeyData];
         //字典转模型
-        HDLoginUserModel * model = [HDLoginUserModel mj_objectWithKeyValues:dataDic];
+        HDLoginUserModel * model = [HDLoginUserModel mj_objectWithKeyValues:respons];
         [model saveToLocal];
         HDGI.loginUser = model;
         [self goToTabBarVC];
