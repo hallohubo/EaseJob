@@ -185,7 +185,9 @@
             [LBXAlertAction sayWithTitle:@"提示" message:error.desc buttons:@[ @"确认"] chooseBlock:nil];
             return ;
         }
+        Dlog(@"json:%@",json);
         NSDictionary *respons = json;
+        Dlog(@"jsonResponse:%@",respons);
         //字典转模型
         HDLoginUserModel * model = [HDLoginUserModel mj_objectWithKeyValues:respons];
         [model saveToLocal];
