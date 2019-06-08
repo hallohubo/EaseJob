@@ -10,13 +10,8 @@
 #import "LDCry.h"
 #import "UINavigationController+Pop.h"
 
-//#define HDDomain @"http://app.mstshebao.com/"
-#define HDDomain @"http://app.maishebaohr.com/"         //新外网
-//#define HDDomain @"http://192.168.10.77:8088/"        // 王颖本机
-//#define HDDomain @"http://192.168.10.14/"             //app内网8088
+#define HDDomain @"http://nyd34e.natappfree.cc/"         //新调试外网
 
-
-//#define HDDomain @"http://192.168.10.77:4527/"        //调试接口// 王颖本机
 #define IP [HDHttpHelper ip]
 
 static dispatch_once_t *onceToken_debug;
@@ -31,8 +26,7 @@ static dispatch_once_t *onceToken_debug;
 
 + (NSString *)ip{
     if ([HDGI.loginUser.TelPhone isEqualToString:@"15060672715"]) {
-        //return @"http://app.mstshebao.com:8088/API/";
-        //return @"http://app.mstshebao.com/API/";
+ 
         return [NSString stringWithFormat:@"%@API/", HDDomain];//测试时用
     }
     return [NSString stringWithFormat:@"%@API/", HDDomain];
@@ -78,12 +72,15 @@ static dispatch_once_t *onceToken_debug;
 }
 
 - (NSURLSessionDataTask *)post101:(void (^)(NSString *key, NSString *seed, HDError *error))block{
+   
     NSString *key = [HDDateHelper stringWithDate:[NSDate date] withFormat:@"yyyyMMddHHmmss"];
     key = HDFORMAT(@"%@-%d", key, arc4random() % 100000);
     NSDictionary *p = @{@"key": HDSTR(key)};
+   
     [self.requestSerializer setValue:HDSTR(PLATFORM) forHTTPHeaderField:@"Platform"];
     [self.requestSerializer setValue:HDSTR([HDHelper uuid]) forHTTPHeaderField:@"IMEI"];
     [self.requestSerializer setValue:HDSTR(APPVERSION) forHTTPHeaderField:@"Version"];
+    
     HDError *e = [HDError new];
     NSURLSessionDataTask *task = [self POST:@"Act101" parameters:p progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSDictionary *json = responseObject;
@@ -139,7 +136,7 @@ static dispatch_once_t *onceToken_debug;
         if (path.length > 4) {
             pathCode = [path substringFromIndex:3];
         }
-        NSString *sign = HDFORMAT(@"%@_%@_RSPlatFormAPI", [HDHelper uuid], seed);
+        NSString *sign = HDFORMAT(@"%@_%@_EasyTaskAPI", [HDHelper uuid], seed);
         NSString *encry = [LDCry getMd5_32Bit_String:sign];
         Dlog(@"sign = %@", sign);
         Dlog(@"encry = %@", encry);

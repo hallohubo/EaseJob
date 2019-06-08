@@ -31,6 +31,7 @@
     IBOutlet UILabel        *lbAgreement;
     IBOutlet UIButton       *btnSelect;
     CAGradientLayer         *gradientLayer;
+    NSURLSessionDataTask    *task;
 }
 
 /********* 定时器 *********/
@@ -42,6 +43,10 @@
 
 
 #pragma mark - lifeCycle
+
+- (void)viewWillDisappear:(BOOL)animated {
+    task = nil;
+}
 
 - (void)viewDidLoad
 {
@@ -85,28 +90,19 @@
     dispatch_source_set_timer(_timer,dispatch_walltime(NULL, 0),1.0*NSEC_PER_SEC, 0); //每秒执行
     dispatch_source_set_event_handler(_timer, ^{
         
-        if(timeout <= 0)
-        { //倒计时结束，关闭
+        if(timeout <= 0) { //倒计时结束，关闭
             [self stopTimer];
         }
-        else
-        {
+        else {
             NSLog(@"时间 = %d",timeout);
             NSString *strTime = [NSString stringWithFormat:@"发送验证码(%dS)",timeout];
             NSLog(@"strTime = %@",strTime);
             dispatch_async(dispatch_get_main_queue(), ^{
-                //定时过程中的UI处理
-                btnValidation.selected = YES;
                 btnValidation.userInteractionEnabled = NO;
-                
-                [btnValidation setTitleColor:Btncolor forState:UIControlStateNormal];
-                btnValidation.backgroundColor = ERWUWUColor;
-                btnValidation.layer.borderWidth = 0.5;
-                btnValidation.layer.borderColor = Btncolor.CGColor;
+                [btnValidation setTitleColor:HDCOLOR_RED forState:UIControlStateNormal];
                 NSString * titleStr = [[NSString alloc] initWithFormat:@"剩余%dS", timeout];
                 [btnValidation setTitle:titleStr forState:UIControlStateNormal];
             });
-            
             timeout--;
         }
     });
@@ -114,8 +110,7 @@
     
 }
 
-//取消定时器
-- (void)stopTimer
+- (void)stopTimer   //取消定时器
 {
     if(self.timer != nil)
     {
@@ -123,11 +118,8 @@
         dispatch_source_cancel(self.timer);
         self.timer = nil;
         dispatch_async(dispatch_get_main_queue(), ^{
-            //定时结束后的UI处理
             btnValidation.selected = NO;
-            
-            [btnValidation setTitleColor:ERWUWUColor forState:UIControlStateNormal];
-            btnValidation.backgroundColor = Btncolor;
+            [btnValidation setTitleColor:HDCOLOR_ORANGE forState:UIControlStateNormal];
             [btnValidation setTitle:@"发送验证码" forState:UIControlStateNormal];
             btnValidation.userInteractionEnabled = YES;
         });
@@ -135,6 +127,36 @@
 }
 
 #pragma mark - Http request
+
+- (void)getPhoneVeriCode //获取验证码
+{
+    [LBXAlertAction sayWithTitle:@"提示" message:HDFORMAT(@"我们将下发短信验证码，请确认手机号：%@", tfPhone.text) buttons:@[@"取消", @"确认"] chooseBlock:^(NSInteger buttonIdx) {
+        if (buttonIdx == 0) {
+            return ;
+        }
+        [self startTime];
+//        [self httpGetCode:tfPhone.text];
+    }];
+}
+
+- (void)httpGetCode:(NSString *)mobile
+{
+    HDHttpHelper *helper = [HDHttpHelper instance];
+    [helper.parameters addEntriesFromDictionary:@{@"mobile": HDSTR(mobile)}];
+    [helper.parameters addEntriesFromDictionary:@{@"flag": @"1"}];
+    [NJProgressHUD show];
+    task = [helper postPath:@"Act103" object:nil finished:^(HDError *error, id object, BOOL isLast, id json) {
+        [NJProgressHUD dismiss];
+        if (error) {
+            [LBXAlertAction sayWithTitle:@"提示" message:error.desc buttons:@[ @"确认"] chooseBlock:nil];
+            return ;
+        }
+        [tfValidation becomeFirstResponder];
+        [NJProgressHUD showSuccess:@"验证码下发成功，请注意查收短信！"];
+        [NJProgressHUD dismissWithDelay:1.2];
+        [self startTime];
+    }];
+}
 //获取验证码
 - (void)getVeriCode
 {
@@ -345,8 +367,7 @@
         return;
     }
     
-    [tfValidation becomeFirstResponder];
-    [self getVeriCode];
+    [self getPhoneVeriCode];
 }
 
 - (IBAction)userProtocolBtnClick

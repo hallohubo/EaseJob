@@ -9,6 +9,7 @@
 #import "HDHelper.h"
 #import <SystemConfiguration/CaptiveNetwork.h>
 #import "CommonCrypto/CommonDigest.h"
+#import "UIWindow+LBXHierarchy.h"
 
 #define TAG_SHOW        0
 #define TAG_SAY         1
@@ -113,11 +114,13 @@ static HDHelper *utility = nil;
 }
 
 + (void)say:(NSString *)message{
-//     *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:sMsg delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+    
+//    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:message delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
 //    [alert show];
 }
 
-+ (void)say:(NSString *)message title:(NSString *)title{
++ (void)say:(NSString *)message title:(NSString *)title
+{
     UIAlertController * alertController = [UIAlertController alertControllerWithTitle:title message:nil preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction * cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
     }];
@@ -126,12 +129,19 @@ static HDHelper *utility = nil;
     
     [alertController addAction:cancelAction];
     [alertController addAction:confirmAction];
-//    [weakSelf presentViewController:alertController animated:YES completion:nil];
+    [[HDHelper getTopViewController] presentViewController:alertController animated:YES completion:nil];
+}
+
++ (UIViewController*)getTopViewController
+{
+    UIWindow * window = [[UIApplication sharedApplication] keyWindow];
+    
+    return window.currentViewController;
 }
 
 
-
-+ (void)rotateView:(UIView *)view angle:(float)angle{
++ (void)rotateView:(UIView *)view angle:(float)angle
+{
     CALayer *layer          = view.layer;
     CAKeyframeAnimation *animation;
     animation               = [CAKeyframeAnimation animationWithKeyPath:@"transform.rotation.z"];
