@@ -530,7 +530,8 @@ static HDHelper *utility = nil;
     return [self hasPassedHours:0.2 flag:str];
 }
 
-+ (BOOL)hasPassedHours:(CGFloat)hour flag:(NSString *)str{
++ (BOOL)hasPassedHours:(CGFloat)hour flag:(NSString *)str
+{
     if (str.length == 0 || hour < 0) {
         return NO;
     }
@@ -549,4 +550,37 @@ static HDHelper *utility = nil;
     }
     return NO;
 }
+
++ (void)changeColor:(UIButton *)btn
+{
+    CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+    gradientLayer.frame = btn.bounds;
+    gradientLayer.startPoint = CGPointMake(0, 0);
+    gradientLayer.endPoint = CGPointMake(1, 0);
+    //设置颜色数组
+    gradientLayer.colors = @[(__bridge id)[ssRGBHexAlpha(0xFFF152, 0.8) CGColor],
+                             (__bridge id)[ssRGBHexAlpha(0xFD8533, 0.5) CGColor]];
+    
+    //设置颜色分割点（范围：0-1）
+    gradientLayer.locations = @[@(0.2f), @(1.0f)];
+    //将CAGradientlayer对象添加在我们要设置背景色的视图的layer层
+    [btn.layer addSublayer:gradientLayer];
+    //设置渐变区域的起始和终止位置（范围为0-1）
+}
+
+//编码
++(NSString*)encodeString:(NSString*)uncodeString
+{
+    //    return (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(NULL,(CFStringRef) uncodeString,NULL,(CFStringRef) @"!*'();:@&=+$,/?%#[]",kCFStringEncodingUTF8));
+    
+    return (NSString *)CFBridgingRelease((__bridge CFTypeRef _Nullable)([[uncodeString description] stringByAddingPercentEncodingWithAllowedCharacters:[[NSCharacterSet characterSetWithCharactersInString:@"!*'();:@&=+$,/?%#[]"] invertedSet]]));
+}
+//解码
++(NSString*)decodeString:(NSString*)decodeString
+{
+    //    return (NSString *)CFBridgingRelease(CFURLCreateStringByReplacingPercentEscapesUsingEncoding(NULL,(__bridge CFStringRef)decodeString,CFSTR(""),CFStringConvertNSStringEncodingToEncoding(NSUTF8StringEncoding)));
+    
+    return (NSString *)CFBridgingRelease(CFURLCreateStringByReplacingPercentEscapes(kCFAllocatorDefault, (CFStringRef)decodeString, CFSTR("")));
+}
+
 @end

@@ -180,6 +180,8 @@
 		C85A600622AA4964008D54FC /* HBInformationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C85A600322AA4963008D54FC /* HBInformationCell.xib */; };
 		C85A600722AA4964008D54FC /* HBInformationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C85A600522AA4964008D54FC /* HBInformationCell.m */; };
 		C85A600B22ABD051008D54FC /* RSAUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = C85A600922ABD050008D54FC /* RSAUtil.m */; };
+		C878650122AD03C80084677F /* HBLoginPageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C87864FF22AD03C80084677F /* HBLoginPageVC.m */; };
+		C878650222AD03C80084677F /* HBLoginPageVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C878650022AD03C80084677F /* HBLoginPageVC.xib */; };
 		C8B74D6A22A8E1B600BCA2E6 /* HB3DScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C8B74D6922A8E1B600BCA2E6 /* HB3DScrollView.m */; };
 		DA3A28492263213900D8D6C1 /* HLTokenModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3A28482263213900D8D6C1 /* HLTokenModel.m */; };
 		DA4EFC582248A12500062E14 /* myButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DA4EFC552248A12400062E14 /* myButton.m */; };
@@ -522,6 +524,9 @@
 		C85A600522AA4964008D54FC /* HBInformationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBInformationCell.m; sourceTree = "<group>"; };
 		C85A600922ABD050008D54FC /* RSAUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSAUtil.m; sourceTree = "<group>"; };
 		C85A600A22ABD051008D54FC /* RSAUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSAUtil.h; sourceTree = "<group>"; };
+		C87864FE22AD03C80084677F /* HBLoginPageVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBLoginPageVC.h; sourceTree = "<group>"; };
+		C87864FF22AD03C80084677F /* HBLoginPageVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HBLoginPageVC.m; sourceTree = "<group>"; };
+		C878650022AD03C80084677F /* HBLoginPageVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HBLoginPageVC.xib; sourceTree = "<group>"; };
 		C8B74D6822A8E1B600BCA2E6 /* HB3DScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HB3DScrollView.h; sourceTree = "<group>"; };
 		C8B74D6922A8E1B600BCA2E6 /* HB3DScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HB3DScrollView.m; sourceTree = "<group>"; };
 		D1D528ADF624776ACA4E89E5 /* Pods-Destination.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Destination.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Destination/Pods-Destination.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1583,6 +1588,7 @@
 		C829E42222A965BA002EEFF8 /* HBLogin */ = {
 			isa = PBXGroup;
 			children = (
+				C87864FA22AD03400084677F /* HBMainLogin */,
 				C829E42322A9681A002EEFF8 /* HBRegister */,
 			);
 			path = HBLogin;
@@ -1642,6 +1648,40 @@
 				C85A600922ABD050008D54FC /* RSAUtil.m */,
 			);
 			path = RSA;
+			sourceTree = "<group>";
+		};
+		C87864FA22AD03400084677F /* HBMainLogin */ = {
+			isa = PBXGroup;
+			children = (
+				C87864FB22AD035D0084677F /* Controllers */,
+				C87864FD22AD03790084677F /* Models */,
+				C87864FC22AD036E0084677F /* Views */,
+			);
+			path = HBMainLogin;
+			sourceTree = "<group>";
+		};
+		C87864FB22AD035D0084677F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C87864FE22AD03C80084677F /* HBLoginPageVC.h */,
+				C87864FF22AD03C80084677F /* HBLoginPageVC.m */,
+				C878650022AD03C80084677F /* HBLoginPageVC.xib */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C87864FC22AD036E0084677F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C87864FD22AD03790084677F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1730,6 +1770,7 @@
 				BFB5E390215A431100985F62 /* LaunchScreen.storyboard in Resources */,
 				BFB20AD12182BC2E0007DE96 /* NJLoginVC.xib in Resources */,
 				BFB5E48A215A54AC00985F62 /* NJRegisterVC.xib in Resources */,
+				C878650222AD03C80084677F /* HBLoginPageVC.xib in Resources */,
 				BFB5E487215A54AC00985F62 /* NJForgetPwdVC.xib in Resources */,
 				BF95102121D3880F003EE1BD /* NJShareImageBottomView.xib in Resources */,
 				BF5EB0A6218012D00051BA80 /* NJShareItemCell.xib in Resources */,
@@ -1883,6 +1924,7 @@
 				BFB5E43F215A446300985F62 /* FileCacheTool.m in Sources */,
 				BF2278F0215B271200FB5504 /* CYLTabBarControllerConfig.m in Sources */,
 				BFB5E463215A446300985F62 /* NSString+LSCore.m in Sources */,
+				C878650122AD03C80084677F /* HBLoginPageVC.m in Sources */,
 				BFE565E821AD17DB00E89202 /* NJPhotoBrowserPopAnimator.m in Sources */,
 				BFD5CF4421DCEB8E00986CF5 /* NJPhotoBrowserTransitionParameter.m in Sources */,
 				BF578AD821743D5D0067591A /* NJAddBankTableFooterView.m in Sources */,

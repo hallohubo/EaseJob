@@ -244,7 +244,7 @@
                         <action selector="btnRegisterClick:" destination="-1" eventType="touchUpInside" id="cQK-xF-i2h"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请点击表示同意《用户协议》" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hv3-wU-LMf">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请审阅《用户隐私保护协议》" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hv3-wU-LMf">
                     <rect key="frame" x="83" y="399" width="271" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="hh7-H4-FAZ"/>

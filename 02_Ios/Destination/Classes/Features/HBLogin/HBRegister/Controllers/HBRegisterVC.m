@@ -53,7 +53,6 @@
 {
     [super viewDidLoad];
     [self setup];
-    [self changeColor];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -139,7 +138,8 @@
             [HDHelper say:error.desc];
             return ;
         }
-        str = [self URLDecodedString:json[@"PublicKey"]];
+       //str = [self URLDecodedString:json[@"PublicKey"]];
+        str = [HDHelper decodeString:json[@"PublicKey"]];
         Dlog(@"RSA:%@", str);
         finishBlock(str);
     }];
@@ -308,6 +308,16 @@
 
 - (IBAction)btnRegisterClick:(UIButton *)sender
 {
+//    [self getPublicKey:^(NSString *key) {
+//        NSString *strPasswordKey  =[RSAUtil encryptString:tfPassword.text publicKey:key];
+//        Dlog(@"resultLogin=%@",strPasswordKey);
+//
+//        NSDictionary *dic = @{@"mobile":HDSTR(tfPhone.text),@"pwd":HDSTR(strPasswordKey), @"validCode":HDSTR(tfValidation.text), @"inviteCode":HDSTR(tfInvite.text)};
+//
+//        [self HttpPostRegisterRequest:dic];
+//    }];
+//    return;
+    
     if(tfPhone.text.length == 0) {
         [NJProgressHUD showError:@"手机号不能为空"];
         [NJProgressHUD dismissWithDelay:1.2];
@@ -424,6 +434,7 @@
 {
     self.title = @"注册";
     [btnRegister addBorderWidth:0.0 color:nil cornerRadius:20.];
+    [HDHelper changeColor:btnRegister];
     
     tfPassword.keyboardType = UIKeyboardTypeASCIICapable;
     [tfPhone addTarget:self action:@selector(phoneInput:) forControlEvents:UIControlEventEditingChanged];
@@ -434,22 +445,6 @@
     [lbAgreement addGestureRecognizer:tapGesture];
 }
 
-- (void)changeColor
-{
-    gradientLayer = [CAGradientLayer layer];
-    gradientLayer.frame = btnRegister.bounds;
-    //将CAGradientlayer对象添加在我们要设置背景色的视图的layer层
-    [btnRegister.layer addSublayer:gradientLayer];
-    //设置渐变区域的起始和终止位置（范围为0-1）
-    gradientLayer.startPoint = CGPointMake(0, 0);
-    gradientLayer.endPoint = CGPointMake(1, 0);
-    //设置颜色数组
-    gradientLayer.colors = @[(__bridge id)[ssRGBHexAlpha(0xFFF152, 0.8) CGColor],
-                             (__bridge id)[ssRGBHexAlpha(0xFD8533, 0.5) CGColor]];
-    
-    //设置颜色分割点（范围：0-1）
-    gradientLayer.locations = @[@(0.2f), @(1.0f)];
-}
 
 #pragma mark - 其它
 - (void)dealloc

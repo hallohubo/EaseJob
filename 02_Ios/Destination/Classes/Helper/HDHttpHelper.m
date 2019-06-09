@@ -10,7 +10,7 @@
 #import "LDCry.h"
 #import "UINavigationController+Pop.h"
 
-#define HDDomain @"http://nyd34e.natappfree.cc/"         //新调试外网
+#define HDDomain @"http://ckz8di.natappfree.cc/"         //新调试外网
 
 #define IP [HDHttpHelper ip]
 
