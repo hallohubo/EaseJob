@@ -308,9 +308,6 @@
 
 - (IBAction)btnRegisterClick:(UIButton *)sender
 {
-        [self goToTabBarVC];
-    return;
-    
     if(tfPhone.text.length == 0) {
         [NJProgressHUD showError:@"手机号不能为空"];
         [NJProgressHUD dismissWithDelay:1.2];
@@ -354,7 +351,6 @@
     }
     
     [self.view endEditing:YES];
-    [self goToTabBarVC];
 
     [self getPublicKey:^(NSString *key) {
         NSString *strPasswordKey  =[RSAUtil encryptString:tfPassword.text publicKey:key];
@@ -479,17 +475,18 @@
 
 - (void)goToTabBarVC
 {
-    AppDelegate * appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-
-    CYLTabBarControllerConfig * tabBarControllerConfig = [[CYLTabBarControllerConfig alloc] init];
-    CYLTabBarController * tabBarController = tabBarControllerConfig.tabBarController;
-
-    tabBarController.delegate = appDelegate;
-    
-    
-    [UIView transitionFromView:self.navigationController.view toView:tabBarController.view duration:UIViewAnimationTrantitionTime options:UIViewAnimationOptionTransitionFlipFromRight | UIViewAnimationOptionCurveEaseInOut completion:^(BOOL finished) {
-        [UIApplication sharedApplication].keyWindow.rootViewController = tabBarController;
-    }];
+    [self.navigationController popViewControllerAnimated:YES];
+//    AppDelegate * appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+//
+//    CYLTabBarControllerConfig * tabBarControllerConfig = [[CYLTabBarControllerConfig alloc] init];
+//    CYLTabBarController * tabBarController = tabBarControllerConfig.tabBarController;
+//
+//    tabBarController.delegate = appDelegate;
+//
+//    [UIView transitionFromView:self.view toView:tabBarController.view duration:UIViewAnimationTrantitionTime options:UIViewAnimationOptionTransitionFlipFromRight | UIViewAnimationOptionCurveEaseInOut completion:^(BOOL finished) {
+//
+//        tabBarController.selectedIndex = 0;
+//    }];
 }
 
 +(CYLTabBarController *)tabbarController

@@ -97,6 +97,8 @@
     //注册中间按钮
     [CYLPlusButtonSubclass registerPlusButton];
     
+    HDLoginUserModel *model = [HDLoginUserModel readFromLocal];
+    HDGI.loginUser  = model;
 //    HDLaunchAdVC * launchAdVC = [[HDLaunchAdVC alloc] init];
 //    [self.window setRootViewController:launchAdVC];
 //    [self.window makeKeyAndVisible];
