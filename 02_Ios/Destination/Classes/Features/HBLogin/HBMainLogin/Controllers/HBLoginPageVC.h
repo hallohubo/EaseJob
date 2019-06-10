@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface HBLoginPageVC : UIViewController
-
+@property (nonatomic, copy) void(^loginFinishedBlock)(HDLoginUserModel *model);
 @end
 
 NS_ASSUME_NONNULL_END

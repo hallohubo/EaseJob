@@ -7,6 +7,10 @@
 //
 
 #import "HBLoginPageVC.h"
+#import "HBRegisterVC.h"
+#import "CYLTabBarControllerConfig.h"
+#import "CYLTabBarController.h"
+#import "AppDelegate.h"
 #import "RSAUtil.h"
 
 @interface HBLoginPageVC ()<UINavigationControllerDelegate>
@@ -81,8 +85,6 @@
     }];
 }
 
-
-
 - (void)HttpPostLoginRequest:(NSDictionary *)dicParam   //登录
 {
     HDHttpHelper *helper = [HDHttpHelper instance];
@@ -100,7 +102,13 @@
         //字典转模型
         HDLoginUserModel * model = [HDLoginUserModel mj_objectWithKeyValues:respons];
         [model saveToLocal];
+        
         HDGI.loginUser = model;
+        if (self.loginFinishedBlock) {
+            self.loginFinishedBlock(model);
+        }else {
+            [self goToTabBarVC];
+        }
     }];
 }
 #pragma mark - UI event
@@ -141,7 +149,7 @@
     
     [self getPublicKey:^(NSString *key) {
         NSString *strPasswordKey  =[RSAUtil encryptString:tfPassword.text publicKey:key];
-        Dlog(@"resultLogin=%@",strPasswordKey);
+        Dlog(@"-----resultLogin=%@",strPasswordKey);
         
         NSDictionary *dic = @{@"mobile":HDSTR(tfPhone.text),@"pwd":HDSTR(strPasswordKey)};
         
@@ -149,22 +157,20 @@
     }];
 }
 
-- (IBAction)secureBtnClick:(UIButton *)sender {
+- (IBAction)btnSecureClick:(UIButton *)sender
+{
     btnSecure.selected = !btnSecure.selected;
     tfPassword.secureTextEntry = btnSecure.selected;
 }
 
-- (void)phoneInput:(UITextField *)textF
+- (IBAction)btnForgetClick:(UIButton *)sender
 {
-    [self checkLoginBtnEnable];
+
 }
-- (void)codeInput:(UITextField *)textF
+
+- (IBAction)btnRegisterClick:(UIButton *)sender
 {
-    [self checkLoginBtnEnable];
-}
-- (void)pwdInput:(UITextField *)textF
-{
-    [self checkLoginBtnEnable];
+    [self.navigationController pushViewController:[HBRegisterVC new] animated:YES];
 }
 
 #pragma mark - setter and getter
@@ -177,26 +183,24 @@
     [HDHelper changeColor:btnLogin];
     
     tfPassword.keyboardType = UIKeyboardTypeASCIICapable;
-    [tfPhone addTarget:self action:@selector(phoneInput:) forControlEvents:UIControlEventEditingChanged];
 }
 
-
 #pragma mark - other method
-//
-//- (NSString *)URLDecodedString:(NSString*)str
-//{
-//    NSString *decodedString = (__bridge_transfer NSString*)CFURLCreateStringByReplacingPercentEscapesUsingEncoding(NULL, (__bridge CFStringRef)str,CFSTR(""),CFStringConvertNSStringEncodingToEncoding(NSUTF8StringEncoding));
-//    return decodedString;
-//}
 
-- (void)checkLoginBtnEnable
+- (void)goToTabBarVC
 {
-    if(tfPhone.text.length == 0 || tfPassword.text.length == 0) {
-        btnLogin.enabled = NO;
-        return;
-    }
+    AppDelegate * appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     
-    btnLogin.enabled = YES;
+    CYLTabBarControllerConfig * tabBarControllerConfig = [[CYLTabBarControllerConfig alloc] init];
+    CYLTabBarController * tabBarController = tabBarControllerConfig.tabBarController;
+    
+    tabBarController.delegate = appDelegate;
+    [UIApplication sharedApplication].keyWindow.rootViewController = tabBarController;
+    [[UIApplication sharedApplication].keyWindow makeKeyAndVisible];
+    
+//    [UIView transitionFromView:self.navigationController.view toView:tabBarController.view duration:UIViewAnimationTrantitionTime options:UIViewAnimationOptionTransitionFlipFromRight | UIViewAnimationOptionCurveEaseInOut completion:^(BOOL finished) {
+//        [UIApplication sharedApplication].keyWindow.rootViewController = tabBarController;
+//    }];
 }
 
 @end

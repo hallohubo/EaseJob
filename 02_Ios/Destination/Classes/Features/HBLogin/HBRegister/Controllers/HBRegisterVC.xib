@@ -140,7 +140,7 @@
                             </constraints>
                         </imageView>
                         <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入验证码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gJa-kb-RV6">
-                            <rect key="frame" x="31" y="-6" width="173" height="30"/>
+                            <rect key="frame" x="31" y="-6" width="183" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="Vnv-Hu-iK8"/>
                             </constraints>
@@ -158,8 +158,8 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MAe-aw-XgE">
-                            <rect key="frame" x="204" y="-6" width="90" height="30"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MAe-aw-XgE">
+                            <rect key="frame" x="214" y="-6" width="80" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="BwO-ob-mkj"/>
                             </constraints>
@@ -176,9 +176,8 @@
                     <constraints>
                         <constraint firstItem="gJa-kb-RV6" firstAttribute="leading" secondItem="V7q-di-NcD" secondAttribute="trailing" constant="13" id="E3D-pL-dKw"/>
                         <constraint firstItem="MAe-aw-XgE" firstAttribute="leading" secondItem="gJa-kb-RV6" secondAttribute="trailing" id="FSP-Uc-h7B"/>
-                        <constraint firstItem="IOH-RT-e6g" firstAttribute="trailing" secondItem="gJa-kb-RV6" secondAttribute="trailing" constant="90" id="GKn-nX-iRt"/>
                         <constraint firstItem="MAe-aw-XgE" firstAttribute="centerY" secondItem="gJa-kb-RV6" secondAttribute="centerY" id="LUU-ge-SzU"/>
-                        <constraint firstAttribute="trailing" secondItem="gJa-kb-RV6" secondAttribute="trailing" constant="90" id="Rwd-2U-B5S"/>
+                        <constraint firstAttribute="trailing" secondItem="gJa-kb-RV6" secondAttribute="trailing" constant="80" id="Rwd-2U-B5S"/>
                         <constraint firstItem="V7q-di-NcD" firstAttribute="top" secondItem="exo-H9-sJZ" secondAttribute="top" id="UKe-PU-Q0f"/>
                         <constraint firstAttribute="height" constant="40" id="Xfp-Dt-W5s"/>
                         <constraint firstItem="V7q-di-NcD" firstAttribute="leading" secondItem="exo-H9-sJZ" secondAttribute="leading" id="cyl-Oy-Wek"/>
@@ -186,6 +185,7 @@
                         <constraint firstAttribute="trailing" secondItem="MAe-aw-XgE" secondAttribute="trailing" id="lGT-ku-Xt6"/>
                         <constraint firstItem="IOH-RT-e6g" firstAttribute="top" secondItem="gJa-kb-RV6" secondAttribute="bottom" constant="2" id="n5G-7f-ZPC"/>
                         <constraint firstItem="IOH-RT-e6g" firstAttribute="leading" secondItem="gJa-kb-RV6" secondAttribute="leading" constant="-3" id="q3M-E4-bLI"/>
+                        <constraint firstItem="MAe-aw-XgE" firstAttribute="trailing" secondItem="IOH-RT-e6g" secondAttribute="trailing" id="y1j-gh-oJm"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cti-6r-OZe">

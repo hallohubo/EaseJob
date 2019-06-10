@@ -249,54 +249,7 @@
 //    //        }
 //    //    }];
 //}
--(void)DataInit{
-    
-    //    NSString * deviceToken = (NSString *)[FileCacheTool unCacheObjectWithKey:NJUserDefaultDeviceToken];
-    //    if([NSString isEmptyString:deviceToken])
-    //    {
-    //        NSLog(@"数据初始化失败");
-    //        [self infoRequest];
-    //    }else{
-    //
-    //        [[NetAPIManager instance] postWithPath:@"changtour/Index/init" parameters:@{deviceToken:@"device_token",@"0":@"device_type"} finished:^(HDError * _Nullable error, id object, BOOL isLast, id result) {
-    //
-    //            if (!error) {
-    //                [self infoRequest];
-    //                NSLog(@"数据初始化成功");
-    //            }else{
-    //                NSLog(@"数据初始化失败");
-    //
-    //            }
-    //
-    //
-    //        }];
-    //    }
-}
-//用户的信息
-- (void)infoRequest
-{
-    
-    //    NSString * token = [NJLoginTool getUserToken];
-    //    @{@"token":token}
-    //    [[NetAPIManager instance] postWithPath:@"changtour/User/info" parameters:nil finished:^(HDError * _Nullable error, id object, BOOL isLast, id result) {
-    //        [NJProgressHUD dismiss];
-    //        if (error) {
-    //            [HDHelper say:error.desc];
-    //            return ;
-    //        }
-    //        NSDictionary *respons = result;
-    //        NSDictionary * dataDic = respons[DictionaryKeyData];
-    //        HDWeakSelf;
-    //        NJUserItem * userItem = [NJUserItem mj_objectWithKeyValues:dataDic];
-    //        [NJLoginTool loginWithItem:userItem];
-    //        NSString * msgStr = dataDic[DictionaryKeyMsg];
-    //        [NJProgressHUD showSuccess:msgStr];
-    //        [NJProgressHUD dismissWithDelay:1.2 completion:^{
-    //            [weakSelf goToTabBarVC];
-    //        }];
-    //
-    //    }];
-}
+
 
 #pragma mark - evert
 
@@ -305,7 +258,6 @@
     btnSelect.selected = !btnSelect.selected;
     [self checkLoginBtnEnable];
 }
-
 
 - (IBAction)btnRegisterClick:(UIButton *)sender
 {
@@ -453,11 +405,11 @@
     HDLog(@"%s", __func__);
 }
 
-- (NSString *)URLDecodedString:(NSString*)str
-{
-    NSString *decodedString = (__bridge_transfer NSString*)CFURLCreateStringByReplacingPercentEscapesUsingEncoding(NULL, (__bridge CFStringRef)str,CFSTR(""),CFStringConvertNSStringEncodingToEncoding(NSUTF8StringEncoding));
-    return decodedString;
-}
+//- (NSString *)URLDecodedString:(NSString*)str
+//{
+////    NSString *decodedString = (__bridge_transfer NSString*)CFURLCreateStringByReplacingPercentEscapesUsingEncoding(NULL, (__bridge CFStringRef)str,CFSTR(""),CFStringConvertNSStringEncodingToEncoding(NSUTF8StringEncoding));
+//    return decodedString;
+//}
 
 - (void)checkLoginBtnEnable
 {

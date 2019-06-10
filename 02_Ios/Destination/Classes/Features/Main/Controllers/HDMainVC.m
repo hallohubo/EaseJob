@@ -9,7 +9,10 @@
 #import "HDMainVC.h"
 #import "HB3DScrollView.h"
 #import "HBInformationCell.h"
-#import "HBRegisterVC.h"
+#import "HBLoginPageVC.h"
+
+#import "NJNavigationController.h"
+#import "AppDelegate.h"
 
 #define BANNER_RATIO 0.557
 #define BANNER_MODEL @"BANNER_MODEL"
@@ -297,11 +300,25 @@
 {
     switch (sender.tag) {
         case 0:{//注册
-            [self.navigationController pushViewController:[HBRegisterVC new] animated:YES];
-            break;
+//            [self.navigationController pushViewController:[HBLoginPageVC new] animated:YES];
+//            break;
         }
         case 1:{//投票
-            
+//            [LBXAlertAction sayWithTitle:@"提示" message:@"确定要退出吗?" buttons:@[@"取消", @"确定"] chooseBlock:^(NSInteger buttonIdx) {
+//                if (buttonIdx == 1) {
+//                    [[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"firstInsurePersonID"];
+//                    [[NSUserDefaults standardUserDefaults] synchronize];
+//                    
+//                    HDGI.loginUser = nil;
+//                    [HDLoginUserModel clearFromLocal];
+//                    Dlog(@"JIGUANG:别名取消");
+//                    
+//                    NJNavigationController * naviVC = [[NJNavigationController alloc] initWithRootViewController:[HBLoginPageVC new]];
+//                    [[UIApplication sharedApplication].keyWindow setRootViewController:naviVC];
+//                    [[UIApplication sharedApplication].keyWindow makeKeyAndVisible];
+//
+//                }
+//            }];
             break;
         }
         case 2:{//关注
