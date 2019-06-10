@@ -386,7 +386,7 @@
 - (void)setup
 {
     self.title = @"注册";
-    [btnRegister addBorderWidth:0.0 color:nil cornerRadius:20.];
+    [btnRegister addBorderWidth:0.0 color:nil cornerRadius:25.];
     [HDHelper changeColor:btnRegister];
     
     tfPassword.keyboardType = UIKeyboardTypeASCIICapable;

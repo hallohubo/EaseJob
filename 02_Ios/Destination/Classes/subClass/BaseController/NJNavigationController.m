@@ -25,7 +25,10 @@
     self.navigationBar.translucent = NO;
     
     //设置背景图片和阴影
-    [self.navigationBar setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]] forBarMetrics:UIBarMetricsDefault];
+   // [self.navigationBar setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]] forBarMetrics:UIBarMetricsDefault];
+    UIView *backView = [self customeView];
+    [self.navigationBar setBackgroundImage:[self convertViewToImage:backView] forBarMetrics:UIBarMetricsDefault];
+    
     [self.navigationBar setShadowImage:[[UIImage alloc] init]];
     
     //标题属性
@@ -57,6 +60,7 @@
 {
     //为下一个界面统一设置返回按钮样式
     //判断是否是根控制器
+    Dlog(@"child:%lu", (unsigned long)self.childViewControllers.count);
     if(self.childViewControllers.count > 0)
     {
         //为下一个界面统一设置返回按钮样式
@@ -80,5 +84,34 @@
     //不是根控制器，才有左划返回
     return self.childViewControllers.count > 1;
 }
+
+#pragma mark - 创建一张渐变色UIView
+- (UIView *)customeView
+{
+    UIView *backView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kSCREEN_WIDTH, 64)];
+    
+    CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+    gradientLayer.colors = @[(__bridge id)HDCOLOR_ORANGE.CGColor, (__bridge id)ssRGBHex(0x42A2F5).CGColor, (__bridge id)ssRGBHex(0x43BDF5).CGColor];
+    gradientLayer.locations = @[@0.3, @0.5, @1.0];
+    gradientLayer.startPoint = CGPointMake(0, 0);
+    gradientLayer.endPoint = CGPointMake(1.0, 0);
+    gradientLayer.frame = backView.frame;
+    [backView.layer addSublayer:gradientLayer];
+    return backView;
+}
+
+#pragma mark - 将创建的渐变色UIView转换成Image
+-(UIImage*)convertViewToImage:(UIView*)v
+{
+    CGSize s = v.bounds.size;
+    // 下面方法，第一个参数表示区域大小。第二个参数表示是否是非透明的。如果需  要显示半透明效果，需要传NO，否则传YES。第三个参数就是屏幕密度了
+    UIGraphicsBeginImageContextWithOptions(s, YES, [UIScreen mainScreen].scale);
+    [v.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage*image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
+
+
 
 @end

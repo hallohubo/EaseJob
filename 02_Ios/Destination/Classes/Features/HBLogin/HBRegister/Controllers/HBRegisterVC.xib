@@ -232,10 +232,10 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jhU-QS-yeP">
-                    <rect key="frame" x="60" y="354" width="294" height="40"/>
+                    <rect key="frame" x="60" y="354" width="294" height="50"/>
                     <color key="backgroundColor" red="0.99607843139999996" green="0.45812182509999999" blue="0.33164883449999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="40" id="Spf-ls-0nm"/>
+                        <constraint firstAttribute="height" constant="50" id="Spf-ls-0nm"/>
                     </constraints>
                     <state key="normal" title="注册">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -245,7 +245,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请审阅《用户隐私保护协议》" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hv3-wU-LMf">
-                    <rect key="frame" x="83" y="399" width="271" height="30"/>
+                    <rect key="frame" x="83" y="409" width="271" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="hh7-H4-FAZ"/>
                     </constraints>
@@ -254,7 +254,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oSn-sI-0g7">
-                    <rect key="frame" x="64" y="407" width="14" height="14"/>
+                    <rect key="frame" x="64" y="417" width="14" height="14"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="14" id="28p-2P-WGY"/>
                         <constraint firstAttribute="width" constant="14" id="utc-0g-W6C"/>
