@@ -152,6 +152,7 @@
             return ;
         }
         NSDictionary *dic = @{@"mobile": HDSTR(tfPhone.text), @"flag": @"1"};
+        Dlog(@"-----dic:%@", dic);
         [self httpGetCode:dic];
     }];
 }

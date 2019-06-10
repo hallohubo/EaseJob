@@ -24,7 +24,8 @@ static dispatch_once_t *onceToken_debug;
 
 @implementation HDHttpHelper
 
-+ (NSString *)ip{
++ (NSString *)ip
+{
     if ([HDGI.loginUser.RegMobile isEqualToString:@"15060672715"]) {
  
         return [NSString stringWithFormat:@"%@API/", HDDomain];//测试时用
@@ -32,7 +33,8 @@ static dispatch_once_t *onceToken_debug;
     return [NSString stringWithFormat:@"%@API/", HDDomain];
 }
 
-+ (instancetype)instance{
++ (instancetype)instance
+{
      HDHttpHelper *_sharedClient = nil;
 //    static dispatch_once_t onceToken;
 //    onceToken_debug = &onceToken;
@@ -50,7 +52,8 @@ static dispatch_once_t *onceToken_debug;
 //    *onceToken_debug = 0;//地址指向的值
 //}
 
-- (void)setDefault{
+- (void)setDefault
+{
     _parameters = [NSMutableDictionary new];
     /*设置默认参数*/
     [_parameters setValue:@"1"                      forKey:@"Source"];
@@ -67,11 +70,13 @@ static dispatch_once_t *onceToken_debug;
     }
 }
 
-- (void)setParameters:(NSMutableDictionary *)parameters{
+- (void)setParameters:(NSMutableDictionary *)parameters
+{
     [_parameters addEntriesFromDictionary:parameters];
 }
 
-- (NSURLSessionDataTask *)post101:(void (^)(NSString *key, NSString *seed, HDError *error))block{
+- (NSURLSessionDataTask *)post101:(void (^)(NSString *key, NSString *seed, HDError *error))block
+{
    
     NSString *key = [HDDateHelper stringWithDate:[NSDate date] withFormat:@"yyyyMMddHHmmss"];
     key = HDFORMAT(@"%@-%d", key, arc4random() % 100000);
@@ -146,10 +151,10 @@ static dispatch_once_t *onceToken_debug;
         [self.requestSerializer setValue:HDSTR([HDHelper uuid]) forHTTPHeaderField:@"IMEI"];
         [self.requestSerializer setValue:HDSTR(APPVERSION) forHTTPHeaderField:@"Version"];
         NSURLSessionDataTask *task = [self POST:path parameters:_parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-            Dlog(@"%@ http = %@", path, task.response.URL);
+            Dlog(@"path:%@ --- http response's url = %@", path, task.response.URL);
             NSError *nserror = nil;
             NSDictionary *dic_json = responseObject;
-            Dlog(@"%@ json = %@", path, dic_json);
+            Dlog(@"path:%@ --- json = %@", path, dic_json);
             if (!dic_json) {
                 e.desc = HDFORMAT(@"服务器返回数据有误，错误码:%@01", pathCode);
                 block(e, nil, NO, nil);
@@ -241,7 +246,8 @@ static dispatch_once_t *onceToken_debug;
 }
 
 #pragma mark - 请求Post图片方法
-- (NSURLSessionDataTask *)httpPostPath:(NSString *)path data:(NSArray *)datas finished:(void (^)(HDError *error, id object))block{
+- (NSURLSessionDataTask *)httpPostPath:(NSString *)path data:(NSArray *)datas finished:(void (^)(HDError *error, id object))block
+{
     NSURLSessionDataTask *task = [self post101:^(NSString *key, NSString *seed, HDError *error) {
         Dlog(@"seed = %@", seed);
         NSString *pathCode;
@@ -305,7 +311,8 @@ static dispatch_once_t *onceToken_debug;
     return task;
 }
 
-+ (NSString *)getTheArrayKey:(NSDictionary *)dic {
++ (NSString *)getTheArrayKey:(NSDictionary *)dic
+{
     if (dic.count == 0 || !dic) {
         return nil;
     }
@@ -324,7 +331,8 @@ static dispatch_once_t *onceToken_debug;
 
 #pragma mark - runtime
 
-+ (id)model:(id)model fromDictionary:(NSDictionary *)dic {
++ (id)model:(id)model fromDictionary:(NSDictionary *)dic
+{
     if (!model || !dic || dic.count == 0) {
         Dlog(@"传入参数model或dic为空！");
         return nil;
@@ -351,7 +359,8 @@ static dispatch_once_t *onceToken_debug;
     return model;
 }
 
-+ (NSString *)changeBr2n:(NSString *)s {
++ (NSString *)changeBr2n:(NSString *)s
+{
     if (s.length == 0) {
         return @"";
     }
@@ -378,7 +387,8 @@ static dispatch_once_t *onceToken_debug;
     return allNames;
 }
 
-+ (NSMutableArray *)dic_arrayWithArray:(NSMutableArray *)ar model:(id)model {
++ (NSMutableArray *)dic_arrayWithArray:(NSMutableArray *)ar model:(id)model
+{
     NSMutableArray *mar = [NSMutableArray new];
     for (int i = 0; i < ar.count; i++) {
         id m = ar[i];
@@ -394,7 +404,8 @@ static dispatch_once_t *onceToken_debug;
     return mar;
 }
 
-+ (NSMutableArray *)model_arrayWithArray:(NSMutableArray *)ar model:(id)model {
++ (NSMutableArray *)model_arrayWithArray:(NSMutableArray *)ar model:(id)model
+{
     NSMutableArray *mar = [NSMutableArray new];
     for (int i = 0; i < ar.count; i++) {
         NSDictionary *d = ar[i];
@@ -404,7 +415,8 @@ static dispatch_once_t *onceToken_debug;
     return mar;
 }
 
-+ (id)transform:(NSString *)serial toClass:(id)newObj{
++ (id)transform:(NSString *)serial toClass:(id)newObj
+{
     NSError *error = nil;
     id result = [NSJSONSerialization JSONObjectWithData:[serial dataUsingEncoding:kCFStringEncodingUTF8] options:NSJSONReadingMutableContainers error:&error];
     if (error) {
@@ -426,7 +438,8 @@ static dispatch_once_t *onceToken_debug;
     return obj;
 }
 
-+ (NSString *)jsonObject:(id)object{
++ (NSString *)jsonObject:(id)object
+{
     if ([object isKindOfClass:[NSNull class]]) {
         object = @"";
     }
@@ -445,18 +458,21 @@ static dispatch_once_t *onceToken_debug;
 
 @implementation HDError
 
-+ (HDError *)errorWithCode:(int)errCode andDescription:(NSString *)description{
++ (HDError *)errorWithCode:(int)errCode andDescription:(NSString *)description
+{
     return [[self alloc] initWithCode:errCode desc:description];
 }
 
-- (id)initWithCode:(int)code desc:(NSString *)desc{
+- (id)initWithCode:(int)code desc:(NSString *)desc
+{
     if (self = [super init]) {
         self.code   = code;
         self.desc   = desc;
     }
     return self;
 }
-+ (HDError *)errorWithHDError:(NSError *)error{
++ (HDError *)errorWithHDError:(NSError *)error
+{
     return [self alloc];
 }
 @end

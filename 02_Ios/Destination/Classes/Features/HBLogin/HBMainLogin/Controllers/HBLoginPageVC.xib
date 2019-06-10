@@ -15,6 +15,7 @@
                 <outlet property="btnForget" destination="3VO-sT-uTq" id="ee2-QV-FQd"/>
                 <outlet property="btnLogin" destination="CFu-BQ-oeR" id="ddj-0I-2nw"/>
                 <outlet property="btnRegiste" destination="qXn-Ym-Cd1" id="4w4-qV-YaV"/>
+                <outlet property="btnSecure" destination="1nt-hM-kVp" id="bOg-VF-Pa1"/>
                 <outlet property="imvLogo" destination="oPj-Aq-LzR" id="zUH-5l-Hve"/>
                 <outlet property="tfPassword" destination="kFK-09-2WO" id="nyo-xF-oHv"/>
                 <outlet property="tfPhone" destination="NrH-cV-3bG" id="Gl8-KZ-sX2"/>
@@ -120,6 +121,9 @@
                             </constraints>
                             <state key="normal" image="register_hidePassword"/>
                             <state key="selected" image="register_showPassword"/>
+                            <connections>
+                                <action selector="secureBtnClick:" destination="-1" eventType="touchUpInside" id="X3x-i0-g0S"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

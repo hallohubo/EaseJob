@@ -316,7 +316,7 @@
     if(_leftImageArr == nil)
     {
         NSMutableArray<NJLoginCarouseImageItem *> * leftImageArrM = [NSMutableArray array];
-        for (NSInteger i = 0; i < 5; i++) {
+        for (NSInteger i = 0; i < 4; i++) {
             NSString * imageName = [NSString stringWithFormat:@"img_login_left_%ld", i + 1];
             NJLoginCarouseImageItem * imageItem = [[NJLoginCarouseImageItem alloc] init];
             imageItem.carouseImage = [UIImage imageNamed:imageName];
@@ -332,7 +332,7 @@
     if(_rightImageArr == nil)
     {
         NSMutableArray<NJLoginCarouseImageItem *> * rightImageArrM = [NSMutableArray array];
-        for (NSInteger i = 0; i < 5; i++) {
+        for (NSInteger i = 0; i < 4; i++) {
             NSString * imageName = [NSString stringWithFormat:@"img_login_right_%ld", i + 1];
             NJLoginCarouseImageItem * imageItem = [[NJLoginCarouseImageItem alloc] init];
             imageItem.carouseImage = [UIImage imageNamed:imageName];

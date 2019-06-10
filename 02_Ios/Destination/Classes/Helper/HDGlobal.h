@@ -21,5 +21,6 @@
 //@property (nonatomic, strong) NSString *AuthID;             //第三方登录act121客户未绑定手机号时暂存
 @property (nonatomic, strong) NSString *gender;
 + (HDGlobal *)instance;
-
++ (BOOL)isLogin;
++ (NSString *)getUserID;
 @end

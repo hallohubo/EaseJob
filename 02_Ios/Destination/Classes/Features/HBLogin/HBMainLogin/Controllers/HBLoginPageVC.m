@@ -15,6 +15,7 @@
     IBOutlet UITextField    *tfPhone;
     IBOutlet UIButton       *btnLogin;
     IBOutlet UIButton       *btnForget;
+    IBOutlet UIButton       *btnSecure;
     IBOutlet UIButton       *btnRegiste;
     IBOutlet UIImageView    *imvLogo;
     CAGradientLayer         *gradientLayer;
@@ -26,6 +27,14 @@
 @implementation HBLoginPageVC
 
 #pragma mark - lifeCycle
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    if(![tfPhone isFirstResponder])
+    {
+        [tfPhone becomeFirstResponder];
+    }
+}
 
 - (void)viewWillDisappear:(BOOL)animated {
     task = nil;
@@ -66,48 +75,20 @@
             [HDHelper say:error.desc];
             return ;
         }
-        //str = [self URLDecodedString:json[@"PublicKey"]];
         str = [HDHelper decodeString:json[@"PublicKey"]];
-        Dlog(@"RSA:%@", str);
+        Dlog(@"login password with RSA:%@", str);
         finishBlock(str);
     }];
 }
 
-//- (void)getPhoneVeriCode //获取验证码
-//{
-//    [LBXAlertAction sayWithTitle:@"提示" message:HDFORMAT(@"我们将下发短信验证码，请确认手机号：%@", tfPhone.text) buttons:@[@"取消", @"确认"] chooseBlock:^(NSInteger buttonIdx) {
-//        if (buttonIdx == 0) {
-//            return ;
-//        }
-//        NSDictionary *dic = @{@"mobile": HDSTR(tfPhone.text), @"flag": @"1"};
-//        [self httpGetCode:dic];
-//    }];
-//}
-//
-//- (void)httpGetCode:(NSDictionary *)dicParam
-//{
-//    HDHttpHelper *helper = [HDHttpHelper instance];
-//    [helper.parameters addEntriesFromDictionary:dicParam];
-//    [NJProgressHUD show];
-//    task = [helper postPath:@"Act103" object:nil finished:^(HDError *error, id object, BOOL isLast, id json) {
-//        [NJProgressHUD dismiss];
-//        if (error) {
-//            [LBXAlertAction sayWithTitle:@"提示" message:error.desc buttons:@[ @"确认"] chooseBlock:nil];
-//            return ;
-//        }
-//        [tfValidation becomeFirstResponder];
-//        [NJProgressHUD showSuccess:@"验证码下发成功，请注意查收短信！"];
-//        [NJProgressHUD dismissWithDelay:1.2];
-//        [self startTime];
-//    }];
-//}
 
-- (void)HttpPostLoginRequest:(NSDictionary *)dicParam
+
+- (void)HttpPostLoginRequest:(NSDictionary *)dicParam   //登录
 {
     HDHttpHelper *helper = [HDHttpHelper instance];
     [helper.parameters addEntriesFromDictionary:dicParam];
     [NJProgressHUD show];
-    task = [helper postPath:@"Act104" object:nil finished:^(HDError *error, id object, BOOL isLast, id json) {
+    task = [helper postPath:@"Act105" object:nil finished:^(HDError *error, id object, BOOL isLast, id json) {
         [NJProgressHUD dismiss];
         if (error) {
             [LBXAlertAction sayWithTitle:@"提示" message:error.desc buttons:@[ @"确认"] chooseBlock:nil];
@@ -168,6 +149,10 @@
     }];
 }
 
+- (IBAction)secureBtnClick:(UIButton *)sender {
+    btnSecure.selected = !btnSecure.selected;
+    tfPassword.secureTextEntry = btnSecure.selected;
+}
 
 - (void)phoneInput:(UITextField *)textF
 {
@@ -188,6 +173,7 @@
 {
     self.navigationController.delegate = self;
     
+    [btnLogin addBorderWidth:.0 color:nil cornerRadius:25.];
     [HDHelper changeColor:btnLogin];
     
     tfPassword.keyboardType = UIKeyboardTypeASCIICapable;
@@ -196,12 +182,12 @@
 
 
 #pragma mark - other method
-
-- (NSString *)URLDecodedString:(NSString*)str
-{
-    NSString *decodedString = (__bridge_transfer NSString*)CFURLCreateStringByReplacingPercentEscapesUsingEncoding(NULL, (__bridge CFStringRef)str,CFSTR(""),CFStringConvertNSStringEncodingToEncoding(NSUTF8StringEncoding));
-    return decodedString;
-}
+//
+//- (NSString *)URLDecodedString:(NSString*)str
+//{
+//    NSString *decodedString = (__bridge_transfer NSString*)CFURLCreateStringByReplacingPercentEscapesUsingEncoding(NULL, (__bridge CFStringRef)str,CFSTR(""),CFStringConvertNSStringEncodingToEncoding(NSUTF8StringEncoding));
+//    return decodedString;
+//}
 
 - (void)checkLoginBtnEnable
 {

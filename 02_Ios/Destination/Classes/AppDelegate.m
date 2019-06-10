@@ -28,6 +28,7 @@
 #import <UMCommonLog/UMCommonLogManager.h>
 #import <UserNotifications/UserNotifications.h>
 #import "HDLaunchAdVC.h"
+#import "HBLoginPageVC.h"
 
 #define AmapApiKey @"e0fea2f98787ad18f09bd070a3ccbdd1"
 //微信
@@ -103,15 +104,15 @@
 //    [self.window setRootViewController:launchAdVC];
 //    [self.window makeKeyAndVisible];
     
-    if([NJLoginTool isLogin]){
+    if(![HDGlobal isLogin]){
         CYLTabBarControllerConfig * tabBarControllerConfig = [[CYLTabBarControllerConfig alloc] init];
         CYLTabBarController * tabBarController = tabBarControllerConfig.tabBarController;
         tabBarController.delegate = self;
         [self.window setRootViewController:tabBarController];
         [self.window makeKeyAndVisible];
     }else{
-        NJSelectLoginMethodVC * selectLoginMethodVC = [[NJSelectLoginMethodVC alloc] init];
-        NJNavigationController * naviVC = [[NJNavigationController alloc] initWithRootViewController:selectLoginMethodVC];
+//        NJSelectLoginMethodVC * selectLoginMethodVC = [[NJSelectLoginMethodVC alloc] init];
+        NJNavigationController * naviVC = [[NJNavigationController alloc] initWithRootViewController:[HBLoginPageVC new]];
         [self.window setRootViewController:naviVC];
         [self.window makeKeyAndVisible];
     }
