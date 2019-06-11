@@ -655,7 +655,7 @@
 		4154A6B122A0ECB500C459BE /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				C87C720622AF467800E9813F /* HBMe */,
+				C87C720622AF467800E9813F /* Me */,
 				C829E42222A965BA002EEFF8 /* HBLogin */,
 				BFB5E46F215A54AC00985F62 /* Login */,
 				BFB5E4C5215A5A4100985F62 /* Main */,
@@ -1650,12 +1650,12 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		C87C720622AF467800E9813F /* HBMe */ = {
+		C87C720622AF467800E9813F /* Me */ = {
 			isa = PBXGroup;
 			children = (
 				C87C720722AF479800E9813F /* Controllers */,
 			);
-			path = HBMe;
+			path = Me;
 			sourceTree = "<group>";
 		};
 		C87C720722AF479800E9813F /* Controllers */ = {
