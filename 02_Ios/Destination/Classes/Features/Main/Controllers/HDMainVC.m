@@ -14,7 +14,7 @@
 #import "NJNavigationController.h"
 #import "AppDelegate.h"
 
-#define BANNER_RATIO 0.557
+#define BANNER_RATIO 0.64
 #define BANNER_MODEL @"BANNER_MODEL"
 
 @interface HDMainVC ()<UINavigationControllerDelegate>
@@ -63,6 +63,7 @@
     [self setup];
     [self setTableHead];
     [self setBannerView:nil];
+    [self setStatusBarBackgroundColor:[UIColor clearColor]];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -88,6 +89,15 @@
     // 判断要显示的控制器是否是自己
     BOOL isShowHomePage = [viewController isKindOfClass:[self class]];
     [self.navigationController setNavigationBarHidden:isShowHomePage animated:YES];
+}
+
+- (void)setStatusBarBackgroundColor:(UIColor *)color {
+    
+    UIView *statusBar = [[[UIApplication sharedApplication] valueForKey:@"statusBarWindow"] valueForKey:@"statusBar"];
+    
+    if ([statusBar respondsToSelector:@selector(setBackgroundColor:)]) {
+        statusBar.backgroundColor = color;
+    }
 }
 
 #pragma mark UIScrollViewDelegate

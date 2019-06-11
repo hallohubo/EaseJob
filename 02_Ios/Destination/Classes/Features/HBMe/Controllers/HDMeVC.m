@@ -43,6 +43,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupUI];
+    [self setStatusBarBackgroundColor:[UIColor clearColor]];
     
     // Do any additional setup after loading the view from its nib.
 }
@@ -61,6 +62,14 @@
     [self.navigationController setNavigationBarHidden:isShowHomePage animated:YES];
 }
 
+- (void)setStatusBarBackgroundColor:(UIColor *)color {
+    
+    UIView *statusBar = [[[UIApplication sharedApplication] valueForKey:@"statusBarWindow"] valueForKey:@"statusBar"];
+
+    if ([statusBar respondsToSelector:@selector(setBackgroundColor:)]) {
+        statusBar.backgroundColor = color;
+    }
+}
 #pragma mark - setter and getter
 
 - (void)setupUI
@@ -73,7 +82,7 @@
     [imvIsVIP addBorderWidth:0.f color:nil cornerRadius:10.f];
     [lbMemberMark addBorderWidth:.0f color:nil cornerRadius:10.f];
     [imvHeadDotPoint addDottedBorderWithLineWidth:1.f lineColor:RGB(90, 90, 90)];
-    [imvHeadBackground addDottedBorderWithLineWidth:1.f lineColor:RGB(90, 90, 90)];
+    [imvHeadBackground addDottedBorderWithLineWidth:2.f lineColor:RGB(90, 90, 90)];
 }
 
 @end
