@@ -254,10 +254,10 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oSn-sI-0g7">
-                    <rect key="frame" x="64" y="417" width="14" height="14"/>
+                    <rect key="frame" x="60" y="415" width="18" height="18"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="14" id="28p-2P-WGY"/>
-                        <constraint firstAttribute="width" constant="14" id="utc-0g-W6C"/>
+                        <constraint firstAttribute="height" constant="18" id="28p-2P-WGY"/>
+                        <constraint firstAttribute="width" constant="18" id="utc-0g-W6C"/>
                     </constraints>
                     <state key="normal" image="register_disagreet">
                         <color key="titleShadowColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

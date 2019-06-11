@@ -91,8 +91,8 @@
     UIView *backView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kSCREEN_WIDTH, 64)];
     
     CAGradientLayer *gradientLayer = [CAGradientLayer layer];
-    gradientLayer.colors = @[(__bridge id)HDCOLOR_ORANGE.CGColor, (__bridge id)ssRGBHex(0x42A2F5).CGColor, (__bridge id)ssRGBHex(0x43BDF5).CGColor];
-    gradientLayer.locations = @[@0.3, @0.5, @1.0];
+    gradientLayer.colors = @[(__bridge id)RGBA(254, 209, 73, 1).CGColor, (__bridge id)RGBA(253, 138, 53, 1).CGColor];
+    gradientLayer.locations = @[@0.2, @1.0];
     gradientLayer.startPoint = CGPointMake(0, 0);
     gradientLayer.endPoint = CGPointMake(1.0, 0);
     gradientLayer.frame = backView.frame;

@@ -11,11 +11,6 @@
 #import "UIImage+NJImage.h"
 #import <SVProgressHUD.h>
 #import "NJWebVC.h"
-#import "NJUserItem.h"
-#import <MJExtension.h>
-#import <SafariServices/SafariServices.h>
-#import <CYLTabBarController.h>
-#import "CYLTabBarControllerConfig.h"
 #import "AppDelegate.h"
 #import "RSAUtil.h"
 
@@ -56,74 +51,9 @@
     // Do any additional setup after loading the view from its nib.
 }
 
-#pragma mark - 设置定时器
-- (void)setupTimer
+- (void)dealloc
 {
-    UIApplication * app = [UIApplication sharedApplication];
-    __block    UIBackgroundTaskIdentifier bgTask;
-    bgTask = [app beginBackgroundTaskWithExpirationHandler:^{
-        dispatch_async(dispatch_get_main_queue(), ^{
-            if (bgTask != UIBackgroundTaskInvalid)
-            {
-                bgTask = UIBackgroundTaskInvalid;
-            }
-        });
-    }];
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        dispatch_async(dispatch_get_main_queue(), ^{
-            if (bgTask != UIBackgroundTaskInvalid)
-            {
-                bgTask = UIBackgroundTaskInvalid;
-            }
-        });
-    });
-}
-
-//启动定时器
-- (void)startTime
-{
-    __block int timeout = 60; //倒计时时间
-    
-    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    dispatch_source_t _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0,queue);
-    self.timer = _timer;
-    dispatch_source_set_timer(_timer,dispatch_walltime(NULL, 0),1.0*NSEC_PER_SEC, 0); //每秒执行
-    dispatch_source_set_event_handler(_timer, ^{
-        
-        if(timeout <= 0) { //倒计时结束，关闭
-            [self stopTimer];
-        }
-        else {
-            NSLog(@"时间 = %d",timeout);
-            NSString *strTime = [NSString stringWithFormat:@"发送验证码(%dS)",timeout];
-            NSLog(@"strTime = %@",strTime);
-            dispatch_async(dispatch_get_main_queue(), ^{
-                btnValidation.userInteractionEnabled = NO;
-                [btnValidation setTitleColor:HDCOLOR_RED forState:UIControlStateNormal];
-                NSString * titleStr = [[NSString alloc] initWithFormat:@"剩余%dS", timeout];
-                [btnValidation setTitle:titleStr forState:UIControlStateNormal];
-            });
-            timeout--;
-        }
-    });
-    dispatch_resume(_timer);
-    
-}
-
-- (void)stopTimer   //取消定时器
-{
-    if(self.timer != nil)
-    {
-        HDLog(@"取消定时器");
-        dispatch_source_cancel(self.timer);
-        self.timer = nil;
-        dispatch_async(dispatch_get_main_queue(), ^{
-            btnValidation.selected = NO;
-            [btnValidation setTitleColor:HDCOLOR_ORANGE forState:UIControlStateNormal];
-            [btnValidation setTitle:@"发送验证码" forState:UIControlStateNormal];
-            btnValidation.userInteractionEnabled = YES;
-        });
-    }
+    HDLog(@"%s", __func__);
 }
 
 #pragma mark - Http request
@@ -193,63 +123,13 @@
         HDLoginUserModel * model = [HDLoginUserModel mj_objectWithKeyValues:respons];
         [model saveToLocal];
         HDGI.loginUser = model;
+        
+        [NJProgressHUD showSuccess:@"注册成功，请登录!"];
+        [NJProgressHUD dismissWithDelay:1.2];
+
         [self goToTabBarVC];
     }];
 }
-
-
-//注册
-//- (void)postRegisterRequest
-//{
-//
-//
-//        NSMutableDictionary *postParams = [[NSMutableDictionary alloc]init];
-//        [postParams setValue:[NSString stringWithFormat:@"%@",self.phoneNumberTextF.text] forKey:@"username"];
-//        [postParams setValue:[NSString stringWithFormat:@"%@",self.pwdTextF.text] forKey:@"password"];
-//        [postParams setValue:[NSString stringWithFormat:@"%@",self.codeTextF.text] forKey:@"code"];
-//        [NJProgressHUD show];
-//        [[NetAPIManager instance] postWithPath:@"User/register" parameters:postParams finished:^(HDError * _Nullable error, id object, BOOL isLast, id result) {
-//            [NJProgressHUD dismiss];
-//            if (error) {
-//                [HDHelper say:error.desc];
-//                return ;
-//            }
-//            NSDictionary *respons = result;
-//            NSDictionary * dataDic = respons[DictionaryKeyData];
-//            字典转模型
-//            HLTokenModel * tokenmodel = [HLTokenModel mj_objectWithKeyValues:dataDic];
-//            NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
-//            [userDefaults setValue:tokenmodel.token forKey:NJUserDefaultLoginUserToken];
-//            [self DataInit];
-//
-//        }];
-//
-//
-//    //
-//    //    [NJProgressHUD show];
-//    //    [NetRequest userRegisterWithPhoneNumber:self.phoneNumberTextF.text code:self.codeTextF.text pwd:self.pwdTextF.text completedBlock:^(id data, NSError *error) {
-//    //        [NJProgressHUD dismiss];
-//    //        if(!error)
-//    //        {
-//    //            HDWeakSelf;
-//    //            NSDictionary * dataDic = data[DictionaryKeyData];
-//    //            NJUserItem * userItem = [NJUserItem mj_objectWithKeyValues:dataDic];
-//    //            [NJLoginTool loginWithItem:userItem];
-//    //
-//    //            NSString * msgStr = data[DictionaryKeyMsg];
-//    //            [NJProgressHUD showSuccess:msgStr];
-//    //            [NJProgressHUD dismissWithDelay:1.2 completion:^{
-//    //                [weakSelf goToTabBarVC];
-//    //            }];
-//    //
-//    //        }
-//    //        else
-//    //        {
-//    //            HDLog(@"%@", error);
-//    //        }
-//    //    }];
-//}
-
 
 #pragma mark - evert
 
@@ -261,16 +141,6 @@
 
 - (IBAction)btnRegisterClick:(UIButton *)sender
 {
-//    [self getPublicKey:^(NSString *key) {
-//        NSString *strPasswordKey  =[RSAUtil encryptString:tfPassword.text publicKey:key];
-//        Dlog(@"resultLogin=%@",strPasswordKey);
-//
-//        NSDictionary *dic = @{@"mobile":HDSTR(tfPhone.text),@"pwd":HDSTR(strPasswordKey), @"validCode":HDSTR(tfValidation.text), @"inviteCode":HDSTR(tfInvite.text)};
-//
-//        [self HttpPostRegisterRequest:dic];
-//    }];
-//    return;
-    
     if(tfPhone.text.length == 0) {
         [NJProgressHUD showError:@"手机号不能为空"];
         [NJProgressHUD dismissWithDelay:1.2];
@@ -381,6 +251,78 @@
     [self checkLoginBtnEnable];
 }
 
+#pragma mark - 设置定时器
+
+- (void)setupTimer
+{
+    UIApplication * app = [UIApplication sharedApplication];
+    __block    UIBackgroundTaskIdentifier bgTask;
+    bgTask = [app beginBackgroundTaskWithExpirationHandler:^{
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (bgTask != UIBackgroundTaskInvalid)
+            {
+                bgTask = UIBackgroundTaskInvalid;
+            }
+        });
+    }];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (bgTask != UIBackgroundTaskInvalid)
+            {
+                bgTask = UIBackgroundTaskInvalid;
+            }
+        });
+    });
+}
+
+//启动定时器
+- (void)startTime
+{
+    __block int timeout = 60; //倒计时时间
+    
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_source_t _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0,queue);
+    self.timer = _timer;
+    dispatch_source_set_timer(_timer,dispatch_walltime(NULL, 0),1.0*NSEC_PER_SEC, 0); //每秒执行
+    dispatch_source_set_event_handler(_timer, ^{
+        
+        if(timeout <= 0) { //倒计时结束，关闭
+            [self stopTimer];
+        }
+        else {
+            NSLog(@"时间 = %d",timeout);
+            NSString *strTime = [NSString stringWithFormat:@"发送验证码(%dS)",timeout];
+            NSLog(@"strTime = %@",strTime);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                btnValidation.userInteractionEnabled = NO;
+                [btnValidation setTitleColor:HDCOLOR_RED forState:UIControlStateNormal];
+                NSString * titleStr = [[NSString alloc] initWithFormat:@"剩余%dS", timeout];
+                [btnValidation setTitle:titleStr forState:UIControlStateNormal];
+            });
+            timeout--;
+        }
+    });
+    
+    dispatch_resume(_timer);
+}
+
+- (void)stopTimer   //取消定时器
+{
+    if(self.timer != nil)
+    {
+        HDLog(@"取消定时器");
+        dispatch_source_cancel(self.timer);
+        self.timer = nil;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            btnValidation.selected = NO;
+            [btnValidation setTitleColor:HDCOLOR_ORANGE forState:UIControlStateNormal];
+            [btnValidation setTitle:@"发送验证码" forState:UIControlStateNormal];
+            btnValidation.userInteractionEnabled = YES;
+        });
+    }
+}
+
+
 #pragma mark - setter and getter
 
 - (void)setup
@@ -398,22 +340,11 @@
     [lbAgreement addGestureRecognizer:tapGesture];
 }
 
-
 #pragma mark - 其它
-- (void)dealloc
-{
-    HDLog(@"%s", __func__);
-}
-
-//- (NSString *)URLDecodedString:(NSString*)str
-//{
-////    NSString *decodedString = (__bridge_transfer NSString*)CFURLCreateStringByReplacingPercentEscapesUsingEncoding(NULL, (__bridge CFStringRef)str,CFSTR(""),CFStringConvertNSStringEncodingToEncoding(NSUTF8StringEncoding));
-//    return decodedString;
-//}
 
 - (void)checkLoginBtnEnable
 {
-    if(tfPhone.text.length == 0 || tfValidation.text.length == 0 || tfPassword.text.length == 0 || !btnSelect.selected || tfInvite.text.length == 0) {
+    if(tfPhone.text.length == 0 || tfValidation.text.length == 0 || tfPassword.text.length == 0 || !btnSelect.selected || tfInvite.text.length == 0 || !btnSelect.selected) {
         btnRegister.enabled = NO;
         return;
     }
@@ -424,36 +355,6 @@
 - (void)goToTabBarVC
 {
     [self.navigationController popViewControllerAnimated:YES];
-//    AppDelegate * appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-//
-//    CYLTabBarControllerConfig * tabBarControllerConfig = [[CYLTabBarControllerConfig alloc] init];
-//    CYLTabBarController * tabBarController = tabBarControllerConfig.tabBarController;
-//
-//    tabBarController.delegate = appDelegate;
-//
-//    [UIView transitionFromView:self.view toView:tabBarController.view duration:UIViewAnimationTrantitionTime options:UIViewAnimationOptionTransitionFlipFromRight | UIViewAnimationOptionCurveEaseInOut completion:^(BOOL finished) {
-//
-//        tabBarController.selectedIndex = 0;
-//    }];
-}
-
-+(CYLTabBarController *)tabbarController
-{
-    UIWindow * window = [[UIApplication sharedApplication] keyWindow];
-    UIViewController *tabbarController = window.rootViewController;
-    if ([tabbarController isKindOfClass:[CYLTabBarController class]]) {
-        return (CYLTabBarController *)tabbarController;
-    }
-    return nil;
     
-}
-
-- (void)setNavigationBarStyle{
-    [self.navigationController.navigationBar setBackgroundImage:HDIMAGE(@"theme") forBarMetrics:UIBarMetricsDefault];
-    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
-    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:
-                         [UIColor whiteColor], NSForegroundColorAttributeName, [UIFont boldSystemFontOfSize:14.0f], NSFontAttributeName, nil];
-    [self.navigationController.navigationBar setTitleTextAttributes:dic];
-    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
 }
 @end

@@ -558,8 +558,7 @@ static HDHelper *utility = nil;
     gradientLayer.startPoint = CGPointMake(0, 0);
     gradientLayer.endPoint = CGPointMake(1, 0);
     //设置颜色数组
-    gradientLayer.colors = @[(__bridge id)[ssRGBHexAlpha(0xFFF152, 0.8) CGColor],
-                             (__bridge id)[ssRGBHexAlpha(0xFD8533, 0.5) CGColor]];
+    gradientLayer.colors = @[(__bridge id)RGBA(254, 209, 73, 1).CGColor, (__bridge id)RGBA(253, 138, 53, 1).CGColor];
     
     //设置颜色分割点（范围：0-1）
     gradientLayer.locations = @[@(0.2f), @(1.0f)];
