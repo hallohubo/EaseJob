@@ -395,7 +395,7 @@
     pageControl.numberOfPages = ar_bannerList.count;
     needReload = 0;
     
-    [vMessage addBorderWidth:.1f color:nil cornerRadius:5.0];    
+    [vMessage addBorderWidth:0.f color:nil cornerRadius:5.0];
 }
 
 - (void)setTableHead

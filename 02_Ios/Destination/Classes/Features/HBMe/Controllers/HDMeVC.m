@@ -13,6 +13,9 @@
     IBOutlet UIImageView        *imvHeadBackground;
     IBOutlet UIImageView        *imvHeadPerson;
     IBOutlet UIImageView        *imvOpenMemberArrow;
+    IBOutlet UIImageView        *imvIsVIP;
+    IBOutlet UIImageView        *imvHeadDotPoint;
+
     IBOutlet UIButton           *btnOpenMember;//开通会员
     IBOutlet UIButton           *btnRecharge;//充值
     IBOutlet UIButton           *btnWithdrawal;//提现
@@ -26,6 +29,7 @@
     IBOutlet UILabel            *lbTask;//任务余额
     IBOutlet UILabel            *lbDeposit;//保证金
     IBOutlet UILabel            *lbFrozen;//冻结余额
+    IBOutlet UILabel            *lbMemberMark;
     
     IBOutlet UIView             *vNeedCorneradia;
 }
@@ -34,19 +38,25 @@
 
 @implementation HDMeVC
 
+#pragma mark - life cycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setupUI];
+    
     // Do any additional setup after loading the view from its nib.
 }
 
-/*
-#pragma mark - Navigation
+#pragma mark - setter and getter
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)setupUI
+{
+    [vNeedCorneradia addBorderWidth:0.f color:nil cornerRadius:8.f];
+    [btnOpenMember addBorderWidth:1. color:HDCOLOR_ORANGE cornerRadius:15.f];
+    [imvHeadPerson addBorderWidth:.0 color:nil cornerRadius:33.f];
+    [imvIsVIP addBorderWidth:0.f color:nil cornerRadius:10.f];
+    [lbMemberMark addBorderWidth:.0f color:nil cornerRadius:10.f];
+    [imvHeadDotPoint addDottedBorderWithLineWidth:1.f lineColor:RGB(90, 90, 90)];
 }
-*/
 
 @end

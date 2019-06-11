@@ -125,7 +125,7 @@
         HDGI.loginUser = model;
         
         [NJProgressHUD showSuccess:@"注册成功，请登录!"];
-        [NJProgressHUD dismissWithDelay:1.2];
+        [NJProgressHUD dismissWithDelay:2.5];
 
         [self goToTabBarVC];
     }];

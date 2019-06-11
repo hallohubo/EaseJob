@@ -104,7 +104,7 @@
 //    [self.window setRootViewController:launchAdVC];
 //    [self.window makeKeyAndVisible];
     
-    if(![HDGlobal isLogin]){
+    if([HDGlobal isLogin]){
         CYLTabBarControllerConfig * tabBarControllerConfig = [[CYLTabBarControllerConfig alloc] init];
         CYLTabBarController * tabBarController = tabBarControllerConfig.tabBarController;
         tabBarController.delegate = self;
