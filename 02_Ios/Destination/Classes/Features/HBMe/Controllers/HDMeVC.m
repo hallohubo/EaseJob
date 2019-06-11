@@ -8,7 +8,7 @@
 
 #import "HDMeVC.h"
 
-@interface HDMeVC ()
+@interface HDMeVC ()<UINavigationControllerDelegate>
 {
     IBOutlet UIImageView        *imvHeadBackground;
     IBOutlet UIImageView        *imvHeadPerson;
@@ -47,10 +47,26 @@
     // Do any additional setup after loading the view from its nib.
 }
 
+- (void)dealloc
+{
+    self.navigationController.delegate = nil;
+}
+
+#pragma mark - UINavigationControllerDelegate
+
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+    // 判断要显示的控制器是否是自己
+    BOOL isShowHomePage = [viewController isKindOfClass:[self class]];
+    [self.navigationController setNavigationBarHidden:isShowHomePage animated:YES];
+}
+
 #pragma mark - setter and getter
 
 - (void)setupUI
 {
+     self.navigationController.delegate = self;//设置导航控制器的代理为self
+    
     [vNeedCorneradia addBorderWidth:0.f color:nil cornerRadius:8.f];
     [btnOpenMember addBorderWidth:1. color:HDCOLOR_ORANGE cornerRadius:15.f];
     [imvHeadPerson addBorderWidth:.0 color:nil cornerRadius:33.f];
