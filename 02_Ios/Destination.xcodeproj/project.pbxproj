@@ -182,6 +182,8 @@
 		C85A600B22ABD051008D54FC /* RSAUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = C85A600922ABD050008D54FC /* RSAUtil.m */; };
 		C878650122AD03C80084677F /* HBLoginPageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C87864FF22AD03C80084677F /* HBLoginPageVC.m */; };
 		C878650222AD03C80084677F /* HBLoginPageVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C878650022AD03C80084677F /* HBLoginPageVC.xib */; };
+		C87C720B22AF47B600E9813F /* HDMeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C87C720922AF47B600E9813F /* HDMeVC.m */; };
+		C87C720C22AF47B600E9813F /* HDMeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C87C720A22AF47B600E9813F /* HDMeVC.xib */; };
 		C8B74D6A22A8E1B600BCA2E6 /* HB3DScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C8B74D6922A8E1B600BCA2E6 /* HB3DScrollView.m */; };
 		DA3A28492263213900D8D6C1 /* HLTokenModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3A28482263213900D8D6C1 /* HLTokenModel.m */; };
 		DA4EFC582248A12500062E14 /* myButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DA4EFC552248A12400062E14 /* myButton.m */; };
@@ -527,6 +529,9 @@
 		C87864FE22AD03C80084677F /* HBLoginPageVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBLoginPageVC.h; sourceTree = "<group>"; };
 		C87864FF22AD03C80084677F /* HBLoginPageVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HBLoginPageVC.m; sourceTree = "<group>"; };
 		C878650022AD03C80084677F /* HBLoginPageVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HBLoginPageVC.xib; sourceTree = "<group>"; };
+		C87C720822AF47B600E9813F /* HDMeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HDMeVC.h; sourceTree = "<group>"; };
+		C87C720922AF47B600E9813F /* HDMeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HDMeVC.m; sourceTree = "<group>"; };
+		C87C720A22AF47B600E9813F /* HDMeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HDMeVC.xib; sourceTree = "<group>"; };
 		C8B74D6822A8E1B600BCA2E6 /* HB3DScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HB3DScrollView.h; sourceTree = "<group>"; };
 		C8B74D6922A8E1B600BCA2E6 /* HB3DScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HB3DScrollView.m; sourceTree = "<group>"; };
 		D1D528ADF624776ACA4E89E5 /* Pods-Destination.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Destination.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Destination/Pods-Destination.debug.xcconfig"; sourceTree = "<group>"; };
@@ -655,7 +660,7 @@
 		4154A6B122A0ECB500C459BE /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				C87C720622AF467800E9813F /* New Group */,
+				C87C720622AF467800E9813F /* HBMe */,
 				C829E42222A965BA002EEFF8 /* HBLogin */,
 				BFB5E46F215A54AC00985F62 /* Login */,
 				BFB5E4C5215A5A4100985F62 /* Main */,
@@ -1685,11 +1690,22 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		C87C720622AF467800E9813F /* New Group */ = {
+		C87C720622AF467800E9813F /* HBMe */ = {
 			isa = PBXGroup;
 			children = (
+				C87C720722AF479800E9813F /* Controllers */,
 			);
-			path = "New Group";
+			path = HBMe;
+			sourceTree = "<group>";
+		};
+		C87C720722AF479800E9813F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C87C720822AF47B600E9813F /* HDMeVC.h */,
+				C87C720922AF47B600E9813F /* HDMeVC.m */,
+				C87C720A22AF47B600E9813F /* HDMeVC.xib */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1786,6 +1802,7 @@
 				411FA6A922A1D6800071B6A5 /* HDProfileVC.xib in Resources */,
 				BF5B34E121F17D06006F2AE7 /* NJLaunchAdVC.xib in Resources */,
 				BFB5E38B215A431000985F62 /* Main.storyboard in Resources */,
+				C87C720C22AF47B600E9813F /* HDMeVC.xib in Resources */,
 				BF0A5CE821E2F2AF00BD1CF4 /* mdd.yqxsy.cn.cer in Resources */,
 				BF675798219ACA3200A74FDB /* ChinaProvince.plist in Resources */,
 				411FA6B722A1D98C0071B6A5 /* HDDiscoverVC.xib in Resources */,
@@ -1880,6 +1897,7 @@
 				BF3A39C22192D2ED00140143 /* NSDate+NJCommonDate.m in Sources */,
 				BFB5E48B215A54AC00985F62 /* NJRegisterVC.m in Sources */,
 				BFB5E446215A446300985F62 /* XLPaymentLoadingHUD.m in Sources */,
+				C87C720B22AF47B600E9813F /* HDMeVC.m in Sources */,
 				BFF437272175E9A7006EE0A0 /* NJHorizontalMenuListView.m in Sources */,
 				BF9DEDB821AD226C00C45B33 /* NJPhotoBrowserModalAnimationTransition.m in Sources */,
 				BFF1576B21AE97FB00F4FCF4 /* NJCommentModalAnimationTransition.m in Sources */,
