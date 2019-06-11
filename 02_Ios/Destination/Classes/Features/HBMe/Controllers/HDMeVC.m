@@ -70,6 +70,44 @@
         statusBar.backgroundColor = color;
     }
 }
+
+#pragma mark - UI event
+
+- (IBAction)touchButton:(UIButton *)sender {
+    switch (sender.tag) {
+        case 0:{//开通会员
+            
+            break;
+        }
+        case 1:{//充值
+            
+            break;
+        }
+        case 2:{//提现
+            
+            break;
+        }
+        case 3:{//收支明细
+            
+            break;
+        }
+        case 4:{//分享佣金
+            
+            break;
+        }
+        case 5:{//联系客服
+            
+            break;
+        }
+        case 6:{//系统设置
+            
+            break;
+        }
+
+        default:
+            break;
+    }
+}
 #pragma mark - setter and getter
 
 - (void)setupUI
