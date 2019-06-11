@@ -173,6 +173,8 @@
 		C845CAD822A77155007379BF /* UINavigationController+Pop.m in Sources */ = {isa = PBXBuildFile; fileRef = C845CAD722A77155007379BF /* UINavigationController+Pop.m */; };
 		C845CADB22A772AF007379BF /* HDGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = C845CAD922A772AF007379BF /* HDGlobal.m */; };
 		C845CADE22A772F1007379BF /* HDUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C845CADD22A772F1007379BF /* HDUserModel.m */; };
+		C847CBB322AFB2760055EC65 /* HBSystemSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C847CBB122AFB2760055EC65 /* HBSystemSettingVC.m */; };
+		C847CBB422AFB2760055EC65 /* HBSystemSettingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C847CBB222AFB2760055EC65 /* HBSystemSettingVC.xib */; };
 		C85A600122AA494B008D54FC /* HDMainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C85A5FFE22AA494B008D54FC /* HDMainVC.m */; };
 		C85A600222AA494B008D54FC /* HDMainVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C85A5FFF22AA494B008D54FC /* HDMainVC.xib */; };
 		C85A600622AA4964008D54FC /* HBInformationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C85A600322AA4963008D54FC /* HBInformationCell.xib */; };
@@ -513,6 +515,9 @@
 		C845CADA22A772AF007379BF /* HDGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDGlobal.h; sourceTree = "<group>"; };
 		C845CADC22A772F1007379BF /* HDUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDUserModel.h; sourceTree = "<group>"; };
 		C845CADD22A772F1007379BF /* HDUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDUserModel.m; sourceTree = "<group>"; };
+		C847CBB022AFB2760055EC65 /* HBSystemSettingVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBSystemSettingVC.h; sourceTree = "<group>"; };
+		C847CBB122AFB2760055EC65 /* HBSystemSettingVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HBSystemSettingVC.m; sourceTree = "<group>"; };
+		C847CBB222AFB2760055EC65 /* HBSystemSettingVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HBSystemSettingVC.xib; sourceTree = "<group>"; };
 		C85A5FFE22AA494B008D54FC /* HDMainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDMainVC.m; sourceTree = "<group>"; };
 		C85A5FFF22AA494B008D54FC /* HDMainVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HDMainVC.xib; sourceTree = "<group>"; };
 		C85A600022AA494B008D54FC /* HDMainVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDMainVC.h; sourceTree = "<group>"; };
@@ -1607,6 +1612,32 @@
 			path = LDEncrypt;
 			sourceTree = "<group>";
 		};
+		C847CBAD22AFB20A0055EC65 /* MeMainPage */ = {
+			isa = PBXGroup;
+			children = (
+				C87C720722AF479800E9813F /* Controllers */,
+			);
+			path = MeMainPage;
+			sourceTree = "<group>";
+		};
+		C847CBAE22AFB2280055EC65 /* SystemSetting */ = {
+			isa = PBXGroup;
+			children = (
+				C847CBAF22AFB2410055EC65 /* Controllers */,
+			);
+			path = SystemSetting;
+			sourceTree = "<group>";
+		};
+		C847CBAF22AFB2410055EC65 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C847CBB022AFB2760055EC65 /* HBSystemSettingVC.h */,
+				C847CBB122AFB2760055EC65 /* HBSystemSettingVC.m */,
+				C847CBB222AFB2760055EC65 /* HBSystemSettingVC.xib */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		C85A600822ABD03B008D54FC /* RSA */ = {
 			isa = PBXGroup;
 			children = (
@@ -1653,7 +1684,8 @@
 		C87C720622AF467800E9813F /* Me */ = {
 			isa = PBXGroup;
 			children = (
-				C87C720722AF479800E9813F /* Controllers */,
+				C847CBAE22AFB2280055EC65 /* SystemSetting */,
+				C847CBAD22AFB20A0055EC65 /* MeMainPage */,
 			);
 			path = Me;
 			sourceTree = "<group>";
@@ -1750,6 +1782,7 @@
 				BF41AA05217733BF004D155B /* NJMenuItemView.xib in Resources */,
 				BF578ADA21743D640067591A /* NJAddBankTableFooterView.xib in Resources */,
 				BF5C34D321B7A5CF001EFD9C /* NJSelectLoginMethodVC.xib in Resources */,
+				C847CBB422AFB2760055EC65 /* HBSystemSettingVC.xib in Resources */,
 				BF958F6121D506E300E0F050 /* NJForceBindPhoneNumberVC.xib in Resources */,
 				BFB5E390215A431100985F62 /* LaunchScreen.storyboard in Resources */,
 				BFB20AD12182BC2E0007DE96 /* NJLoginVC.xib in Resources */,
@@ -1823,6 +1856,7 @@
 				BF5EB0B221805B740051BA80 /* NJRewardView.m in Sources */,
 				411FA6BF22A1DA470071B6A5 /* HDMissionVC.m in Sources */,
 				BFB5E433215A446300985F62 /* UIWindow+LBXHierarchy.m in Sources */,
+				C847CBB322AFB2760055EC65 /* HBSystemSettingVC.m in Sources */,
 				BFB5E466215A446300985F62 /* UIImage+NJImage.m in Sources */,
 				C845CADE22A772F1007379BF /* HDUserModel.m in Sources */,
 				BFB5E488215A54AC00985F62 /* NJForgetPwdVC.m in Sources */,

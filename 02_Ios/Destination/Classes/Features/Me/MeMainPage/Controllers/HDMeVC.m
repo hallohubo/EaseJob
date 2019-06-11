@@ -7,6 +7,7 @@
 //
 
 #import "HDMeVC.h"
+#import "HBSystemSettingVC.h"
 
 @interface HDMeVC ()<UINavigationControllerDelegate>
 {
@@ -100,7 +101,7 @@
             break;
         }
         case 6:{//系统设置
-            
+            [self.navigationController pushViewController:[HBSystemSettingVC new] animated:YES];
             break;
         }
 
