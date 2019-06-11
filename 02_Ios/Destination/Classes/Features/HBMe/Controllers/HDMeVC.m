@@ -16,15 +16,18 @@
     IBOutlet UIButton           *btnOpenMember;//开通会员
     IBOutlet UIButton           *btnRecharge;//充值
     IBOutlet UIButton           *btnWithdrawal;//提现
+    IBOutlet UIButton           *btnIncome;//收支明细
+    IBOutlet UIButton           *btnShare;//分享得佣金
+    IBOutlet UIButton           *btnCutomer;//联系客服
+    IBOutlet UIButton           *btnSetting;//系统设置
+
     IBOutlet UILabel            *lbName;
     IBOutlet UILabel            *lbCommission;//佣金余额
     IBOutlet UILabel            *lbTask;//任务余额
     IBOutlet UILabel            *lbDeposit;//保证金
     IBOutlet UILabel            *lbFrozen;//冻结余额
-    IBOutlet UIButton           *btnIncome;//收支明细
-    IBOutlet UIButton           *btnShare;//分享得佣金
-    IBOutlet UIButton           *btnCutomer;//联系客服
-    IBOutlet UIButton           *btnSetting;//系统设置
+    
+    IBOutlet UIView             *vNeedCorneradia;
 }
 
 @end

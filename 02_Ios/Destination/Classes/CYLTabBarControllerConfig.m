@@ -17,7 +17,7 @@ static CGFloat const CYLTabBarControllerHeight = 49.f;
 #import "HDMainVC.h"
 #import "HDMissionVC.h"
 #import "HDDiscoverVC.h"
-#import "HDProfileVC.h"
+#import "HDMeVC.h"
 //#import "NJProfileVC.h"
 //#import "HDNearbyVC.h"
 //#import "NJHomeVC.h"
@@ -39,7 +39,7 @@ static CGFloat const CYLTabBarControllerHeight = 49.f;
         UINavigationController *nav_main = [[NJNavigationController alloc] initWithRootViewController:[HDMainVC new]];
         UINavigationController *nav_nearby = [[NJNavigationController alloc] initWithRootViewController:[HDDiscoverVC new]];
         UINavigationController *nav_attention = [[NJNavigationController alloc] initWithRootViewController:[HDMissionVC new]];
-        UINavigationController *nav_profile = [[NJNavigationController alloc] initWithRootViewController:[HDProfileVC new]];
+        UINavigationController *nav_profile = [[NJNavigationController alloc] initWithRootViewController:[HDMeVC new]];
         CYLTabBarController *tabBarController = [CYLTabBarController tabBarControllerWithViewControllers:@[nav_main, nav_nearby, nav_attention, nav_profile] tabBarItemsAttributes:[self getTabBarItemsAttributes] imageInsets:imageInsets titlePositionAdjustment:titlePositionAdjustment context:self.context];
         [self customizeTabBarAppearance:tabBarController];
 
