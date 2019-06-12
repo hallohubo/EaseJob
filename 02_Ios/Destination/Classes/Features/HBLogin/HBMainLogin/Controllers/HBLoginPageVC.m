@@ -8,6 +8,7 @@
 
 #import "HBLoginPageVC.h"
 #import "HBRegisterVC.h"
+#import "HBForgetPasswordVC.h"
 #import "CYLTabBarControllerConfig.h"
 #import "CYLTabBarController.h"
 #import "AppDelegate.h"
@@ -165,7 +166,7 @@
 
 - (IBAction)btnForgetClick:(UIButton *)sender
 {
-
+    [self.navigationController pushViewController:[HBForgetPasswordVC new] animated:YES];
 }
 
 - (IBAction)btnRegisterClick:(UIButton *)sender

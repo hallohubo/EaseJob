@@ -26,8 +26,8 @@
     IBOutlet UIButton       *btnSecure;
     IBOutlet UILabel        *lbAgreement;
     IBOutlet UIButton       *btnSelect;
-    CAGradientLayer         *gradientLayer;
     NSURLSessionDataTask    *task;
+    
 }
 
 /********* 定时器 *********/
@@ -68,7 +68,7 @@
             [HDHelper say:error.desc];
             return ;
         }
-       //str = [self URLDecodedString:json[@"PublicKey"]];
+        
         str = [HDHelper decodeString:json[@"PublicKey"]];
         Dlog(@"RSA:%@", str);
         finishBlock(str);
@@ -131,7 +131,7 @@
     }];
 }
 
-#pragma mark - evert
+#pragma mark - event
 
 - (void)readClick
 {
@@ -321,7 +321,6 @@
         });
     }
 }
-
 
 #pragma mark - setter and getter
 

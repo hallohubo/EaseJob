@@ -42,7 +42,7 @@
             break;
         }
         case 2:{
-            
+            [self logout];
             break;
         }
 
