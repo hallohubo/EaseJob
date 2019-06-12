@@ -77,7 +77,7 @@
     [helper postPath:@"Act102" object:nil finished:^(HDError *error, id object, BOOL isLast, id json) {
         [NJProgressHUD dismiss];
         if (error) {
-            [HDHelper say:error.desc];
+            [LBXAlertAction sayWithTitle:@"提示" message:error.desc buttons:@[ @"确认"] chooseBlock:nil];
             return ;
         }
         str = [HDHelper decodeString:json[@"PublicKey"]];
@@ -112,6 +112,7 @@
         }
     }];
 }
+
 #pragma mark - UI event
 
 - (IBAction)btnLoginClick:(UIButton *)sender
@@ -199,9 +200,6 @@
     [UIApplication sharedApplication].keyWindow.rootViewController = tabBarController;
     [[UIApplication sharedApplication].keyWindow makeKeyAndVisible];
     
-//    [UIView transitionFromView:self.navigationController.view toView:tabBarController.view duration:UIViewAnimationTrantitionTime options:UIViewAnimationOptionTransitionFlipFromRight | UIViewAnimationOptionCurveEaseInOut completion:^(BOOL finished) {
-//        [UIApplication sharedApplication].keyWindow.rootViewController = tabBarController;
-//    }];
 }
 
 @end

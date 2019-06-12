@@ -10,7 +10,7 @@
 #import "LDCry.h"
 #import "UINavigationController+Pop.h"
 
-#define HDDomain @"http://tsqju5.natappfree.cc/"         //调试-“natappfree”
+#define HDDomain @"http://4byze9.natappfree.cc/"         //调试-“natappfree”
 
 #define IP [HDHttpHelper ip]
 

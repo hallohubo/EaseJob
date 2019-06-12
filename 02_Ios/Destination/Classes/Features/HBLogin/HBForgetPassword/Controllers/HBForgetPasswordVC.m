@@ -7,6 +7,7 @@
 //
 
 #import "HBForgetPasswordVC.h"
+#import "HBResetPasswordVC.h"
 
 @interface HBForgetPasswordVC ()
 {
@@ -127,8 +128,11 @@
         }
         Dlog(@"json:%@",json);
         NSDictionary *respons = json;
-        NSString *str = JSON(json[@"IsValid"]);
-        Dlog(@"isvalid:%@",respons);
+        NSString *strIsvalid = JSON(json[@"IsValid"]);
+        Dlog(@"isvalid:%@",strIsvalid);
+        
+        HBResetPasswordVC *ctr = [[HBResetPasswordVC alloc] initWithPhone:tfPhone.text specifiedCode:strIsvalid];
+        [self.navigationController pushViewController:ctr animated:YES];
         
     }];
 }

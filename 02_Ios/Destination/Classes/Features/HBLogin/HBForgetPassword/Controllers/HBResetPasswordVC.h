@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface HBResetPasswordVC : UIViewController
-
+- (instancetype)initWithPhone:(NSString *)phoneNumber specifiedCode:(NSString *)sCode;
 @end
 
 NS_ASSUME_NONNULL_END

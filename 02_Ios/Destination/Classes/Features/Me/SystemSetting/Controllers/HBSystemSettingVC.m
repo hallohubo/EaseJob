@@ -7,6 +7,7 @@
 //
 
 #import "HBSystemSettingVC.h"
+#import "NJNavigationController.h"
 #import "HBLoginPageVC.h"
 
 @interface HBSystemSettingVC ()
@@ -52,11 +53,12 @@
 }
 
 - (void)logout {
-    [LBXAlertAction sayWithTitle:@"提示" message:@"确定退出吗？" buttons:@[@"确认", @"取消"] chooseBlock:^(NSInteger buttonIdx) {
-        if (0 == buttonIdx) {
+    [LBXAlertAction sayWithTitle:@"提示" message:@"确定退出吗？" buttons:@[@"取消", @"确定"] chooseBlock:^(NSInteger buttonIdx) {
+        if (1 == buttonIdx) {
             HDGI.loginUser = nil;
             [HDLoginUserModel clearFromLocal];
-            [self presentViewController:[HBLoginPageVC new] animated:YES completion:nil];
+            
+            [self recomeToLogin];
         }
         return;
     }];
@@ -70,6 +72,13 @@
     
     [btnQuit addBorderWidth:0.0f color:nil cornerRadius:25.f];
     [HDHelper changeColor:btnQuit];
+}
+
+- (void)recomeToLogin
+{
+    NJNavigationController * naviVC = [[NJNavigationController alloc] initWithRootViewController:[HBLoginPageVC new]];
+    [[UIApplication sharedApplication].keyWindow setRootViewController:naviVC];
+    [[UIApplication sharedApplication].keyWindow makeKeyAndVisible];
 }
 
 @end
