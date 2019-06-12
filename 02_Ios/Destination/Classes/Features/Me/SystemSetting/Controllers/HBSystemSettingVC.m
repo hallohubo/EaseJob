@@ -7,6 +7,7 @@
 //
 
 #import "HBSystemSettingVC.h"
+#import "HBLoginPageVC.h"
 
 @interface HBSystemSettingVC ()
 {
@@ -31,27 +32,34 @@
 
 - (IBAction)touchButton:(UIButton *)sender
 {
-    if (sender.tag == 0) {
-        Dlog(@"touch clean cach button");
-    }else {
-        [self logout];
+    switch (sender.tag) {
+        case 0:{
+            
+            break;
+        }
+        case 1:{
+            
+            break;
+        }
+        case 2:{
+            
+            break;
+        }
+
+        default:
+            break;
     }
 }
 
 - (void)logout {
-//    HDHelper *help  = [HDHelper instance];
-//    [help say:@"确定退出吗？" confirm:@"确定" cancel:@"取消" finished:^(UIAlertView *alertView, int index) {
-//        Dlog(@"resultIndex = %d", index);
-//        if (index == 1) {
-//            [[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"firstInsurePersonID"];
-//            [[NSUserDefaults standardUserDefaults] synchronize];
-//
-//            HDGI.loginUser = nil;
-//            [HDLoginUserModel clearFromLocal];
-//            [self.navigationController popViewControllerAnimated:YES];
-//        }
-//        return ;
-//    }];
+    [LBXAlertAction sayWithTitle:@"提示" message:@"确定退出吗？" buttons:@[@"确认", @"取消"] chooseBlock:^(NSInteger buttonIdx) {
+        if (0 == buttonIdx) {
+            HDGI.loginUser = nil;
+            [HDLoginUserModel clearFromLocal];
+            [self presentViewController:[HBLoginPageVC new] animated:YES completion:nil];
+        }
+        return;
+    }];
 }
 
 #pragma mark - Setter and Getter

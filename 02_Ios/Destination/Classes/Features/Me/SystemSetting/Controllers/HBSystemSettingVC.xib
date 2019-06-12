@@ -105,7 +105,7 @@
                         <constraint firstItem="dKq-g3-tad" firstAttribute="centerY" secondItem="Gsp-cS-0tD" secondAttribute="centerY" id="rpa-a6-j5u"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TVx-yG-5Oo">
+                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TVx-yG-5Oo">
                     <rect key="frame" x="30" y="175" width="354" height="50"/>
                     <color key="backgroundColor" red="1" green="0.67214573519999998" blue="0.1333546622" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
@@ -114,6 +114,9 @@
                     <state key="normal" title="退出登录">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
+                    <connections>
+                        <action selector="touchButton:" destination="-1" eventType="touchUpInside" id="OtF-CP-kUe"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
