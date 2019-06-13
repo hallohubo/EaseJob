@@ -38,6 +38,8 @@
  */
 - (void)addDottedBorderWithLineWidth:(CGFloat)lineWidth lineColor:(UIColor *)lineColor viewFrame:(CGRect)frame;
 
+- (UIView *)addDottedBorderWithView:(UIView*)viewBorder LineWidth:(CGFloat)lineWidth lineColor:(UIColor *)lineColor;
+
 // 从 XIB 中加载视图
 + (instancetype)NJ_loadViewFromXib;
 

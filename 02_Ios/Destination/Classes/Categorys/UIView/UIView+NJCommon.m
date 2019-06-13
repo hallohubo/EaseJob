@@ -50,6 +50,31 @@
     [self.layer addSublayer:border];
 }
 
+- (UIView *)addDottedBorderWithView:(UIView*)viewBorder LineWidth:(CGFloat)lineWidth lineColor:(UIColor *)lineColor{
+    CAShapeLayer *border = [CAShapeLayer layer];
+    
+    //虚线的颜色
+    border.strokeColor = lineColor.CGColor;
+    //填充的颜色
+    border.fillColor = nil;
+    
+    //设置路径
+    border.path = [UIBezierPath bezierPathWithRect:viewBorder.bounds].CGPath;
+    
+    border.frame = viewBorder.bounds;
+    //虚线的宽度
+    border.lineWidth = lineWidth;
+    
+    
+    //设置线条的样式
+    //    border.lineCap = @"square";
+    //虚线的间隔
+    border.lineDashPattern = @[@4, @2];
+    
+    [viewBorder.layer addSublayer:border];
+    return viewBorder;
+}
+
 // 从 XIB 中加载视图
 + (instancetype)NJ_loadViewFromXib {
     return [[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil].firstObject;
