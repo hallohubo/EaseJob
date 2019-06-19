@@ -451,7 +451,7 @@
 //    _scrollTextView2.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:vNews];
     
-    [vNews startScrollWithText:@"向左连续滚动字符串" textColor:[UIColor blackColor] font:[UIFont systemFontOfSize:13]];
+    [vNews startScrollWithText:@" 向左连续滚动字符串     " textColor:[UIColor blackColor] font:[UIFont systemFontOfSize:13]];
 }
 
 - (void)setTableHead
