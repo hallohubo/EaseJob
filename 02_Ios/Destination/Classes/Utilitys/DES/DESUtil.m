@@ -69,7 +69,7 @@ static Byte iv[] = {1,2,3,4,5,6,7,8};
     
     if (encryptOperation == kCCDecrypt)
     {
-        result = [[[NSString alloc] initWithData:[NSData dataWithBytes:(const void *)dataOut length:(NSUInteger)dataOutMoved] encoding:NSUTF8StringEncoding] autorelease];
+        result = [[NSString alloc] initWithData:[NSData dataWithBytes:(const void *)dataOut length:(NSUInteger)dataOutMoved] encoding:NSUTF8StringEncoding];
     }
     else
     {

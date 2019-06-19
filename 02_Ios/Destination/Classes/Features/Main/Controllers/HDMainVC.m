@@ -13,13 +13,16 @@
 
 #import "NJNavigationController.h"
 #import "AppDelegate.h"
+#import "HBBannerModel.h"
+#import "HBNewsModle.h"
+#import "LMJScrollTextView.h"
 
 #define BANNER_RATIO 0.64
 #define BANNER_MODEL @"BANNER_MODEL"
 
 @interface HDMainVC ()<UINavigationControllerDelegate>
 {
-    IBOutlet UILabel            *lbMessage;
+    IBOutlet LMJScrollTextView  *vNews;
     IBOutlet UIView             *vHeadView;
     IBOutlet UIPageControl      *pageControl;
     IBOutlet HB3DScrollView     *scv_banner;
@@ -64,6 +67,7 @@
     [self setTableHead];
     [self setBannerView:nil];
     [self setStatusBarBackgroundColor:[UIColor clearColor]];
+    [self httpGetBannerImages];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -371,30 +375,50 @@
 
 #pragma mark - Http event
 
-- (void)httpGetBannerImages {
+- (void)httpGetBannerImages {//获取轮播图
     HDHttpHelper *helper = [HDHttpHelper instance];
-    [helper.parameters addEntriesFromDictionary:@{@"modulettype": HDSTR(@"2")}];
-    task = [helper postPath:@"Act204" object:[HDBannerModel class] finished:^(HDError *error, id object, BOOL isLast, id json) {
+    [helper.parameters addEntriesFromDictionary:@{@"position": HDSTR(@"1")}];
+    [NJProgressHUD show];
+    
+    task = [helper postPath:@"Act006" object:[HBBannerModel class] finished:^(HDError *error, id object, BOOL isLast, id json)
+    {
+        [NJProgressHUD dismiss];
         if (error) {
-            needReload++;
             if (error.code != 0) {
-                [HDHelper say:error.desc];
+                [LBXAlertAction sayWithTitle:@"提示" message:error.desc buttons:@[ @"确认"] chooseBlock:nil];
             }
             return ;
         }
-        needReload = needReload > 0? (needReload - 1): 0;
-        NSData *data = [NSKeyedArchiver archivedDataWithRootObject:json];
-        [[NSUserDefaults standardUserDefaults] setValue:data forKey:BANNER_MODEL];
-        [[NSUserDefaults standardUserDefaults] synchronize];
+        
         ar_bannerList = object;
-        if (ar_bannerList.count == 0) {
-            return;
-        }
         [self setBannerView:ar_bannerList];
     }];
 }
 
+- (void)httpGetNewsList:(NSInteger)indexPage {//获取资讯
+    HDHttpHelper *helper = [HDHttpHelper instance];
+    NSDictionary *dic = @{@"PageSize": @"10",
+                          @"PageIndex": @(indexPage)
+                          };
+    [helper.parameters addEntriesFromDictionary:dic];
 
+    task = [helper postPath:@"Act008" object:[HBNewsModle class] finished:^(HDError *error, id object, BOOL isLast, id json)
+    {
+        if (error) {
+            if (error.code != 0 ) {
+                [HDHelper say:error.desc];
+            }
+            return ;
+        }
+        marOrderList = [[NSMutableArray alloc] initWithArray:object];
+        
+        NSData *data = [NSKeyedArchiver archivedDataWithRootObject:marOrderList];
+        NSDictionary *dic = @{@"news":data};
+        [[NSUserDefaults standardUserDefaults] setObject:dic forKey:@"news"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+
+    }];
+}
 #pragma mark - setter and getter
 
 - (void)setup
@@ -406,6 +430,28 @@
     needReload = 0;
     
     [vMessage addBorderWidth:0.f color:nil cornerRadius:5.0];
+    UIWindow* desWindow=[UIApplication sharedApplication].keyWindow;
+    
+    CGRect frame = [vNews convertRect:vNews.bounds toView:desWindow];
+    Dlog(@"WINDowframe:%@", NSStringFromCGRect(frame));
+    
+    Dlog(@"frame:%@", NSStringFromCGRect(vNews.frame));
+    Dlog(@"frame:%@", NSStringFromCGRect(vNews.bounds));
+    Dlog(@"VMframe:%@", NSStringFromCGRect(vMessage.frame));
+    Dlog(@"Vmframe:%@", NSStringFromCGRect(vMessage.bounds));
+    Dlog(@"tbvframe:%@", NSStringFromCGRect(tbv.frame));
+    Dlog(@"tbvframe:%@", NSStringFromCGRect(tbv.bounds));
+    Dlog(@"vHeadframe:%@", NSStringFromCGRect(vHeadView.frame));
+    Dlog(@"vHeadframe:%@", NSStringFromCGRect(vHeadView.bounds));
+    
+    
+
+    vNews = [[LMJScrollTextView alloc] initWithFrame:frame textScrollModel:LMJTextScrollContinuous direction:LMJTextScrollMoveLeft];
+    [vNews setMoveSpeed:0.1];
+//    _scrollTextView2.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:vNews];
+    
+    [vNews startScrollWithText:@"向左连续滚动字符串" textColor:[UIColor blackColor] font:[UIFont systemFontOfSize:13]];
 }
 
 - (void)setTableHead
@@ -430,16 +476,12 @@
     }
     CGFloat height = (HDDeviceSize.width) * BANNER_RATIO;
     if (!ar || ar.count < 1) {
-        HDBannerModel *mTemp0 = [HDBannerModel new];
-        HDBannerModel *mTemp1 = [HDBannerModel new];
-        HDBannerModel *mTemp2 = [HDBannerModel new];
-        HDBannerModel *mTemp3 = [HDBannerModel new];
+        HBBannerModel *mTemp0 = [HBBannerModel new];
+        HBBannerModel *mTemp1 = [HBBannerModel new];
         
-        mTemp0.ImageUrl = @"local";
-        mTemp1.ImageUrl = @"local";
-        mTemp2.ImageUrl = @"local";
-        mTemp3.ImageUrl = @"local";
-        ar_bannerList = @[mTemp0, mTemp1, mTemp2, mTemp3];
+        mTemp0.ImgUrl = @"local";
+        mTemp1.ImgUrl = @"local";
+        ar_bannerList = @[mTemp0, mTemp1];
         ar = ar_bannerList;
     }
     pageControl.numberOfPages = ar.count;
@@ -455,12 +497,12 @@
     [scv_banner loadPageIndex:1 animated:NO];
     
     for (int i = 0; i < mar.count; i++) {
-        HDBannerModel *m = mar[i];
+        HBBannerModel *m = mar[i];
         UIImageView *imv = [[UIImageView alloc] initWithFrame:CGRectMake((HDDeviceSize.width) * i, 0, HDDeviceSize.width, height)];
-        if ([m.ImageUrl isEqualToString:@"local"]) {//取写死本地的数据
+        if ([m.ImgUrl isEqualToString:@"local"]) {//取写死本地的数据
             [imv setImage:HDIMAGE(@"main_banner")];//
         }else{
-            [imv sd_setImageWithURL:[NSURL URLWithString:m.ImageUrl] placeholderImage:HDIMAGE(@"main_banner")];
+            [imv sd_setImageWithURL:[NSURL URLWithString:m.ImgUrl] placeholderImage:HDIMAGE(@"main_banner")];
         }
         imv.userInteractionEnabled = YES;
         imv.contentMode     = UIViewContentModeScaleAspectFill;
@@ -475,8 +517,3 @@
 }
 @end
 
-@implementation HDBannerModel
-
-
-
-@end

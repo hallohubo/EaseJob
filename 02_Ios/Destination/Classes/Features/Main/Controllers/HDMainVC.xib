@@ -22,12 +22,12 @@
                 <outlet property="btnRegister" destination="As4-xV-7Ca" id="s9l-cv-cdP"/>
                 <outlet property="btnVote" destination="yqS-ug-8go" id="bRH-G0-VCh"/>
                 <outlet property="btnforward" destination="EYW-g7-HxR" id="bfY-bM-dW5"/>
-                <outlet property="lbMessage" destination="ieZ-gb-TwE" id="2Bj-gu-NEB"/>
                 <outlet property="pageControl" destination="Mip-xn-sPg" id="JkO-27-6X8"/>
                 <outlet property="scv_banner" destination="CTr-P2-RvY" id="8G7-tk-h42"/>
                 <outlet property="tbv" destination="Oz3-yx-oeC" id="T0C-pp-CeW"/>
                 <outlet property="vHeadView" destination="p0y-3W-LSy" id="JIN-ed-Ywc"/>
                 <outlet property="vMessage" destination="NeP-2C-nQt" id="V4Q-7v-Ndn"/>
+                <outlet property="vNews" destination="6mt-D0-TVb" id="yqu-jM-NbQ"/>
                 <outlet property="vScrollviewContent" destination="9mp-BG-8xq" id="bqW-yl-GdO"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -418,22 +418,20 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ieZ-gb-TwE">
-                            <rect key="frame" x="58" y="14.5" width="274" height="21"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6mt-D0-TVb" customClass="LMJScrollTextView">
+                            <rect key="frame" x="58" y="0.0" width="251" height="30"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="21" id="Stk-MG-GBX"/>
+                                <constraint firstAttribute="height" constant="30" id="v0O-89-myt"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
+                        </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q40-Rv-BhU">
-                            <rect key="frame" x="332" y="10" width="25" height="30"/>
+                            <rect key="frame" x="317" y="10" width="40" height="30"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="25" id="hcT-v2-hjY"/>
+                                <constraint firstAttribute="width" constant="40" id="hcT-v2-hjY"/>
                                 <constraint firstAttribute="height" constant="30" id="nnk-5k-nbI"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <state key="normal" title="查看">
                                 <color key="titleColor" red="0.98021870850000004" green="0.31308874489999999" blue="0.2206134796" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
@@ -441,16 +439,16 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="ieZ-gb-TwE" firstAttribute="centerY" secondItem="NeP-2C-nQt" secondAttribute="centerY" id="Gay-oh-cKm"/>
+                        <constraint firstItem="6mt-D0-TVb" firstAttribute="leading" secondItem="NeP-2C-nQt" secondAttribute="leading" constant="58" id="30G-Uu-79W"/>
                         <constraint firstItem="Q40-Rv-BhU" firstAttribute="centerY" secondItem="NeP-2C-nQt" secondAttribute="centerY" id="IKb-Pm-nZE"/>
-                        <constraint firstItem="ieZ-gb-TwE" firstAttribute="leading" secondItem="Ptu-fB-e1R" secondAttribute="trailing" constant="8" id="Kzm-Sg-QJj"/>
+                        <constraint firstItem="6mt-D0-TVb" firstAttribute="centerY" secondItem="NeP-2C-nQt" secondAttribute="centerY" constant="-10" id="IMv-Wn-7Je"/>
                         <constraint firstItem="Ptu-fB-e1R" firstAttribute="leading" secondItem="t6A-Lw-qco" secondAttribute="trailing" constant="8" id="MfF-Yy-KGJ"/>
                         <constraint firstAttribute="height" constant="50" id="Obb-Z5-Ssv"/>
+                        <constraint firstItem="Q40-Rv-BhU" firstAttribute="leading" secondItem="6mt-D0-TVb" secondAttribute="trailing" constant="8" id="UAw-QN-U1f"/>
                         <constraint firstAttribute="trailing" secondItem="Q40-Rv-BhU" secondAttribute="trailing" constant="8" id="ae5-V9-vXC"/>
                         <constraint firstItem="t6A-Lw-qco" firstAttribute="leading" secondItem="NeP-2C-nQt" secondAttribute="leading" constant="9" id="b46-3b-8YN"/>
                         <constraint firstItem="t6A-Lw-qco" firstAttribute="centerY" secondItem="NeP-2C-nQt" secondAttribute="centerY" id="dBe-VW-Z4X"/>
                         <constraint firstItem="Ptu-fB-e1R" firstAttribute="centerY" secondItem="t6A-Lw-qco" secondAttribute="centerY" id="fQA-ch-CAE"/>
-                        <constraint firstAttribute="trailing" secondItem="ieZ-gb-TwE" secondAttribute="trailing" constant="33" id="rs7-Pb-iuv"/>
                     </constraints>
                 </view>
             </subviews>

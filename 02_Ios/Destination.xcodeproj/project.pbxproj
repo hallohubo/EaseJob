@@ -166,6 +166,9 @@
 		C81232A822B1FBCA00DBFECF /* HBTaskVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C81232A622B1FBCA00DBFECF /* HBTaskVC.xib */; };
 		C814AD9C22B09AE100F46A50 /* HBResetPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C814AD9A22B09AE100F46A50 /* HBResetPasswordVC.m */; };
 		C814AD9D22B09AE100F46A50 /* HBResetPasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C814AD9B22B09AE100F46A50 /* HBResetPasswordVC.xib */; };
+		C81EF15D22BA1106005F72D7 /* HBBannerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C81EF15C22BA1106005F72D7 /* HBBannerModel.m */; };
+		C81EF16022BA1AE6005F72D7 /* HBNewsModle.m in Sources */ = {isa = PBXBuildFile; fileRef = C81EF15F22BA1AE6005F72D7 /* HBNewsModle.m */; };
+		C81EF16622BA33EC005F72D7 /* LMJScrollTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = C81EF16522BA33EC005F72D7 /* LMJScrollTextView.m */; };
 		C828FF8D22A9E3D400CAA10C /* HBDiscoverCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C828FF8B22A9E3D400CAA10C /* HBDiscoverCell.m */; };
 		C828FF8E22A9E3D400CAA10C /* HBDiscoverCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C828FF8C22A9E3D400CAA10C /* HBDiscoverCell.xib */; };
 		C829E42A22A968B5002EEFF8 /* HBRegisterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C829E42822A968B5002EEFF8 /* HBRegisterVC.m */; };
@@ -507,6 +510,12 @@
 		C814AD9922B09AE100F46A50 /* HBResetPasswordVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBResetPasswordVC.h; sourceTree = "<group>"; };
 		C814AD9A22B09AE100F46A50 /* HBResetPasswordVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HBResetPasswordVC.m; sourceTree = "<group>"; };
 		C814AD9B22B09AE100F46A50 /* HBResetPasswordVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HBResetPasswordVC.xib; sourceTree = "<group>"; };
+		C81EF15B22BA1106005F72D7 /* HBBannerModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBBannerModel.h; sourceTree = "<group>"; };
+		C81EF15C22BA1106005F72D7 /* HBBannerModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HBBannerModel.m; sourceTree = "<group>"; };
+		C81EF15E22BA1AE6005F72D7 /* HBNewsModle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBNewsModle.h; sourceTree = "<group>"; };
+		C81EF15F22BA1AE6005F72D7 /* HBNewsModle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HBNewsModle.m; sourceTree = "<group>"; };
+		C81EF16422BA33EC005F72D7 /* LMJScrollTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJScrollTextView.h; sourceTree = "<group>"; };
+		C81EF16522BA33EC005F72D7 /* LMJScrollTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJScrollTextView.m; sourceTree = "<group>"; };
 		C828FF8A22A9E3D400CAA10C /* HBDiscoverCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBDiscoverCell.h; sourceTree = "<group>"; };
 		C828FF8B22A9E3D400CAA10C /* HBDiscoverCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HBDiscoverCell.m; sourceTree = "<group>"; };
 		C828FF8C22A9E3D400CAA10C /* HBDiscoverCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HBDiscoverCell.xib; sourceTree = "<group>"; };
@@ -1511,6 +1520,7 @@
 		BFE565CD21AD179B00E89202 /* ThirdLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				C81EF16122BA2B2F005F72D7 /* JhtMarquee */,
 				BFF1576521AE874E00F4FCF4 /* CustomPresentationVC */,
 				BF451FF021AD403100045FA0 /* AnimationTransition */,
 				BFE565CE21AD17DB00E89202 /* NJPhotoBrowser */,
@@ -1572,6 +1582,15 @@
 				BF41AA04217733BF004D155B /* NJMenuItemView.xib */,
 			);
 			path = HorizontalMenuListView;
+			sourceTree = "<group>";
+		};
+		C81EF16122BA2B2F005F72D7 /* JhtMarquee */ = {
+			isa = PBXGroup;
+			children = (
+				C81EF16422BA33EC005F72D7 /* LMJScrollTextView.h */,
+				C81EF16522BA33EC005F72D7 /* LMJScrollTextView.m */,
+			);
+			path = JhtMarquee;
 			sourceTree = "<group>";
 		};
 		C829E42222A965BA002EEFF8 /* HBLogin */ = {
@@ -1717,6 +1736,10 @@
 		C87864FD22AD03790084677F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C81EF15B22BA1106005F72D7 /* HBBannerModel.h */,
+				C81EF15C22BA1106005F72D7 /* HBBannerModel.m */,
+				C81EF15E22BA1AE6005F72D7 /* HBNewsModle.h */,
+				C81EF15F22BA1AE6005F72D7 /* HBNewsModle.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1899,6 +1922,7 @@
 				BF5EB0B221805B740051BA80 /* NJRewardView.m in Sources */,
 				411FA6BF22A1DA470071B6A5 /* HDMissionVC.m in Sources */,
 				BFB5E433215A446300985F62 /* UIWindow+LBXHierarchy.m in Sources */,
+				C81EF16022BA1AE6005F72D7 /* HBNewsModle.m in Sources */,
 				C847CBB322AFB2760055EC65 /* HBSystemSettingVC.m in Sources */,
 				BFB5E466215A446300985F62 /* UIImage+NJImage.m in Sources */,
 				C845CADE22A772F1007379BF /* HDUserModel.m in Sources */,
@@ -1987,8 +2011,10 @@
 				C81232A722B1FBCA00DBFECF /* HBTaskVC.m in Sources */,
 				C8B74D6A22A8E1B600BCA2E6 /* HB3DScrollView.m in Sources */,
 				BFB5E43F215A446300985F62 /* FileCacheTool.m in Sources */,
+				C81EF15D22BA1106005F72D7 /* HBBannerModel.m in Sources */,
 				BF2278F0215B271200FB5504 /* CYLTabBarControllerConfig.m in Sources */,
 				BFB5E463215A446300985F62 /* NSString+LSCore.m in Sources */,
+				C81EF16622BA33EC005F72D7 /* LMJScrollTextView.m in Sources */,
 				C878650122AD03C80084677F /* HBLoginPageVC.m in Sources */,
 				BFE565E821AD17DB00E89202 /* NJPhotoBrowserPopAnimator.m in Sources */,
 				BFD5CF4421DCEB8E00986CF5 /* NJPhotoBrowserTransitionParameter.m in Sources */,
@@ -2211,7 +2237,10 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = H9FPGG9QT2;
 				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Destination/Classes/ThirdLibrary/JhtMarquee",
+				);
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Destination/Classes/Destination.pch";
@@ -2246,7 +2275,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H9FPGG9QT2;
 				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Destination/Classes/ThirdLibrary/JhtMarquee",
+				);
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Destination/Classes/Destination.pch";
