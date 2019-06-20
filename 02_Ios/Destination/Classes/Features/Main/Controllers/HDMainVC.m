@@ -447,7 +447,7 @@
     
 
     vNews = [[LMJScrollTextView alloc] initWithFrame:frame textScrollModel:LMJTextScrollContinuous direction:LMJTextScrollMoveLeft];
-    [vNews setMoveSpeed:0.1];
+    [vNews setMoveSpeed:0.03];
 //    _scrollTextView2.backgroundColor = [UIColor whiteColor];
     [vMessage addSubview:vNews];
     
