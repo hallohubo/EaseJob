@@ -7,6 +7,7 @@
 //
 
 #import "HBAnnouncementVC.h"
+#import "HBAnnounceDetailVC.h"
 #import "HBNewsModle.h"
 
 @interface HBAnnouncementVC () {
@@ -33,6 +34,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    HBNewsModle *model = marNewsList[indexPath.section];
+    HBAnnounceDetailVC *ctr = [[HBAnnounceDetailVC alloc] initWithTypeID:model.NoticeID];
+    [self.navigationController pushViewController:ctr animated:YES];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -74,7 +78,9 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:str];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
-    
+    HBNewsModle *modle = marNewsList[indexPath.section];
+    cell.textLabel.text = modle.NoticeTitle;
+    cell.detailTextLabel.text = modle.PublishDT;
     return cell;
 }
 
