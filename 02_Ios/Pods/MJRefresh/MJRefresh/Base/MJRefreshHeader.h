@@ -11,7 +11,7 @@
 
 @interface MJRefreshHeader : MJRefreshComponent
 /** 创建header */
-+ (instancetype)headerWithRefreshingBlock:(MJRefreshComponentRefreshingBlock)refreshingBlock;
++(instancetype)headerWithRefreshingBlock:(MJRefreshComponentRefreshingBlock)refreshingBlock;
 /** 创建header */
 + (instancetype)headerWithRefreshingTarget:(id)target refreshingAction:(SEL)action;
 
