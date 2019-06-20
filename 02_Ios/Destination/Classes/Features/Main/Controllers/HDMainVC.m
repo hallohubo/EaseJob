@@ -68,6 +68,7 @@
     [self setBannerView:nil];
     [self setStatusBarBackgroundColor:[UIColor clearColor]];
     [self httpGetBannerImages];
+    [self httpGetRecentlyNews:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -395,13 +396,8 @@
     }];
 }
 
-- (void)httpGetNewsList:(NSInteger)indexPage {//获取资讯
+- (void)httpGetRecentlyNews:(NSInteger)indexPage {//获取资讯
     HDHttpHelper *helper = [HDHttpHelper instance];
-    NSDictionary *dic = @{@"PageSize": @"10",
-                          @"PageIndex": @(indexPage)
-                          };
-    [helper.parameters addEntriesFromDictionary:dic];
-
     task = [helper postPath:@"Act008" object:[HBNewsModle class] finished:^(HDError *error, id object, BOOL isLast, id json)
     {
         if (error) {
@@ -410,12 +406,22 @@
             }
             return ;
         }
-        marOrderList = [[NSMutableArray alloc] initWithArray:object];
+        NSArray *ar = json[@"list"];
+        NSString *strContent = [NSString string];
+        for (NSDictionary *dic in ar) {
+            if (HDSTR(dic[@"NoticeTitle"])) {
+                strContent = HDFORMAT(@"%@    %@", strContent, HDSTR(dic[@"NoticeTitle"]));
+            }
+        }
         
-        NSData *data = [NSKeyedArchiver archivedDataWithRootObject:marOrderList];
-        NSDictionary *dic = @{@"news":data};
+        NSDictionary *dic = @{@"news":strContent};
         [[NSUserDefaults standardUserDefaults] setObject:dic forKey:@"news"];
         [[NSUserDefaults standardUserDefaults] synchronize];
+        
+        if (strContent.length < 1) {
+            strContent = @"Welcome to visit Eazy Work App!";
+        }
+        [self setFlowWords:strContent];
 
     }];
 }
@@ -425,33 +431,24 @@
 {
     self.navigationController.delegate = self;//设置导航控制器的代理为self
     
+    [vMessage addBorderWidth:0.f color:nil cornerRadius:5.0];
+    
     scv_banner.backgroundColor  = [UIColor groupTableViewBackgroundColor];
     pageControl.numberOfPages = ar_bannerList.count;
     needReload = 0;
     
-    [vMessage addBorderWidth:0.f color:nil cornerRadius:5.0];
-    UIWindow* desWindow=[UIApplication sharedApplication].keyWindow;
-    
+}
+
+- (void)setFlowWords:(NSString *)word
+{
     CGRect frame = [vNews convertRect:vNews.bounds toView:vMessage];
     Dlog(@"WINDowframe:%@", NSStringFromCGRect(frame));
     
-    Dlog(@"frame:%@", NSStringFromCGRect(vNews.frame));
-    Dlog(@"frame:%@", NSStringFromCGRect(vNews.bounds));
-    Dlog(@"VMframe:%@", NSStringFromCGRect(vMessage.frame));
-    Dlog(@"Vmframe:%@", NSStringFromCGRect(vMessage.bounds));
-    Dlog(@"tbvframe:%@", NSStringFromCGRect(tbv.frame));
-    Dlog(@"tbvframe:%@", NSStringFromCGRect(tbv.bounds));
-    Dlog(@"vHeadframe:%@", NSStringFromCGRect(vHeadView.frame));
-    Dlog(@"vHeadframe:%@", NSStringFromCGRect(vHeadView.bounds));
-    
-    
-
     vNews = [[LMJScrollTextView alloc] initWithFrame:frame textScrollModel:LMJTextScrollContinuous direction:LMJTextScrollMoveLeft];
     [vNews setMoveSpeed:0.03];
-//    _scrollTextView2.backgroundColor = [UIColor whiteColor];
     [vMessage addSubview:vNews];
     
-    [vNews startScrollWithText:@" 向左连续滚动字符串     " textColor:[UIColor blackColor] font:[UIFont systemFontOfSize:13]];
+    [vNews startScrollWithText:word textColor:HDCOLOR_RED font:[UIFont systemFontOfSize:13]];
 }
 
 - (void)setTableHead
