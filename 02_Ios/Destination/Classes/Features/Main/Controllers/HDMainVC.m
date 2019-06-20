@@ -17,6 +17,8 @@
 #import "HBNewsModle.h"
 #import "LMJScrollTextView.h"
 
+#import "HBAnnouncementVC.h"
+
 #define BANNER_RATIO 0.64
 #define BANNER_MODEL @"BANNER_MODEL"
 
@@ -50,7 +52,6 @@
     
     NSURLSessionDataTask        *task;
     NSTimer                     *timer;
-    HDHUD                       *hud;
     int                         needReload; //失败一次+1，<= 0不用重新请求
 }
 
@@ -368,6 +369,10 @@
             
             break;
         }
+        case 10:{//公告信息
+            [self.navigationController pushViewController:[HBAnnouncementVC new] animated:YES];
+            break;
+        }
 
         default:
             break;
@@ -410,7 +415,7 @@
         NSString *strContent = [NSString string];
         for (NSDictionary *dic in ar) {
             if (HDSTR(dic[@"NoticeTitle"])) {
-                strContent = HDFORMAT(@"%@    %@", strContent, HDSTR(dic[@"NoticeTitle"]));
+                strContent = HDFORMAT(@"  %@  %@  ", strContent, HDSTR(dic[@"NoticeTitle"]));
             }
         }
         
@@ -419,7 +424,7 @@
         [[NSUserDefaults standardUserDefaults] synchronize];
         
         if (strContent.length < 1) {
-            strContent = @"Welcome to visit Eazy Work App!";
+            strContent = @"  Welcome to visit Eazy Work App!  ";
         }
         [self setFlowWords:strContent];
 

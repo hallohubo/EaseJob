@@ -425,7 +425,7 @@
                                 <constraint firstAttribute="height" constant="30" id="v0O-89-myt"/>
                             </constraints>
                         </view>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q40-Rv-BhU">
+                        <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q40-Rv-BhU">
                             <rect key="frame" x="317" y="10" width="40" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="40" id="hcT-v2-hjY"/>
@@ -435,6 +435,9 @@
                             <state key="normal" title="查看">
                                 <color key="titleColor" red="0.98021870850000004" green="0.31308874489999999" blue="0.2206134796" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
+                            <connections>
+                                <action selector="checkTaskDetail:" destination="-1" eventType="touchUpInside" id="txe-bE-knY"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

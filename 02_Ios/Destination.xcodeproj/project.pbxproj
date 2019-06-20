@@ -189,6 +189,8 @@
 		C85A600B22ABD051008D54FC /* RSAUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = C85A600922ABD050008D54FC /* RSAUtil.m */; };
 		C867A5CA22B08A4C008ACC1A /* HBForgetPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C867A5C822B08A4C008ACC1A /* HBForgetPasswordVC.m */; };
 		C867A5CB22B08A4C008ACC1A /* HBForgetPasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C867A5C922B08A4C008ACC1A /* HBForgetPasswordVC.xib */; };
+		C877655C22BB1F6D00E0C4B3 /* HBAnnouncementVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C877655A22BB1F6D00E0C4B3 /* HBAnnouncementVC.m */; };
+		C877655D22BB1F6D00E0C4B3 /* HBAnnouncementVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C877655B22BB1F6D00E0C4B3 /* HBAnnouncementVC.xib */; };
 		C878650122AD03C80084677F /* HBLoginPageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C87864FF22AD03C80084677F /* HBLoginPageVC.m */; };
 		C878650222AD03C80084677F /* HBLoginPageVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C878650022AD03C80084677F /* HBLoginPageVC.xib */; };
 		C87C720B22AF47B600E9813F /* HDMeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C87C720922AF47B600E9813F /* HDMeVC.m */; };
@@ -550,6 +552,9 @@
 		C867A5C722B08A4C008ACC1A /* HBForgetPasswordVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBForgetPasswordVC.h; sourceTree = "<group>"; };
 		C867A5C822B08A4C008ACC1A /* HBForgetPasswordVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HBForgetPasswordVC.m; sourceTree = "<group>"; };
 		C867A5C922B08A4C008ACC1A /* HBForgetPasswordVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HBForgetPasswordVC.xib; sourceTree = "<group>"; };
+		C877655922BB1F6D00E0C4B3 /* HBAnnouncementVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBAnnouncementVC.h; sourceTree = "<group>"; };
+		C877655A22BB1F6D00E0C4B3 /* HBAnnouncementVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HBAnnouncementVC.m; sourceTree = "<group>"; };
+		C877655B22BB1F6D00E0C4B3 /* HBAnnouncementVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HBAnnouncementVC.xib; sourceTree = "<group>"; };
 		C87864FE22AD03C80084677F /* HBLoginPageVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBLoginPageVC.h; sourceTree = "<group>"; };
 		C87864FF22AD03C80084677F /* HBLoginPageVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HBLoginPageVC.m; sourceTree = "<group>"; };
 		C878650022AD03C80084677F /* HBLoginPageVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HBLoginPageVC.xib; sourceTree = "<group>"; };
@@ -1430,6 +1435,7 @@
 		BFB5E4C5215A5A4100985F62 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				C877655522BB1EC400E0C4B3 /* announcement */,
 				BFB5E4C7215A5A4100985F62 /* Controllers */,
 				BFB5E4C6215A5A4100985F62 /* Models */,
 				BFB5E4C8215A5A4100985F62 /* Views */,
@@ -1706,6 +1712,40 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		C877655522BB1EC400E0C4B3 /* announcement */ = {
+			isa = PBXGroup;
+			children = (
+				C877655822BB1F4000E0C4B3 /* Models */,
+				C877655722BB1F3700E0C4B3 /* Views */,
+				C877655622BB1F2300E0C4B3 /* Controllers */,
+			);
+			path = announcement;
+			sourceTree = "<group>";
+		};
+		C877655622BB1F2300E0C4B3 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C877655922BB1F6D00E0C4B3 /* HBAnnouncementVC.h */,
+				C877655A22BB1F6D00E0C4B3 /* HBAnnouncementVC.m */,
+				C877655B22BB1F6D00E0C4B3 /* HBAnnouncementVC.xib */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C877655722BB1F3700E0C4B3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C877655822BB1F4000E0C4B3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		C87864FA22AD03400084677F /* HBMainLogin */ = {
 			isa = PBXGroup;
 			children = (
@@ -1864,6 +1904,7 @@
 				C867A5CB22B08A4C008ACC1A /* HBForgetPasswordVC.xib in Resources */,
 				BF578AD5217438020067591A /* NJBankCell.xib in Resources */,
 				C81232A822B1FBCA00DBFECF /* HBTaskVC.xib in Resources */,
+				C877655D22BB1F6D00E0C4B3 /* HBAnnouncementVC.xib in Resources */,
 				C85A600622AA4964008D54FC /* HBInformationCell.xib in Resources */,
 				BFB2016821E599B200A06FB4 /* NJValidationCodeLoginVC.xib in Resources */,
 				BF5EB0B721805D3A0051BA80 /* NJRewardListView.xib in Resources */,
@@ -2039,6 +2080,7 @@
 				C845CAC622A7630A007379BF /* HDHttpHelper.m in Sources */,
 				BF59DF0521F1C10D00721D01 /* NJLaunchAdItem.m in Sources */,
 				BFB2016721E599B200A06FB4 /* NJValidationCodeLoginVC.m in Sources */,
+				C877655C22BB1F6D00E0C4B3 /* HBAnnouncementVC.m in Sources */,
 				BFB5E489215A54AC00985F62 /* NJUserItem.m in Sources */,
 				BFB5E465215A446300985F62 /* UIImageView+NJDownload.m in Sources */,
 				BF41AA03217733AA004D155B /* NJMenuItemView.m in Sources */,
