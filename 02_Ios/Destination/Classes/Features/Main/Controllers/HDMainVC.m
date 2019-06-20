@@ -432,7 +432,7 @@
     [vMessage addBorderWidth:0.f color:nil cornerRadius:5.0];
     UIWindow* desWindow=[UIApplication sharedApplication].keyWindow;
     
-    CGRect frame = [vNews convertRect:vNews.bounds toView:desWindow];
+    CGRect frame = [vNews convertRect:vNews.bounds toView:vMessage];
     Dlog(@"WINDowframe:%@", NSStringFromCGRect(frame));
     
     Dlog(@"frame:%@", NSStringFromCGRect(vNews.frame));
@@ -449,7 +449,7 @@
     vNews = [[LMJScrollTextView alloc] initWithFrame:frame textScrollModel:LMJTextScrollContinuous direction:LMJTextScrollMoveLeft];
     [vNews setMoveSpeed:0.1];
 //    _scrollTextView2.backgroundColor = [UIColor whiteColor];
-    [self.view addSubview:vNews];
+    [vMessage addSubview:vNews];
     
     [vNews startScrollWithText:@" 向左连续滚动字符串     " textColor:[UIColor blackColor] font:[UIFont systemFontOfSize:13]];
 }

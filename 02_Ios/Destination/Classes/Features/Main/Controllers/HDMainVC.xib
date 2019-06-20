@@ -419,7 +419,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6mt-D0-TVb" customClass="LMJScrollTextView">
-                            <rect key="frame" x="58" y="-1" width="251" height="30"/>
+                            <rect key="frame" x="58" y="10" width="251" height="30"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="v0O-89-myt"/>
@@ -441,7 +441,7 @@
                     <constraints>
                         <constraint firstItem="6mt-D0-TVb" firstAttribute="leading" secondItem="NeP-2C-nQt" secondAttribute="leading" constant="58" id="30G-Uu-79W"/>
                         <constraint firstItem="Q40-Rv-BhU" firstAttribute="centerY" secondItem="NeP-2C-nQt" secondAttribute="centerY" id="IKb-Pm-nZE"/>
-                        <constraint firstItem="6mt-D0-TVb" firstAttribute="centerY" secondItem="NeP-2C-nQt" secondAttribute="centerY" constant="-11" id="IMv-Wn-7Je"/>
+                        <constraint firstItem="6mt-D0-TVb" firstAttribute="centerY" secondItem="NeP-2C-nQt" secondAttribute="centerY" id="IMv-Wn-7Je"/>
                         <constraint firstItem="Ptu-fB-e1R" firstAttribute="leading" secondItem="t6A-Lw-qco" secondAttribute="trailing" constant="8" id="MfF-Yy-KGJ"/>
                         <constraint firstAttribute="height" constant="50" id="Obb-Z5-Ssv"/>
                         <constraint firstItem="Q40-Rv-BhU" firstAttribute="leading" secondItem="6mt-D0-TVb" secondAttribute="trailing" constant="8" id="UAw-QN-U1f"/>
