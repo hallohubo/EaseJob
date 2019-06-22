@@ -10,9 +10,11 @@
 #import "HBAnnounceDetailVC.h"
 #import "HBNewsModle.h"
 
-@interface HBAnnouncementVC () {
+@interface HBAnnouncementVC ()<UIWebViewDelegate>
+{
     NSURLSessionDataTask    *task;
     NSMutableArray          *marNewsList;
+    UIViewController        *webViewCtr;
     IBOutlet UITableView    *tbv;
 }
 
@@ -35,8 +37,7 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     HBNewsModle *model = marNewsList[indexPath.section];
-    HBAnnounceDetailVC *ctr = [[HBAnnounceDetailVC alloc] initWithTypeID:model.NoticeID];
-    [self.navigationController pushViewController:ctr animated:YES];
+    [self showAnnouncementPage:model.NoticeUrl];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -111,6 +112,34 @@
         [tbv reloadData];
         
     }];
+}
+
+#pragma mark - touch even
+
+- (void)showAnnouncementPage:(NSString *)strUrlLink
+{
+    if (!strUrlLink || strUrlLink.length < 1) {
+        Dlog(@"HBAnnouncementVC: this announcement don't contains a urlLink!");
+        return;
+    }
+    
+    NSURL *url = [NSURL URLWithString:HDSTR(strUrlLink)];
+    NSString *strUrl = url.absoluteString;
+    
+    if (url) {
+        webViewCtr = [UIViewController new];
+        UIWebView *web = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, 10, 10)];
+        web.scalesPageToFit = YES;
+        [webViewCtr.view addSubview:web];
+        [web makeConstraints:^(MASConstraintMaker *make) {
+            make.center.equalTo(webViewCtr.view);
+            make.size.equalTo(webViewCtr.view);
+        }];
+        [web loadRequest:[NSURLRequest requestWithURL:url]];
+        web.delegate = self;
+        
+        [self.navigationController pushViewController:webViewCtr animated:YES];
+    }
 }
 
 #pragma mark - setter and getter

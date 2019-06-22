@@ -20,6 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *ImgPosition;    //图片显示位置（1=首页广告）
 @property (nonatomic, strong) NSString *OrderValue;     // 图片排序
 
+
+
 + (id)readFromLocal;
 - (void)saveToLocal;
 + (void)clearFromLocal;

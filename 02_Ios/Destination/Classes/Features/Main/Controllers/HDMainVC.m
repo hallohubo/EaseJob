@@ -22,7 +22,7 @@
 #define BANNER_RATIO 0.64
 #define BANNER_MODEL @"BANNER_MODEL"
 
-@interface HDMainVC ()<UINavigationControllerDelegate>
+@interface HDMainVC ()<UINavigationControllerDelegate, UIWebViewDelegate>
 {
     IBOutlet LMJScrollTextView  *vNews;
     IBOutlet UIView             *vHeadView;
@@ -48,6 +48,7 @@
     NSMutableArray              *mar_pakageList;
     NSMutableArray              *marOrderList;
     NSMutableArray              *marHeadScrollImageList;
+    UIViewController            *webViewCtr;
 
     
     NSURLSessionDataTask        *task;
@@ -309,7 +310,44 @@
 
 - (void)goBannerDetail:(UITapGestureRecognizer *)tap
 {
-    
+    UIView *v = tap.view;
+    NSURL *url = nil;
+    int tab = v.tag;
+    if (v.tag < marHeadScrollImageList.count) {
+        HBBannerModel *bannerModel = marHeadScrollImageList[v.tag];
+        NSString *strLinkType   = HDSTR(bannerModel.LinkType);
+        NSString *strExternalLink   = HDSTR(bannerModel.ExternalLink);
+       
+        if ([strLinkType isEqualToString:@"0"]) {
+            Dlog(@"0代表无跳转");
+            return;
+        }
+        if (!strExternalLink || strExternalLink.length < 1) {
+            Dlog(@"主页主宣传图链接为空");
+            return;
+        }
+        
+        url = [NSURL URLWithString:HDSTR(bannerModel.ExternalLink)];
+        NSString *strUrl = url.absoluteString;
+        if (strUrl.length < 1) {
+            return;
+        }
+        if (url) {
+            webViewCtr = [UIViewController new];
+            webViewCtr.title = @"活动详情";
+            UIWebView *web = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, 10, 10)];
+            web.scalesPageToFit = YES;
+            [webViewCtr.view addSubview:web];
+            [web makeConstraints:^(MASConstraintMaker *make) {
+                make.center.equalTo(webViewCtr.view);
+                make.size.equalTo(webViewCtr.view);
+            }];
+            [web loadRequest:[NSURLRequest requestWithURL:url]];
+            web.delegate = self;
+            
+            [self.navigationController pushViewController:webViewCtr animated:YES];
+        }
+    }
 }
 
 - (IBAction)checkTaskDetail:(UIButton *)sender
@@ -401,7 +439,7 @@
     }];
 }
 
-- (void)httpGetRecentlyNews:(NSInteger)indexPage {//获取资讯
+- (void)httpGetRecentlyNews:(NSInteger)indexPage {//获取广告资讯
     HDHttpHelper *helper = [HDHttpHelper instance];
     task = [helper postPath:@"Act008" object:[HBNewsModle class] finished:^(HDError *error, id object, BOOL isLast, id json)
     {
@@ -411,23 +449,19 @@
             }
             return ;
         }
-        NSArray *ar = json[@"list"];
+        NSArray *ar = object;
         NSString *strContent = [NSString string];
-        for (NSDictionary *dic in ar) {
-            if (HDSTR(dic[@"NoticeTitle"])) {
-                strContent = HDFORMAT(@"  %@  %@  ", strContent, HDSTR(dic[@"NoticeTitle"]));
+        if (!ar || ar.count < 1) {
+            strContent = @"                      平台暂时没有新的公告信息!                                             ";
+            [self setFlowWords:strContent];
+            return;
+        }else {
+            for (id obj in ar) {
+                HBNewsModle *modle = obj;
+                strContent = HDFORMAT(@"        %@        %@  ", strContent, modle.NoticeTitle);
             }
+            [self setFlowWords:strContent];
         }
-        
-        NSDictionary *dic = @{@"news":strContent};
-        [[NSUserDefaults standardUserDefaults] setObject:dic forKey:@"news"];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-        
-        if (strContent.length < 1) {
-            strContent = @"  Welcome to visit Eazy Work App!  ";
-        }
-        [self setFlowWords:strContent];
-
     }];
 }
 #pragma mark - setter and getter

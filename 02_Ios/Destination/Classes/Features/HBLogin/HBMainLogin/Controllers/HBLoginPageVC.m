@@ -35,10 +35,10 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    if(![tfPhone isFirstResponder])
-    {
-        [tfPhone becomeFirstResponder];
-    }
+//    if(![tfPhone isFirstResponder])
+//    {
+//        [tfPhone becomeFirstResponder];
+//    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated {

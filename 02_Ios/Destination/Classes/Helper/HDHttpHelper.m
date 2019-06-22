@@ -9,6 +9,8 @@
 #import "HDHttpHelper.h"
 #import "LDCry.h"
 #import "UINavigationController+Pop.h"
+#import "HBLoginPageVC.h"
+#import "NJNavigationController.h"
 
 //#define HDDomain @"http://4byze9.natappfree.cc/"         //调试-“natappfree”
 #define HDDomain @"http://39.98.76.94:8007/"
@@ -60,14 +62,14 @@ static dispatch_once_t *onceToken_debug;
     [_parameters setValue:@"1"                      forKey:@"Source"];
     [_parameters setValue:HDSTR([HDHelper uuid])    forKey:@"IMEI"];
     [_parameters setValue:HDSTR(APPVERSION)         forKey:@"Version"];
-    NSString *token = HDGI.loginUser.Token;
-    NSString *uid   = HDGI.loginUser.MID;
-    Dlog(@"uid=%@",uid);
-    if (token) {
-        [_parameters setValue:token forKey:@"Token"];
+    NSString *Token = HDGI.loginUser.Token;
+    NSString *MID   = HDGI.loginUser.MID;
+    Dlog(@"uid=%@",MID);
+    if (Token) {
+        [_parameters setValue:Token forKey:@"Token"];
     }
-    if (uid) {
-        [_parameters setValue:uid forKey:@"UserID"];
+    if (MID) {
+        [_parameters setValue:MID forKey:@"MID"];
     }
 }
 
@@ -166,8 +168,14 @@ static dispatch_once_t *onceToken_debug;
             NSString    *ErrorDesc  = JSON(dic_json[@"ErrorDesc"]);
             NSObject    *result     = dic_json[@"Result"];
             BOOL        isLast      = NO;
-            if (code.intValue == 5) {//后台token值过期时，重登录操作
-                
+            if ((code.intValue == 5)) {//后台token值过期时，重登录操作
+                NJNavigationController * naviVC = [[NJNavigationController alloc] initWithRootViewController:[HBLoginPageVC new]];
+                [[UIApplication sharedApplication].keyWindow setRootViewController:naviVC];
+                [[UIApplication sharedApplication].keyWindow makeKeyAndVisible];
+                e.desc = ErrorDesc.length > 0? ErrorDesc: Description;
+                e.code = code.intValue;
+                block(e, nil, NO, nil);
+                return;
             }
             if (code.intValue != 0) {
                 e.desc =  ErrorDesc.length > 0? ErrorDesc: Description;
