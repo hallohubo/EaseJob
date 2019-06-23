@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		411FA69922A103D00071B6A5 /* UIView+LoadFromNib.m in Sources */ = {isa = PBXBuildFile; fileRef = 411FA69722A103D00071B6A5 /* UIView+LoadFromNib.m */; };
 		411FA69C22A120E60071B6A5 /* UICollectionView+HDRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 411FA69B22A120E60071B6A5 /* UICollectionView+HDRect.m */; };
-		411FA6B622A1D98C0071B6A5 /* #.m in Sources */ = {isa = PBXBuildFile; fileRef = 411FA6B422A1D98C0071B6A5 /* #.m */; };
+		411FA6B622A1D98C0071B6A5 /* HDDiscoverVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 411FA6B422A1D98C0071B6A5 /* HDDiscoverVC.m */; };
 		411FA6B722A1D98C0071B6A5 /* HDDiscoverVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 411FA6B522A1D98C0071B6A5 /* HDDiscoverVC.xib */; };
 		411FA6BF22A1DA470071B6A5 /* HDMissionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 411FA6BD22A1DA470071B6A5 /* HDMissionVC.m */; };
 		414995B2226F03D500D10D51 /* HDStringHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 414995B1226F03D400D10D51 /* HDStringHelper.m */; };
@@ -222,7 +222,7 @@
 		411FA69A22A120E60071B6A5 /* UICollectionView+HDRect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+HDRect.h"; sourceTree = "<group>"; };
 		411FA69B22A120E60071B6A5 /* UICollectionView+HDRect.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+HDRect.m"; sourceTree = "<group>"; };
 		411FA6B322A1D98C0071B6A5 /* HDDiscoverVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HDDiscoverVC.h; sourceTree = "<group>"; };
-		411FA6B422A1D98C0071B6A5 /* #.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "#.m"; sourceTree = "<group>"; };
+		411FA6B422A1D98C0071B6A5 /* HDDiscoverVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HDDiscoverVC.m; sourceTree = "<group>"; };
 		411FA6B522A1D98C0071B6A5 /* HDDiscoverVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HDDiscoverVC.xib; sourceTree = "<group>"; };
 		411FA6BC22A1DA470071B6A5 /* HDMissionVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HDMissionVC.h; sourceTree = "<group>"; };
 		411FA6BD22A1DA470071B6A5 /* HDMissionVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HDMissionVC.m; sourceTree = "<group>"; };
@@ -640,7 +640,7 @@
 			isa = PBXGroup;
 			children = (
 				411FA6B322A1D98C0071B6A5 /* HDDiscoverVC.h */,
-				411FA6B422A1D98C0071B6A5 /* #.m */,
+				411FA6B422A1D98C0071B6A5 /* HDDiscoverVC.m */,
 				411FA6B522A1D98C0071B6A5 /* HDDiscoverVC.xib */,
 			);
 			path = Controllers;
@@ -1994,7 +1994,7 @@
 			files = (
 				C85A600122AA494B008D54FC /* HDMainVC.m in Sources */,
 				BF9DEDB221AD19E900C45B33 /* NJPhotoBrowserVC.m in Sources */,
-				411FA6B622A1D98C0071B6A5 /* #.m in Sources */,
+				411FA6B622A1D98C0071B6A5 /* HDDiscoverVC.m in Sources */,
 				BF5EB0B221805B740051BA80 /* NJRewardView.m in Sources */,
 				411FA6BF22A1DA470071B6A5 /* HDMissionVC.m in Sources */,
 				BFB5E433215A446300985F62 /* UIWindow+LBXHierarchy.m in Sources */,

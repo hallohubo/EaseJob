@@ -35,6 +35,7 @@
 {
     [super viewDidLoad];
     [self setup];
+    [self httpGetRecentlyNews:1];
 }
 
 #pragma mark - UINavigationControllerDelegate
@@ -105,9 +106,15 @@
 
 #pragma mark - http event
 
-- (void)httpGetRecentlyNews:(NSInteger)indexPage //获取前10条热门任务
+- (void)httpGetRecentlyNews:(NSInteger)indexPage  //获取前10条热门任务
 {
     HDHttpHelper *helper = [HDHttpHelper instance];
+    NSDictionary *dic = @{@"PageSize": @"10",
+                          @"PageIndex": @(indexPage),
+                          @"type": @"0",
+                          };
+    [helper.parameters addEntriesFromDictionary:dic];
+    
     task = [helper postPath:@"Act204" object:[HBDiscoverModel class] finished:^(HDError *error, id object, BOOL isLast, id json)
             {
                 if (error) {
