@@ -15,6 +15,8 @@
 #import "AppDelegate.h"
 #import "HBBannerModel.h"
 #import "HBNewsModle.h"
+#import "HBTaskNewsModel.h"
+
 #import "LMJScrollTextView.h"
 
 #import "HBAnnouncementVC.h"
@@ -48,6 +50,7 @@
     NSMutableArray              *mar_pakageList;
     NSMutableArray              *marOrderList;
     NSMutableArray              *marHeadScrollImageList;
+    NSMutableArray              *marTaskNewsList;
     UIViewController            *webViewCtr;
 
     
@@ -71,6 +74,7 @@
     [self setStatusBarBackgroundColor:[UIColor clearColor]];
     [self httpGetBannerImages];
     [self httpGetRecentlyNews:nil];
+    [self httpGetRecentlyAnnounce:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -282,7 +286,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 5;
+    return marTaskNewsList.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -293,11 +297,13 @@
         cell = [HBInformationCell loadFromNib];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
+    HBTaskNewsModel *model = marTaskNewsList[indexPath.row];
     [cell.imvPhoto setImage:HDIMAGE(@"main_cellHeadImage")];
-    cell.lbMainheading.text = @"趣头条看新闻赚钱";
-    cell.lbSubheading.text  = @"已抢4/15";
-    cell.lbMoney.text = @"¥ +1.99元";
-   
+    cell.lbMainheading.text = model.TaskTitle;
+    NSString *strAmount = HDFORMAT(@"%@/%@", model.HasSaleNum, model.Quantity);
+    cell.lbSubheading.text  = strAmount;
+    cell.lbMoney.text = model.Commission;//@"¥ +1.99元";
+    
     return cell;
 }
 
@@ -439,7 +445,8 @@
     }];
 }
 
-- (void)httpGetRecentlyNews:(NSInteger)indexPage {//获取广告资讯
+- (void)httpGetRecentlyAnnounce:(NSInteger)indexPage
+{//获取广告资讯
     HDHttpHelper *helper = [HDHttpHelper instance];
     task = [helper postPath:@"Act008" object:[HBNewsModle class] finished:^(HDError *error, id object, BOOL isLast, id json)
     {
@@ -464,6 +471,27 @@
         }
     }];
 }
+
+- (void)httpGetRecentlyNews:(NSInteger)indexPage //获取前10条热门任务
+{
+    HDHttpHelper *helper = [HDHttpHelper instance];
+    task = [helper postPath:@"Act202" object:[HBTaskNewsModel class] finished:^(HDError *error, id object, BOOL isLast, id json)
+    {
+        if (error) {
+            if (error.code != 0 ) {
+                [HDHelper say:error.desc];
+            }
+            return ;
+        }
+        if (!object) {
+            return;
+        }
+        marTaskNewsList = object;
+        [tbv reloadData];
+        
+    }];
+}
+
 #pragma mark - setter and getter
 
 - (void)setup

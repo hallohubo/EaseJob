@@ -95,10 +95,6 @@
     self.title = @"任务";
     self.navigationController.delegate = self;//设置导航控制器的代理为self
     
-    v0 = [v0 addDottedBorderWithView:v0 LineWidth:1.0f lineColor:RGB(136, 136, 136)];
-    v1 = [v1 addDottedBorderWithView:v1 LineWidth:1.0f lineColor:RGB(136, 136, 136)];
-    v2 = [v2 addDottedBorderWithView:v2 LineWidth:1.0f lineColor:RGB(136, 136, 136)];
-    v3 = [v3 addDottedBorderWithView:v3 LineWidth:1.0f lineColor:RGB(136, 136, 136)];
 }
 
 @end

@@ -120,7 +120,7 @@
     [imvHeadPerson addBorderWidth:.0 color:nil cornerRadius:33.f];
     [imvIsVIP addBorderWidth:0.f color:nil cornerRadius:10.f];
     [lbMemberMark addBorderWidth:.0f color:nil cornerRadius:10.f];
-    [imvHeadDotPoint addDottedBorderWithLineWidth:1.f lineColor:RGB(90, 90, 90)];
+//    [imvHeadDotPoint addDottedBorderWithLineWidth:1.f lineColor:RGB(90, 90, 90)];
 }
 
 @end

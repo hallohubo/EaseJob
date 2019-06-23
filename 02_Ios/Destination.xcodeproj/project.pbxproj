@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		411FA69922A103D00071B6A5 /* UIView+LoadFromNib.m in Sources */ = {isa = PBXBuildFile; fileRef = 411FA69722A103D00071B6A5 /* UIView+LoadFromNib.m */; };
 		411FA69C22A120E60071B6A5 /* UICollectionView+HDRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 411FA69B22A120E60071B6A5 /* UICollectionView+HDRect.m */; };
-		411FA6B622A1D98C0071B6A5 /* HDDiscoverVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 411FA6B422A1D98C0071B6A5 /* HDDiscoverVC.m */; };
+		411FA6B622A1D98C0071B6A5 /* #.m in Sources */ = {isa = PBXBuildFile; fileRef = 411FA6B422A1D98C0071B6A5 /* #.m */; };
 		411FA6B722A1D98C0071B6A5 /* HDDiscoverVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 411FA6B522A1D98C0071B6A5 /* HDDiscoverVC.xib */; };
 		411FA6BF22A1DA470071B6A5 /* HDMissionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 411FA6BD22A1DA470071B6A5 /* HDMissionVC.m */; };
 		414995B2226F03D500D10D51 /* HDStringHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 414995B1226F03D400D10D51 /* HDStringHelper.m */; };
@@ -161,6 +161,8 @@
 		BFF437272175E9A7006EE0A0 /* NJHorizontalMenuListView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFF437262175E9A7006EE0A0 /* NJHorizontalMenuListView.m */; };
 		BFF975F421B7D09400643521 /* NJLoginCarouseImageItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BFF975F321B7D09300643521 /* NJLoginCarouseImageItem.m */; };
 		BFFED21021BE8AE80054831C /* NJShareConst.m in Sources */ = {isa = PBXBuildFile; fileRef = BFFED20F21BE8AE80054831C /* NJShareConst.m */; };
+		C807083922BF2D72007CCA27 /* HBTaskNewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C807083722BF2B4E007CCA27 /* HBTaskNewsModel.m */; };
+		C807083C22BF36CD007CCA27 /* HBDiscoverModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C807083B22BF36CD007CCA27 /* HBDiscoverModel.m */; };
 		C81232A322B1F6F400DBFECF /* HDMIssionVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 411FA6BE22A1DA470071B6A5 /* HDMIssionVC.xib */; };
 		C81232A722B1FBCA00DBFECF /* HBTaskVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C81232A522B1FBCA00DBFECF /* HBTaskVC.m */; };
 		C81232A822B1FBCA00DBFECF /* HBTaskVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C81232A622B1FBCA00DBFECF /* HBTaskVC.xib */; };
@@ -220,7 +222,7 @@
 		411FA69A22A120E60071B6A5 /* UICollectionView+HDRect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+HDRect.h"; sourceTree = "<group>"; };
 		411FA69B22A120E60071B6A5 /* UICollectionView+HDRect.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+HDRect.m"; sourceTree = "<group>"; };
 		411FA6B322A1D98C0071B6A5 /* HDDiscoverVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HDDiscoverVC.h; sourceTree = "<group>"; };
-		411FA6B422A1D98C0071B6A5 /* HDDiscoverVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HDDiscoverVC.m; sourceTree = "<group>"; };
+		411FA6B422A1D98C0071B6A5 /* #.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "#.m"; sourceTree = "<group>"; };
 		411FA6B522A1D98C0071B6A5 /* HDDiscoverVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HDDiscoverVC.xib; sourceTree = "<group>"; };
 		411FA6BC22A1DA470071B6A5 /* HDMissionVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HDMissionVC.h; sourceTree = "<group>"; };
 		411FA6BD22A1DA470071B6A5 /* HDMissionVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HDMissionVC.m; sourceTree = "<group>"; };
@@ -508,6 +510,10 @@
 		BFF975F321B7D09300643521 /* NJLoginCarouseImageItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NJLoginCarouseImageItem.m; sourceTree = "<group>"; };
 		BFFED20E21BE8AE80054831C /* NJShareConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NJShareConst.h; sourceTree = "<group>"; };
 		BFFED20F21BE8AE80054831C /* NJShareConst.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NJShareConst.m; sourceTree = "<group>"; };
+		C807083622BF2B4E007CCA27 /* HBTaskNewsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HBTaskNewsModel.h; path = Destination/Classes/Features/Main/announcement/announcementDetail/Controllers/HBTaskNewsModel.h; sourceTree = SOURCE_ROOT; };
+		C807083722BF2B4E007CCA27 /* HBTaskNewsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = HBTaskNewsModel.m; path = Destination/Classes/Features/Main/announcement/announcementDetail/Controllers/HBTaskNewsModel.m; sourceTree = SOURCE_ROOT; };
+		C807083A22BF36CD007CCA27 /* HBDiscoverModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBDiscoverModel.h; sourceTree = "<group>"; };
+		C807083B22BF36CD007CCA27 /* HBDiscoverModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HBDiscoverModel.m; sourceTree = "<group>"; };
 		C81232A422B1FBCA00DBFECF /* HBTaskVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBTaskVC.h; sourceTree = "<group>"; };
 		C81232A522B1FBCA00DBFECF /* HBTaskVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HBTaskVC.m; sourceTree = "<group>"; };
 		C81232A622B1FBCA00DBFECF /* HBTaskVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HBTaskVC.xib; sourceTree = "<group>"; };
@@ -634,7 +640,7 @@
 			isa = PBXGroup;
 			children = (
 				411FA6B322A1D98C0071B6A5 /* HDDiscoverVC.h */,
-				411FA6B422A1D98C0071B6A5 /* HDDiscoverVC.m */,
+				411FA6B422A1D98C0071B6A5 /* #.m */,
 				411FA6B522A1D98C0071B6A5 /* HDDiscoverVC.xib */,
 			);
 			path = Controllers;
@@ -643,6 +649,8 @@
 		411FA6B122A1D9690071B6A5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C807083A22BF36CD007CCA27 /* HBDiscoverModel.h */,
+				C807083B22BF36CD007CCA27 /* HBDiscoverModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1451,6 +1459,8 @@
 		BFB5E4C6215A5A4100985F62 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C807083622BF2B4E007CCA27 /* HBTaskNewsModel.h */,
+				C807083722BF2B4E007CCA27 /* HBTaskNewsModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1984,7 +1994,7 @@
 			files = (
 				C85A600122AA494B008D54FC /* HDMainVC.m in Sources */,
 				BF9DEDB221AD19E900C45B33 /* NJPhotoBrowserVC.m in Sources */,
-				411FA6B622A1D98C0071B6A5 /* HDDiscoverVC.m in Sources */,
+				411FA6B622A1D98C0071B6A5 /* #.m in Sources */,
 				BF5EB0B221805B740051BA80 /* NJRewardView.m in Sources */,
 				411FA6BF22A1DA470071B6A5 /* HDMissionVC.m in Sources */,
 				BFB5E433215A446300985F62 /* UIWindow+LBXHierarchy.m in Sources */,
@@ -2073,6 +2083,7 @@
 				C845CAD422A764B5007379BF /* NSData+Encryption.m in Sources */,
 				BFB5E442215A446300985F62 /* NJCollectionViewController.m in Sources */,
 				DA4EFC592248A12500062E14 /* myLabel.m in Sources */,
+				C807083C22BF36CD007CCA27 /* HBDiscoverModel.m in Sources */,
 				BFB5E432215A446300985F62 /* LBXAlertAction.m in Sources */,
 				C81232A722B1FBCA00DBFECF /* HBTaskVC.m in Sources */,
 				C8B74D6A22A8E1B600BCA2E6 /* HB3DScrollView.m in Sources */,
@@ -2135,6 +2146,7 @@
 				BFB5E46A215A446300985F62 /* UIView+NJCommon.m in Sources */,
 				BFE565E121AD17DB00E89202 /* NJPhotoBrowserCell.m in Sources */,
 				BFAB365A21A7A40D00C6390F /* UIImage+MetaData.m in Sources */,
+				C807083922BF2D72007CCA27 /* HBTaskNewsModel.m in Sources */,
 				41DF48DA22544E7800ED9E99 /* UITableViewCell+tableView.m in Sources */,
 				BF5F0CC421BE7531000705F8 /* NJShareIconItem.m in Sources */,
 				BFE565E521AD17DB00E89202 /* NJPhotoBrowserPushAnimator.m in Sources */,

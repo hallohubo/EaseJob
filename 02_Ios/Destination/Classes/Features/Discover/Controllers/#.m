@@ -8,6 +8,7 @@
 
 #import "HDDiscoverVC.h"
 #import "HBDiscoverCell.h"
+#import "HBDiscoverModel.h"
 
 
 @interface HDDiscoverVC ()<UINavigationControllerDelegate>
@@ -19,7 +20,9 @@
     IBOutlet UIButton       *btnVIP;
     IBOutlet UIView         *vSearch;
     IBOutlet UITableView    *tbv;
-    NSArray     *arBtn;
+    NSArray                     *arBtn;
+    NSURLSessionDataTask        *task;
+    NSMutableArray              *marDiscoverList;
 }
 
 @end
@@ -70,7 +73,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 5;
+    return marDiscoverList.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -86,17 +89,41 @@
         cell = [HBDiscoverCell loadFromNib];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
+    HBDiscoverModel *model = marDiscoverList[indexPath.section];
+    
     cell.vBackground.layer.cornerRadius = 6.f;
     cell.vBackground.layer.masksToBounds= YES;
     
     [cell.imvPhoto setImage:HDIMAGE(@"main_cellHeadImage")];
-    cell.lbMainheading.text = @"趣头条看新闻赚钱";
-    cell.lbSubheading.text  = @"已抢4/15";
-    cell.lbMoney.text = @"¥ +1.99元";
+    cell.lbMainheading.text = model.TaskTitle;
+    NSString *strAmount = HDFORMAT(@"%@/%@", model.HasSaleNum, model.Quantity);
+    cell.lbSubheading.text  = strAmount;
+    cell.lbMoney.text = model.Commission;//@"¥ +1.99元";
     
     return cell;
 }
 
+#pragma mark - http event
+
+- (void)httpGetRecentlyNews:(NSInteger)indexPage //获取前10条热门任务
+{
+    HDHttpHelper *helper = [HDHttpHelper instance];
+    task = [helper postPath:@"Act204" object:[HBDiscoverModel class] finished:^(HDError *error, id object, BOOL isLast, id json)
+            {
+                if (error) {
+                    if (error.code != 0 ) {
+                        [HDHelper say:error.desc];
+                    }
+                    return ;
+                }
+                if (!object) {
+                    return;
+                }
+                marDiscoverList = object;
+                [tbv reloadData];
+                
+            }];
+}
 
 
 #pragma mark - event

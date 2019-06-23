@@ -63,10 +63,6 @@
 - (void)setup
 {
     self.title = @"任";
-    [btnIssuedNotPaid addDottedBorderWithLineWidth:1.f lineColor:RGB(134, 136, 137)];
-    [btnIssuedPrepaid addDottedBorderWithLineWidth:1.f lineColor:RGB(134, 136, 137)];
-    [btnReceivedNotPaid addDottedBorderWithLineWidth:1.f lineColor:RGB(134, 136, 137)];
-    [btnReceivedPrepaid addDottedBorderWithLineWidth:1.f lineColor:RGB(134, 136, 137)];
 }
 
 @end
