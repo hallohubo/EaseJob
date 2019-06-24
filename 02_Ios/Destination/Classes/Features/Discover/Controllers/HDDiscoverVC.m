@@ -106,7 +106,7 @@
 
 #pragma mark - http event
 
-- (void)httpGetRecentlyNews:(NSInteger)indexPage  //获取前10条热门任务
+- (void)httpGetRecentlyNews:(NSInteger)indexPage  //
 {
     HDHttpHelper *helper = [HDHttpHelper instance];
     NSDictionary *dic = @{@"PageSize": @"10",

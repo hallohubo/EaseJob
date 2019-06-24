@@ -360,25 +360,10 @@
 {
     switch (sender.tag) {
         case 0:{//注册
-//            [self.navigationController pushViewController:[HBLoginPageVC new] animated:YES];
-//            break;
+
         }
         case 1:{//投票
-//            [LBXAlertAction sayWithTitle:@"提示" message:@"确定要退出吗?" buttons:@[@"取消", @"确定"] chooseBlock:^(NSInteger buttonIdx) {
-//                if (buttonIdx == 1) {
-//                    [[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"firstInsurePersonID"];
-//                    [[NSUserDefaults standardUserDefaults] synchronize];
-//                    
-//                    HDGI.loginUser = nil;
-//                    [HDLoginUserModel clearFromLocal];
-//                    Dlog(@"JIGUANG:别名取消");
-//                    
-//                    NJNavigationController * naviVC = [[NJNavigationController alloc] initWithRootViewController:[HBLoginPageVC new]];
-//                    [[UIApplication sharedApplication].keyWindow setRootViewController:naviVC];
-//                    [[UIApplication sharedApplication].keyWindow makeKeyAndVisible];
-//
-//                }
-//            }];
+           
             break;
         }
         case 2:{//关注
@@ -445,8 +430,8 @@
     }];
 }
 
-- (void)httpGetRecentlyAnnounce:(NSInteger)indexPage
-{//获取广告资讯
+- (void)httpGetRecentlyAnnounce:(NSInteger)indexPage    //获取3条公告
+{
     HDHttpHelper *helper = [HDHttpHelper instance];
     task = [helper postPath:@"Act008" object:[HBNewsModle class] finished:^(HDError *error, id object, BOOL isLast, id json)
     {
@@ -472,7 +457,7 @@
     }];
 }
 
-- (void)httpGetRecentlyNews:(NSInteger)indexPage //获取前10条热门任务
+- (void)httpGetRecentlyNews:(NSInteger)indexPage //获取前10条热门资讯
 {
     HDHttpHelper *helper = [HDHttpHelper instance];
     task = [helper postPath:@"Act202" object:[HBTaskNewsModel class] finished:^(HDError *error, id object, BOOL isLast, id json)

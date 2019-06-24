@@ -168,6 +168,8 @@
 		C81232A822B1FBCA00DBFECF /* HBTaskVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C81232A622B1FBCA00DBFECF /* HBTaskVC.xib */; };
 		C814AD9C22B09AE100F46A50 /* HBResetPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C814AD9A22B09AE100F46A50 /* HBResetPasswordVC.m */; };
 		C814AD9D22B09AE100F46A50 /* HBResetPasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C814AD9B22B09AE100F46A50 /* HBResetPasswordVC.xib */; };
+		C81923CC22C0C8FD00DE9CA3 /* HBPopularInformationsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C81923CA22C0C8FD00DE9CA3 /* HBPopularInformationsVC.m */; };
+		C81923CD22C0C8FD00DE9CA3 /* HBPopularInformationsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C81923CB22C0C8FD00DE9CA3 /* HBPopularInformationsVC.xib */; };
 		C81EF15D22BA1106005F72D7 /* HBBannerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C81EF15C22BA1106005F72D7 /* HBBannerModel.m */; };
 		C81EF16022BA1AE6005F72D7 /* HBNewsModle.m in Sources */ = {isa = PBXBuildFile; fileRef = C81EF15F22BA1AE6005F72D7 /* HBNewsModle.m */; };
 		C81EF16622BA33EC005F72D7 /* LMJScrollTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = C81EF16522BA33EC005F72D7 /* LMJScrollTextView.m */; };
@@ -520,6 +522,9 @@
 		C814AD9922B09AE100F46A50 /* HBResetPasswordVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBResetPasswordVC.h; sourceTree = "<group>"; };
 		C814AD9A22B09AE100F46A50 /* HBResetPasswordVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HBResetPasswordVC.m; sourceTree = "<group>"; };
 		C814AD9B22B09AE100F46A50 /* HBResetPasswordVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HBResetPasswordVC.xib; sourceTree = "<group>"; };
+		C81923C922C0C8FD00DE9CA3 /* HBPopularInformationsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBPopularInformationsVC.h; sourceTree = "<group>"; };
+		C81923CA22C0C8FD00DE9CA3 /* HBPopularInformationsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HBPopularInformationsVC.m; sourceTree = "<group>"; };
+		C81923CB22C0C8FD00DE9CA3 /* HBPopularInformationsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HBPopularInformationsVC.xib; sourceTree = "<group>"; };
 		C81EF15B22BA1106005F72D7 /* HBBannerModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBBannerModel.h; sourceTree = "<group>"; };
 		C81EF15C22BA1106005F72D7 /* HBBannerModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HBBannerModel.m; sourceTree = "<group>"; };
 		C81EF15E22BA1AE6005F72D7 /* HBNewsModle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBNewsModle.h; sourceTree = "<group>"; };
@@ -1448,6 +1453,7 @@
 		BFB5E4C5215A5A4100985F62 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				C81923C622C0C86B00DE9CA3 /* PopularInformation */,
 				C877655522BB1EC400E0C4B3 /* announcement */,
 				BFB5E4C7215A5A4100985F62 /* Controllers */,
 				BFB5E4C6215A5A4100985F62 /* Models */,
@@ -1603,6 +1609,32 @@
 				BF41AA04217733BF004D155B /* NJMenuItemView.xib */,
 			);
 			path = HorizontalMenuListView;
+			sourceTree = "<group>";
+		};
+		C81923C622C0C86B00DE9CA3 /* PopularInformation */ = {
+			isa = PBXGroup;
+			children = (
+				C81923C822C0C8C700DE9CA3 /* Models */,
+				C81923C722C0C8BB00DE9CA3 /* Controllers */,
+			);
+			path = PopularInformation;
+			sourceTree = "<group>";
+		};
+		C81923C722C0C8BB00DE9CA3 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C81923C922C0C8FD00DE9CA3 /* HBPopularInformationsVC.h */,
+				C81923CA22C0C8FD00DE9CA3 /* HBPopularInformationsVC.m */,
+				C81923CB22C0C8FD00DE9CA3 /* HBPopularInformationsVC.xib */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C81923C822C0C8C700DE9CA3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		C81EF16122BA2B2F005F72D7 /* JhtMarquee */ = {
@@ -1912,6 +1944,7 @@
 				C828FF8E22A9E3D400CAA10C /* HBDiscoverCell.xib in Resources */,
 				BFB20AB02182A9D30007DE96 /* NJRoadInputView.xib in Resources */,
 				C829E42B22A968B5002EEFF8 /* HBRegisterVC.xib in Resources */,
+				C81923CD22C0C8FD00DE9CA3 /* HBPopularInformationsVC.xib in Resources */,
 				C85A600222AA494B008D54FC /* HDMainVC.xib in Resources */,
 				BF8805F321C4A35C0076283D /* NJPayContentView.xib in Resources */,
 				BF5EB0AE21803F4D0051BA80 /* NJShareCardCell.xib in Resources */,
@@ -2115,6 +2148,7 @@
 				DAB8CA4222754308001EA577 /* HDTableView.m in Sources */,
 				C845CAC622A7630A007379BF /* HDHttpHelper.m in Sources */,
 				BF59DF0521F1C10D00721D01 /* NJLaunchAdItem.m in Sources */,
+				C81923CC22C0C8FD00DE9CA3 /* HBPopularInformationsVC.m in Sources */,
 				BFB2016721E599B200A06FB4 /* NJValidationCodeLoginVC.m in Sources */,
 				C877655C22BB1F6D00E0C4B3 /* HBAnnouncementVC.m in Sources */,
 				BFB5E489215A54AC00985F62 /* NJUserItem.m in Sources */,
