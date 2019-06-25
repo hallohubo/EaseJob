@@ -13,13 +13,14 @@
 
 #import "NJNavigationController.h"
 #import "AppDelegate.h"
-#import "HBBannerModel.h"
-#import "HBNewsModle.h"
-#import "HBTaskNewsModel.h"
+#import "HBBannerModel.h"   //轮播图
+#import "HBNewsModle.h"     //前3条公告信息
+#import "HBTaskNewsModel.h" //前10条热门资讯
 
 #import "LMJScrollTextView.h"
 
-#import "HBAnnouncementVC.h"
+#import "HBAnnouncementVC.h"//公告列表分页
+#import "HDHotTaskVC.h"// 任务列表分页
 
 #define BANNER_RATIO 0.64
 #define BANNER_MODEL @"BANNER_MODEL"
@@ -309,9 +310,9 @@
 
 #pragma mark - Button event
 
-- (void)loadMoreInformation
+- (void)loadMoreInformation     //jump to more hot task page
 {
-    
+    [self.navigationController pushViewController:[HDHotTaskVC new] animated:YES];
 }
 
 - (void)goBannerDetail:(UITapGestureRecognizer *)tap
