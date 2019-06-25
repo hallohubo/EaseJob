@@ -511,8 +511,8 @@
     pageControl.numberOfPages = ar_bannerList.count;
     
     page = 0;
-//    tbv.mj_header = [HLGifHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
-    tbv.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+    tbv.mj_header = [HLGifHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+//    tbv.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
     tbv.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
     
 }
