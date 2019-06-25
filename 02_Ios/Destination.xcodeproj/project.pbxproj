@@ -173,6 +173,7 @@
 		C81EF15D22BA1106005F72D7 /* HBBannerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C81EF15C22BA1106005F72D7 /* HBBannerModel.m */; };
 		C81EF16022BA1AE6005F72D7 /* HBNewsModle.m in Sources */ = {isa = PBXBuildFile; fileRef = C81EF15F22BA1AE6005F72D7 /* HBNewsModle.m */; };
 		C81EF16622BA33EC005F72D7 /* LMJScrollTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = C81EF16522BA33EC005F72D7 /* LMJScrollTextView.m */; };
+		C828D46122C202C800C030E8 /* HLGifHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = C828D46022C202C800C030E8 /* HLGifHeader.m */; };
 		C828FF8D22A9E3D400CAA10C /* HBDiscoverCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C828FF8B22A9E3D400CAA10C /* HBDiscoverCell.m */; };
 		C828FF8E22A9E3D400CAA10C /* HBDiscoverCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C828FF8C22A9E3D400CAA10C /* HBDiscoverCell.xib */; };
 		C829E42A22A968B5002EEFF8 /* HBRegisterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C829E42822A968B5002EEFF8 /* HBRegisterVC.m */; };
@@ -532,6 +533,8 @@
 		C81EF15F22BA1AE6005F72D7 /* HBNewsModle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HBNewsModle.m; sourceTree = "<group>"; };
 		C81EF16422BA33EC005F72D7 /* LMJScrollTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJScrollTextView.h; sourceTree = "<group>"; };
 		C81EF16522BA33EC005F72D7 /* LMJScrollTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJScrollTextView.m; sourceTree = "<group>"; };
+		C828D45F22C202C800C030E8 /* HLGifHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLGifHeader.h; sourceTree = "<group>"; };
+		C828D46022C202C800C030E8 /* HLGifHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLGifHeader.m; sourceTree = "<group>"; };
 		C828FF8A22A9E3D400CAA10C /* HBDiscoverCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBDiscoverCell.h; sourceTree = "<group>"; };
 		C828FF8B22A9E3D400CAA10C /* HBDiscoverCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HBDiscoverCell.m; sourceTree = "<group>"; };
 		C828FF8C22A9E3D400CAA10C /* HBDiscoverCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HBDiscoverCell.xib; sourceTree = "<group>"; };
@@ -1108,6 +1111,7 @@
 		BFB5E399215A43EA00985F62 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				C828D45E22C2028A00C030E8 /* Others */,
 				BFE565CD21AD179B00E89202 /* ThirdLibrary */,
 				BFB5E39E215A446300985F62 /* Utilitys */,
 				BFB5E3CB215A446300985F62 /* subClass */,
@@ -1651,6 +1655,15 @@
 			path = JhtMarquee;
 			sourceTree = "<group>";
 		};
+		C828D45E22C2028A00C030E8 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				C828D45F22C202C800C030E8 /* HLGifHeader.h */,
+				C828D46022C202C800C030E8 /* HLGifHeader.m */,
+			);
+			path = Others;
+			sourceTree = "<group>";
+		};
 		C829E42222A965BA002EEFF8 /* HBLogin */ = {
 			isa = PBXGroup;
 			children = (
@@ -2161,6 +2174,7 @@
 				BFB5E465215A446300985F62 /* UIImageView+NJDownload.m in Sources */,
 				BF41AA03217733AA004D155B /* NJMenuItemView.m in Sources */,
 				415A9EEC2290EF6100D433BE /* HD3DScrollView.m in Sources */,
+				C828D46122C202C800C030E8 /* HLGifHeader.m in Sources */,
 				BF6CA8302181A7F20019365F /* NJCollectionViewFlowLayout.m in Sources */,
 				BFB5E444215A446300985F62 /* NJSearchController.m in Sources */,
 				BFB5E440215A446300985F62 /* HDViewController.m in Sources */,

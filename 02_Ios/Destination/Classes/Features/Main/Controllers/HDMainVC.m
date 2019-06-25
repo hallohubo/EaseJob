@@ -22,6 +22,8 @@
 #import "HBAnnouncementVC.h"//公告列表分页
 #import "HDHotTaskVC.h"// 任务列表分页
 
+#import "HLGifHeader.h"
+
 #define BANNER_RATIO 0.64
 #define BANNER_MODEL @"BANNER_MODEL"
 
@@ -57,7 +59,7 @@
     
     NSURLSessionDataTask        *task;
     NSTimer                     *timer;
-    int                         needReload; //失败一次+1，<= 0不用重新请求
+    NSUInteger page;
 }
 
 @end
@@ -69,12 +71,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self setup];
+    [self setupInit];
     [self setTableHead];
     [self setBannerView:nil];
     [self setStatusBarBackgroundColor:[UIColor clearColor]];
     [self httpGetBannerImages];
-    [self httpGetRecentlyNews:nil];
     [self httpGetRecentlyAnnounce:nil];
 }
 
@@ -461,8 +462,15 @@
 - (void)httpGetRecentlyNews:(NSInteger)indexPage //获取前10条热门资讯
 {
     HDHttpHelper *helper = [HDHttpHelper instance];
+    NSDictionary *dic = @{@"PageSize":  @"10",
+                          @"PageIndex": @(indexPage)
+                          };
+    [helper.parameters addEntriesFromDictionary:dic];
+    
     task = [helper postPath:@"Act202" object:[HBTaskNewsModel class] finished:^(HDError *error, id object, BOOL isLast, id json)
     {
+        [tbv.mj_footer endRefreshing];
+
         if (error) {
             if (error.code != 0 ) {
                 [HDHelper say:error.desc];
@@ -472,15 +480,28 @@
         if (!object) {
             return;
         }
-        marTaskNewsList = object;
-        [tbv reloadData];
+        NSArray * dataArr = object;
+        if(page == 0){
+            [marTaskNewsList removeAllObjects];
+        }
         
+        if(page > 0 && (dataArr == nil || dataArr.count == 0)){
+            page -= 1;
+            [NJProgressHUD showInfoWithStatus:@"已经到底了"];
+            [NJProgressHUD dismissWithDelay:1.2];
+            return ;
+        }
+        
+        [marTaskNewsList addObjectsFromArray:dataArr];
+        
+        [tbv reloadData];
+        [self performSelector:@selector(loadDadelay) withObject:self afterDelay:DROP_down_time];
     }];
 }
 
 #pragma mark - setter and getter
 
-- (void)setup
+- (void)setupInit
 {
     self.navigationController.delegate = self;//设置导航控制器的代理为self
     
@@ -488,7 +509,11 @@
     
     scv_banner.backgroundColor  = [UIColor groupTableViewBackgroundColor];
     pageControl.numberOfPages = ar_bannerList.count;
-    needReload = 0;
+    
+    page = 0;
+//    tbv.mj_header = [HLGifHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+    tbv.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+    tbv.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
     
 }
 
@@ -565,5 +590,26 @@
     }
     [self setAutoScrollStart];
 }
+
+#pragma mark - other
+
+- (void)loadNewData
+{
+    page = 0;
+    [self httpGetRecentlyNews:page];
+}
+
+- (void)loadMoreData
+{
+    page += 1;
+    [self httpGetRecentlyNews:page];
+}
+
+-(void)loadDadelay{
+    
+    [tbv.mj_header endRefreshing];
+    
+}
+
 @end
 
