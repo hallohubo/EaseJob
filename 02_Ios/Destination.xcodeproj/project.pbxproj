@@ -221,6 +221,18 @@
 		C85A600B22ABD051008D54FC /* RSAUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = C85A600922ABD050008D54FC /* RSAUtil.m */; };
 		C867A5CA22B08A4C008ACC1A /* HBForgetPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C867A5C822B08A4C008ACC1A /* HBForgetPasswordVC.m */; };
 		C867A5CB22B08A4C008ACC1A /* HBForgetPasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C867A5C922B08A4C008ACC1A /* HBForgetPasswordVC.xib */; };
+		C8683CD522C36F3A0084C172 /* ParentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8683CBF22C36F3A0084C172 /* ParentViewController.m */; };
+		C8683CD622C36F3A0084C172 /* JSBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = C8683CC122C36F3A0084C172 /* JSBadgeView.m */; };
+		C8683CD722C36F3A0084C172 /* FourViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8683CC322C36F3A0084C172 /* FourViewController.m */; };
+		C8683CD822C36F3A0084C172 /* EightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8683CC522C36F3A0084C172 /* EightViewController.m */; };
+		C8683CD922C36F3A0084C172 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8683CC722C36F3A0084C172 /* BaseViewController.m */; };
+		C8683CDA22C36F3A0084C172 /* FiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8683CC822C36F3A0084C172 /* FiveViewController.m */; };
+		C8683CDB22C36F3A0084C172 /* ThidViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8683CCB22C36F3A0084C172 /* ThidViewController.m */; };
+		C8683CDC22C36F3A0084C172 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8683CCC22C36F3A0084C172 /* FirstViewController.m */; };
+		C8683CDD22C36F3A0084C172 /* SixViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8683CCE22C36F3A0084C172 /* SixViewController.m */; };
+		C8683CDE22C36F3A0084C172 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8683CD122C36F3A0084C172 /* SecondViewController.m */; };
+		C8683CDF22C36F3A0084C172 /* SevenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8683CD222C36F3A0084C172 /* SevenViewController.m */; };
+		C8683CE222C36F740084C172 /* SPPageMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = C8683CE122C36F740084C172 /* SPPageMenu.m */; };
 		C877655C22BB1F6D00E0C4B3 /* HBAnnouncementVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C877655A22BB1F6D00E0C4B3 /* HBAnnouncementVC.m */; };
 		C877655D22BB1F6D00E0C4B3 /* HBAnnouncementVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C877655B22BB1F6D00E0C4B3 /* HBAnnouncementVC.xib */; };
 		C878650122AD03C80084677F /* HBLoginPageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C87864FF22AD03C80084677F /* HBLoginPageVC.m */; };
@@ -623,6 +635,30 @@
 		C867A5C722B08A4C008ACC1A /* HBForgetPasswordVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBForgetPasswordVC.h; sourceTree = "<group>"; };
 		C867A5C822B08A4C008ACC1A /* HBForgetPasswordVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HBForgetPasswordVC.m; sourceTree = "<group>"; };
 		C867A5C922B08A4C008ACC1A /* HBForgetPasswordVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HBForgetPasswordVC.xib; sourceTree = "<group>"; };
+		C8683CBE22C36F3A0084C172 /* ParentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParentViewController.h; sourceTree = "<group>"; };
+		C8683CBF22C36F3A0084C172 /* ParentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParentViewController.m; sourceTree = "<group>"; };
+		C8683CC022C36F3A0084C172 /* JSBadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSBadgeView.h; sourceTree = "<group>"; };
+		C8683CC122C36F3A0084C172 /* JSBadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSBadgeView.m; sourceTree = "<group>"; };
+		C8683CC322C36F3A0084C172 /* FourViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourViewController.m; sourceTree = "<group>"; };
+		C8683CC422C36F3A0084C172 /* SixViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SixViewController.h; sourceTree = "<group>"; };
+		C8683CC522C36F3A0084C172 /* EightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EightViewController.m; sourceTree = "<group>"; };
+		C8683CC622C36F3A0084C172 /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		C8683CC722C36F3A0084C172 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		C8683CC822C36F3A0084C172 /* FiveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FiveViewController.m; sourceTree = "<group>"; };
+		C8683CC922C36F3A0084C172 /* SevenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SevenViewController.h; sourceTree = "<group>"; };
+		C8683CCA22C36F3A0084C172 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		C8683CCB22C36F3A0084C172 /* ThidViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThidViewController.m; sourceTree = "<group>"; };
+		C8683CCC22C36F3A0084C172 /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		C8683CCD22C36F3A0084C172 /* EightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EightViewController.h; sourceTree = "<group>"; };
+		C8683CCE22C36F3A0084C172 /* SixViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SixViewController.m; sourceTree = "<group>"; };
+		C8683CCF22C36F3A0084C172 /* FourViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourViewController.h; sourceTree = "<group>"; };
+		C8683CD022C36F3A0084C172 /* ThidViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThidViewController.h; sourceTree = "<group>"; };
+		C8683CD122C36F3A0084C172 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		C8683CD222C36F3A0084C172 /* SevenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SevenViewController.m; sourceTree = "<group>"; };
+		C8683CD322C36F3A0084C172 /* FiveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FiveViewController.h; sourceTree = "<group>"; };
+		C8683CD422C36F3A0084C172 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		C8683CE022C36F740084C172 /* SPPageMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPPageMenu.h; sourceTree = "<group>"; };
+		C8683CE122C36F740084C172 /* SPPageMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPPageMenu.m; sourceTree = "<group>"; };
 		C877655922BB1F6D00E0C4B3 /* HBAnnouncementVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBAnnouncementVC.h; sourceTree = "<group>"; };
 		C877655A22BB1F6D00E0C4B3 /* HBAnnouncementVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HBAnnouncementVC.m; sourceTree = "<group>"; };
 		C877655B22BB1F6D00E0C4B3 /* HBAnnouncementVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HBAnnouncementVC.xib; sourceTree = "<group>"; };
@@ -696,6 +732,13 @@
 		411FA6AF22A1D9470071B6A5 /* Discover */ = {
 			isa = PBXGroup;
 			children = (
+				C8683CE022C36F740084C172 /* SPPageMenu.h */,
+				C8683CE122C36F740084C172 /* SPPageMenu.m */,
+				C8683CC222C36F3A0084C172 /* ChildViewControllers */,
+				C8683CC022C36F3A0084C172 /* JSBadgeView.h */,
+				C8683CC122C36F3A0084C172 /* JSBadgeView.m */,
+				C8683CBE22C36F3A0084C172 /* ParentViewController.h */,
+				C8683CBF22C36F3A0084C172 /* ParentViewController.m */,
 				411FA6B022A1D9590071B6A5 /* Controllers */,
 				411FA6B222A1D96C0071B6A5 /* Views */,
 				411FA6B122A1D9690071B6A5 /* Models */,
@@ -1860,6 +1903,31 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		C8683CC222C36F3A0084C172 /* ChildViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C8683CC322C36F3A0084C172 /* FourViewController.m */,
+				C8683CC422C36F3A0084C172 /* SixViewController.h */,
+				C8683CC522C36F3A0084C172 /* EightViewController.m */,
+				C8683CC622C36F3A0084C172 /* FirstViewController.h */,
+				C8683CC722C36F3A0084C172 /* BaseViewController.m */,
+				C8683CC822C36F3A0084C172 /* FiveViewController.m */,
+				C8683CC922C36F3A0084C172 /* SevenViewController.h */,
+				C8683CCA22C36F3A0084C172 /* SecondViewController.h */,
+				C8683CCB22C36F3A0084C172 /* ThidViewController.m */,
+				C8683CCC22C36F3A0084C172 /* FirstViewController.m */,
+				C8683CCD22C36F3A0084C172 /* EightViewController.h */,
+				C8683CCE22C36F3A0084C172 /* SixViewController.m */,
+				C8683CCF22C36F3A0084C172 /* FourViewController.h */,
+				C8683CD022C36F3A0084C172 /* ThidViewController.h */,
+				C8683CD122C36F3A0084C172 /* SecondViewController.m */,
+				C8683CD222C36F3A0084C172 /* SevenViewController.m */,
+				C8683CD322C36F3A0084C172 /* FiveViewController.h */,
+				C8683CD422C36F3A0084C172 /* BaseViewController.h */,
+			);
+			path = ChildViewControllers;
+			sourceTree = "<group>";
+		};
 		C877655522BB1EC400E0C4B3 /* announcement */ = {
 			isa = PBXGroup;
 			children = (
@@ -2170,6 +2238,7 @@
 				411FA6BF22A1DA470071B6A5 /* HDMissionVC.m in Sources */,
 				BFB5E433215A446300985F62 /* UIWindow+LBXHierarchy.m in Sources */,
 				C81EF16022BA1AE6005F72D7 /* HBNewsModle.m in Sources */,
+				C8683CDF22C36F3A0084C172 /* SevenViewController.m in Sources */,
 				C847CBB322AFB2760055EC65 /* HBSystemSettingVC.m in Sources */,
 				BFB5E466215A446300985F62 /* UIImage+NJImage.m in Sources */,
 				C845CADE22A772F1007379BF /* HDUserModel.m in Sources */,
@@ -2182,6 +2251,7 @@
 				BFFED21021BE8AE80054831C /* NJShareConst.m in Sources */,
 				BFB5E43E215A446300985F62 /* NJCIQRCodeTool.m in Sources */,
 				BFB20AD02182BC2E0007DE96 /* NJLoginVC.m in Sources */,
+				C8683CD922C36F3A0084C172 /* BaseViewController.m in Sources */,
 				BF0B406E21E72399006267A9 /* UITextView+NJCommon.m in Sources */,
 				C845CADB22A772AF007379BF /* HDGlobal.m in Sources */,
 				BF578AD0217432D70067591A /* NJModalListView.m in Sources */,
@@ -2191,10 +2261,12 @@
 				BF8805EE21C4A1170076283D /* NJPaymentView.m in Sources */,
 				41DF48DC22544E7800ED9E99 /* UIImage+alpha.m in Sources */,
 				BF578AD4217438020067591A /* NJBankCell.m in Sources */,
+				C8683CD822C36F3A0084C172 /* EightViewController.m in Sources */,
 				BFE565E321AD17DB00E89202 /* NJPhotoBrowserNaviAnimationTransition.m in Sources */,
 				BF451FF921AD416300045FA0 /* NJModalNaviAnimationTransition.m in Sources */,
 				BFF1576821AE87EA00F4FCF4 /* NJCommentPresentationVC.m in Sources */,
 				DA4EFC582248A12500062E14 /* myButton.m in Sources */,
+				C8683CD522C36F3A0084C172 /* ParentViewController.m in Sources */,
 				BFE565E421AD17DB00E89202 /* NJPhotoBrowserScrollView.m in Sources */,
 				BF958F6021D506E300E0F050 /* NJForceBindPhoneNumberVC.m in Sources */,
 				C814AD9C22B09AE100F46A50 /* HBResetPasswordVC.m in Sources */,
@@ -2245,6 +2317,7 @@
 				BFB5E464215A446300985F62 /* UIView+NJFrame.m in Sources */,
 				411FA69C22A120E60071B6A5 /* UICollectionView+HDRect.m in Sources */,
 				DAF87D742268762400957B6F /* SPAlertController.m in Sources */,
+				C8683CDC22C36F3A0084C172 /* FirstViewController.m in Sources */,
 				BFCF66E821EED99E006D6F3E /* NJValuePicker.m in Sources */,
 				41DF48DB22544E7800ED9E99 /* UIImage+Color.m in Sources */,
 				BFC13CF121D21503006EE226 /* NJDatabaseManager.m in Sources */,
@@ -2288,6 +2361,7 @@
 				C845CAC622A7630A007379BF /* HDHttpHelper.m in Sources */,
 				BF59DF0521F1C10D00721D01 /* NJLaunchAdItem.m in Sources */,
 				C81923CC22C0C8FD00DE9CA3 /* HDHotTaskVC.m in Sources */,
+				C8683CDB22C36F3A0084C172 /* ThidViewController.m in Sources */,
 				BFB2016721E599B200A06FB4 /* NJValidationCodeLoginVC.m in Sources */,
 				C877655C22BB1F6D00E0C4B3 /* HBAnnouncementVC.m in Sources */,
 				BFB5E489215A54AC00985F62 /* NJUserItem.m in Sources */,
@@ -2298,6 +2372,7 @@
 				BF6CA8302181A7F20019365F /* NJCollectionViewFlowLayout.m in Sources */,
 				C89D80BB22C31A9F00FCD9D9 /* HBTaskNewsModel.m in Sources */,
 				BFB5E444215A446300985F62 /* NJSearchController.m in Sources */,
+				C8683CDE22C36F3A0084C172 /* SecondViewController.m in Sources */,
 				BFB5E440215A446300985F62 /* HDViewController.m in Sources */,
 				BFB5E467215A446300985F62 /* UILabel+NJChangeLineSpaceAndWordSpace.m in Sources */,
 				BF675799219ACA3200A74FDB /* NJAddressPickerView.m in Sources */,
@@ -2307,13 +2382,18 @@
 				BF451FF321AD409A00045FA0 /* NJModalPushAnimator.m in Sources */,
 				BFB5E460215A446300985F62 /* AppDelegate.m in Sources */,
 				41C6A6632259D0D0005BF525 /* HDQRCodeCt.m in Sources */,
+				C8683CDD22C36F3A0084C172 /* SixViewController.m in Sources */,
 				BFA7E70921AF7E69003F103E /* NJCommentPushAnimatior.m in Sources */,
 				BF95D75621E47BC6001853D2 /* NJCarouseView.m in Sources */,
+				C8683CD622C36F3A0084C172 /* JSBadgeView.m in Sources */,
 				BFE565E721AD17DB00E89202 /* NJPhotoBrowserImageView.m in Sources */,
+				C8683CE222C36F740084C172 /* SPPageMenu.m in Sources */,
 				BF0B406821E7210A006267A9 /* UITextField+NJCommon.m in Sources */,
 				BFB5E435215A446300985F62 /* UIAlertView+LBXAlertAction.m in Sources */,
 				BFB5E46C215A446300985F62 /* UIBarButtonItem+NJItem.m in Sources */,
 				BF5EB0AD21803F4D0051BA80 /* NJShareCardCell.m in Sources */,
+				C8683CD722C36F3A0084C172 /* FourViewController.m in Sources */,
+				C8683CDA22C36F3A0084C172 /* FiveViewController.m in Sources */,
 				BFB5E438215A446300985F62 /* QFDatePickerView.m in Sources */,
 				BF2278ED215B227A00FB5504 /* CYLPlusButtonSubclass.m in Sources */,
 				BFB20AAE2182A9CC0007DE96 /* NJRoadInputView.m in Sources */,

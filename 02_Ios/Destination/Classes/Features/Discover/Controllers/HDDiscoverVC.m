@@ -14,10 +14,6 @@
 @interface HDDiscoverVC ()<UINavigationControllerDelegate>
 {
     IBOutlet UITextField    *tfSearch;
-    IBOutlet UIButton       *btnAll;
-    IBOutlet UIButton       *btnSimple;
-    IBOutlet UIButton       *btnHighPrice;
-    IBOutlet UIButton       *btnVIP;
     IBOutlet UIView         *vSearch;
     IBOutlet UITableView    *tbv;
     NSArray                     *arBtn;
@@ -35,7 +31,7 @@
 {
     [super viewDidLoad];
     [self setup];
-    [self httpGetRecentlyNews:1];
+//    [self httpGetRecentlyNews:1];
 }
 
 #pragma mark - UINavigationControllerDelegate
@@ -135,27 +131,14 @@
 
 #pragma mark - event
 
-- (IBAction)btnSelect:(UIButton *)sender
-{
-    [self changeBtnStatus:sender];
-    
-}
+
 
 #pragma mark - setter and getter
-
-- (void)changeBtnStatus:(UIButton *)sender
-{
-    for (UIButton *btn in arBtn) {
-        btn.selected = [btn isEqual:sender]? YES : NO;
-    }
-}
 
 - (void)setup
 {
     self.navigationController.delegate = self;//设置导航控制器的代理为self
 
     [vSearch addBorderWidth:.1f color:nil cornerRadius:15.0];
-    
-    arBtn = @[btnAll, btnSimple, btnHighPrice, btnVIP];
 }
 @end

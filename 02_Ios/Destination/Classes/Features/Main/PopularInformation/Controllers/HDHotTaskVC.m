@@ -30,7 +30,7 @@
     [self setupUI];
     [self setTableviewRefreshInit];
     [self loadNewData];
-    // Do any additional setup after loading the view from its nib.
+ 
 }
 
 #pragma mark - UITableViewDelegate
