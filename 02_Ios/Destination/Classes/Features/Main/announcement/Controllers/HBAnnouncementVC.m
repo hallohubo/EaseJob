@@ -16,6 +16,8 @@
     NSMutableArray          *marNewsList;
     UIViewController        *webViewCtr;
     IBOutlet UITableView    *tbv;
+    NSUInteger page;
+
 }
 
 @end
@@ -27,7 +29,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupUI];
-    [self httpGetRecentlyNews:1];
+    [self setTableviewRefreshInit];
+    [self loadNewData];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -94,21 +97,41 @@
                           @"PageIndex": @(indexPage)
                           };
     [helper.parameters addEntriesFromDictionary:dic];
-    [NJProgressHUD show];
     task = [helper postPath:@"Act007" object:[HBNewsModle class] finished:^(HDError *error, id object, BOOL isLast, id json)
     {
-        [NJProgressHUD dismiss];
+        [tbv.mj_footer endRefreshing];
+        [tbv.mj_header endRefreshing];
         if (error) {
             [LBXAlertAction sayWithTitle:@"提示" message:error.desc buttons:@[ @"确认"] chooseBlock:nil];
 
             return ;
         }
         
-        if (indexPage == 1) {
-            marNewsList = [[NSMutableArray alloc] initWithArray:object];
-        } else {
-            [marNewsList addObjectsFromArray:object];
+        NSArray * dataArr = [NSArray array];
+        if ([object isKindOfClass:[NSArray class]] && object) {
+            NSArray * dataArr = object;
+        }else {
+            return;
         }
+        
+        if (dataArr.count < 1) {
+            [NJProgressHUD showInfoWithStatus:@"暂时没有公告信息"];
+            [NJProgressHUD dismissWithDelay:1.2];
+            return ;
+        }
+        
+        if(page == 0){
+            [marNewsList removeAllObjects];
+        }
+        
+        if(page > 0 && (dataArr == nil || dataArr.count == 0)){
+            page -= 1;
+            [NJProgressHUD showInfoWithStatus:@"已经到底了"];
+            [NJProgressHUD dismissWithDelay:1.2];
+            return ;
+        }
+        
+        [marNewsList addObjectsFromArray:dataArr];
         [tbv reloadData];
         
     }];
@@ -147,6 +170,29 @@
 - (void)setupUI
 {
     self.title = @"公告列表";
+}
+
+- (void)setTableviewRefreshInit
+{
+    page = 0;
+    
+    tbv.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+    tbv.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
+}
+
+
+#pragma mark - other
+
+- (void)loadNewData
+{
+    page = 0;
+    [self httpGetRecentlyNews:page];
+}
+
+- (void)loadMoreData
+{
+    page += 1;
+    [self httpGetRecentlyNews:page];
 }
 
 @end

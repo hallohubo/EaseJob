@@ -72,9 +72,11 @@
 {
     [super viewDidLoad];
     [self setupInit];
+    [self setTableviewRefreshInit];
     [self setTableHead];
     [self setBannerView:nil];
     [self setStatusBarBackgroundColor:[UIColor clearColor]];
+    [self loadNewData];
     [self httpGetBannerImages];
     [self httpGetRecentlyAnnounce:nil];
 }
@@ -470,17 +472,20 @@
     task = [helper postPath:@"Act202" object:[HBTaskNewsModel class] finished:^(HDError *error, id object, BOOL isLast, id json)
     {
         [tbv.mj_footer endRefreshing];
-
+        [self performSelector:@selector(loadDadelay) withObject:self afterDelay:DROP_down_time];
+        
         if (error) {
-            if (error.code != 0 ) {
-                [HDHelper say:error.desc];
-            }
+            [LBXAlertAction sayWithTitle:@"提示" message:error.desc buttons:@[ @"确认"] chooseBlock:nil];
             return ;
         }
-        if (!object) {
+        
+        NSArray * dataArr = [NSArray array];
+        if ([object isKindOfClass:[NSArray class]] && object) {
+            NSArray * dataArr = object;
+        }else {
             return;
         }
-        NSArray * dataArr = object;
+        
         if(page == 0){
             [marTaskNewsList removeAllObjects];
         }
@@ -493,9 +498,8 @@
         }
         
         [marTaskNewsList addObjectsFromArray:dataArr];
-        
         [tbv reloadData];
-        [self performSelector:@selector(loadDadelay) withObject:self afterDelay:DROP_down_time];
+        
     }];
 }
 
@@ -510,11 +514,14 @@
     scv_banner.backgroundColor  = [UIColor groupTableViewBackgroundColor];
     pageControl.numberOfPages = ar_bannerList.count;
     
+}
+
+- (void)setTableviewRefreshInit
+{
     page = 0;
     tbv.mj_header = [HLGifHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
-//    tbv.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+    //    tbv.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
     tbv.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
-    
 }
 
 - (void)setFlowWords:(NSString *)word
