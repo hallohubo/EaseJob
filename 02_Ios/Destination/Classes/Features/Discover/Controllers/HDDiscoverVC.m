@@ -10,16 +10,33 @@
 #import "HBDiscoverCell.h"
 #import "HBDiscoverModel.h"
 
+#import "SPPageMenu.h"
+#import "BaseViewController.h"
+#import "FirstViewController.h"
+#import "SecondViewController.h"
+#import "ThidViewController.h"
+#import "FourViewController.h"
+#import "FiveViewController.h"
+#import "SixViewController.h"
+#import "SevenViewController.h"
+#import "EightViewController.h"
 
-@interface HDDiscoverVC ()<UINavigationControllerDelegate>
+#import "JSBadgeView.h"
+
+
+
+@interface HDDiscoverVC ()<UINavigationControllerDelegate ,SPPageMenuDelegate, UIScrollViewDelegate>
 {
     IBOutlet UITextField    *tfSearch;
     IBOutlet UIView         *vSearch;
     IBOutlet UITableView    *tbv;
+    IBOutlet SPPageMenu     *vPageMenu;
     NSArray                     *arBtn;
     NSURLSessionDataTask        *task;
     NSMutableArray              *marDiscoverList;
 }
+
+@property (nonatomic, strong) NSArray *dataArr;
 
 @end
 
@@ -31,6 +48,7 @@
 {
     [super viewDidLoad];
     [self setup];
+    [self setupPageMenuInit];
 //    [self httpGetRecentlyNews:1];
 }
 
@@ -140,5 +158,24 @@
     self.navigationController.delegate = self;//设置导航控制器的代理为self
 
     [vSearch addBorderWidth:.1f color:nil cornerRadius:15.0];
+}
+
+- (void)setupPageMenuInit
+{
+    self.dataArr = @[@"生活",@"影视中心",@"交通",@"电视剧",@"搞笑",@"综艺"];
+    
+    // trackerStyle:跟踪器的样式
+    CGRect frame = [vPageMenu convertRect:vPageMenu.bounds toView:self.view];
+    Dlog(@"WINDowframe:%@", NSStringFromCGRect(frame));
+    
+    vPageMenu = [SPPageMenu pageMenuWithFrame:frame trackerStyle:SPPageMenuTrackerStyleLineAttachment];
+    // 传递数组，默认选中第2个
+    [vPageMenu setItems:self.dataArr selectedItemIndex:1];
+    // 设置代理
+    vPageMenu.delegate = self;
+    // 给pageMenu传递外界的大scrollView，内部监听self.scrollView的滚动，从而实现让跟踪器跟随self.scrollView移动的效果
+    vPageMenu.bridgeScrollView = tbv;
+    [self.view addSubview:vPageMenu];
+    
 }
 @end
