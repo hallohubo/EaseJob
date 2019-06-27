@@ -208,14 +208,10 @@
 		C83B250B22C4923B00A89DF0 /* JSBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = C83B24F522C4923B00A89DF0 /* JSBadgeView.m */; };
 		C83B250C22C4923B00A89DF0 /* ParentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C83B24F622C4923B00A89DF0 /* ParentViewController.m */; };
 		C83B250D22C4923B00A89DF0 /* SPPageMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = C83B24F722C4923B00A89DF0 /* SPPageMenu.m */; };
-		C83B250E22C4923B00A89DF0 /* FourViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C83B24F922C4923B00A89DF0 /* FourViewController.m */; };
-		C83B250F22C4923B00A89DF0 /* EightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C83B24FB22C4923B00A89DF0 /* EightViewController.m */; };
 		C83B251022C4923B00A89DF0 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C83B24FD22C4923B00A89DF0 /* BaseViewController.m */; };
 		C83B251222C4923B00A89DF0 /* ThidViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C83B250122C4923B00A89DF0 /* ThidViewController.m */; };
 		C83B251322C4923B00A89DF0 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C83B250222C4923B00A89DF0 /* FirstViewController.m */; };
-		C83B251422C4923B00A89DF0 /* SixViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C83B250422C4923B00A89DF0 /* SixViewController.m */; };
 		C83B251522C4923B00A89DF0 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C83B250722C4923B00A89DF0 /* SecondViewController.m */; };
-		C83B251622C4923B00A89DF0 /* SevenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C83B250822C4923B00A89DF0 /* SevenViewController.m */; };
 		C845CAC622A7630A007379BF /* HDHttpHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C845CAC522A7630A007379BF /* HDHttpHelper.m */; };
 		C845CAD222A764B5007379BF /* LDCry.m in Sources */ = {isa = PBXBuildFile; fileRef = C845CAC922A764B5007379BF /* LDCry.m */; };
 		C845CAD422A764B5007379BF /* NSData+Encryption.m in Sources */ = {isa = PBXBuildFile; fileRef = C845CACE22A764B5007379BF /* NSData+Encryption.m */; };
@@ -610,21 +606,13 @@
 		C83B24F522C4923B00A89DF0 /* JSBadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSBadgeView.m; path = Destination/Classes/Features/Discover/JSBadgeView.m; sourceTree = SOURCE_ROOT; };
 		C83B24F622C4923B00A89DF0 /* ParentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ParentViewController.m; path = Destination/Classes/Features/Discover/ParentViewController.m; sourceTree = SOURCE_ROOT; };
 		C83B24F722C4923B00A89DF0 /* SPPageMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPPageMenu.m; path = Destination/Classes/Features/Discover/SPPageMenu.m; sourceTree = SOURCE_ROOT; };
-		C83B24F922C4923B00A89DF0 /* FourViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourViewController.m; sourceTree = "<group>"; };
-		C83B24FA22C4923B00A89DF0 /* SixViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SixViewController.h; sourceTree = "<group>"; };
-		C83B24FB22C4923B00A89DF0 /* EightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EightViewController.m; sourceTree = "<group>"; };
 		C83B24FC22C4923B00A89DF0 /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
 		C83B24FD22C4923B00A89DF0 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
-		C83B24FF22C4923B00A89DF0 /* SevenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SevenViewController.h; sourceTree = "<group>"; };
 		C83B250022C4923B00A89DF0 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		C83B250122C4923B00A89DF0 /* ThidViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThidViewController.m; sourceTree = "<group>"; };
 		C83B250222C4923B00A89DF0 /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		C83B250322C4923B00A89DF0 /* EightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EightViewController.h; sourceTree = "<group>"; };
-		C83B250422C4923B00A89DF0 /* SixViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SixViewController.m; sourceTree = "<group>"; };
-		C83B250522C4923B00A89DF0 /* FourViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourViewController.h; sourceTree = "<group>"; };
 		C83B250622C4923B00A89DF0 /* ThidViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThidViewController.h; sourceTree = "<group>"; };
 		C83B250722C4923B00A89DF0 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
-		C83B250822C4923B00A89DF0 /* SevenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SevenViewController.m; sourceTree = "<group>"; };
 		C83B250A22C4923B00A89DF0 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		C845CAC422A7630A007379BF /* HDHttpHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDHttpHelper.h; sourceTree = "<group>"; };
 		C845CAC522A7630A007379BF /* HDHttpHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDHttpHelper.m; sourceTree = "<group>"; };
@@ -1829,21 +1817,13 @@
 		C83B24F822C4923B00A89DF0 /* ChildViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				C83B24F922C4923B00A89DF0 /* FourViewController.m */,
-				C83B24FA22C4923B00A89DF0 /* SixViewController.h */,
-				C83B24FB22C4923B00A89DF0 /* EightViewController.m */,
 				C83B24FC22C4923B00A89DF0 /* FirstViewController.h */,
 				C83B24FD22C4923B00A89DF0 /* BaseViewController.m */,
-				C83B24FF22C4923B00A89DF0 /* SevenViewController.h */,
 				C83B250022C4923B00A89DF0 /* SecondViewController.h */,
 				C83B250122C4923B00A89DF0 /* ThidViewController.m */,
 				C83B250222C4923B00A89DF0 /* FirstViewController.m */,
-				C83B250322C4923B00A89DF0 /* EightViewController.h */,
-				C83B250422C4923B00A89DF0 /* SixViewController.m */,
-				C83B250522C4923B00A89DF0 /* FourViewController.h */,
 				C83B250622C4923B00A89DF0 /* ThidViewController.h */,
 				C83B250722C4923B00A89DF0 /* SecondViewController.m */,
-				C83B250822C4923B00A89DF0 /* SevenViewController.m */,
 				C83B250A22C4923B00A89DF0 /* BaseViewController.h */,
 			);
 			name = ChildViewControllers;
@@ -2209,7 +2189,6 @@
 				411FA6BF22A1DA470071B6A5 /* HDMissionVC.m in Sources */,
 				BFB5E433215A446300985F62 /* UIWindow+LBXHierarchy.m in Sources */,
 				C81EF16022BA1AE6005F72D7 /* HBNewsModle.m in Sources */,
-				C83B251622C4923B00A89DF0 /* SevenViewController.m in Sources */,
 				C847CBB322AFB2760055EC65 /* HBSystemSettingVC.m in Sources */,
 				BFB5E466215A446300985F62 /* UIImage+NJImage.m in Sources */,
 				C845CADE22A772F1007379BF /* HDUserModel.m in Sources */,
@@ -2232,7 +2211,6 @@
 				C83B250B22C4923B00A89DF0 /* JSBadgeView.m in Sources */,
 				BF8805EE21C4A1170076283D /* NJPaymentView.m in Sources */,
 				41DF48DC22544E7800ED9E99 /* UIImage+alpha.m in Sources */,
-				C83B250F22C4923B00A89DF0 /* EightViewController.m in Sources */,
 				BF578AD4217438020067591A /* NJBankCell.m in Sources */,
 				BFE565E321AD17DB00E89202 /* NJPhotoBrowserNaviAnimationTransition.m in Sources */,
 				BF451FF921AD416300045FA0 /* NJModalNaviAnimationTransition.m in Sources */,
@@ -2353,7 +2331,6 @@
 				BFB5E447215A446300985F62 /* XLPaymentSuccessHUD.m in Sources */,
 				BF29A9CE215F744800D5E8BB /* UIViewController+NJViewControllerBar.m in Sources */,
 				BF451FF321AD409A00045FA0 /* NJModalPushAnimator.m in Sources */,
-				C83B251422C4923B00A89DF0 /* SixViewController.m in Sources */,
 				BFB5E460215A446300985F62 /* AppDelegate.m in Sources */,
 				41C6A6632259D0D0005BF525 /* HDQRCodeCt.m in Sources */,
 				BFA7E70921AF7E69003F103E /* NJCommentPushAnimatior.m in Sources */,
@@ -2362,7 +2339,6 @@
 				BF0B406821E7210A006267A9 /* UITextField+NJCommon.m in Sources */,
 				BFB5E435215A446300985F62 /* UIAlertView+LBXAlertAction.m in Sources */,
 				BFB5E46C215A446300985F62 /* UIBarButtonItem+NJItem.m in Sources */,
-				C83B250E22C4923B00A89DF0 /* FourViewController.m in Sources */,
 				BF5EB0AD21803F4D0051BA80 /* NJShareCardCell.m in Sources */,
 				BFB5E438215A446300985F62 /* QFDatePickerView.m in Sources */,
 				BF2278ED215B227A00FB5504 /* CYLPlusButtonSubclass.m in Sources */,

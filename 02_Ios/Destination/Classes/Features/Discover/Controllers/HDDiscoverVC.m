@@ -218,8 +218,7 @@
     
     NSArray *controllerClassNames = [NSArray arrayWithObjects:@"FirstViewController",
                                      @"SecondViewController",
-                                     @"ThidViewController",
-                                     @"FourViewController", nil
+                                     @"ThidViewController",nil
                                      ];
     
     for (int i = 0; i < self.dataArr.count; i++) {

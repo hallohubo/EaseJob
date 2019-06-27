@@ -86,8 +86,6 @@
     cell.lbMainheading.text = model.TaskTitle;
     cell.lbSubheading.text  = model.Quantity;
     cell.lbMoney.text   = model.Commission;
-    cell.backgroundColor = HDCOLOR_GREEN;
-    cell.contentView.backgroundColor = HDCOLOR_RED;
     return cell;
 }
 

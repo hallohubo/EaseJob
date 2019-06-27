@@ -12,11 +12,7 @@
 #import "FirstViewController.h"
 #import "SecondViewController.h"
 #import "ThidViewController.h"
-#import "FourViewController.h"
 
-#import "SixViewController.h"
-#import "SevenViewController.h"
-#import "EightViewController.h"
 
 #import "JSBadgeView.h"
 
@@ -166,11 +162,11 @@
         self.scrollView.contentOffset = CGPointMake(0, 0);
     }
     
-    SixViewController *sixVc = [[SixViewController alloc] init];
-    sixVc.text = @"我是新插入的";
-    [self addChildViewController:sixVc];
-    [self.myChildViewControllers insertObject:sixVc atIndex:insertNumber];
-    
+//    SixViewController *sixVc = [[SixViewController alloc] init];
+//    sixVc.text = @"我是新插入的";
+//    [self addChildViewController:sixVc];
+//    [self.myChildViewControllers insertObject:sixVc atIndex:insertNumber];
+//
     // 要先添加控制器，再添加item，如果先添加item，会立即调代理方法，此时myChildViewControllers的个数还是0，在代理方法中retun了
     if ([object isKindOfClass:[NSString class]]) {
         [self.pageMenu insertItemWithTitle:object atIndex:insertNumber animated:YES];
