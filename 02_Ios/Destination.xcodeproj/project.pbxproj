@@ -1818,13 +1818,13 @@
 			isa = PBXGroup;
 			children = (
 				C83B24FC22C4923B00A89DF0 /* FirstViewController.h */,
-				C83B24FD22C4923B00A89DF0 /* BaseViewController.m */,
-				C83B250022C4923B00A89DF0 /* SecondViewController.h */,
-				C83B250122C4923B00A89DF0 /* ThidViewController.m */,
 				C83B250222C4923B00A89DF0 /* FirstViewController.m */,
-				C83B250622C4923B00A89DF0 /* ThidViewController.h */,
+				C83B250022C4923B00A89DF0 /* SecondViewController.h */,
 				C83B250722C4923B00A89DF0 /* SecondViewController.m */,
+				C83B250622C4923B00A89DF0 /* ThidViewController.h */,
+				C83B250122C4923B00A89DF0 /* ThidViewController.m */,
 				C83B250A22C4923B00A89DF0 /* BaseViewController.h */,
+				C83B24FD22C4923B00A89DF0 /* BaseViewController.m */,
 			);
 			name = ChildViewControllers;
 			path = Destination/Classes/Features/Discover/ChildViewControllers;

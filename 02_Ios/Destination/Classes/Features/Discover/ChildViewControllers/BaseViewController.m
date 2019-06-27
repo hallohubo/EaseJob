@@ -11,6 +11,10 @@
 #import "HBDiscoverCell.h"
 
 @interface BaseViewController () <UITableViewDataSource, UITableViewDelegate>
+{
+    NSInteger page;
+    NSURLSessionTask    *task;
+}
 
 @end
 
@@ -29,6 +33,8 @@
     tableView.estimatedSectionFooterHeight = 0;
     [self.view addSubview:tableView];
     _tableView = tableView;
+   
+    [self setTableviewRefreshInit];
 }
 
 - (void)viewWillLayoutSubviews
@@ -87,6 +93,101 @@
     cell.lbSubheading.text  = model.Quantity;
     cell.lbMoney.text   = model.Commission;
     return cell;
+}
+
+#pragma mark - http event
+- (void)httpGetPageTask:(NSInteger)indexPage type:(NSString *)type  //
+{
+    int iValue = type.intValue;
+    HDHttpHelper *helper = [HDHttpHelper instance];
+    NSDictionary *dic = @{@"PageSize": @"10",
+                          @"PageIndex": @(indexPage),
+                          @"type": @(iValue),
+                          };
+    [helper.parameters addEntriesFromDictionary:dic];
+    
+    task = [helper postPath:@"Act204" object:[HBDiscoverModel class] finished:^(HDError *error, id object, BOOL isLast, id json)
+    {
+        [_tableView.mj_footer endRefreshing];
+        [_tableView.mj_header endRefreshing];
+        if (error) {
+            [LBXAlertAction sayWithTitle:@"提示" message:error.desc buttons:@[ @"确认"] chooseBlock:nil];
+            
+            return ;
+        }
+        
+        NSArray * dataArr = [NSArray array];
+        if ([object isKindOfClass:[NSArray class]] && object) {
+            dataArr = object;
+        }else {
+            return;
+        }
+        
+        if (dataArr.count < 1) {
+            NSMutableArray *mar = [[NSMutableArray alloc] init];
+            for (int i = 0; i < 10; i++) {
+                HBDiscoverModel *model = [HBDiscoverModel new];
+                model.TaskTitle = HDFORMAT(@"task%d", i);
+                model.Commission= HDFORMAT(@"RMB:1000.%d0元", i);
+                model.Quantity = @"19/10";
+                [mar addObject:model];
+            }
+            _marList = [mar copy];
+            [_tableView reloadData];
+            return;
+        }
+        
+        if (dataArr.count < 1 && page == 1) {
+            _marList = [NSMutableArray array];
+            [NJProgressHUD showInfoWithStatus:@"暂时没有资讯！"];
+            [NJProgressHUD dismissWithDelay:1.2];
+            return ;
+        }
+        
+        if(page == 1){
+            _marList = [NSMutableArray arrayWithArray:dataArr];
+            [_tableView reloadData];
+            return;
+        }
+        
+        if(page > 1 && (dataArr == nil || dataArr.count == 0)){
+            page -= 1;
+            [NJProgressHUD showInfoWithStatus:@"已经到底了"];
+            [NJProgressHUD dismissWithDelay:1.2];
+            [_marList addObjectsFromArray:dataArr];
+            [_tableView reloadData];
+            return ;
+        }
+        
+        [_marList addObjectsFromArray:dataArr];
+        [_tableView reloadData];
+        
+    }];
+}
+
+
+#pragma mark - setter and getter
+
+- (void)setTableviewRefreshInit
+{
+    page = 1;
+   
+    _tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+    _tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
+}
+
+#pragma mark - other
+
+- (void)loadNewData
+{
+    page = 1;
+    [self httpGetPageTask:page type:_type];
+}
+
+- (void)loadMoreData
+{
+    page += 1;
+    [self httpGetPageTask:page type:_type];
 }
 
 @end
