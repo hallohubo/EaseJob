@@ -221,6 +221,7 @@
 		C845CADE22A772F1007379BF /* HDUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C845CADD22A772F1007379BF /* HDUserModel.m */; };
 		C847CBB322AFB2760055EC65 /* HBSystemSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C847CBB122AFB2760055EC65 /* HBSystemSettingVC.m */; };
 		C847CBB422AFB2760055EC65 /* HBSystemSettingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C847CBB222AFB2760055EC65 /* HBSystemSettingVC.xib */; };
+		C8555C6A22C4DED800BAB241 /* FourViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8555C6922C4DED800BAB241 /* FourViewController.m */; };
 		C85A600122AA494B008D54FC /* HDMainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C85A5FFE22AA494B008D54FC /* HDMainVC.m */; };
 		C85A600222AA494B008D54FC /* HDMainVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C85A5FFF22AA494B008D54FC /* HDMainVC.xib */; };
 		C85A600622AA4964008D54FC /* HBInformationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C85A600322AA4963008D54FC /* HBInformationCell.xib */; };
@@ -631,6 +632,8 @@
 		C847CBB022AFB2760055EC65 /* HBSystemSettingVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBSystemSettingVC.h; sourceTree = "<group>"; };
 		C847CBB122AFB2760055EC65 /* HBSystemSettingVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HBSystemSettingVC.m; sourceTree = "<group>"; };
 		C847CBB222AFB2760055EC65 /* HBSystemSettingVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HBSystemSettingVC.xib; sourceTree = "<group>"; };
+		C8555C6822C4DED800BAB241 /* FourViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourViewController.h; sourceTree = "<group>"; };
+		C8555C6922C4DED800BAB241 /* FourViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourViewController.m; sourceTree = "<group>"; };
 		C85A5FFE22AA494B008D54FC /* HDMainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDMainVC.m; sourceTree = "<group>"; };
 		C85A5FFF22AA494B008D54FC /* HDMainVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HDMainVC.xib; sourceTree = "<group>"; };
 		C85A600022AA494B008D54FC /* HDMainVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDMainVC.h; sourceTree = "<group>"; };
@@ -1817,6 +1820,8 @@
 		C83B24F822C4923B00A89DF0 /* ChildViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				C8555C6822C4DED800BAB241 /* FourViewController.h */,
+				C8555C6922C4DED800BAB241 /* FourViewController.m */,
 				C83B24FC22C4923B00A89DF0 /* FirstViewController.h */,
 				C83B250222C4923B00A89DF0 /* FirstViewController.m */,
 				C83B250022C4923B00A89DF0 /* SecondViewController.h */,
@@ -2353,6 +2358,7 @@
 				BFB5E469215A446300985F62 /* UITextField+NJPlaceHolder.m in Sources */,
 				BFB5E439215A446300985F62 /* NJTimerTool.m in Sources */,
 				BFB5E46D215A446300985F62 /* NJGlobalConst.m in Sources */,
+				C8555C6A22C4DED800BAB241 /* FourViewController.m in Sources */,
 				BF5EB0A121800FB10051BA80 /* NJShareCardListView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

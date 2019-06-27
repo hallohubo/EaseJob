@@ -15,6 +15,7 @@
 #import "FirstViewController.h"
 #import "SecondViewController.h"
 #import "ThidViewController.h"
+#import "FourViewController.h"
 
 #import "JSBadgeView.h"
 
@@ -218,7 +219,7 @@
     
     NSArray *controllerClassNames = [NSArray arrayWithObjects:@"FirstViewController",
                                      @"SecondViewController",
-                                     @"ThidViewController",nil
+                                     @"ThidViewController", @"FourViewController", nil
                                      ];
     
     for (int i = 0; i < self.dataArr.count; i++) {
