@@ -197,7 +197,7 @@
 
 - (void)setupPageMenuInit
 {
-    self.dataArr = @[@"全部",@"简单",@"高价",@"VIP"];V
+    self.dataArr = @[@"全部",@"简单",@"高价",@"VIP"];
     
     CGRect frame = [vPageMenu convertRect:vPageMenu.bounds toView:self.view];
     Dlog(@"WINDowframe1:%@", NSStringFromCGRect(frame));
