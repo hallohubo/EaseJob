@@ -210,10 +210,13 @@
     Dlog(@"WINDowframe1:%@", NSStringFromCGRect(frame));
 //    frame.origin.y = frame.origin.y-20;
     
-    vPageMenu = [SPPageMenu pageMenuWithFrame:frame trackerStyle:SPPageMenuTrackerStyleLine];
+    vPageMenu = [SPPageMenu pageMenuWithFrame:frame trackerStyle:SPPageMenuTrackerStyleLineAttachment];
     
     // 传递数组，默认选中第1个
     [vPageMenu setItems:self.dataArr selectedItemIndex:0];
+    // 不可滑动的等宽排列
+    vPageMenu.permutationWay = SPPageMenuPermutationWayNotScrollEqualWidths;
+    vPageMenu.trackerWidth = 40;
 //    vPageMenu.backgroundColor = HDCOLOR_RED;
     // 设置代理
     vPageMenu.delegate = self;
@@ -222,7 +225,12 @@
     vPageMenu.bridgeScrollView = tbv;
     [self.view addSubview:vPageMenu];
     
-    NSArray *controllerClassNames = [NSArray arrayWithObjects:@"FirstViewController",@"SecondViewController",@"ThidViewController", @"FourViewController", nil];
+    NSArray *controllerClassNames = [NSArray arrayWithObjects:@"FirstViewController",
+                                     @"SecondViewController",
+                                     @"ThidViewController",
+                                     @"FourViewController", nil
+                                     ];
+    
     for (int i = 0; i < self.dataArr.count; i++) {
         if (controllerClassNames.count > i) {
             BaseViewController *baseVc = [[NSClassFromString(controllerClassNames[i]) alloc] init];
