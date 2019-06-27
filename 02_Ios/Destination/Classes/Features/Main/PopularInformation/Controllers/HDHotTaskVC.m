@@ -158,13 +158,16 @@
     
     if (url) {
         webViewCtr = [UIViewController new];
+        
         UIWebView *web = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, 10, 10)];
         web.scalesPageToFit = YES;
         [webViewCtr.view addSubview:web];
+        
         [web makeConstraints:^(MASConstraintMaker *make) {
             make.center.equalTo(webViewCtr.view);
             make.size.equalTo(webViewCtr.view);
         }];
+        
         [web loadRequest:[NSURLRequest requestWithURL:url]];
         web.delegate = self;
         
