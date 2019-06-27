@@ -123,7 +123,7 @@
             return;
         }
         
-        if (dataArr.count < 1) {
+        if (dataArr.count < 1) {//test
             NSMutableArray *mar = [[NSMutableArray alloc] init];
             for (int i = 0; i < 10; i++) {
                 HBDiscoverModel *model = [HBDiscoverModel new];

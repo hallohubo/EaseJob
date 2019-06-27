@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+[self httpGetPageTask:1 type:@"2"];
     // 请进入 "BaseViewController"
 }
 
