@@ -11,5 +11,10 @@
 @interface BaseViewController : UIViewController
 
 @property (nonatomic, copy) NSString *text;
+@property (nonatomic, strong) NSMutableArray  *marList;
+@property (nonatomic, strong) UITableView *tableView;
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
 
-@end
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section;
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section;@end

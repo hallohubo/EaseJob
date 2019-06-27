@@ -15,11 +15,6 @@
 #import "FirstViewController.h"
 #import "SecondViewController.h"
 #import "ThidViewController.h"
-#import "FourViewController.h"
-#import "FiveViewController.h"
-#import "SixViewController.h"
-#import "SevenViewController.h"
-#import "EightViewController.h"
 
 #import "JSBadgeView.h"
 
@@ -29,7 +24,7 @@
 {
     IBOutlet UITextField    *tfSearch;
     IBOutlet UIView         *vSearch;
-    IBOutlet UIScrollView    *tbv;
+    IBOutlet UIScrollView    *scv;
     IBOutlet SPPageMenu     *vPageMenu;
     IBOutlet UIView         *vHead;
     NSArray                     *arBtn;
@@ -166,12 +161,12 @@
     NSLog(@"%zd------->%zd",fromIndex,toIndex);
     
     // 如果该代理方法是由拖拽self.scrollView而触发，说明self.scrollView已经在用户手指的拖拽下而发生偏移，此时不需要再用代码去设置偏移量，否则在跟踪模式为SPPageMenuTrackerFollowingModeHalf的情况下，滑到屏幕一半时会有闪跳现象。闪跳是因为外界设置的scrollView偏移和用户拖拽产生冲突
-    if (!tbv.isDragging) { // 判断用户是否在拖拽scrollView
+    if (!scv.isDragging) { // 判断用户是否在拖拽scrollView
         // 如果fromIndex与toIndex之差大于等于2,说明跨界面移动了,此时不动画.
         if (labs(toIndex - fromIndex) >= 2) {
-            [tbv setContentOffset:CGPointMake(kSCREEN_WIDTH * toIndex, 0) animated:NO];
+            [scv setContentOffset:CGPointMake(kSCREEN_WIDTH * toIndex, 0) animated:NO];
         } else {
-            [tbv setContentOffset:CGPointMake(kSCREEN_WIDTH * toIndex, 0) animated:YES];
+            [scv setContentOffset:CGPointMake(kSCREEN_WIDTH * toIndex, 0) animated:YES];
         }
     }
     
@@ -181,8 +176,8 @@
     // 如果已经加载过，就不再加载
     if ([targetViewController isViewLoaded]) return;
     
-    targetViewController.view.frame = CGRectMake(kSCREEN_WIDTH * toIndex, 0, kSCREEN_WIDTH, tbv.bounds.size.height);
-    [tbv addSubview:targetViewController.view];
+    targetViewController.view.frame = CGRectMake(kSCREEN_WIDTH * toIndex, 0, kSCREEN_WIDTH, scv.bounds.size.height);
+    [scv addSubview:targetViewController.view];
     
 }
 
@@ -202,14 +197,10 @@
 - (void)setupPageMenuInit
 {
     self.dataArr = @[@"全部",@"简单",@"高价",@"UIP"];
-    //UIView *window = [UIApplication sharedApplication].keyWindow;
-    CGRect frame = [vPageMenu convertRect:vPageMenu.bounds toView:self.view];
-//    Dlog(@"WINDowframe0:%@", NSStringFromCGRect(window.frame));
-//    Dlog(@"WINDowbound0:%@", NSStringFromCGRect(window.bounds));
-
-    Dlog(@"WINDowframe1:%@", NSStringFromCGRect(frame));
-//    frame.origin.y = frame.origin.y-20;
     
+    CGRect frame = [vPageMenu convertRect:vPageMenu.bounds toView:self.view];
+    Dlog(@"WINDowframe1:%@", NSStringFromCGRect(frame));
+
     vPageMenu = [SPPageMenu pageMenuWithFrame:frame trackerStyle:SPPageMenuTrackerStyleLineAttachment];
     
     // 传递数组，默认选中第1个
@@ -222,7 +213,7 @@
     vPageMenu.delegate = self;
     //给pageMenu传递外界的大scrollView，内部监听self.scrollView的滚动，
     //从而实现让跟踪器跟随self.scrollView移动的效果
-    vPageMenu.bridgeScrollView = tbv;
+    vPageMenu.bridgeScrollView = scv;
     [self.view addSubview:vPageMenu];
     
     NSArray *controllerClassNames = [NSArray arrayWithObjects:@"FirstViewController",
@@ -234,15 +225,7 @@
     for (int i = 0; i < self.dataArr.count; i++) {
         if (controllerClassNames.count > i) {
             BaseViewController *baseVc = [[NSClassFromString(controllerClassNames[i]) alloc] init];
-            id object = [vPageMenu contentForItemAtIndex:i];
-            if ([object isKindOfClass:[NSString class]]) {
-                baseVc.text = object;
-            } else if ([object isKindOfClass:[UIImage class]]) {
-                baseVc.text = @"图片";
-            } else {
-                SPPageMenuButtonItem *item = (SPPageMenuButtonItem *)object;
-                baseVc.text = item.title;
-            }
+                baseVc.text = HDFORMAT(@"%d", i);
             [self addChildViewController:baseVc];
             // 控制器本来自带childViewControllers,但是遗憾的是该数组的元素顺序永远无法改变，只要是addChildViewController,都是添加到最后一个，而控制器不像数组那样，可以插入或删除任意位置，所以这里自己定义可变数组，以便插入(删除)(如果没有插入(删除)功能，直接用自带的childViewControllers即可)
             [self.myChildViewControllers addObject:baseVc];
@@ -252,13 +235,13 @@
     // pageMenu.selectedItemIndex就是选中的item下标
     if (vPageMenu.selectedItemIndex < self.myChildViewControllers.count) {
         BaseViewController *baseVc = self.myChildViewControllers[vPageMenu.selectedItemIndex];
-        CGRect frame = [tbv convertRect:tbv.bounds toView:self.view];
-        [tbv addSubview:baseVc.view];
+        CGRect frame = [scv convertRect:scv.bounds toView:self.view];
+        [scv addSubview:baseVc.view];
         
-        baseVc.view.frame = CGRectMake(kSCREEN_WIDTH * vPageMenu.selectedItemIndex, 0, kSCREEN_WIDTH, tbv.bounds.size.height);
+        baseVc.view.frame = CGRectMake(kSCREEN_WIDTH * vPageMenu.selectedItemIndex, 0, kSCREEN_WIDTH, scv.bounds.size.height);
         
-        tbv.contentOffset = CGPointMake(kSCREEN_WIDTH * vPageMenu.selectedItemIndex, 0);
-        tbv.contentSize = CGSizeMake(self.dataArr.count * kSCREEN_WIDTH, 0);
+        scv.contentOffset = CGPointMake(kSCREEN_WIDTH * vPageMenu.selectedItemIndex, 0);
+        scv.contentSize = CGSizeMake(self.dataArr.count * kSCREEN_WIDTH, 0);
     }
     
 }

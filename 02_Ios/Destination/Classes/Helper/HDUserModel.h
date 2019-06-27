@@ -13,6 +13,7 @@
 @end
 
 @interface HDLoginUserModel : NSObject
+
 @property (nonatomic, strong) NSString *MID;        //会员ID
 @property (nonatomic, strong) NSString *MemberNo;   //会员编号
 @property (nonatomic, strong) NSString *RegMobile;  //注册手机号

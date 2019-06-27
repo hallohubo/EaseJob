@@ -7,48 +7,88 @@
 //
 
 #import "BaseViewController.h"
+#import "HBDiscoverModel.h"
+#import "HBDiscoverCell.h"
 
 @interface BaseViewController () <UITableViewDataSource, UITableViewDelegate>
-@property (nonatomic, strong) UITableView *tableView;
+
 @end
 
 @implementation BaseViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     
-    UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
     tableView.dataSource = self;
     tableView.delegate = self;
+    
+    //设置取消 Automatic 自动计算一下2个高度值
+    tableView.estimatedSectionHeaderHeight = 0;
+    tableView.estimatedSectionFooterHeight = 0;
     [self.view addSubview:tableView];
     _tableView = tableView;
 }
 
-- (void)viewWillLayoutSubviews {
+- (void)viewWillLayoutSubviews
+{
     [super viewWillLayoutSubviews];
     self.tableView.frame = self.view.bounds;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 20;
+#pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[NSStringFromClass([self class]) stringByAppendingString:@"cell"]];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:[NSStringFromClass([self class]) stringByAppendingString:@"cell"]];
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 100.;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 5.;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    return 1;
+}
+
+#pragma mark - tableview data source
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 1;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return _marList.count > 0? _marList.count : 0;
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *str = @"HBDiscoverCell";
+    HBDiscoverCell *cell = [tableView dequeueReusableCellWithIdentifier:str];
+    if(!cell){
+        cell = [HBDiscoverCell loadFromNib];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
-    cell.textLabel.text = [NSString stringWithFormat:@"%@------第%zd行",_text,indexPath.row];
-    if ([_text isEqualToString:@"图片"]) {
-        cell.detailTextLabel.text = @"注:这是图片不是emoji哦";
-        cell.detailTextLabel.font = [UIFont systemFontOfSize:10];
-    } else {
-        cell.detailTextLabel.text = nil;
-    }
-    cell.textLabel.alpha = 0.7;
-    cell.textLabel.font = [UIFont systemFontOfSize:15];
+
+    HBDiscoverModel *model = _marList[indexPath.section];
+    [cell.imvPhoto setImage:HDIMAGE(@"main_cellHeadImage")];
+    cell.lbMainheading.text = model.TaskTitle;
+    cell.lbSubheading.text  = model.Quantity;
+    cell.lbMoney.text   = model.Commission;
+    cell.backgroundColor = HDCOLOR_GREEN;
+    cell.contentView.backgroundColor = HDCOLOR_RED;
     return cell;
 }
-
 
 @end

@@ -87,7 +87,7 @@
                 <outlet property="lbSubheading" destination="Ain-jo-DDF" id="Wfk-Jb-I6x"/>
                 <outlet property="vBackground" destination="4vQ-Mk-fbO" id="XCp-lU-ktF"/>
             </connections>
-            <point key="canvasLocation" x="147.82608695652175" y="67.299107142857139"/>
+            <point key="canvasLocation" x="-90" y="12"/>
         </tableViewCell>
     </objects>
 </document>

@@ -12,7 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HDDiscoverVC">
             <connections>
-                <outlet property="tbv" destination="Dht-Mg-dYP" id="bOL-Yz-dlg"/>
+                <outlet property="scv" destination="Dht-Mg-dYP" id="qzd-Mq-Dqn"/>
                 <outlet property="tfSearch" destination="V9z-rG-wz4" id="7l7-uR-vNx"/>
                 <outlet property="vHead" destination="5lJ-Hf-gm8" id="avn-wL-vEl"/>
                 <outlet property="vPageMenu" destination="doT-k4-4ai" id="OaX-VO-A1H"/>

@@ -13,7 +13,7 @@
 #import "SecondViewController.h"
 #import "ThidViewController.h"
 #import "FourViewController.h"
-#import "FiveViewController.h"
+
 #import "SixViewController.h"
 #import "SevenViewController.h"
 #import "EightViewController.h"
@@ -61,7 +61,7 @@
     
     [self.view addSubview:self.scrollView];
 
-    NSArray *controllerClassNames = [NSArray arrayWithObjects:@"FirstViewController",@"SecondViewController",@"ThidViewController",@"FourViewController",@"FiveViewController",@"SixViewController",@"SevenViewController",@"EightViewController", nil];
+    NSArray *controllerClassNames = [NSArray arrayWithObjects:@"FirstViewController",@"SecondViewController",@"ThidViewController",@"FourViewController",@"SixViewController",@"SevenViewController",@"EightViewController", nil];
     for (int i = 0; i < self.dataArr.count; i++) {
         if (controllerClassNames.count > i) {
             BaseViewController *baseVc = [[NSClassFromString(controllerClassNames[i]) alloc] init];
