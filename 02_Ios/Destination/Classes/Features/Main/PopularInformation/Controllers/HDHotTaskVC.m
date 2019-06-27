@@ -100,45 +100,48 @@
                           @"PageIndex": @(indexPage)
                           };
     [helper.parameters addEntriesFromDictionary:dic];
-    [NJProgressHUD show];
     task = [helper postPath:@"Act203" object:[HDHotTaskModel class] finished:^(HDError *error, id object, BOOL isLast, id json)
-            {
-                [tbv.mj_footer endRefreshing];
-                [tbv.mj_header endRefreshing];
-                if (error) {
-                    [LBXAlertAction sayWithTitle:@"提示" message:error.desc buttons:@[ @"确认"] chooseBlock:nil];
-                    
-                    return ;
-                }
-                
-                NSArray * dataArr = [NSArray array];
-                if ([object isKindOfClass:[NSArray class]] && object) {
-                    NSArray * dataArr = object;
-                }else {
-                    return;
-                }
-                
-                if (dataArr.count < 1) {
-                    [NJProgressHUD showInfoWithStatus:@"暂时没有公告信息"];
-                    [NJProgressHUD dismissWithDelay:1.2];
-                    return ;
-                }
-                
-                if(page == 0){
-                    [marPopularNewsList removeAllObjects];
-                }
-                
-                if(page > 0 && (dataArr == nil || dataArr.count == 0)){
-                    page -= 1;
-                    [NJProgressHUD showInfoWithStatus:@"已经到底了"];
-                    [NJProgressHUD dismissWithDelay:1.2];
-                    return ;
-                }
-                
-                [marPopularNewsList addObjectsFromArray:dataArr];
-                [tbv reloadData];
-                
-            }];
+    {
+        [tbv.mj_footer endRefreshing];
+        [tbv.mj_header endRefreshing];
+        if (error) {
+            [LBXAlertAction sayWithTitle:@"提示" message:error.desc buttons:@[ @"确认"] chooseBlock:nil];
+            
+            return ;
+        }
+        
+        NSArray * dataArr = [NSArray array];
+        if ([object isKindOfClass:[NSArray class]] && object) {
+            dataArr = object;
+        }else {
+            return;
+        }
+        
+        if (dataArr.count < 1 && page == 1) {
+            [NJProgressHUD showInfoWithStatus:@"暂时没有资讯！"];
+            [NJProgressHUD dismissWithDelay:1.2];
+            return ;
+        }
+        
+        if(page == 1){
+            marPopularNewsList = [NSMutableArray arrayWithArray:dataArr];
+            [tbv reloadData];
+            return;
+        }
+        
+        if(page > 1 && (dataArr == nil || dataArr.count == 0)){
+            page -= 1;
+            [NJProgressHUD showInfoWithStatus:@"已经到底了"];
+            [NJProgressHUD dismissWithDelay:1.2];
+            [marPopularNewsList addObjectsFromArray:dataArr];
+            [tbv reloadData];
+            return ;
+        }
+        
+        [marPopularNewsList addObjectsFromArray:dataArr];
+        [tbv reloadData];
+        
+    }];
 }
 
 #pragma mark - touch even
@@ -178,7 +181,7 @@
 
 - (void)setTableviewRefreshInit
 {
-    page = 0;
+    page = 1;
     
     tbv.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
     tbv.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
@@ -189,7 +192,7 @@
 
 - (void)loadNewData
 {
-    page = 0;
+    page = 1;
     [self httpGetHotTask:page];
 }
 

@@ -7,7 +7,6 @@
 //
 
 #import "HBAnnouncementVC.h"
-#import "HBAnnounceDetailVC.h"
 #import "HBNewsModle.h"
 
 @interface HBAnnouncementVC ()<UIWebViewDelegate>
@@ -109,25 +108,29 @@
         
         NSArray * dataArr = [NSArray array];
         if ([object isKindOfClass:[NSArray class]] && object) {
-            NSArray * dataArr = object;
+            dataArr = object;
         }else {
             return;
         }
         
-        if (dataArr.count < 1) {
-            [NJProgressHUD showInfoWithStatus:@"暂时没有公告信息"];
+        if (dataArr.count < 1 && page == 1) {
+            [NJProgressHUD showInfoWithStatus:@"目前没有公告信息噢！"];
             [NJProgressHUD dismissWithDelay:1.2];
             return ;
         }
         
-        if(page == 0){
-            [marNewsList removeAllObjects];
+        if(page == 1){
+            marNewsList = [NSMutableArray arrayWithArray:dataArr];
+            [tbv reloadData];
+            return;
         }
         
-        if(page > 0 && (dataArr == nil || dataArr.count == 0)){
+        if(page > 1 && (dataArr == nil || dataArr.count == 0)){
             page -= 1;
             [NJProgressHUD showInfoWithStatus:@"已经到底了"];
             [NJProgressHUD dismissWithDelay:1.2];
+            [marNewsList addObjectsFromArray:dataArr];
+            [tbv reloadData];
             return ;
         }
         
@@ -174,7 +177,7 @@
 
 - (void)setTableviewRefreshInit
 {
-    page = 0;
+    page = 1;
     
     tbv.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
     tbv.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
@@ -185,7 +188,7 @@
 
 - (void)loadNewData
 {
-    page = 0;
+    page = 1;
     [self httpGetRecentlyNews:page];
 }
 
