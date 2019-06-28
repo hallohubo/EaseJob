@@ -598,33 +598,35 @@
     NSArray *arLables   = @[lb0, lb1, lb2, lb3, lb4, lb5, lb6, lb7, lb8, lb9];
     NSArray *arImgviews = @[imv0, imv1, imv2, imv3, imv4, imv5, imv6, imv7, imv8, imv9];
     NSArray *arButtons  = @[btn0, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9];
+    
+    for (UILabel *lb in arLables) {
+        lb.hidden = YES;
+    }
+    for (UIButton *btn in arButtons) {
+        btn.hidden = YES;
+    }
+    for (UIImageView *imv in arImgviews) {
+        imv.hidden = YES;
+    }
+    
     for (int i = 0; i < marAllTaskList.count; i++) {
         HBAllTaskTypeModle *model = marAllTaskList[i];
         NSURL *url = [NSURL URLWithString:model.TaskIcon];
-       
-        for (UILabel *lb in arLables) {
-            lb.text = [lb isEqual:arLables[i]]? model.TaskType : lb.text;
-            lb.hidden = [lb isEqual:arLables[i]]?  NO: YES;
-        }
+        UILabel *lb = arLables[i];
+        lb.hidden = NO;
+        lb.text = model.TaskType;
         
-        for (UIImageView *imv in arImgviews) {
-            imv.hidden = [imv isEqual:arImgviews[i]]? NO : YES;
-            if([imv isEqual:arImgviews[i]]) {
-                [imv sd_setImageWithURL:url];
-                //                [imv setImage:HDIMAGE(@"main_focus")];
-                if (marAllTaskList.count == i+1) {
-                    [imv setImage:HDIMAGE(@"main_all")];
-                }
-            }
-        }
+        UIButton *btn = arButtons[i];
+        btn.hidden = NO;
+        btn.tag = i;
         
-        for (UIButton *btn in arButtons) {
-            btn.tag = [btn isEqual:arButtons[i]]? i : btn.tag;
-            btn.hidden = [btn isEqual:arButtons[i]]? NO : YES;
-            if (marAllTaskList.count == i+1 && [btn isEqual:arButtons[i]]) {
-                Dlog(@"btntag:%ld", (long)btn.tag);
-            }
-
+        
+        UIImageView *imv = arImgviews[i];
+        imv.hidden = NO;
+        [imv sd_setImageWithURL:url];
+        //                [imv setImage:HDIMAGE(@"main_focus")];
+        if (marAllTaskList.count == i+1) {
+            [imv setImage:HDIMAGE(@"main_all")];
         }
     }
 }
