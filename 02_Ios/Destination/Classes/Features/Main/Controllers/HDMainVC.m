@@ -64,6 +64,7 @@
     NSURLSessionDataTask        *task;
     NSTimer                     *timer;
     NSUInteger page;
+//    UITabBarController          *tabbarCtr;
     
     NSArray     *arLables;
     NSArray     *arImgviews;
@@ -93,6 +94,12 @@
 - (void)dealloc
 {
     self.navigationController.delegate = nil;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    //[self.navigationController setNavigationBarHidden:YES animated:YES];
+    
 }
 
 
@@ -359,12 +366,24 @@
     }
 }
 
-- (IBAction)checkTaskDetail:(UIButton *)sender
+- (void)checkAllTaskDetail:(UIButton *)sender
 {
-
     HBAllTaskTypeModle *model = marAllTaskList[sender.tag];
-
-    [self.navigationController pushViewController:[HDDiscoverVC new] animated:YES];
+    
+    UILabel *lb = arLables[sender.tag]; //special case when type is all
+    if ([lb.text isEqualToString:@"全部"]) {
+        model.TaskTypeID = @"0";
+    }
+    
+    UITabBarController *tab = self.tabBarController;
+    NSArray *views = self.tabBarController.viewControllers;
+    NJNavigationController *cc = views[1];
+    
+    if ([cc.tabBarItem.title isEqualToString:@"发现"]) {
+        HDDiscoverVC *ctr = cc.childViewControllers[0];
+        ctr.typeId = model.TaskTypeID;
+        tab.selectedIndex = 1;
+    }
 }
 
 - (IBAction)checkoutAnnouncementsList:(UIButton *)sender
@@ -523,7 +542,7 @@
     }
 }
 
-- (void)setTableviewRefreshInit
+- (void)setTableviewRefreshInit // add refresh body on tableview
 {
     page = 1;
     tbv.mj_header = [HLGifHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
@@ -531,7 +550,7 @@
     tbv.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
 }
 
-- (void)setFlowWords:(NSString *)word
+- (void)setFlowWords:(NSString *)word //adjust announcement lable
 {
     CGRect frame = [vNews convertRect:vNews.bounds toView:vMessage];
     Dlog(@"WINDowframe:%@", NSStringFromCGRect(frame));
@@ -543,7 +562,7 @@
     [vNews startScrollWithText:word textColor:HDCOLOR_RED font:[UIFont systemFontOfSize:13]];
 }
 
-- (void)setTableHead:(NSInteger)intHeight
+- (void)setTableHead:(NSInteger)intHeight//adjust the tableview's head
 {
     CGFloat height = intHeight + (HDDeviceSize.width) * BANNER_RATIO;
     UIView *v = [[UIView alloc] initWithFrame:CGRectMake(0, 0, HDDeviceSize.width, height)];
@@ -618,14 +637,15 @@
     
     for (int i = 0; i < marAllTaskList.count; i++) {
         HBAllTaskTypeModle *model = marAllTaskList[i];
-        NSURL *url = [NSURL URLWithString:model.TaskIcon];
+        NSURL *url  = [NSURL URLWithString:model.TaskIcon];
         UILabel *lb = arLables[i];
-        lb.hidden = NO;
+        lb.hidden   = NO;
         lb.text = model.TaskType;
         
-        UIButton *btn = arButtons[i];
-        btn.hidden = NO;
+        UIButton *btn   = arButtons[i];
+        btn.hidden  = NO;
         btn.tag = i;
+        [btn addTarget:self action:@selector(checkAllTaskDetail:) forControlEvents:UIControlEventTouchUpInside];
         
         UIImageView *imv = arImgviews[i];
         imv.hidden = NO;

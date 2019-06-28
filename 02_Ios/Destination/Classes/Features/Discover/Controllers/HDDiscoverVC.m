@@ -31,7 +31,7 @@
     NSArray                     *arBtn;
     NSURLSessionDataTask        *task;
     NSMutableArray              *marDiscoverList;
-    NSString                    *typeId;// at home page that task list or the all task view
+    // at home page that task list or the all task view
 }
 
 @property (nonatomic, strong) NSArray *dataArr;
@@ -43,13 +43,9 @@
 
 #pragma mark - lifeCycle
 
-- (instancetype)initWithTypeId:(NSString *)typeID
+- (void)viewWillAppear:(BOOL)animated
 {
-    if (self = [super init]) {
-        typeId = typeID;
-        return self;
-    }
-    return nil;
+    [self setupPageMenuInit];
 }
 
 - (void)viewDidLoad
@@ -57,7 +53,7 @@
     [super viewDidLoad];
     [self setup];
     [self setupPageMenuInit];
-//    [self httpGetRecentlyNews:1];
+    Dlog(@"ddddddd:%@", self.typeId);
 }
 
 #pragma mark - UINavigationControllerDelegate
@@ -207,6 +203,7 @@
 
 - (void)setupPageMenuInit
 {
+    Dlog(@"ddddddd:%@", self.typeId);
     self.dataArr = @[@"全部",@"简单",@"高价",@"VIP"];
     
     CGRect frame = [vPageMenu convertRect:vPageMenu.bounds toView:self.view];
@@ -236,7 +233,7 @@
         if (controllerClassNames.count > i) {
             BaseViewController *baseVc = [[NSClassFromString(controllerClassNames[i]) alloc] init];
             
-            baseVc.typeID = typeId.length > 0? typeId : @"0";
+            baseVc.typeID = _typeId.length > 0? self.typeId : @"0";
             baseVc.text = HDFORMAT(@"%d", i);
             
             [self addChildViewController:baseVc];
