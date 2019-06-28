@@ -14,10 +14,11 @@
 @property (nonatomic, strong) NSMutableArray  *marList;
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSString *type;
+@property (nonatomic, strong) NSString *typeID;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section;
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section;
-- (void)httpGetPageTask:(NSInteger)indexPage type:(NSString *)type;
+- (void)httpGetPageTask:(NSInteger)indexPage type:(NSString *)type typeId:(NSString *)typeId;
 @end

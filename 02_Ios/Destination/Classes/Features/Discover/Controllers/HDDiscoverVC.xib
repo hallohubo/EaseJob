@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -26,7 +25,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5lJ-Hf-gm8">
-                    <rect key="frame" x="0.0" y="20" width="414" height="50"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="epk-sm-Vs7">
                             <rect key="frame" x="13" y="10" width="388" height="30"/>
@@ -60,14 +59,14 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="doT-k4-4ai" customClass="SPPageMenu">
-                    <rect key="frame" x="0.0" y="70" width="414" height="40"/>
+                    <rect key="frame" x="0.0" y="50" width="414" height="40"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="8Cx-Lq-6FY"/>
                     </constraints>
                 </view>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dht-Mg-dYP">
-                    <rect key="frame" x="0.0" y="110" width="414" height="626"/>
+                    <rect key="frame" x="0.0" y="90" width="414" height="646"/>
                     <connections>
                         <outlet property="delegate" destination="-1" id="3fF-CM-Bd5"/>
                     </connections>
@@ -75,18 +74,17 @@
             </subviews>
             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
             <constraints>
-                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="5lJ-Hf-gm8" secondAttribute="trailing" id="6B0-fn-LtW"/>
+                <constraint firstAttribute="trailing" secondItem="5lJ-Hf-gm8" secondAttribute="trailing" id="6B0-fn-LtW"/>
                 <constraint firstItem="doT-k4-4ai" firstAttribute="top" secondItem="5lJ-Hf-gm8" secondAttribute="bottom" id="BVS-uQ-eQg"/>
-                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="Dht-Mg-dYP" secondAttribute="bottom" id="Dde-FW-nqO"/>
+                <constraint firstAttribute="bottom" secondItem="Dht-Mg-dYP" secondAttribute="bottom" id="Dde-FW-nqO"/>
                 <constraint firstItem="Dht-Mg-dYP" firstAttribute="top" secondItem="doT-k4-4ai" secondAttribute="bottom" id="F0N-Kg-jMb"/>
-                <constraint firstItem="5lJ-Hf-gm8" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="LVy-1x-Iz7"/>
-                <constraint firstItem="5lJ-Hf-gm8" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="TPl-bn-vL8"/>
-                <constraint firstItem="doT-k4-4ai" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="iju-4R-njv"/>
-                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="doT-k4-4ai" secondAttribute="trailing" id="oY2-Dd-1Xt"/>
-                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="Dht-Mg-dYP" secondAttribute="trailing" id="sKJ-HL-2nH"/>
-                <constraint firstItem="Dht-Mg-dYP" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="yyg-zv-3uV"/>
+                <constraint firstItem="5lJ-Hf-gm8" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="LVy-1x-Iz7"/>
+                <constraint firstItem="5lJ-Hf-gm8" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="TPl-bn-vL8"/>
+                <constraint firstItem="doT-k4-4ai" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="iju-4R-njv"/>
+                <constraint firstAttribute="trailing" secondItem="doT-k4-4ai" secondAttribute="trailing" id="oY2-Dd-1Xt"/>
+                <constraint firstAttribute="trailing" secondItem="Dht-Mg-dYP" secondAttribute="trailing" id="sKJ-HL-2nH"/>
+                <constraint firstItem="Dht-Mg-dYP" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="yyg-zv-3uV"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
             <point key="canvasLocation" x="153.62318840579712" y="75.669642857142847"/>
         </view>
     </objects>

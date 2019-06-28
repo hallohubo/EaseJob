@@ -11,17 +11,37 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HDMainVC">
             <connections>
-                <outlet property="btnAll" destination="CMl-Ce-xRG" id="2aU-GG-qFR"/>
-                <outlet property="btnAttention" destination="CNa-aq-s6Y" id="CFM-WU-1Dj"/>
-                <outlet property="btnBrowse" destination="iFG-vU-pkV" id="hf5-5A-bNF"/>
-                <outlet property="btnCheck" destination="Q40-Rv-BhU" id="wKU-Lm-WPb"/>
-                <outlet property="btnComment" destination="SZw-nq-3cw" id="Vig-gh-aj8"/>
-                <outlet property="btnDownloa" destination="WG7-zB-keQ" id="rUt-dc-l6S"/>
-                <outlet property="btnECommerce" destination="SyU-2L-rCN" id="h72-Ta-8MC"/>
-                <outlet property="btnPost" destination="DI1-mO-9zv" id="99d-2O-4IF"/>
-                <outlet property="btnRegister" destination="As4-xV-7Ca" id="s9l-cv-cdP"/>
-                <outlet property="btnVote" destination="yqS-ug-8go" id="bRH-G0-VCh"/>
-                <outlet property="btnforward" destination="EYW-g7-HxR" id="bfY-bM-dW5"/>
+                <outlet property="btn0" destination="As4-xV-7Ca" id="nDu-Mg-TWg"/>
+                <outlet property="btn1" destination="yqS-ug-8go" id="jhK-wx-TAB"/>
+                <outlet property="btn2" destination="CNa-aq-s6Y" id="aqe-6M-E4e"/>
+                <outlet property="btn3" destination="iFG-vU-pkV" id="V7L-v5-7nj"/>
+                <outlet property="btn4" destination="WG7-zB-keQ" id="5nP-Uf-g26"/>
+                <outlet property="btn5" destination="EYW-g7-HxR" id="how-cb-6Xg"/>
+                <outlet property="btn6" destination="DI1-mO-9zv" id="OdQ-vl-eeU"/>
+                <outlet property="btn7" destination="SZw-nq-3cw" id="DIJ-qY-Bmk"/>
+                <outlet property="btn8" destination="SyU-2L-rCN" id="b5g-3b-7j5"/>
+                <outlet property="btn9" destination="CMl-Ce-xRG" id="cJd-gh-Do2"/>
+                <outlet property="btnCheck" destination="Q40-Rv-BhU" id="kVh-Mi-TQm"/>
+                <outlet property="imv0" destination="ixm-lx-y2A" id="CLJ-EE-w2o"/>
+                <outlet property="imv1" destination="z1d-NR-5Lh" id="BXE-FK-k7Z"/>
+                <outlet property="imv2" destination="EfR-rB-JiZ" id="VcV-cP-BEL"/>
+                <outlet property="imv3" destination="YmN-lP-KiN" id="9qa-rN-HNV"/>
+                <outlet property="imv4" destination="scL-dp-YKh" id="IZP-D9-UNt"/>
+                <outlet property="imv5" destination="CTf-0A-wgZ" id="6GC-iZ-w2W"/>
+                <outlet property="imv6" destination="u2X-Nw-seA" id="PZl-8d-JzW"/>
+                <outlet property="imv7" destination="iMM-jt-zMi" id="3dA-Fc-cdC"/>
+                <outlet property="imv8" destination="xzF-Ua-QrJ" id="hSB-D0-pzb"/>
+                <outlet property="imv9" destination="WtZ-nS-IpA" id="uLs-tI-Z8t"/>
+                <outlet property="lb0" destination="xBA-Zq-3Ha" id="qEM-Rk-gX6"/>
+                <outlet property="lb1" destination="52I-8p-Iyz" id="nIJ-xA-BnX"/>
+                <outlet property="lb2" destination="Hoq-AO-1yQ" id="m2Y-b7-dWI"/>
+                <outlet property="lb3" destination="65m-xs-TMK" id="wc5-XT-xPu"/>
+                <outlet property="lb4" destination="1tz-Cc-0U4" id="rMD-NJ-fSy"/>
+                <outlet property="lb5" destination="Pqo-PZ-m5T" id="eV1-c2-11E"/>
+                <outlet property="lb6" destination="gg4-e6-2DR" id="QpS-uL-OXe"/>
+                <outlet property="lb7" destination="33C-fS-yWZ" id="CAv-b8-uZd"/>
+                <outlet property="lb8" destination="R7u-s5-gTw" id="pjZ-15-BOj"/>
+                <outlet property="lb9" destination="tvc-4L-rlm" id="ajG-tm-VOq"/>
                 <outlet property="pageControl" destination="Mip-xn-sPg" id="JkO-27-6X8"/>
                 <outlet property="scv_banner" destination="CTr-P2-RvY" id="8G7-tk-h42"/>
                 <outlet property="tbv" destination="Oz3-yx-oeC" id="T0C-pp-CeW"/>
@@ -97,9 +117,6 @@
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="As4-xV-7Ca" secondAttribute="height" multiplier="1:1" id="NcA-2S-Ghl"/>
                             </constraints>
-                            <connections>
-                                <action selector="checkTaskDetail:" destination="-1" eventType="touchUpInside" id="MF0-MH-Gcc"/>
-                            </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="注册" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xBA-Zq-3Ha">
                             <rect key="frame" x="10" y="79" width="73" height="20"/>
@@ -133,27 +150,18 @@
                         </imageView>
                         <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yqS-ug-8go" userLabel="Button1">
                             <rect key="frame" x="97.5" y="30" width="44" height="44"/>
-                            <connections>
-                                <action selector="checkTaskDetail:" destination="-1" eventType="touchUpInside" id="uFT-DE-7Pv"/>
-                            </connections>
                         </button>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_focus" translatesAutoresizingMaskIntoConstraints="NO" id="EfR-rB-JiZ" userLabel="Image View2">
                             <rect key="frame" x="170.5" y="30" width="44" height="44"/>
                         </imageView>
                         <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CNa-aq-s6Y" userLabel="Button2">
                             <rect key="frame" x="170.5" y="30" width="44" height="44"/>
-                            <connections>
-                                <action selector="checkTaskDetail:" destination="-1" eventType="touchUpInside" id="AK6-VQ-b5N"/>
-                            </connections>
                         </button>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_browse" translatesAutoresizingMaskIntoConstraints="NO" id="YmN-lP-KiN" userLabel="Image View3">
                             <rect key="frame" x="243.5" y="30" width="44" height="44"/>
                         </imageView>
                         <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iFG-vU-pkV" userLabel="Button3">
                             <rect key="frame" x="243.5" y="30" width="44" height="44"/>
-                            <connections>
-                                <action selector="checkTaskDetail:" destination="-1" eventType="touchUpInside" id="l40-Gc-mH6"/>
-                            </connections>
                         </button>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_download" translatesAutoresizingMaskIntoConstraints="NO" id="scL-dp-YKh" userLabel="Image View5">
                             <rect key="frame" x="316.5" y="30" width="44" height="44"/>
@@ -164,9 +172,6 @@
                             <state key="normal">
                                 <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
-                            <connections>
-                                <action selector="checkTaskDetail:" destination="-1" eventType="touchUpInside" id="Wme-Xb-vSG"/>
-                            </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="下载" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1tz-Cc-0U4">
                             <rect key="frame" x="302" y="79" width="73" height="20"/>
@@ -192,9 +197,6 @@
                         </label>
                         <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EYW-g7-HxR" userLabel="ButtonForward">
                             <rect key="frame" x="24.5" y="112" width="44" height="44"/>
-                            <connections>
-                                <action selector="checkTaskDetail:" destination="-1" eventType="touchUpInside" id="vQx-mx-Oqz"/>
-                            </connections>
                         </button>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_post" translatesAutoresizingMaskIntoConstraints="NO" id="u2X-Nw-seA" userLabel="Image View6">
                             <rect key="frame" x="97.5" y="112" width="44" height="44"/>
@@ -214,9 +216,6 @@
                         </label>
                         <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DI1-mO-9zv" userLabel="ButtonPost">
                             <rect key="frame" x="97.5" y="112" width="44" height="44"/>
-                            <connections>
-                                <action selector="checkTaskDetail:" destination="-1" eventType="touchUpInside" id="Wlx-iQ-Dtp"/>
-                            </connections>
                         </button>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_comment" translatesAutoresizingMaskIntoConstraints="NO" id="iMM-jt-zMi" userLabel="Image View6">
                             <rect key="frame" x="170.5" y="112" width="44" height="44"/>
@@ -236,9 +235,6 @@
                         </label>
                         <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SZw-nq-3cw" userLabel="ButtonComment">
                             <rect key="frame" x="170.5" y="112" width="44" height="44"/>
-                            <connections>
-                                <action selector="checkTaskDetail:" destination="-1" eventType="touchUpInside" id="ZvE-6F-8V4"/>
-                            </connections>
                         </button>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_ECommerce" translatesAutoresizingMaskIntoConstraints="NO" id="xzF-Ua-QrJ" userLabel="Image View6">
                             <rect key="frame" x="243.5" y="112" width="44" height="44"/>
@@ -258,9 +254,6 @@
                         </label>
                         <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SyU-2L-rCN" userLabel="ButtonECommerce">
                             <rect key="frame" x="243.5" y="112" width="44" height="44"/>
-                            <connections>
-                                <action selector="checkTaskDetail:" destination="-1" eventType="touchUpInside" id="lM1-ZE-j4l"/>
-                            </connections>
                         </button>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_all" translatesAutoresizingMaskIntoConstraints="NO" id="WtZ-nS-IpA" userLabel="Image View6">
                             <rect key="frame" x="316.5" y="112" width="44" height="44"/>
@@ -280,9 +273,6 @@
                         </label>
                         <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CMl-Ce-xRG" userLabel="ButtonaAll">
                             <rect key="frame" x="316.5" y="112" width="44" height="44"/>
-                            <connections>
-                                <action selector="checkTaskDetail:" destination="-1" eventType="touchUpInside" id="4L9-wE-E9a"/>
-                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -436,7 +426,7 @@
                                 <color key="titleColor" red="0.98021870850000004" green="0.31308874489999999" blue="0.2206134796" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                             <connections>
-                                <action selector="checkTaskDetail:" destination="-1" eventType="touchUpInside" id="txe-bE-knY"/>
+                                <action selector="checkoutAnnouncementsList:" destination="-1" eventType="touchUpInside" id="d6L-ts-DsS"/>
                             </connections>
                         </button>
                     </subviews>

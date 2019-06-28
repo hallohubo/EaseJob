@@ -13,19 +13,22 @@
 
 #import "NJNavigationController.h"
 #import "AppDelegate.h"
-#import "HBBannerModel.h"   //轮播图
-#import "HBNewsModle.h"     //前3条公告信息
-#import "HBTaskNewsModel.h" //前10条热门资讯
+#import "HBBannerModel.h"       //轮播图
+#import "HBNewsModle.h"         //前3条公告信息
+#import "HBTaskNewsModel.h"     //前10条热门资讯
+#import "HBAllTaskTypeModle.h"  //Act201 获取所有任务类型及其设置值
 
 #import "LMJScrollTextView.h"
 
-#import "HBAnnouncementVC.h"//公告列表分页
-#import "HDHotTaskVC.h"// 任务列表分页
+#import "HBAnnouncementVC.h"    //公告列表分页
+#import "HDHotTaskVC.h"         //任务列表分页
+#import "HDDiscoverVC.h"        //所有类型任务
 
 #import "HLGifHeader.h"
 
 #define BANNER_RATIO 0.64
 #define BANNER_MODEL @"BANNER_MODEL"
+
 
 @interface HDMainVC ()<UINavigationControllerDelegate, UIWebViewDelegate>
 {
@@ -38,19 +41,17 @@
     IBOutlet UITableView        *tbv;
     IBOutlet UIButton           *btnCheck;
     
-    IBOutlet UIButton           *btnRegister;
-    IBOutlet UIButton           *btnVote;
-    IBOutlet UIButton           *btnAttention;
-    IBOutlet UIButton           *btnBrowse;
-    IBOutlet UIButton           *btnDownloa;
-    IBOutlet UIButton           *btnforward;
-    IBOutlet UIButton           *btnPost;
-    IBOutlet UIButton           *btnComment;
-    IBOutlet UIButton           *btnECommerce;
-    IBOutlet UIButton           *btnAll;
+    IBOutlet UIButton           *btn0, *btn1, *btn2, *btn3, *btn4,
+                                *btn5, *btn6, *btn7, *btn8, *btn9;
+    
+    IBOutlet UILabel            *lb0, *lb1, *lb2, *lb3, *lb4,
+                                *lb5, *lb6, *lb7, *lb8, *lb9;
+    
+    IBOutlet UIImageView        *imv0, *imv1, *imv2, *imv3, *imv4,
+                                *imv5, *imv6, *imv7, *imv8, *imv9;
     
     NSArray                     *ar_bannerList;
-    NSMutableArray              *mar_pakageList;
+    NSMutableArray              *marAllTaskList;
     NSMutableArray              *marOrderList;
     NSMutableArray              *marHeadScrollImageList;
     NSMutableArray              *marTaskNewsList;
@@ -79,16 +80,7 @@
     [self loadNewData];
     [self httpGetBannerImages];
     [self httpGetRecentlyAnnounce:nil];
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-    
+    [self httpGetAllTask];
 }
 
 - (void)dealloc
@@ -362,57 +354,40 @@
 
 - (IBAction)checkTaskDetail:(UIButton *)sender
 {
-    switch (sender.tag) {
-        case 0:{//注册
+    HBAllTaskTypeModle *model = marAllTaskList[sender.tag];
+    
+    [self.navigationController pushViewController:[HDDiscoverVC new] animated:YES];
+}
 
-        }
-        case 1:{//投票
-           
-            break;
-        }
-        case 2:{//关注
-            
-            break;
-        }
-        case 3:{//浏览
-            
-            break;
-        }
-        case 4:{//下载
-            
-            break;
-        }
-        case 5:{//转发
-            
-            break;
-        }
-        case 6:{//发帖
-            
-            break;
-        }
-        case 7:{//评论
-            
-            break;
-        }
-        case 8:{//电商
-            
-            break;
-        }
-        case 9:{//全部
-            
-            break;
-        }
-        case 10:{//公告信息
-            [self.navigationController pushViewController:[HBAnnouncementVC new] animated:YES];
-            break;
-        }
-
-        default:
-            break;
-    }
+- (IBAction)checkoutAnnouncementsList:(UIButton *)sender
+{
+    [self.navigationController pushViewController:[HBAnnouncementVC new] animated:YES];
 }
 
 #pragma mark - Http event
+
+- (void)httpGetAllTask {//获取所有任务类型及其设置值
+    HDHttpHelper *helper = [HDHttpHelper instance];
+    [NJProgressHUD show];
+    
+    task = [helper postPath:@"Act201" object:[HBAllTaskTypeModle class] finished:^(HDError *error, id object, BOOL isLast, id json)
+    {
+        [NJProgressHUD dismiss];
+        if (error) {
+            if (error.code != 0) {
+                [LBXAlertAction sayWithTitle:@"提示" message:error.desc buttons:@[ @"确认"] chooseBlock:nil];
+            }
+            return ;
+        }
+        if (![object isKindOfClass:[NSArray class]]) {
+            return;
+        }
+        
+        marAllTaskList = object;
+        Dlog(@"maralltask:%@", marAllTaskList);
+        [self setAllTaskView];
+    }];
+}
 
 - (void)httpGetBannerImages {//获取轮播图
     HDHttpHelper *helper = [HDHttpHelper instance];
@@ -428,13 +403,15 @@
             }
             return ;
         }
-        
+        if (![object isKindOfClass:[NSArray class]]) {
+            return;
+        }
         ar_bannerList = object;
         [self setBannerView:ar_bannerList];
     }];
 }
 
-- (void)httpGetRecentlyAnnounce:(NSInteger)indexPage    //获取3条公告
+- (void)httpGetRecentlyAnnounce:(NSInteger)indexPage    //获取3条公告走马灯
 {
     HDHttpHelper *helper = [HDHttpHelper instance];
     task = [helper postPath:@"Act008" object:[HBNewsModle class] finished:^(HDError *error, id object, BOOL isLast, id json)
@@ -461,7 +438,7 @@
     }];
 }
 
-- (void)httpGetRecentlyNews:(NSInteger)indexPage //获取前10条热门资讯
+- (void)httpGetHotTenTask:(NSInteger)indexPage //获取前10条热门任务
 {
     HDHttpHelper *helper = [HDHttpHelper instance];
     NSDictionary *dic = @{@"PageSize":  @"10",
@@ -583,7 +560,7 @@
     [mar insertObject:[ar lastObject] atIndex:0];
     [mar addObject:[ar firstObject]];
     marHeadScrollImageList = [[NSMutableArray alloc] init];
-    marHeadScrollImageList = mar;//used for geting the link when click image;
+    marHeadScrollImageList = mar;//used for geting the jumping_link when click image;
     
     scv_banner.contentSize = CGSizeMake((HDDeviceSize.width) * mar.count, 10.);
     [scv_banner loadPageIndex:1 animated:NO];
@@ -608,18 +585,40 @@
     [self setAutoScrollStart];
 }
 
+- (void)setAllTaskView
+{
+    NSArray *arLables   = @[lb0, lb1, lb2, lb3, lb4, lb5, lb6, lb7, lb8];
+    NSArray *arImgviews = @[imv0, imv1, imv2, imv3, imv4, imv5, imv6, imv7, imv8];
+    NSArray *arButtons  = @[btn0, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8];
+    for (int i = 0; i < marAllTaskList.count; i++) {
+        HBAllTaskTypeModle *model = marAllTaskList[i];
+        NSURL *url = [NSURL URLWithString:model.TaskIcon];
+       
+        
+        for (UILabel *lb in arLables) {
+            lb.text = [lb isEqual:arLables[i]]? model.TaskType : lb.text;
+        }
+        for (UIImageView *imv in arImgviews) {
+            if( [imv isEqual:arImgviews[i]]) {
+                [imv sd_setImageWithURL:url];
+//                [imv setImage:HDIMAGE(@"main_focus")];
+            }
+        }
+    }
+}
+
 #pragma mark - other
 
 - (void)loadNewData
 {
     page = 1;
-    [self httpGetRecentlyNews:page];
+    [self httpGetHotTenTask:page];
 }
 
 - (void)loadMoreData
 {
     page += 1;
-    [self httpGetRecentlyNews:page];
+    [self httpGetHotTenTask:page];
 }
 
 @end

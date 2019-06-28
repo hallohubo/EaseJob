@@ -96,13 +96,15 @@
 }
 
 #pragma mark - http event
-- (void)httpGetPageTask:(NSInteger)indexPage type:(NSString *)type  //
+- (void)httpGetPageTask:(NSInteger)indexPage type:(NSString *)type typeId:(NSString *)typeId  //
 {
-    int iValue = type.intValue;
+    int IntType = type.intValue;
+    int IntTypeId = typeId.intValue;
     HDHttpHelper *helper = [HDHttpHelper instance];
     NSDictionary *dic = @{@"PageSize": @"10",
                           @"PageIndex": @(indexPage),
-                          @"type": @(iValue),
+                          @"taskTypeID": @(IntTypeId),
+                          @"searchType": @(IntType),
                           };
     [helper.parameters addEntriesFromDictionary:dic];
     
@@ -181,13 +183,13 @@
 - (void)loadNewData
 {
     page = 1;
-    [self httpGetPageTask:page type:_type];
+    [self httpGetPageTask:page type:_type typeId:_typeID];
 }
 
 - (void)loadMoreData
 {
     page += 1;
-    [self httpGetPageTask:page type:_type];
+    [self httpGetPageTask:page type:_type typeId:_typeID];
 }
 
 @end

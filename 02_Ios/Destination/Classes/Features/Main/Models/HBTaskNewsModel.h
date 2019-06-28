@@ -12,6 +12,7 @@
 @property (nonatomic, strong) NSString *TaskID;     //任务ID
 @property (nonatomic, strong) NSString *TaskNo;     //任务编号
 @property (nonatomic, strong) NSString *TaskType;   //任务类型
+@property (nonatomic, strong) NSString *TaskTypeId; //任务类型Id
 @property (nonatomic, strong) NSString *TaskIcon;   //任务类型图标
 @property (nonatomic, strong) NSString *TaskPayType;    //是否垫付（1=是，0=否）
 @property (nonatomic, strong) NSString *TaskTitle;      //任务标题

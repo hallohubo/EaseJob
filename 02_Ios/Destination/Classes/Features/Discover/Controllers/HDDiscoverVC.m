@@ -25,12 +25,13 @@
 {
     IBOutlet UITextField    *tfSearch;
     IBOutlet UIView         *vSearch;
-    IBOutlet UIScrollView    *scv;
+    IBOutlet UIScrollView   *scv;
     IBOutlet SPPageMenu     *vPageMenu;
     IBOutlet UIView         *vHead;
     NSArray                     *arBtn;
     NSURLSessionDataTask        *task;
     NSMutableArray              *marDiscoverList;
+    NSString                    *typeId;// at home page that task list or the all task view
 }
 
 @property (nonatomic, strong) NSArray *dataArr;
@@ -41,6 +42,15 @@
 @implementation HDDiscoverVC
 
 #pragma mark - lifeCycle
+
+- (instancetype)initWithTypeId:(NSString *)typeID
+{
+    if (self = [super init]) {
+        typeId = typeID;
+        return self;
+    }
+    return nil;
+}
 
 - (void)viewDidLoad
 {
@@ -225,7 +235,10 @@
     for (int i = 0; i < self.dataArr.count; i++) {
         if (controllerClassNames.count > i) {
             BaseViewController *baseVc = [[NSClassFromString(controllerClassNames[i]) alloc] init];
-                baseVc.text = HDFORMAT(@"%d", i);
+            
+            baseVc.typeID = typeId.length > 0? typeId : @"0";
+            baseVc.text = HDFORMAT(@"%d", i);
+            
             [self addChildViewController:baseVc];
             // 控制器本来自带childViewControllers,但是遗憾的是该数组的元素顺序永远无法改变，只要是addChildViewController,都是添加到最后一个，而控制器不像数组那样，可以插入或删除任意位置，所以这里自己定义可变数组，以便插入(删除)(如果没有插入(删除)功能，直接用自带的childViewControllers即可)
             [self.myChildViewControllers addObject:baseVc];
