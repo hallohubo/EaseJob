@@ -375,10 +375,11 @@
         model.TaskTypeID = @"0";
     }
     
+    // in this app cycle the tabBarController  is the global variable, so we can catch its point and don't worry about crashing
     UITabBarController *tab = self.tabBarController;
     NSArray *views = self.tabBarController.viewControllers;
-    NJNavigationController *cc = views[1];
     
+    NJNavigationController *cc = views[1];
     if ([cc.tabBarItem.title isEqualToString:@"发现"]) {
         HDDiscoverVC *ctr = cc.childViewControllers[0];
         ctr.typeId = model.TaskTypeID;
