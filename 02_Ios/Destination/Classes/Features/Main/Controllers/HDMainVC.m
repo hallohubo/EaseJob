@@ -585,7 +585,7 @@
     [self setAutoScrollStart];
 }
 
-- (void)setAllTaskView
+- (void)setAllTaskView  // 根据后台任务类型数量显示UI
 {
     NSRange range = NSMakeRange(marAllTaskList.count>9 ? 9 : marAllTaskList.count, marAllTaskList.count>9 ? marAllTaskList.count-9 : 0);
     [marAllTaskList removeObjectsInRange:range];
@@ -593,7 +593,7 @@
     model.TaskType = @"全部";
     model.TaskIcon = @"main_all";
     model.TaskTypeID = @"0";
-    [marAllTaskList addObject:model];
+    [marAllTaskList addObject:model];//最后显示“全部”类型
     
     NSArray *arLables   = @[lb0, lb1, lb2, lb3, lb4, lb5, lb6, lb7, lb8, lb9];
     NSArray *arImgviews = @[imv0, imv1, imv2, imv3, imv4, imv5, imv6, imv7, imv8, imv9];
