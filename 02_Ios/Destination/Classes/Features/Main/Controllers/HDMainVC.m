@@ -587,22 +587,44 @@
 
 - (void)setAllTaskView
 {
-    NSArray *arLables   = @[lb0, lb1, lb2, lb3, lb4, lb5, lb6, lb7, lb8];
-    NSArray *arImgviews = @[imv0, imv1, imv2, imv3, imv4, imv5, imv6, imv7, imv8];
-    NSArray *arButtons  = @[btn0, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8];
+    NSRange range = NSMakeRange(marAllTaskList.count>9 ? 9 : marAllTaskList.count, marAllTaskList.count>9 ? marAllTaskList.count-9 : 0);
+    [marAllTaskList removeObjectsInRange:range];
+    HBAllTaskTypeModle *model = [HBAllTaskTypeModle new];
+    model.TaskType = @"全部";
+    model.TaskIcon = @"main_all";
+    model.TaskTypeID = @"0";
+    [marAllTaskList addObject:model];
+    
+    NSArray *arLables   = @[lb0, lb1, lb2, lb3, lb4, lb5, lb6, lb7, lb8, lb9];
+    NSArray *arImgviews = @[imv0, imv1, imv2, imv3, imv4, imv5, imv6, imv7, imv8, imv9];
+    NSArray *arButtons  = @[btn0, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9];
     for (int i = 0; i < marAllTaskList.count; i++) {
         HBAllTaskTypeModle *model = marAllTaskList[i];
         NSURL *url = [NSURL URLWithString:model.TaskIcon];
        
-        
         for (UILabel *lb in arLables) {
             lb.text = [lb isEqual:arLables[i]]? model.TaskType : lb.text;
+            lb.hidden = [lb isEqual:arLables[i]]?  NO: YES;
         }
+        
         for (UIImageView *imv in arImgviews) {
-            if( [imv isEqual:arImgviews[i]]) {
+            imv.hidden = [imv isEqual:arImgviews[i]]? NO : YES;
+            if([imv isEqual:arImgviews[i]]) {
                 [imv sd_setImageWithURL:url];
-//                [imv setImage:HDIMAGE(@"main_focus")];
+                //                [imv setImage:HDIMAGE(@"main_focus")];
+                if (marAllTaskList.count == i+1) {
+                    [imv setImage:HDIMAGE(@"main_all")];
+                }
             }
+        }
+        
+        for (UIButton *btn in arButtons) {
+            btn.tag = [btn isEqual:arButtons[i]]? i : btn.tag;
+            btn.hidden = [btn isEqual:arButtons[i]]? NO : YES;
+            if (marAllTaskList.count == i+1 && [btn isEqual:arButtons[i]]) {
+                Dlog(@"btntag:%ld", (long)btn.tag);
+            }
+
         }
     }
 }
