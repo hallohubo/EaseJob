@@ -42,6 +42,7 @@
                 <outlet property="lb7" destination="33C-fS-yWZ" id="CAv-b8-uZd"/>
                 <outlet property="lb8" destination="R7u-s5-gTw" id="pjZ-15-BOj"/>
                 <outlet property="lb9" destination="tvc-4L-rlm" id="ajG-tm-VOq"/>
+                <outlet property="lcAllTaksHeight" destination="8KK-wT-xKM" id="T1E-Yc-AyJ"/>
                 <outlet property="pageControl" destination="Mip-xn-sPg" id="JkO-27-6X8"/>
                 <outlet property="scv_banner" destination="CTr-P2-RvY" id="8G7-tk-h42"/>
                 <outlet property="tbv" destination="Oz3-yx-oeC" id="T0C-pp-CeW"/>

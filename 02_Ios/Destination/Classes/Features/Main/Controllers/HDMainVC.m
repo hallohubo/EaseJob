@@ -30,6 +30,7 @@
 #define BANNER_MODEL @"BANNER_MODEL"
 
 
+
 @interface HDMainVC ()<UINavigationControllerDelegate, UIWebViewDelegate>
 {
     IBOutlet LMJScrollTextView  *vNews;
@@ -40,6 +41,8 @@
     IBOutlet UIView             *vMessage;
     IBOutlet UITableView        *tbv;
     IBOutlet UIButton           *btnCheck;
+    IBOutlet NSLayoutConstraint *lcAllTaksHeight;//adjust all task view height
+    IBOutlet NSLayoutConstraint *lcHeadHeight;
     
     IBOutlet UIButton           *btn0, *btn1, *btn2, *btn3, *btn4,
                                 *btn5, *btn6, *btn7, *btn8, *btn9;
@@ -61,6 +64,10 @@
     NSURLSessionDataTask        *task;
     NSTimer                     *timer;
     NSUInteger page;
+    
+    NSArray     *arLables;
+    NSArray     *arImgviews;
+    NSArray     *arButtons;
 }
 
 @end
@@ -74,7 +81,7 @@
     [super viewDidLoad];
     [self setupInit];
     [self setTableviewRefreshInit];
-    [self setTableHead];
+    [self setTableHead:290];
     [self setBannerView:nil];
     [self setStatusBarBackgroundColor:[UIColor clearColor]];
     [self loadNewData];
@@ -354,8 +361,9 @@
 
 - (IBAction)checkTaskDetail:(UIButton *)sender
 {
+
     HBAllTaskTypeModle *model = marAllTaskList[sender.tag];
-    
+
     [self.navigationController pushViewController:[HDDiscoverVC new] animated:YES];
 }
 
@@ -501,6 +509,18 @@
     scv_banner.backgroundColor  = [UIColor groupTableViewBackgroundColor];
     pageControl.numberOfPages = ar_bannerList.count;
     
+    arLables   = @[lb0, lb1, lb2, lb3, lb4, lb5, lb6, lb7, lb8, lb9];
+    arImgviews = @[imv0, imv1, imv2, imv3, imv4, imv5, imv6, imv7, imv8, imv9];
+    arButtons  = @[btn0, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9];
+    [self setUIObjectHiden:arLables];
+    [self setUIObjectHiden:arButtons];
+    [self setUIObjectHiden:arImgviews];
+}
+
+- (void)setUIObjectHiden:(NSArray *)UIObject{
+    for (id object in UIObject) {
+        [object setHidden:YES];
+    }
 }
 
 - (void)setTableviewRefreshInit
@@ -523,9 +543,9 @@
     [vNews startScrollWithText:word textColor:HDCOLOR_RED font:[UIFont systemFontOfSize:13]];
 }
 
-- (void)setTableHead
+- (void)setTableHead:(NSInteger)intHeight
 {
-    CGFloat height = 290 + (HDDeviceSize.width) * BANNER_RATIO;
+    CGFloat height = intHeight + (HDDeviceSize.width) * BANNER_RATIO;
     UIView *v = [[UIView alloc] initWithFrame:CGRectMake(0, 0, HDDeviceSize.width, height)];
     [v addSubview:vHeadView];
     [vHeadView makeConstraints:^(MASConstraintMaker *make){
@@ -585,29 +605,16 @@
     [self setAutoScrollStart];
 }
 
-- (void)setAllTaskView  // 根据后台任务类型数量显示UI
+- (void)setAllTaskView  // according the all task case to change task's view
 {
     NSRange range = NSMakeRange(marAllTaskList.count>9 ? 9 : marAllTaskList.count, marAllTaskList.count>9 ? marAllTaskList.count-9 : 0);
     [marAllTaskList removeObjectsInRange:range];
+    
     HBAllTaskTypeModle *model = [HBAllTaskTypeModle new];
     model.TaskType = @"全部";
     model.TaskIcon = @"main_all";
     model.TaskTypeID = @"0";
-    [marAllTaskList addObject:model];//最后显示“全部”类型
-    
-    NSArray *arLables   = @[lb0, lb1, lb2, lb3, lb4, lb5, lb6, lb7, lb8, lb9];
-    NSArray *arImgviews = @[imv0, imv1, imv2, imv3, imv4, imv5, imv6, imv7, imv8, imv9];
-    NSArray *arButtons  = @[btn0, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9];
-    
-    for (UILabel *lb in arLables) {
-        lb.hidden = YES;
-    }
-    for (UIButton *btn in arButtons) {
-        btn.hidden = YES;
-    }
-    for (UIImageView *imv in arImgviews) {
-        imv.hidden = YES;
-    }
+    [marAllTaskList addObject:model];//insert "全部" item
     
     for (int i = 0; i < marAllTaskList.count; i++) {
         HBAllTaskTypeModle *model = marAllTaskList[i];
@@ -620,15 +627,16 @@
         btn.hidden = NO;
         btn.tag = i;
         
-        
         UIImageView *imv = arImgviews[i];
         imv.hidden = NO;
         [imv sd_setImageWithURL:url];
-        //                [imv setImage:HDIMAGE(@"main_focus")];
         if (marAllTaskList.count == i+1) {
             [imv setImage:HDIMAGE(@"main_all")];
         }
     }
+    //need to change the tableview's height at view head
+    lcAllTaksHeight.constant = marOrderList.count > 5 ? 210. : 130.;
+    [self setTableHead:marOrderList.count > 5 ? 290 : 210];
 }
 
 #pragma mark - other
