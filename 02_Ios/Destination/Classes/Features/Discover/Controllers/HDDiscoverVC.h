@@ -14,8 +14,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (strong, nonatomic) NSString *typeId;
 
-- (instancetype)initWithTypeId:(NSString *)typeID;
-
 @end
 
 NS_ASSUME_NONNULL_END

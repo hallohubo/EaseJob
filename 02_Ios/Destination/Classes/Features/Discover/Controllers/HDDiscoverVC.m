@@ -43,9 +43,14 @@
 
 #pragma mark - lifeCycle
 
-- (void)viewWillAppear:(BOOL)animated
+- (void)viewDidAppear:(BOOL)animated
 {
-    [self setupPageMenuInit];
+    
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    HDGI.typeID = @"0";
 }
 
 - (void)viewDidLoad
@@ -53,7 +58,6 @@
     [super viewDidLoad];
     [self setup];
     [self setupPageMenuInit];
-    Dlog(@"ddddddd:%@", self.typeId);
 }
 
 #pragma mark - UINavigationControllerDelegate
@@ -204,6 +208,9 @@
 - (void)setupPageMenuInit
 {
     Dlog(@"ddddddd:%@", self.typeId);
+    if (self.childViewControllers.count > 0) {
+        
+    }
     self.dataArr = @[@"全部",@"简单",@"高价",@"VIP"];
     
     CGRect frame = [vPageMenu convertRect:vPageMenu.bounds toView:self.view];
@@ -216,7 +223,6 @@
     // 不可滑动的等宽排列
     vPageMenu.permutationWay = SPPageMenuPermutationWayNotScrollEqualWidths;
     vPageMenu.trackerWidth = 40;
-//    vPageMenu.backgroundColor = HDCOLOR_RED;
     // 设置代理
     vPageMenu.delegate = self;
     //给pageMenu传递外界的大scrollView，内部监听self.scrollView的滚动，
@@ -229,11 +235,15 @@
                                      @"ThidViewController", @"FourViewController", nil
                                      ];
     
+    
     for (int i = 0; i < self.dataArr.count; i++) {
         if (controllerClassNames.count > i) {
             BaseViewController *baseVc = [[NSClassFromString(controllerClassNames[i]) alloc] init];
+//            [baseVc addObserver:self forKeyPath:@"typeID" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
             
-            baseVc.typeID = _typeId.length > 0? self.typeId : @"0";
+            HDGI.typeID = _typeId.length > 0? self.typeId : @"0";
+            
+            Dlog(@"typetype:%@", baseVc.typeID);
             baseVc.text = HDFORMAT(@"%d", i);
             
             [self addChildViewController:baseVc];
@@ -254,6 +264,15 @@
         scv.contentSize = CGSizeMake(self.dataArr.count * kSCREEN_WIDTH, 0);
     }
     
+}
+
+- (void)traverseMyChildrenViewControllers
+{
+    for (BaseViewController *ctr in _myChildViewControllers) {
+        if (ctr) {
+            [ctr addObserver:self forKeyPath:@"typeID" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
+        }
+    }
 }
 
 - (NSMutableArray *)myChildViewControllers {

@@ -14,11 +14,21 @@
 
 @implementation FourViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    [self httpGetPageTask:1 type:@"3" typeId:HDSTR(self.typeID)];
+#pragma mark = life cycle;
 
-    // 请进入 "BaseViewController"
+- (void)viewDidAppear:(BOOL)animated
+{
+    Dlog(@"----FourViewController viewWillAppear------:%@", HDSTR(HDGI.typeID));
+    self.typeID = HDSTR(HDGI.typeID);
+    self.type   = @"3";
+    [self httpGetPageTask:1 type:self.type typeId:HDSTR(HDGI.typeID)];
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    Dlog(@"----FourViewController viewDidLoad------:%@", self.typeID);
+   
 }
 
 

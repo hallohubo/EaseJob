@@ -15,6 +15,7 @@
 @interface HDGlobal : NSObject
 
 @property (nonatomic, strong) HDLoginUserModel *loginUser;  //登录用户
+@property (nonatomic, strong) NSString *typeID; //任务类型切换时使用
 @property (nonatomic, strong) NSString *paySum;             //支付金额，由支付页面315接口获取，支付结果页调用
 //@property (nonatomic, strong) UINavigationController *nav;  //大厦基石导航控件
 @property (nonatomic, strong) NSString *strNotification;    //极光推送判断那个control需要显示小红点；

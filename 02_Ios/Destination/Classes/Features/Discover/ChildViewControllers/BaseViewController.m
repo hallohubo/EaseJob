@@ -35,6 +35,7 @@
     _tableView = tableView;
    
     [self setTableviewRefreshInit];
+    
 }
 
 - (void)viewWillLayoutSubviews
@@ -98,6 +99,7 @@
 #pragma mark - http event
 - (void)httpGetPageTask:(NSInteger)indexPage type:(NSString *)type typeId:(NSString *)typeId  //
 {
+    Dlog(@"=========first==========:%@:%@", type, typeId)
     int IntType = type.intValue;
     int IntTypeId = typeId.intValue;
     HDHttpHelper *helper = [HDHttpHelper instance];
@@ -183,13 +185,13 @@
 - (void)loadNewData
 {
     page = 1;
-    [self httpGetPageTask:page type:_type typeId:_typeID];
+    [self httpGetPageTask:page type:_text typeId:_typeID];
 }
 
 - (void)loadMoreData
 {
     page += 1;
-    [self httpGetPageTask:page type:_type typeId:_typeID];
+    [self httpGetPageTask:page type:_text typeId:_typeID];
 }
 
 @end

@@ -382,7 +382,7 @@
     NJNavigationController *cc = views[1];
     if ([cc.tabBarItem.title isEqualToString:@"发现"]) {
         HDDiscoverVC *ctr = cc.childViewControllers[0];
-        ctr.typeId = model.TaskTypeID;
+        HDGI.typeID = model.TaskTypeID;
         tab.selectedIndex = 1;
     }
 }

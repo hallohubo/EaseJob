@@ -14,11 +14,21 @@
 
 @implementation SecondViewController
 
+#pragma mark = life cycle;
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    Dlog(@"----SecondViewController viewWillAppear------:%@", HDSTR(HDGI.typeID));
+    self.typeID = HDSTR(HDGI.typeID);
+    self.type   = @"1";
+    [self httpGetPageTask:@"1"type:self.type typeId:HDSTR(HDGI.typeID)];
+
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self httpGetPageTask:1 type:@"1" typeId:HDSTR(self.typeID)];
-
-    // 请进入 "BaseViewController"
+    Dlog(@"----SecondViewController viewDidLoad------:%@", self.typeID);
+    
 }
 
 @end

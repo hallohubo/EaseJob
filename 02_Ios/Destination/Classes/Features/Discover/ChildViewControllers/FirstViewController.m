@@ -11,16 +11,27 @@
 
 @interface FirstViewController ()
 {
-    }
+    
+}
 
 @end
 
 @implementation FirstViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    [self httpGetPageTask:1 type:@"0" typeId:HDSTR(self.typeID)];
+#pragma mark = life cycle;
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    Dlog(@"----FirstViewController viewWillAppear------:%@", HDSTR(HDGI.typeID));
+    self.typeID = HDSTR(HDGI.typeID);
+    self.type = @"0";
+    [self httpGetPageTask:1 type:self.type typeId:self.typeID];
+
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
     // 请进入 "BaseViewController"
 }
 

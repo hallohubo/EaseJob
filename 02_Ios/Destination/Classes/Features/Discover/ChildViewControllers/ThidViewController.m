@@ -14,10 +14,20 @@
 
 @implementation ThidViewController
 
-- (void)viewDidLoad {
+#pragma mark = life cycle;
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    Dlog(@"----ThidViewController viewWillAppear------:%@", HDSTR(HDGI.typeID));
+    self.typeID = HDSTR(HDGI.typeID);
+    self.type   = @"2";
+    [self httpGetPageTask:1 type:self.type typeId:HDSTR(HDGI.typeID)];
+}
+
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    [self httpGetPageTask:1 type:@"2" typeId:HDSTR(self.typeID)];
-    // 请进入 "BaseViewController"
+    Dlog(@"----ThidViewController viewDidLoad------:%@", self.typeID);
 }
 
 
