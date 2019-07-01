@@ -21,6 +21,7 @@
 #import <UIImage+AFNetworking.h>
 #import <SDWebImage/UIView+WebCache.h>
 #import "HDHttpHelper.h"
+#import "NJCommonTool.h"
 #import "HDGlobal.h"
 
 #endif

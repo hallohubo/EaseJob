@@ -8,6 +8,8 @@
 
 #import "HDMeVC.h"
 #import "HBSystemSettingVC.h"
+#import "HBMobileCodeAuthenticationVC.h"
+#import "HBKindsCardsAuthenticationVC.h"
 
 @interface HDMeVC ()<UINavigationControllerDelegate>
 {
@@ -17,7 +19,8 @@
     IBOutlet UIImageView        *imvIsVIP;
     IBOutlet UIImageView        *imvHeadDotPoint;
 
-    IBOutlet UIButton           *btnOpenMember;//开通会员
+    IBOutlet UIButton           *btnOpenMember;//开通UIP
+    IBOutlet UIButton           *btnOpenVIP;
     IBOutlet UIButton           *btnRecharge;//充值
     IBOutlet UIButton           *btnWithdrawal;//提现
     IBOutlet UIButton           *btnIncome;//收支明细
@@ -104,7 +107,10 @@
             [self.navigationController pushViewController:[HBSystemSettingVC new] animated:YES];
             break;
         }
-
+        case 7:{//联系客服
+            [self.navigationController pushViewController:[HBMobileCodeAuthenticationVC new] animated:YES];
+            break;
+        }
         default:
             break;
     }
@@ -116,7 +122,7 @@
      self.navigationController.delegate = self;//设置导航控制器的代理为self
     
     [vNeedCorneradia addBorderWidth:0.f color:nil cornerRadius:8.f];
-    [btnOpenMember addBorderWidth:1. color:HDCOLOR_ORANGE cornerRadius:15.f];
+    [btnOpenVIP addBorderWidth:1. color:HDCOLOR_ORANGE cornerRadius:15.f];
     [imvHeadPerson addBorderWidth:.0 color:nil cornerRadius:33.f];
     [imvIsVIP addBorderWidth:0.f color:nil cornerRadius:10.f];
     [lbMemberMark addBorderWidth:.0f color:nil cornerRadius:10.f];

@@ -2572,6 +2572,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Destination/Classes/Utilitys/LDEncrypt",
+					"$(PROJECT_DIR)/Destination/Classes/Utilitys/IDCard/libexidcard",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.yunchen.qinsonghuo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2610,6 +2611,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Destination/Classes/Utilitys/LDEncrypt",
+					"$(PROJECT_DIR)/Destination/Classes/Utilitys/IDCard/libexidcard",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.yunchen.qinsonghuo;
 				PRODUCT_NAME = "$(TARGET_NAME)";

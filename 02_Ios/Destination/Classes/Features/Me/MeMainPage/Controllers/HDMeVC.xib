@@ -14,7 +14,8 @@
             <connections>
                 <outlet property="btnCutomer" destination="j9V-mK-xMw" id="LeL-7h-D6Z"/>
                 <outlet property="btnIncome" destination="vin-0D-xjs" id="ldT-x6-2tR"/>
-                <outlet property="btnOpenMember" destination="ioh-nA-geQ" id="VBb-lD-5Ja"/>
+                <outlet property="btnOpenMember" destination="h61-Vu-bsx" id="6QK-uJ-8cd"/>
+                <outlet property="btnOpenVIP" destination="ioh-nA-geQ" id="ERJ-5P-Ny5"/>
                 <outlet property="btnRecharge" destination="4m8-He-SDh" id="JTV-g8-FUC"/>
                 <outlet property="btnSetting" destination="CaL-xu-U7u" id="WxM-vP-WUk"/>
                 <outlet property="btnShare" destination="fQy-B2-u0l" id="SZL-p6-eju"/>
@@ -417,6 +418,15 @@
                         <constraint firstAttribute="width" constant="20" id="PpP-v7-CRh"/>
                     </constraints>
                 </imageView>
+                <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h61-Vu-bsx">
+                    <rect key="frame" x="103" y="78" width="70" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="tkU-ul-fD5"/>
+                    </constraints>
+                    <connections>
+                        <action selector="touchButton:" destination="-1" eventType="touchUpInside" id="QFF-ju-6HB"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
             <constraints>
@@ -430,6 +440,7 @@
                 <constraint firstItem="6WG-E5-oh8" firstAttribute="top" secondItem="PqY-PJ-9yj" secondAttribute="bottom" constant="5" id="BMH-i6-oK0"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="p4s-e9-CVY" secondAttribute="trailing" constant="20" id="CrH-Bi-Mf1"/>
                 <constraint firstItem="p4s-e9-CVY" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="20" id="ESL-DM-dpC"/>
+                <constraint firstItem="IQd-BJ-xTT" firstAttribute="centerX" secondItem="h61-Vu-bsx" secondAttribute="centerX" id="Kfb-gt-yjy"/>
                 <constraint firstItem="sRj-US-baI" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="Psj-p1-DcC"/>
                 <constraint firstItem="Gt2-Js-MTT" firstAttribute="top" secondItem="idR-Zs-pDF" secondAttribute="bottom" id="QlP-wF-9Se"/>
                 <constraint firstItem="Dux-DU-iHk" firstAttribute="bottom" secondItem="idR-Zs-pDF" secondAttribute="bottom" id="SeN-LR-shy"/>
@@ -459,10 +470,12 @@
                 <constraint firstItem="6A3-Uv-nHo" firstAttribute="centerY" secondItem="41Q-q8-Nw5" secondAttribute="centerY" id="sgB-kB-MRD"/>
                 <constraint firstItem="NlN-hV-DBb" firstAttribute="leading" secondItem="Dux-DU-iHk" secondAttribute="trailing" constant="10" id="soG-NQ-CkI"/>
                 <constraint firstItem="6A3-Uv-nHo" firstAttribute="centerX" secondItem="41Q-q8-Nw5" secondAttribute="centerX" id="tk4-Br-B8s"/>
+                <constraint firstItem="IQd-BJ-xTT" firstAttribute="centerY" secondItem="h61-Vu-bsx" secondAttribute="centerY" id="tmG-1L-o4O"/>
                 <constraint firstItem="zaE-ud-lIP" firstAttribute="top" secondItem="4m8-He-SDh" secondAttribute="bottom" constant="5" id="vMj-Fk-Tmo"/>
                 <constraint firstItem="6A3-Uv-nHo" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="65" id="voe-27-RAw"/>
                 <constraint firstItem="idR-Zs-pDF" firstAttribute="centerY" secondItem="sRj-US-baI" secondAttribute="centerY" id="xOC-QK-37C"/>
                 <constraint firstItem="4m8-He-SDh" firstAttribute="centerX" secondItem="Dux-DU-iHk" secondAttribute="centerX" id="yhI-MG-LSH"/>
+                <constraint firstItem="h61-Vu-bsx" firstAttribute="width" secondItem="IQd-BJ-xTT" secondAttribute="width" id="z9b-pa-7HO"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
             <point key="canvasLocation" x="137.68115942028987" y="78.348214285714278"/>

@@ -269,10 +269,11 @@ static dispatch_once_t *onceToken_debug;
             block(e, nil);
             return ;
         }
-        NSString *sign = HDFORMAT(@"%@_%@_RSPlatFormAPI", [HDHelper uuid], seed);
+        NSString *sign = HDFORMAT(@"%@_%@_EasyTaskAPI", [HDHelper uuid], seed);
         NSString *encry = [LDCry getMd5_32Bit_String:sign];
         Dlog(@"sign = %@", sign);
         Dlog(@"encry = %@", encry);
+
         [self.requestSerializer setValue:HDSTR(key) forHTTPHeaderField:@"Key"];
         [self.requestSerializer setValue:HDSTR(encry) forHTTPHeaderField:@"Sign"];
         [self.requestSerializer setValue:HDSTR(PLATFORM) forHTTPHeaderField:@"Platform"];

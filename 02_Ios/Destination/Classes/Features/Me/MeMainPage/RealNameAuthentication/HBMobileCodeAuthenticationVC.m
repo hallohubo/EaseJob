@@ -7,6 +7,7 @@
 //
 
 #import "HBMobileCodeAuthenticationVC.h"
+#import "HBKindsCardsAuthenticationVC.h"
 
 @interface HBMobileCodeAuthenticationVC ()
 {
@@ -30,6 +31,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setupInit];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -73,7 +75,9 @@
     
     [self.view endEditing:YES];
     
-    NSDictionary *dic = @{@"mobile":HDSTR(tfPhone.text), @"validCode":HDSTR(tfVerifyCode.text)};
+    NSDictionary *dic = @{@"mobile":HDSTR(tfPhone.text),
+                          @"validCode":HDSTR(tfVerifyCode.text)
+                          };
     
     [self HttpPostMobileAuthentication:dic];
 }
@@ -87,7 +91,9 @@
         if (buttonIdx == 0) {
             return ;
         }
-        NSDictionary *dic = @{@"mobile": HDSTR(tfPhone.text), @"flag": @"3"};//1 为h登录, 2为忘记密码 3为实名认证
+        NSDictionary *dic = @{@"mobile": HDSTR(tfPhone.text),
+                              @"flag": @"3"
+                              };//1 为h登录, 2为忘记密码 3为实名认证
         Dlog(@"-----dic:%@", dic);
         [self httpGetCode:dic];
     }];
@@ -118,7 +124,7 @@
     HDHttpHelper *helper = [HDHttpHelper instance];
     [helper.parameters addEntriesFromDictionary:dicParam];
     [NJProgressHUD show];
-    task = [helper postPath:@"Act114" object:nil finished:^(HDError *error, id object, BOOL isLast, id json) {
+    task = [helper postPath:@"Act113" object:nil finished:^(HDError *error, id object, BOOL isLast, id json) {
         [NJProgressHUD dismiss];
         if (error) {
             [LBXAlertAction sayWithTitle:@"提示" message:error.desc buttons:@[ @"确认"] chooseBlock:nil];
@@ -127,10 +133,12 @@
         Dlog(@"json:%@",json);
         NSDictionary *respons = json;
         NSString *strIsvalid = JSON(json[@"IsValid"]);
+        if (!(strIsvalid.length > 0)) {
+            return;
+        }
         Dlog(@"isvalid:%@",strIsvalid);
-        [LBXAlertAction sayWithTitle:@"提示" message:@"短信验证成功" buttons:@[ @"确认"] chooseBlock:nil];
-//        HBResetPasswordVC *ctr = [[HBResetPasswordVC alloc] initWithPhone:tfPhone.text specifiedCode:strIsvalid];
-//        [self.navigationController pushViewController:ctr animated:YES];
+        HBKindsCardsAuthenticationVC *ctr = [[HBKindsCardsAuthenticationVC alloc] initWithIsvail:strIsvalid];
+        [self.navigationController pushViewController:ctr animated:YES];
         
     }];
 }
@@ -213,6 +221,7 @@
     self.title = @"实名认证";
     
     [btnNextStep addBorderWidth:.0 color:nil cornerRadius:25.];
+    
     [HDHelper changeColor:btnNextStep];
 
 }
