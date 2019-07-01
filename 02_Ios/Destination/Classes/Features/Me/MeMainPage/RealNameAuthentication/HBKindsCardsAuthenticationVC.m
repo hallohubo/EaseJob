@@ -17,7 +17,9 @@
     IBOutlet UITextField    *tfBank;
     IBOutlet UITextField    *tfBankCode;
     
-     NSURLSessionDataTask    *task;
+    NSURLSessionDataTask    *task;
+    NSString *isValid;
+    
 }
 
 @end
@@ -25,6 +27,15 @@
 @implementation HBKindsCardsAuthenticationVC
 
 #pragma mark - life cycle
+
+- (instancetype)initWithIsvail:(NSString *)vailString
+{
+    if (self = [super init]) {
+        isValid = vailString;
+        return self;
+    }
+    return nil;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -68,13 +79,13 @@
     
     [self.view endEditing:YES];
     
-    NSDictionary *dic = @{@"name":HDSTR(tfName.text),
-                          @"idCard":HDSTR(tfIdentifyCode.text),
-                          @"bankAccount":HDSTR(tfBankCode.text),
-                          @"openingBank":HDSTR(tfBank.text),
-                          @"openingBank":HDSTR(tfBank.text),
-                          @"isValid":HDSTR(tfBank.text),    //Act113接口返回的IsValid参数值原样回传
-                          @"photoPath":HDSTR(tfBank.text),  //请求接口Act112上传后返回的图片地址
+    NSDictionary *dic = @{@"name"           :HDSTR(tfName.text),
+                          @"idCard"         :HDSTR(tfIdentifyCode.text),
+                          @"bankAccount"    :HDSTR(tfBankCode.text),
+                          @"openingBank"    :HDSTR(tfBank.text),
+                          @"openingBank"    :HDSTR(tfBank.text),
+                          @"isValid"        :HDSTR(isValid),    //Act113接口返回的IsValid参数值原样回传
+                          @"photoPath"      :HDSTR(tfBank.text),  //请求接口Act112上传后返回的图片地址
                           };
     
     [self HttpPostMobileAuthentication:dic];
