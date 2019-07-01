@@ -216,7 +216,36 @@ static HDHelper *utility = nil;
     
 }
 
+#pragma mark - 银行卡号合法验证
 
++ (BOOL)isValidateBandCard:(NSString *)cardNumber
+{
+    int oddSum = 0;
+    int evenSum = 0;
+    int allSum = 0; // 总和
+    // 循环加和
+    for (NSInteger i = 1; i <= cardNumber.length; i++){
+        NSString *theNumber = [cardNumber substringWithRange:NSMakeRange(cardNumber.length-i, 1)];
+        int lastNumber = [theNumber intValue]; if (i%2 == 0){
+            // 偶数位
+            lastNumber *= 2;
+            if (lastNumber > 9){
+                lastNumber -=9;
+            }
+            evenSum += lastNumber;
+            
+        } else{ // 奇数位
+            oddSum += lastNumber;
+        }
+    }
+    allSum = oddSum + evenSum; // 是否合法
+    if (allSum%10 == 0){
+        return YES;
+    } else{
+        return NO;
+    }
+}
+  
 /*邮箱验证 MODIFIED BY DENNISHU*/
 + (BOOL)isValidateEmail:(NSString *)email{
     NSString *emailRegex    = @"^\\s*\\w+(?:\\.{0,1}[\\w-]+)*@[a-zA-Z0-9]+(?:[-.][a-zA-Z0-9]+)*\\.[a-zA-Z]+\\s*$";

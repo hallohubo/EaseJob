@@ -28,7 +28,6 @@
 {
     [super viewDidLoad];
     Dlog(@"----FourViewController viewDidLoad------:%@", self.typeID);
-   
 }
 
 

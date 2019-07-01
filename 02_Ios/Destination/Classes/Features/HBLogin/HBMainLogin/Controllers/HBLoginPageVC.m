@@ -23,7 +23,6 @@
     IBOutlet UIButton       *btnSecure;
     IBOutlet UIButton       *btnRegiste;
     IBOutlet UIImageView    *imvLogo;
-    CAGradientLayer         *gradientLayer;
     NSURLSessionDataTask    *task;
 }
 

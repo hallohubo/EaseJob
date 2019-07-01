@@ -1,8 +1,8 @@
 //
-//  HDDiscoverVC.h
+//  HBMobileCodeAuthenticationVC.h
 //  Destination
 //
-//  Created by 胡勃 on 6/30/19.
+//  Created by 胡勃 on 7/1/19.
 //  Copyright © 2019 Redirect. All rights reserved.
 //
 
@@ -10,9 +10,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface HDDiscoverVC : UIViewController
-
-@property (strong, nonatomic) NSString *typeId;
+@interface HBMobileCodeAuthenticationVC : UIViewController
 
 @end
+
 NS_ASSUME_NONNULL_END

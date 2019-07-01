@@ -67,6 +67,7 @@
 + (void)setShadow:(UIView *)view;
 
 /** NSString验证合法性 **/
++ (BOOL)isValidateBandCard:(NSString *)cardNumber;
 + (BOOL)isValidateEmail:(NSString *)email;
 + (BOOL)isValidateMobile:(NSString *)mobile;
 + (BOOL)isValidateCarNo:(NSString *)carNo;

@@ -1,72 +1,39 @@
 //
-//  HBForgetPasswordVC.m
+//  HBMobileCodeAuthenticationVC.m
 //  Destination
 //
-//  Created by 胡勃 on 6/12/19.
+//  Created by 胡勃 on 7/1/19.
 //  Copyright © 2019 Redirect. All rights reserved.
 //
 
-#import "HBForgetPasswordVC.h"
-#import "HBResetPasswordVC.h"
+#import "HBMobileCodeAuthenticationVC.h"
 
-@interface HBForgetPasswordVC ()
+@interface HBMobileCodeAuthenticationVC ()
 {
-    IBOutlet UITextField        *tfPhone;
-    IBOutlet UITextField        *tfCode;
-    IBOutlet UIButton           *btnGetCode;
-    IBOutlet UIButton           *btnSubmit;
-    NSURLSessionDataTask        *task;
+    IBOutlet UITextField    *tfVerifyCode;
+    IBOutlet UITextField    *tfPhone;
+    IBOutlet UIButton       *btnNextStep;
+    IBOutlet UIButton       *btnGetVerify;
+
+    NSURLSessionDataTask    *task;
 }
 
 /********* 定时器 *********/
 @property(nonatomic, strong) dispatch_source_t timer;
 
+
 @end
 
-@implementation HBForgetPasswordVC
+@implementation HBMobileCodeAuthenticationVC
 
-#pragma mark life cycle
+#pragma mark - life cycle
 
--(void)viewWillDisappear:(BOOL)animated
-{
-    task = nil;
-}
-
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-    [self setupUI];
     // Do any additional setup after loading the view from its nib.
 }
 
-#pragma mark - UI event
-
-- (IBAction)btnRegisterClick:(UIButton *)sender
-{
-    if(tfPhone.text.length == 0) {
-        [NJProgressHUD showError:@"手机号不能为空"];
-        [NJProgressHUD dismissWithDelay:1.2];
-        return;
-    }
-    
-    if(tfPhone.text.length != 11) {
-        [NJProgressHUD showError:@"手机号格式不正确"];
-        [NJProgressHUD dismissWithDelay:1.2];
-        return;
-    }
-    
-    if(tfCode.text.length == 0) {
-        [NJProgressHUD showError:@"验证码不能为空"];
-        [NJProgressHUD dismissWithDelay:1.2];
-        return;
-    }
-    
-    [self.view endEditing:YES];
-    
-    NSDictionary *dic = @{@"mobile":HDSTR(tfPhone.text), @"validCode":HDSTR(tfCode.text)};
-    
-    [self HttpPostRegisterRequest:dic];
-}
+#pragma mark - UI touch event
 
 - (IBAction)getVeriCodeBtnClick:(UIButton *)sender
 {
@@ -84,13 +51,43 @@
     [self getPhoneVeriCode];
 }
 
+- (IBAction)btnNectClick:(UIButton *)sender
+{
+    if(tfPhone.text.length == 0) {
+        [NJProgressHUD showError:@"手机号不能为空"];
+        [NJProgressHUD dismissWithDelay:1.2];
+        return;
+    }
+    
+    if(tfPhone.text.length != 11) {
+        [NJProgressHUD showError:@"手机号格式不正确"];
+        [NJProgressHUD dismissWithDelay:1.2];
+        return;
+    }
+    
+    if(tfVerifyCode.text.length == 0) {
+        [NJProgressHUD showError:@"验证码不能为空"];
+        [NJProgressHUD dismissWithDelay:1.2];
+        return;
+    }
+    
+    [self.view endEditing:YES];
+    
+    NSDictionary *dic = @{@"mobile":HDSTR(tfPhone.text), @"validCode":HDSTR(tfVerifyCode.text)};
+    
+    [self HttpPostMobileAuthentication:dic];
+}
+
+
+#pragma mark - http event
+
 - (void)getPhoneVeriCode //获取验证码
 {
     [LBXAlertAction sayWithTitle:@"提示" message:HDFORMAT(@"我们将下发短信验证码，请确认手机号：%@", tfPhone.text) buttons:@[@"取消", @"确认"] chooseBlock:^(NSInteger buttonIdx) {
         if (buttonIdx == 0) {
             return ;
         }
-        NSDictionary *dic = @{@"mobile": HDSTR(tfPhone.text), @"flag": @"2"};//1 为h登录, 2为忘记密码
+        NSDictionary *dic = @{@"mobile": HDSTR(tfPhone.text), @"flag": @"3"};//1 为h登录, 2为忘记密码 3为实名认证
         Dlog(@"-----dic:%@", dic);
         [self httpGetCode:dic];
     }];
@@ -98,7 +95,7 @@
 
 #pragma mark - http event
 
-- (void)httpGetCode:(NSDictionary *)dicParam
+- (void)httpGetCode:(NSDictionary *)dicParam// reques authentication code
 {
     HDHttpHelper *helper = [HDHttpHelper instance];
     [helper.parameters addEntriesFromDictionary:dicParam];
@@ -109,19 +106,19 @@
             [LBXAlertAction sayWithTitle:@"提示" message:error.desc buttons:@[ @"确认"] chooseBlock:nil];
             return ;
         }
-        [tfCode becomeFirstResponder];
+        [tfVerifyCode becomeFirstResponder];
         [NJProgressHUD showSuccess:@"验证码下发成功，请注意查收短信！"];
         [NJProgressHUD dismissWithDelay:1.2];
         [self startTime];
     }];
 }
 
-- (void)HttpPostRegisterRequest:(NSDictionary *)dicParam
+- (void)HttpPostMobileAuthentication:(NSDictionary *)dicParam //request authentication
 {
     HDHttpHelper *helper = [HDHttpHelper instance];
     [helper.parameters addEntriesFromDictionary:dicParam];
     [NJProgressHUD show];
-    task = [helper postPath:@"Act106" object:nil finished:^(HDError *error, id object, BOOL isLast, id json) {
+    task = [helper postPath:@"Act114" object:nil finished:^(HDError *error, id object, BOOL isLast, id json) {
         [NJProgressHUD dismiss];
         if (error) {
             [LBXAlertAction sayWithTitle:@"提示" message:error.desc buttons:@[ @"确认"] chooseBlock:nil];
@@ -131,9 +128,9 @@
         NSDictionary *respons = json;
         NSString *strIsvalid = JSON(json[@"IsValid"]);
         Dlog(@"isvalid:%@",strIsvalid);
-        
-        HBResetPasswordVC *ctr = [[HBResetPasswordVC alloc] initWithPhone:tfPhone.text specifiedCode:strIsvalid];
-        [self.navigationController pushViewController:ctr animated:YES];
+        [LBXAlertAction sayWithTitle:@"提示" message:@"短信验证成功" buttons:@[ @"确认"] chooseBlock:nil];
+//        HBResetPasswordVC *ctr = [[HBResetPasswordVC alloc] initWithPhone:tfPhone.text specifiedCode:strIsvalid];
+//        [self.navigationController pushViewController:ctr animated:YES];
         
     }];
 }
@@ -181,10 +178,10 @@
             NSString *strTime = [NSString stringWithFormat:@"发送验证码(%dS)",timeout];
             NSLog(@"strTime = %@",strTime);
             dispatch_async(dispatch_get_main_queue(), ^{
-                btnGetCode.userInteractionEnabled = NO;
-                [btnGetCode setTitleColor:HDCOLOR_RED forState:UIControlStateNormal];
+                btnGetVerify.userInteractionEnabled = NO;
+                [btnGetVerify setTitleColor:HDCOLOR_RED forState:UIControlStateNormal];
                 NSString * titleStr = [[NSString alloc] initWithFormat:@"剩余%dS", timeout];
-                [btnGetCode setTitle:titleStr forState:UIControlStateNormal];
+                [btnGetVerify setTitle:titleStr forState:UIControlStateNormal];
             });
             timeout--;
         }
@@ -201,21 +198,23 @@
         dispatch_source_cancel(self.timer);
         self.timer = nil;
         dispatch_async(dispatch_get_main_queue(), ^{
-            btnGetCode.selected = NO;
-            [btnGetCode setTitleColor:HDCOLOR_ORANGE forState:UIControlStateNormal];
-            [btnGetCode setTitle:@"发送验证码" forState:UIControlStateNormal];
-            btnGetCode.userInteractionEnabled = YES;
+            btnGetVerify.selected = NO;
+            [btnGetVerify setTitleColor:HDCOLOR_ORANGE forState:UIControlStateNormal];
+            [btnGetVerify setTitle:@"发送验证码" forState:UIControlStateNormal];
+            btnGetVerify.userInteractionEnabled = YES;
         });
     }
 }
 
-#pragma mark - getter and setter
+#pragma mark - setter and getter
 
-- (void)setupUI
+- (void)setupInit
 {
-    self.title = @"忘记密码";
-    [btnSubmit addBorderWidth:.0f color:nil cornerRadius:25.f];
-    [HDHelper changeColor:btnSubmit];
+    self.title = @"实名认证";
+    
+    [btnNextStep addBorderWidth:.0 color:nil cornerRadius:25.];
+    [HDHelper changeColor:btnNextStep];
+
 }
 
 @end

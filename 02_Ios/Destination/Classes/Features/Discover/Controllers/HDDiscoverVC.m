@@ -2,7 +2,7 @@
 //  HDDiscoverVC.m
 //  Destination
 //
-//  Created by hufan on 2019/6/1.
+//  Created by 胡勃 on 6/30/19.
 //  Copyright © 2019 Redirect. All rights reserved.
 //
 
@@ -149,7 +149,7 @@
                     return;
                 }
                 marDiscoverList = object;
-               
+                
                 
             }];
 }
@@ -158,8 +158,8 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     
-     //这一步是实现跟踪器时刻跟随scrollView滑动的效果,如果对self.pageMenu.scrollView赋了值，这一步可省
-//     [vPageMenu moveTrackerFollowScrollView:scrollView];
+    //这一步是实现跟踪器时刻跟随scrollView滑动的效果,如果对self.pageMenu.scrollView赋了值，这一步可省
+    //     [vPageMenu moveTrackerFollowScrollView:scrollView];
 }
 
 #pragma mark - SPPageMenu的代理方法
@@ -201,7 +201,7 @@
 - (void)setup
 {
     self.navigationController.delegate = self;//设置导航控制器的代理为self
-
+    
     [vSearch addBorderWidth:.1f color:nil cornerRadius:15.0];
 }
 
@@ -215,7 +215,7 @@
     
     CGRect frame = [vPageMenu convertRect:vPageMenu.bounds toView:self.view];
     Dlog(@"WINDowframe1:%@", NSStringFromCGRect(frame));
-
+    
     vPageMenu = [SPPageMenu pageMenuWithFrame:frame trackerStyle:SPPageMenuTrackerStyleLineAttachment];
     
     // 传递数组，默认选中第1个
@@ -239,7 +239,7 @@
     for (int i = 0; i < self.dataArr.count; i++) {
         if (controllerClassNames.count > i) {
             BaseViewController *baseVc = [[NSClassFromString(controllerClassNames[i]) alloc] init];
-//            [baseVc addObserver:self forKeyPath:@"typeID" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
+            //            [baseVc addObserver:self forKeyPath:@"typeID" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
             
             HDGI.typeID = _typeId.length > 0? self.typeId : @"0";
             
