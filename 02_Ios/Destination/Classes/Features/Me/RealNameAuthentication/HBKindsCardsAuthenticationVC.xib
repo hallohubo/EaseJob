@@ -48,10 +48,10 @@
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E7E-YU-T12">
-                    <rect key="frame" x="0.0" y="330.66666666666669" width="414" height="50"/>
+                    <rect key="frame" x="0.0" y="330.66666666666669" width="414" height="40"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="姓名" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KGs-eo-KBB">
-                            <rect key="frame" x="10" y="14.333333333333314" width="90" height="21"/>
+                            <rect key="frame" x="10" y="9.3333333333333144" width="90" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="90" id="aCj-Ti-gfg"/>
                                 <constraint firstAttribute="height" constant="21" id="ljX-Qb-v2o"/>
@@ -61,7 +61,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入姓名" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QaX-nU-c7l">
-                            <rect key="frame" x="102" y="10" width="302" height="30"/>
+                            <rect key="frame" x="102" y="5" width="302" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="YWk-OE-V2B"/>
                             </constraints>
@@ -75,16 +75,16 @@
                         <constraint firstAttribute="trailing" secondItem="QaX-nU-c7l" secondAttribute="trailing" constant="10" id="NwV-rV-M7Y"/>
                         <constraint firstItem="KGs-eo-KBB" firstAttribute="centerY" secondItem="E7E-YU-T12" secondAttribute="centerY" id="RuL-dP-aaz"/>
                         <constraint firstItem="KGs-eo-KBB" firstAttribute="leading" secondItem="E7E-YU-T12" secondAttribute="leading" constant="10" id="Spe-TZ-Eyd"/>
-                        <constraint firstAttribute="height" constant="50" id="nIB-d6-8aa"/>
+                        <constraint firstAttribute="height" constant="40" id="nIB-d6-8aa"/>
                         <constraint firstItem="QaX-nU-c7l" firstAttribute="leading" secondItem="KGs-eo-KBB" secondAttribute="trailing" constant="2" id="sdf-4m-CvZ"/>
                         <constraint firstItem="QaX-nU-c7l" firstAttribute="centerY" secondItem="E7E-YU-T12" secondAttribute="centerY" id="sfY-wa-Qpp"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IcX-Ew-AGL">
-                    <rect key="frame" x="0.0" y="381.66666666666669" width="414" height="50"/>
+                    <rect key="frame" x="0.0" y="371.66666666666669" width="414" height="40"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="身份证号" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SRb-LV-rtV">
-                            <rect key="frame" x="10" y="14.333333333333314" width="90" height="21"/>
+                            <rect key="frame" x="10" y="9.3333333333333144" width="90" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="90" id="Wkh-DO-aFR"/>
                                 <constraint firstAttribute="height" constant="21" id="XxA-Fi-IbK"/>
@@ -94,7 +94,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入身份证号" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cLA-ur-ZQB">
-                            <rect key="frame" x="102" y="10" width="302" height="30"/>
+                            <rect key="frame" x="102" y="5" width="302" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="DtJ-nW-T0B"/>
                             </constraints>
@@ -107,17 +107,17 @@
                     <constraints>
                         <constraint firstItem="SRb-LV-rtV" firstAttribute="leading" secondItem="IcX-Ew-AGL" secondAttribute="leading" constant="10" id="3ju-Q5-nDL"/>
                         <constraint firstItem="cLA-ur-ZQB" firstAttribute="leading" secondItem="SRb-LV-rtV" secondAttribute="trailing" constant="2" id="4d5-kd-eAt"/>
-                        <constraint firstAttribute="height" constant="50" id="Amx-43-G3K"/>
+                        <constraint firstAttribute="height" constant="40" id="Amx-43-G3K"/>
                         <constraint firstItem="cLA-ur-ZQB" firstAttribute="centerY" secondItem="IcX-Ew-AGL" secondAttribute="centerY" id="csa-7h-4z3"/>
                         <constraint firstAttribute="trailing" secondItem="cLA-ur-ZQB" secondAttribute="trailing" constant="10" id="rae-hX-Dzd"/>
                         <constraint firstItem="SRb-LV-rtV" firstAttribute="centerY" secondItem="IcX-Ew-AGL" secondAttribute="centerY" id="uIb-wK-kP1"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nnT-il-mhM">
-                    <rect key="frame" x="0.0" y="432.66666666666669" width="414" height="50"/>
+                    <rect key="frame" x="0.0" y="412.66666666666669" width="414" height="40"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="开户行" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p44-ou-RXv">
-                            <rect key="frame" x="10" y="14.333333333333314" width="90" height="21"/>
+                            <rect key="frame" x="10" y="9.3333333333333144" width="90" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="21" id="7IJ-ft-h9a"/>
                                 <constraint firstAttribute="width" constant="90" id="EpK-Bt-81h"/>
@@ -127,7 +127,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入开户行" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MgW-mO-H8U">
-                            <rect key="frame" x="102" y="10" width="302" height="30"/>
+                            <rect key="frame" x="102" y="5" width="302" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="x0C-Ca-Pdn"/>
                             </constraints>
@@ -138,7 +138,7 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="50" id="071-ug-e9d"/>
+                        <constraint firstAttribute="height" constant="40" id="071-ug-e9d"/>
                         <constraint firstItem="p44-ou-RXv" firstAttribute="leading" secondItem="nnT-il-mhM" secondAttribute="leading" constant="10" id="Jrf-mb-tOT"/>
                         <constraint firstItem="MgW-mO-H8U" firstAttribute="leading" secondItem="p44-ou-RXv" secondAttribute="trailing" constant="2" id="N0H-zi-je0"/>
                         <constraint firstAttribute="trailing" secondItem="MgW-mO-H8U" secondAttribute="trailing" constant="10" id="RMX-Wy-Meu"/>
@@ -147,10 +147,10 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0xL-xd-gIE">
-                    <rect key="frame" x="0.0" y="483.66666666666669" width="414" height="50.000000000000057"/>
+                    <rect key="frame" x="0.0" y="453.66666666666669" width="414" height="40"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="银行卡号" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wrl-JJ-TdE">
-                            <rect key="frame" x="10" y="14.333333333333314" width="90" height="21"/>
+                            <rect key="frame" x="10" y="9.3333333333333144" width="90" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="21" id="Goz-gK-Opc"/>
                                 <constraint firstAttribute="width" constant="90" id="WfZ-Cd-EEh"/>
@@ -160,7 +160,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入银行卡号" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OXa-07-YO9">
-                            <rect key="frame" x="102" y="10" width="302" height="30"/>
+                            <rect key="frame" x="102" y="5" width="302" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="WN3-af-sqK"/>
                             </constraints>
@@ -174,13 +174,13 @@
                         <constraint firstAttribute="trailing" secondItem="OXa-07-YO9" secondAttribute="trailing" constant="10" id="H2c-Ag-M0c"/>
                         <constraint firstItem="wrl-JJ-TdE" firstAttribute="centerY" secondItem="0xL-xd-gIE" secondAttribute="centerY" id="Ivb-i1-IEo"/>
                         <constraint firstItem="wrl-JJ-TdE" firstAttribute="leading" secondItem="0xL-xd-gIE" secondAttribute="leading" constant="10" id="Thm-0u-VZ0"/>
-                        <constraint firstAttribute="height" constant="50" id="aHm-7e-UtW"/>
+                        <constraint firstAttribute="height" constant="40" id="aHm-7e-UtW"/>
                         <constraint firstItem="OXa-07-YO9" firstAttribute="leading" secondItem="wrl-JJ-TdE" secondAttribute="trailing" constant="2" id="gGl-EZ-7bg"/>
                         <constraint firstItem="OXa-07-YO9" firstAttribute="centerY" secondItem="0xL-xd-gIE" secondAttribute="centerY" id="yf3-Tv-x4Q"/>
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="备注：必须是本人银行卡号" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t1F-Sr-s5N">
-                    <rect key="frame" x="10" y="538.66666666666663" width="394" height="21"/>
+                    <rect key="frame" x="10" y="498.66666666666669" width="394" height="21.000000000000057"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="nIy-bm-TPg"/>
                     </constraints>
@@ -189,7 +189,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GFG-6p-qMQ">
-                    <rect key="frame" x="50" y="599.66666666666663" width="314" height="50"/>
+                    <rect key="frame" x="30" y="549.66666666666663" width="354" height="50"/>
                     <color key="backgroundColor" red="0.96827024220000002" green="0.66356486079999999" blue="0.46152895690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="sBn-pP-Q9Y"/>
@@ -205,11 +205,11 @@
             </subviews>
             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
             <constraints>
-                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="GFG-6p-qMQ" secondAttribute="trailing" constant="50" id="0tf-Vl-1ua"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="GFG-6p-qMQ" secondAttribute="trailing" constant="30" id="0tf-Vl-1ua"/>
                 <constraint firstItem="IcX-Ew-AGL" firstAttribute="height" secondItem="E7E-YU-T12" secondAttribute="height" id="253-lD-dHO"/>
                 <constraint firstItem="F0P-in-5Jv" firstAttribute="centerY" secondItem="Q7f-dE-55A" secondAttribute="centerY" id="9nG-tO-iCw"/>
                 <constraint firstItem="0xL-xd-gIE" firstAttribute="height" secondItem="E7E-YU-T12" secondAttribute="height" id="AKB-dD-5nl"/>
-                <constraint firstItem="GFG-6p-qMQ" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="50" id="CVD-Va-YN5"/>
+                <constraint firstItem="GFG-6p-qMQ" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="30" id="CVD-Va-YN5"/>
                 <constraint firstItem="F0P-in-5Jv" firstAttribute="centerX" secondItem="Q7f-dE-55A" secondAttribute="centerX" id="GHU-U1-tT9"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="Q7f-dE-55A" secondAttribute="trailing" id="Iw5-A7-mFF"/>
                 <constraint firstItem="0xL-xd-gIE" firstAttribute="width" secondItem="E7E-YU-T12" secondAttribute="width" id="MYr-T0-aN0"/>
@@ -225,7 +225,7 @@
                 <constraint firstItem="EQ4-NR-fGk" firstAttribute="centerY" secondItem="Q7f-dE-55A" secondAttribute="centerY" id="c8e-FX-aJu"/>
                 <constraint firstItem="EQ4-NR-fGk" firstAttribute="centerX" secondItem="Q7f-dE-55A" secondAttribute="centerX" id="cp5-Uw-0Rm"/>
                 <constraint firstItem="t1F-Sr-s5N" firstAttribute="leading" secondItem="0xL-xd-gIE" secondAttribute="leading" constant="10" id="dDE-2z-coh"/>
-                <constraint firstItem="GFG-6p-qMQ" firstAttribute="top" secondItem="t1F-Sr-s5N" secondAttribute="bottom" constant="40" id="dgx-5K-p2d"/>
+                <constraint firstItem="GFG-6p-qMQ" firstAttribute="top" secondItem="t1F-Sr-s5N" secondAttribute="bottom" constant="30" id="dgx-5K-p2d"/>
                 <constraint firstItem="IcX-Ew-AGL" firstAttribute="width" secondItem="E7E-YU-T12" secondAttribute="width" id="e48-ai-pss"/>
                 <constraint firstItem="IcX-Ew-AGL" firstAttribute="centerX" secondItem="E7E-YU-T12" secondAttribute="centerX" id="ej7-gm-2Zc"/>
                 <constraint firstItem="IcX-Ew-AGL" firstAttribute="top" secondItem="E7E-YU-T12" secondAttribute="bottom" constant="1" id="hSZ-Rq-2w0"/>

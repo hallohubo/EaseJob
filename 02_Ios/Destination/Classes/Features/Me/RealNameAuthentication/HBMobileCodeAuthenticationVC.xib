@@ -101,7 +101,7 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7DI-Ls-8vt">
-                    <rect key="frame" x="40" y="271" width="334" height="50"/>
+                    <rect key="frame" x="40" y="221" width="334" height="50"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="Kxp-Ab-n7H"/>
                     </constraints>
@@ -117,7 +117,7 @@
             <constraints>
                 <constraint firstItem="7DI-Ls-8vt" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="40" id="2va-GO-1i2"/>
                 <constraint firstItem="qel-jX-3ik" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="3hF-W6-fKa"/>
-                <constraint firstItem="7DI-Ls-8vt" firstAttribute="top" secondItem="XMd-nx-9Sn" secondAttribute="bottom" constant="150" id="8ro-B8-G2X"/>
+                <constraint firstItem="7DI-Ls-8vt" firstAttribute="top" secondItem="XMd-nx-9Sn" secondAttribute="bottom" constant="100" id="8ro-B8-G2X"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="7DI-Ls-8vt" secondAttribute="trailing" constant="40" id="9vI-L8-ZcG"/>
                 <constraint firstItem="XMd-nx-9Sn" firstAttribute="centerX" secondItem="qel-jX-3ik" secondAttribute="centerX" id="IIX-so-wst"/>
                 <constraint firstItem="XMd-nx-9Sn" firstAttribute="height" secondItem="qel-jX-3ik" secondAttribute="height" id="Ion-u7-26G"/>

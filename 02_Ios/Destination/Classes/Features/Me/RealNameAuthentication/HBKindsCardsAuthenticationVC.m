@@ -132,7 +132,7 @@
     }
     
     if(tfBankCode.text.length == 0) {
-        [NJProgressHUD showError:@"开户行不能为空"];
+        [NJProgressHUD showError:@"银行卡号不正确!"];
         [NJProgressHUD dismissWithDelay:1.2];
         return;
     }
@@ -179,6 +179,7 @@
         }
         Dlog(@"json:%@",json);
         NSDictionary *respons = json;
+        [self.navigationController popToRootViewControllerAnimated:YES];
     }];
 }
 

@@ -9,7 +9,7 @@
 #import "HDMeVC.h"
 #import "HBSystemSettingVC.h"
 #import "HBMobileCodeAuthenticationVC.h"
-#import "HBKindsCardsAuthenticationVC.h"
+#import "HBGetPersonalAuthentificationVC.h"
 #import "HDMeModel.h"
 
 @interface HDMeVC ()<UINavigationControllerDelegate>
@@ -47,12 +47,17 @@
 
 #pragma mark - life cycle
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [self httpGetMeData];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [self setupUI];
     [self setStatusBarBackgroundColor:[UIColor clearColor]];
-    [self httpGetMeData];
+    //[self httpGetMeData];
     
 }
 
@@ -102,8 +107,8 @@
             [self.navigationController pushViewController:[HBSystemSettingVC new] animated:YES];
             break;
         }
-        case 7:{//联系客服
-            [self.navigationController pushViewController:[HBMobileCodeAuthenticationVC new] animated:YES];
+        case 7:{//个人信息验证
+            [self.navigationController pushViewController:[HBGetPersonalAuthentificationVC new] animated:YES];
             break;
         }
         default:
@@ -112,22 +117,19 @@
 }
 
 #pragma mark - http event
+
 - (void)httpGetMeData //
 {
     HDHttpHelper *helper = [HDHttpHelper instance];
     [NJProgressHUD show];
     
-    task = [helper postPath:@"Act109" object:[HDMeModel new] finished:^(HDError *error, id object, BOOL isLast, id json)
-    {
+    task = [helper postPath:@"Act109" object:[HDMeModel new] finished:^(HDError *error, id object, BOOL isLast, id json) {
+        
         [NJProgressHUD dismiss];
+        
         if (error) {
-            if (error.code != 0 ) {
-                [HDHelper say:error.desc];
-            }
+            [LBXAlertAction sayWithTitle:@"提示" message:error.desc buttons:@[ @"确认"] chooseBlock:nil];
             return ;
-        }
-        if (!object) {
-            return;
         }
         Dlog(@"MeMode:%@", object);
         model = object;
@@ -157,8 +159,19 @@
     [imvHeadPerson setImage:image];
     
     lbName.text = model.RealName.length > 0? model.RealName : model.MemberNo;
+    lbMemberMark.text   = HDSTR(model.AuthStatus);
+    
+    NSString *strGroup = HDSTR(model.MemberGroup);
+    strGroup = [strGroup isEqualToString:@"普通会员"]? HDFORMAT(@"开通VIP"): strGroup;
+    [btnOpenVIP setTitle:strGroup forState:UIControlStateNormal];
+    
+    lbCommission.text   = HDFORMAT(@"￥%.2f", HDSTR(model.Commission).floatValue);
+    lbDeposit.text  = HDFORMAT(@"￥%.2f", HDSTR(model.MarginBalance).floatValue);
+    lbFrozen.text   = HDFORMAT(@"￥%.2f", HDSTR(model.FreezingAmount).floatValue);
+    lbTask.text     = HDFORMAT(@"￥%.2f", HDSTR(model.TaskBalance).floatValue);
 }
 
+//to set the status bar be transparent
 - (void)setStatusBarBackgroundColor:(UIColor *)color
 {
     UIView *statusBar = [[[UIApplication sharedApplication] valueForKey:@"statusBarWindow"] valueForKey:@"statusBar"];
