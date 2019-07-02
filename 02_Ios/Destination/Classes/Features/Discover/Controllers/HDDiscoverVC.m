@@ -137,7 +137,7 @@
                           };
     [helper.parameters addEntriesFromDictionary:dic];
     
-    task = [helper postPath:@"Act204" object:[HBDiscoverModel class] finished:^(HDError *error, id object, BOOL isLast, id json)
+    task = [helper postPath:@"Act204" object:[HBDiscoverModel new] finished:^(HDError *error, id object, BOOL isLast, id json)
             {
                 if (error) {
                     if (error.code != 0 ) {

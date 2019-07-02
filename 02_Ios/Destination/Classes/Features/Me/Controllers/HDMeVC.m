@@ -10,6 +10,7 @@
 #import "HBSystemSettingVC.h"
 #import "HBMobileCodeAuthenticationVC.h"
 #import "HBKindsCardsAuthenticationVC.h"
+#import "HDMeModel.h"
 
 @interface HDMeVC ()<UINavigationControllerDelegate>
 {
@@ -36,6 +37,8 @@
     IBOutlet UILabel            *lbMemberMark;
     
     IBOutlet UIView             *vNeedCorneradia;
+    NSURLSessionTask            *task;
+    HDMeModel   *model;
 }
 
 @end
@@ -44,12 +47,13 @@
 
 #pragma mark - life cycle
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     [self setupUI];
     [self setStatusBarBackgroundColor:[UIColor clearColor]];
+    [self httpGetMeData];
     
-    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)dealloc
@@ -64,15 +68,6 @@
     // 判断要显示的控制器是否是自己
     BOOL isShowHomePage = [viewController isKindOfClass:[self class]];
     [self.navigationController setNavigationBarHidden:isShowHomePage animated:YES];
-}
-
-- (void)setStatusBarBackgroundColor:(UIColor *)color {
-    
-    UIView *statusBar = [[[UIApplication sharedApplication] valueForKey:@"statusBarWindow"] valueForKey:@"statusBar"];
-
-    if ([statusBar respondsToSelector:@selector(setBackgroundColor:)]) {
-        statusBar.backgroundColor = color;
-    }
 }
 
 #pragma mark - UI event
@@ -115,18 +110,61 @@
             break;
     }
 }
+
+#pragma mark - http event
+- (void)httpGetMeData //
+{
+    HDHttpHelper *helper = [HDHttpHelper instance];
+    [NJProgressHUD show];
+    
+    task = [helper postPath:@"Act109" object:[HDMeModel new] finished:^(HDError *error, id object, BOOL isLast, id json)
+    {
+        [NJProgressHUD dismiss];
+        if (error) {
+            if (error.code != 0 ) {
+                [HDHelper say:error.desc];
+            }
+            return ;
+        }
+        if (!object) {
+            return;
+        }
+        Dlog(@"MeMode:%@", object);
+        model = object;
+        [self reloadUIDate:model];
+    }];
+}
+
 #pragma mark - setter and getter
 
 - (void)setupUI
 {
-     self.navigationController.delegate = self;//设置导航控制器的代理为self
+    self.navigationController.delegate = self;//设置导航控制器的代理为self
     
     [vNeedCorneradia addBorderWidth:0.f color:nil cornerRadius:8.f];
     [btnOpenVIP addBorderWidth:1. color:HDCOLOR_ORANGE cornerRadius:15.f];
     [imvHeadPerson addBorderWidth:.0 color:nil cornerRadius:33.f];
     [imvIsVIP addBorderWidth:0.f color:nil cornerRadius:10.f];
     [lbMemberMark addBorderWidth:.0f color:nil cornerRadius:10.f];
-//    [imvHeadDotPoint addDottedBorderWithLineWidth:1.f lineColor:RGB(90, 90, 90)];
 }
 
+- (void)reloadUIDate:(HDMeModel *)object
+{
+    if (!object) {
+        return;
+    }
+    UIImage *image = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:HDSTR(model.HeadImg)]]];
+    [imvHeadPerson setImage:image];
+    
+    lbName.text = model.RealName.length > 0? model.RealName : model.MemberNo;
+}
+
+- (void)setStatusBarBackgroundColor:(UIColor *)color
+{
+    UIView *statusBar = [[[UIApplication sharedApplication] valueForKey:@"statusBarWindow"] valueForKey:@"statusBar"];
+    
+    if ([statusBar respondsToSelector:@selector(setBackgroundColor:)]) {
+        statusBar.backgroundColor = color;
+    }
+}
 @end
