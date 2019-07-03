@@ -12,7 +12,7 @@
 #import "HBLoginPageVC.h"
 #import "NJNavigationController.h"
 
-//#define HDDomain @"http://4byze9.natappfree.cc/"         //调试-“natappfree”
+//#define HDDomain @"http://192.168.10.77:57388/"         //调试
 #define HDDomain @"http://39.98.76.94:8007/"
 
 #define IP [HDHttpHelper ip]

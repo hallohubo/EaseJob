@@ -53,9 +53,37 @@
     if (!(tf_.text.length > 0)) {
         [LBXAlertAction sayWithTitle:@"提示" message:@"输入的内容不能为空" buttons:@[ @"确认"] chooseBlock:nil];
         return;
-    }else if (self.HBModifyMyInformationBlock) {
-        self.HBModifyMyInformationBlock(tf_.text);
     }
+    
+    NSDictionary *dic = @{@"nickName" : tf_.text,
+                          };
+    [self httpCommitMyProfile:dic];
+
+}
+
+#pragma mark - http event
+
+- (void)httpCommitMyProfile:(NSDictionary *)personalData{
+    HDHttpHelper *helper = [HDHttpHelper instance];
+    [helper.parameters addEntriesFromDictionary:personalData];
+    
+    [NJProgressHUD show];
+    
+    task = [helper postPath:@"Act118" object:nil finished:^(HDError *error, id object, BOOL isLast, id json) {
+        [NJProgressHUD dismiss];
+        if (error) {
+            [LBXAlertAction sayWithTitle:@"提示" message:error.desc buttons:@[ @"确认"] chooseBlock:nil];
+            return ;
+        }
+        
+        [NJProgressHUD showSuccess:@"保存成功"];
+        [NJProgressHUD dismissWithDelay:1.2];
+        
+        if (self.HBModifyMyInformationBlock) {
+            self.HBModifyMyInformationBlock(tf_.text);
+        }
+
+    }];
 }
 
 #pragma mark - setter
