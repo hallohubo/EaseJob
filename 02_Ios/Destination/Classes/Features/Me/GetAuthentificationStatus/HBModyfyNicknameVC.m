@@ -1,23 +1,24 @@
 //
-//  HBModifyMyInformationCtr.m
-//  Demo
+//  HBModyfyAvatarVC.m
+//  Destination
 //
-//  Created by hubo on 2017/11/28.
-//Copyright © 2017年 hufan. All rights reserved.
+//  Created by 胡勃 on 7/3/19.
+//  Copyright © 2019 Redirect. All rights reserved.
 //
 
-#import "HBModifyMyInformationCtr.h"
+#import "HBModyfyNicknameVC.h"
 
-@interface HBModifyMyInformationCtr (){
+@interface HBModyfyNicknameVC ()
+{
     IBOutlet UITextField *tf_;
     NSURLSessionDataTask *task;
     NSString *title;
     NSString *defaultValue;
 }
+
 @end
 
-@implementation HBModifyMyInformationCtr
-
+@implementation HBModyfyNicknameVC
 
 - (instancetype)initWithTitle:(NSString *)tile defaultValue:(NSString *)value
 {
@@ -58,6 +59,7 @@
 }
 
 #pragma mark - setter
+
 - (void)setup
 {
     self.title      = title;
@@ -70,5 +72,3 @@
 }
 
 @end
-
-

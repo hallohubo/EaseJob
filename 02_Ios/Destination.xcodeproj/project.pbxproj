@@ -238,8 +238,8 @@
 		C85C377C22CAFB7E00D4BB62 /* HBRealNameAuthenticationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C85C377B22CAFB7E00D4BB62 /* HBRealNameAuthenticationModel.m */; };
 		C85C378122CB372200D4BB62 /* HBGetPersonalAuthentificationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C85C377F22CB372200D4BB62 /* HBGetPersonalAuthentificationVC.m */; };
 		C85C378222CB372200D4BB62 /* HBGetPersonalAuthentificationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C85C378022CB372200D4BB62 /* HBGetPersonalAuthentificationVC.xib */; };
-		C85C378622CB5EC700D4BB62 /* HBModifyMyInformationCtr.m in Sources */ = {isa = PBXBuildFile; fileRef = C85C378322CB5EC700D4BB62 /* HBModifyMyInformationCtr.m */; };
-		C85C378722CB5EC700D4BB62 /* HBModifyMyInformationCtr.xib in Resources */ = {isa = PBXBuildFile; fileRef = C85C378422CB5EC700D4BB62 /* HBModifyMyInformationCtr.xib */; };
+		C8670EB722CC2ED9002ADBF8 /* HBModyfyNicknameVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C8670EB522CC2ED9002ADBF8 /* HBModyfyNicknameVC.m */; };
+		C8670EB822CC2ED9002ADBF8 /* HBModyfyNicknameVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8670EB622CC2ED9002ADBF8 /* HBModyfyNicknameVC.xib */; };
 		C867A5CA22B08A4C008ACC1A /* HBForgetPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C867A5C822B08A4C008ACC1A /* HBForgetPasswordVC.m */; };
 		C867A5CB22B08A4C008ACC1A /* HBForgetPasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C867A5C922B08A4C008ACC1A /* HBForgetPasswordVC.xib */; };
 		C877655C22BB1F6D00E0C4B3 /* HBAnnouncementVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C877655A22BB1F6D00E0C4B3 /* HBAnnouncementVC.m */; };
@@ -671,9 +671,9 @@
 		C85C377E22CB372200D4BB62 /* HBGetPersonalAuthentificationVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBGetPersonalAuthentificationVC.h; sourceTree = "<group>"; };
 		C85C377F22CB372200D4BB62 /* HBGetPersonalAuthentificationVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HBGetPersonalAuthentificationVC.m; sourceTree = "<group>"; };
 		C85C378022CB372200D4BB62 /* HBGetPersonalAuthentificationVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HBGetPersonalAuthentificationVC.xib; sourceTree = "<group>"; };
-		C85C378322CB5EC700D4BB62 /* HBModifyMyInformationCtr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBModifyMyInformationCtr.m; sourceTree = "<group>"; };
-		C85C378422CB5EC700D4BB62 /* HBModifyMyInformationCtr.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HBModifyMyInformationCtr.xib; sourceTree = "<group>"; };
-		C85C378522CB5EC700D4BB62 /* HBModifyMyInformationCtr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBModifyMyInformationCtr.h; sourceTree = "<group>"; };
+		C8670EB422CC2ED9002ADBF8 /* HBModyfyNicknameVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBModyfyNicknameVC.h; sourceTree = "<group>"; };
+		C8670EB522CC2ED9002ADBF8 /* HBModyfyNicknameVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HBModyfyNicknameVC.m; sourceTree = "<group>"; };
+		C8670EB622CC2ED9002ADBF8 /* HBModyfyNicknameVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HBModyfyNicknameVC.xib; sourceTree = "<group>"; };
 		C867A5C722B08A4C008ACC1A /* HBForgetPasswordVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBForgetPasswordVC.h; sourceTree = "<group>"; };
 		C867A5C822B08A4C008ACC1A /* HBForgetPasswordVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HBForgetPasswordVC.m; sourceTree = "<group>"; };
 		C867A5C922B08A4C008ACC1A /* HBForgetPasswordVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HBForgetPasswordVC.xib; sourceTree = "<group>"; };
@@ -1948,12 +1948,12 @@
 		C85C377D22CB362300D4BB62 /* GetAuthentificationStatus */ = {
 			isa = PBXGroup;
 			children = (
-				C85C378522CB5EC700D4BB62 /* HBModifyMyInformationCtr.h */,
-				C85C378322CB5EC700D4BB62 /* HBModifyMyInformationCtr.m */,
-				C85C378422CB5EC700D4BB62 /* HBModifyMyInformationCtr.xib */,
 				C85C377E22CB372200D4BB62 /* HBGetPersonalAuthentificationVC.h */,
 				C85C377F22CB372200D4BB62 /* HBGetPersonalAuthentificationVC.m */,
 				C85C378022CB372200D4BB62 /* HBGetPersonalAuthentificationVC.xib */,
+				C8670EB422CC2ED9002ADBF8 /* HBModyfyNicknameVC.h */,
+				C8670EB522CC2ED9002ADBF8 /* HBModyfyNicknameVC.m */,
+				C8670EB622CC2ED9002ADBF8 /* HBModyfyNicknameVC.xib */,
 			);
 			path = GetAuthentificationStatus;
 			sourceTree = "<group>";
@@ -2154,6 +2154,7 @@
 				C829E42B22A968B5002EEFF8 /* HBRegisterVC.xib in Resources */,
 				C81923CD22C0C8FD00DE9CA3 /* HDHotTaskVC.xib in Resources */,
 				C85A600222AA494B008D54FC /* HDMainVC.xib in Resources */,
+				C8670EB822CC2ED9002ADBF8 /* HBModyfyNicknameVC.xib in Resources */,
 				C85B8F6822C8B5290002299D /* HDDiscoverVC.xib in Resources */,
 				C85C378222CB372200D4BB62 /* HBGetPersonalAuthentificationVC.xib in Resources */,
 				BF8805F321C4A35C0076283D /* NJPayContentView.xib in Resources */,
@@ -2190,7 +2191,6 @@
 				BFB5E38B215A431000985F62 /* Main.storyboard in Resources */,
 				BF0A5CE821E2F2AF00BD1CF4 /* mdd.yqxsy.cn.cer in Resources */,
 				C828D48822C20BF900C030E8 /* 11.png in Resources */,
-				C85C378722CB5EC700D4BB62 /* HBModifyMyInformationCtr.xib in Resources */,
 				BF675798219ACA3200A74FDB /* ChinaProvince.plist in Resources */,
 				C828D48522C20BF900C030E8 /* 16.png in Resources */,
 				C828D48C22C20BF900C030E8 /* 22.png in Resources */,
@@ -2290,10 +2290,10 @@
 				BF5EB0A9218018B20051BA80 /* NJShareItem.m in Sources */,
 				C83B250B22C4923B00A89DF0 /* JSBadgeView.m in Sources */,
 				BF8805EE21C4A1170076283D /* NJPaymentView.m in Sources */,
-				C85C378622CB5EC700D4BB62 /* HBModifyMyInformationCtr.m in Sources */,
 				41DF48DC22544E7800ED9E99 /* UIImage+alpha.m in Sources */,
 				BF578AD4217438020067591A /* NJBankCell.m in Sources */,
 				BFE565E321AD17DB00E89202 /* NJPhotoBrowserNaviAnimationTransition.m in Sources */,
+				C8670EB722CC2ED9002ADBF8 /* HBModyfyNicknameVC.m in Sources */,
 				BF451FF921AD416300045FA0 /* NJModalNaviAnimationTransition.m in Sources */,
 				C85B8F6722C8B5290002299D /* HDDiscoverVC.m in Sources */,
 				BFF1576821AE87EA00F4FCF4 /* NJCommentPresentationVC.m in Sources */,

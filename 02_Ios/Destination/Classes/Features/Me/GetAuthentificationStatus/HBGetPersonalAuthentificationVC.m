@@ -9,7 +9,7 @@
 #import "HBGetPersonalAuthentificationVC.h"
 #import "HBMobileCodeAuthenticationVC.h"
 #import "HBRealNameAuthenticationModel.h"
-#import "HBModifyMyInformationCtr.h"
+#import "HBModyfyNicknameVC.h"
 
 @interface HBGetPersonalAuthentificationVC ()
 {
@@ -63,8 +63,8 @@
             break;
         }
         case 1:{
-            HBModifyMyInformationCtr *_ctr =  [[HBModifyMyInformationCtr alloc] initWithTitle:@"请输入姓名" defaultValue:model.RealName];
-            __weak HBModifyMyInformationCtr *ctr = _ctr;
+            HBModyfyNicknameVC *_ctr =  [[HBModyfyNicknameVC alloc] initWithTitle:@"请输入姓名" defaultValue:model.RealName];
+            __weak HBModyfyNicknameVC *ctr = _ctr;
             
             [self.navigationController pushViewController:ctr animated:YES];
             ctr.HBModifyMyInformationBlock = ^(NSString *name){
