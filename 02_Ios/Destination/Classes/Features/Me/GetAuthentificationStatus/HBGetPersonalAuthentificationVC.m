@@ -9,6 +9,7 @@
 #import "HBGetPersonalAuthentificationVC.h"
 #import "HBMobileCodeAuthenticationVC.h"
 #import "HBRealNameAuthenticationModel.h"
+#import "HBModifyMyInformationCtr.h"
 
 @interface HBGetPersonalAuthentificationVC ()
 {
@@ -52,6 +53,39 @@
 - (IBAction)jumpToIdentifyAuthentifycation:(UIButton *)sender
 {
     [self.navigationController pushViewController:[HBMobileCodeAuthenticationVC new] animated:YES];
+}
+
+- (IBAction)changeNicknameGenderHeadimage:(UIButton *)sender
+{
+    switch (sender.tag) {
+        case 0:{
+            
+            break;
+        }
+        case 1:{
+            HBModifyMyInformationCtr *_ctr =  [[HBModifyMyInformationCtr alloc] initWithTitle:@"请输入姓名" defaultValue:model.RealName];
+            __weak HBModifyMyInformationCtr *ctr = _ctr;
+            
+            [self.navigationController pushViewController:ctr animated:YES];
+            ctr.HBModifyMyInformationBlock = ^(NSString *name){
+                lbNickName.text = name;
+                [ctr.navigationController popViewControllerAnimated:YES];
+//                HDGI.loginUser.RealName = name;
+//                [HDGI.loginUser saveToLocal];
+//                [self httpCommitMyProfile];
+//                [[NSNotificationCenter defaultCenter] postNotificationName:@"first" object:nil];//刷新我的页
+            };
+            break;
+        }
+
+        case 2:{
+            
+            break;
+        }
+
+        default:
+            break;
+    }
 }
 
 #pragma mark - http event

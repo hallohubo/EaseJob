@@ -55,6 +55,9 @@
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kLq-4s-xZs">
                             <rect key="frame" x="324" y="10" width="80" height="80"/>
+                            <connections>
+                                <action selector="changeNicknameGenderHeadimage:" destination="-1" eventType="touchUpInside" id="7nk-Zb-o5D"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -99,12 +102,15 @@
                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hKk-st-EIa">
-                            <rect key="frame" x="320" y="0.0" width="80" height="40"/>
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hKk-st-EIa">
+                            <rect key="frame" x="320" y="1" width="80" height="38"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="80" id="FdK-df-kME"/>
-                                <constraint firstAttribute="height" constant="40" id="PGw-ob-EwJ"/>
+                                <constraint firstAttribute="height" constant="38" id="PGw-ob-EwJ"/>
                             </constraints>
+                            <connections>
+                                <action selector="changeNicknameGenderHeadimage:" destination="-1" eventType="touchUpInside" id="Vkt-S2-kH9"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -151,12 +157,15 @@
                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="osH-Dp-iDb">
-                            <rect key="frame" x="320" y="0.0" width="80" height="40"/>
+                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="osH-Dp-iDb">
+                            <rect key="frame" x="320" y="1" width="80" height="38"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="40" id="D0Y-bb-ODi"/>
+                                <constraint firstAttribute="height" constant="38" id="D0Y-bb-ODi"/>
                                 <constraint firstAttribute="width" constant="80" id="XWB-UO-85F"/>
                             </constraints>
+                            <connections>
+                                <action selector="changeNicknameGenderHeadimage:" destination="-1" eventType="touchUpInside" id="ise-vB-5QG"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
