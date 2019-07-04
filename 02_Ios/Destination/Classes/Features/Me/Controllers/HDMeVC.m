@@ -11,7 +11,7 @@
 #import "HBMobileCodeAuthenticationVC.h"
 #import "HBGetPersonalAuthentificationVC.h"
 #import "HDMeModel.h"
-#import "HBUpdateToVIP.h"
+#import "HBUpdateToVIPVC.h"
 
 @interface HDMeVC ()<UINavigationControllerDelegate>
 {
@@ -81,7 +81,7 @@
 - (IBAction)touchButton:(UIButton *)sender {
     switch (sender.tag) {
         case 0:{//开通会员
-            [self.navigationController pushViewController:[HBUpdateToVIP new] animated:YES];
+            [self.navigationController pushViewController:[HBUpdateToVIPVC new] animated:YES];
             break;
         }
         case 1:{//充值

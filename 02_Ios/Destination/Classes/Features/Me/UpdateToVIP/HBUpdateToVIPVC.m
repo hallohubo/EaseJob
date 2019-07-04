@@ -6,30 +6,52 @@
 //  Copyright © 2019 Redirect. All rights reserved.
 //
 
-#import "HBUpdateToVIP.h"
+#import "HBUpdateToVIPVC.h"
 
-@interface HBUpdateToVIP ()
+@interface HBUpdateToVIPVC ()
 {
     IBOutlet UIButton   *btnOpenVIP;
     IBOutlet UILabel    *lbPerMonth;
-    IBOutlet UILabel    *lbLable;
+    IBOutlet UILabel    *lbLable;       //rectangle stip mark
     IBOutlet UILabel    *lbForever;
+    IBOutlet UILabel    *lbPerMonthTitle;
+    IBOutlet UILabel    *lbForeverTitle;
     IBOutlet UITextView *tvExplain;
     IBOutlet NSLayoutConstraint *lcTextviewHeight;
     IBOutlet NSLayoutConstraint *lcContentHeight;
+    IBOutlet NSLayoutConstraint *lcForeverTitleWidth;
+
     NSURLSessionTask    *task;
+    NSString    *strMemberType;
+    NSString    *strDueDate;
 }
 
 @end
 
-@implementation HBUpdateToVIP
+@implementation HBUpdateToVIPVC
+
+#pragma mark - life cycle
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [self httpGetInitParameter];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupInit];
     [self httpGetExplainWriting];
-    [self httpGetInitParameter];
     // Do any additional setup after loading the view from its nib.
+}
+
+#pragma mark - ui touch event
+
+- (IBAction)touchOpenButton:(UIButton *)sender
+{
+    if (strMemberType.length == 0) {
+        return;
+    }
+    
 }
 
 #pragma mark - http event
@@ -50,10 +72,37 @@
         if (!json) {
             return;
         }
+        
         NSString *strMonth  = JSON(json[@"VIPFeePerMonth"]);
         NSString *strFor    = JSON(json[@"VIPFeeForever"]);
-        lbPerMonth.text = strMonth.length>0? HDFORMAT(@"%.2f元", strMonth.floatValue) : HDFORMAT(@"--");
-        lbForever.text  = strFor.length>0? HDFORMAT(@"%.2f元", strFor.floatValue) : HDFORMAT(@"--");
+        strMemberType   = JSON(json[@"MemberGroup"]);
+        strDueDate  = JSON(json[@"DueDate"]);
+        
+        if ([strMemberType isEqualToString:@"普通会员"] || strDueDate.length == 0) {
+            lbPerMonth.text = strMonth.length>0? HDFORMAT(@"%.2f元", strMonth.floatValue) : HDFORMAT(@"--元");
+            lbForever.text  = strFor.length>0? HDFORMAT(@"%.2f元", strFor.floatValue) : HDFORMAT(@"--元");
+            btnOpenVIP.titleLabel.text = @"开通会员";
+            lbForeverTitle.text = @"永久";
+            lcForeverTitleWidth.constant = 45.f;
+        }
+        
+        if ([strMemberType isEqualToString:@"包月VIP会员"] || strDueDate.length > 6) {
+            lbPerMonth.text = strMonth.length>0? HDFORMAT(@"%.2f元", strMonth.floatValue) : HDFORMAT(@"--元");
+            lbForever.text  = strDueDate;
+            lbForeverTitle.text = @"到期时间";
+            lcForeverTitleWidth.constant = 75.f;
+            btnOpenVIP.titleLabel.text = @"续费";
+        }
+        
+        if ([strMemberType isEqualToString:@"永久VIP会员"] || [strDueDate isEqualToString:@"永久"]) {
+            lbPerMonth.text = strMonth.length>0? HDFORMAT(@"%.2f元", strMonth.floatValue) : HDFORMAT(@"--元");
+            lbForever.text  = @"2119年01月01日";
+            lbForeverTitle.text = @"到期时间";
+            lbPerMonthTitle.text= @"永久";
+            btnOpenVIP.hidden   = YES;
+            lcForeverTitleWidth.constant = 75.f;
+        }
+
     }];
 }
 
