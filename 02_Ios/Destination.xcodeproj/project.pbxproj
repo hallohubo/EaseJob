@@ -240,7 +240,6 @@
 		C85C378222CB372200D4BB62 /* HBGetPersonalAuthentificationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C85C378022CB372200D4BB62 /* HBGetPersonalAuthentificationVC.xib */; };
 		C8670EB722CC2ED9002ADBF8 /* HBModyfyNicknameVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C8670EB522CC2ED9002ADBF8 /* HBModyfyNicknameVC.m */; };
 		C8670EB822CC2ED9002ADBF8 /* HBModyfyNicknameVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8670EB622CC2ED9002ADBF8 /* HBModyfyNicknameVC.xib */; };
-		C8670EBD22CC5E56002ADBF8 /* HBUpdateToVIPVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C8670EBB22CC5E56002ADBF8 /* HBUpdateToVIPVC.m */; };
 		C867A5CA22B08A4C008ACC1A /* HBForgetPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C867A5C822B08A4C008ACC1A /* HBForgetPasswordVC.m */; };
 		C867A5CB22B08A4C008ACC1A /* HBForgetPasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C867A5C922B08A4C008ACC1A /* HBForgetPasswordVC.xib */; };
 		C877655C22BB1F6D00E0C4B3 /* HBAnnouncementVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C877655A22BB1F6D00E0C4B3 /* HBAnnouncementVC.m */; };
@@ -250,7 +249,6 @@
 		C89D80BB22C31A9F00FCD9D9 /* HBTaskNewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C89D80B922C31A9F00FCD9D9 /* HBTaskNewsModel.m */; };
 		C8B74D6A22A8E1B600BCA2E6 /* HB3DScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C8B74D6922A8E1B600BCA2E6 /* HB3DScrollView.m */; };
 		C8C2516422C1BBE6006B3B83 /* HDHotTaskModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C2516322C1BBE6006B3B83 /* HDHotTaskModel.m */; };
-		C8EA26BF22CDA1C8007E4642 /* HBUpdateToVIPVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8670EBC22CC5E56002ADBF8 /* HBUpdateToVIPVC.xib */; };
 		DA3A28492263213900D8D6C1 /* HLTokenModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3A28482263213900D8D6C1 /* HLTokenModel.m */; };
 		DA4EFC582248A12500062E14 /* myButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DA4EFC552248A12400062E14 /* myButton.m */; };
 		DA4EFC592248A12500062E14 /* myLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = DA4EFC562248A12500062E14 /* myLabel.m */; };
@@ -676,9 +674,6 @@
 		C8670EB422CC2ED9002ADBF8 /* HBModyfyNicknameVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBModyfyNicknameVC.h; sourceTree = "<group>"; };
 		C8670EB522CC2ED9002ADBF8 /* HBModyfyNicknameVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HBModyfyNicknameVC.m; sourceTree = "<group>"; };
 		C8670EB622CC2ED9002ADBF8 /* HBModyfyNicknameVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HBModyfyNicknameVC.xib; sourceTree = "<group>"; };
-		C8670EBA22CC5E56002ADBF8 /* HBUpdateToVIPVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBUpdateToVIPVC.h; sourceTree = "<group>"; };
-		C8670EBB22CC5E56002ADBF8 /* HBUpdateToVIPVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HBUpdateToVIPVC.m; sourceTree = "<group>"; };
-		C8670EBC22CC5E56002ADBF8 /* HBUpdateToVIPVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HBUpdateToVIPVC.xib; sourceTree = "<group>"; };
 		C867A5C722B08A4C008ACC1A /* HBForgetPasswordVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBForgetPasswordVC.h; sourceTree = "<group>"; };
 		C867A5C822B08A4C008ACC1A /* HBForgetPasswordVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HBForgetPasswordVC.m; sourceTree = "<group>"; };
 		C867A5C922B08A4C008ACC1A /* HBForgetPasswordVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HBForgetPasswordVC.xib; sourceTree = "<group>"; };
@@ -1966,9 +1961,6 @@
 		C8670EB922CC5DFA002ADBF8 /* UpdateToVIP */ = {
 			isa = PBXGroup;
 			children = (
-				C8670EBA22CC5E56002ADBF8 /* HBUpdateToVIPVC.h */,
-				C8670EBB22CC5E56002ADBF8 /* HBUpdateToVIPVC.m */,
-				C8670EBC22CC5E56002ADBF8 /* HBUpdateToVIPVC.xib */,
 			);
 			path = UpdateToVIP;
 			sourceTree = "<group>";
@@ -2163,7 +2155,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8EA26BF22CDA1C8007E4642 /* HBUpdateToVIPVC.xib in Resources */,
 				C828FF8E22A9E3D400CAA10C /* HBDiscoverCell.xib in Resources */,
 				C828D48422C20BF900C030E8 /* 17.png in Resources */,
 				C828D48322C20BF900C030E8 /* 15.png in Resources */,
@@ -2314,7 +2305,6 @@
 				BF451FF921AD416300045FA0 /* NJModalNaviAnimationTransition.m in Sources */,
 				C85B8F6722C8B5290002299D /* HDDiscoverVC.m in Sources */,
 				BFF1576821AE87EA00F4FCF4 /* NJCommentPresentationVC.m in Sources */,
-				C8670EBD22CC5E56002ADBF8 /* HBUpdateToVIPVC.m in Sources */,
 				C83B250C22C4923B00A89DF0 /* ParentViewController.m in Sources */,
 				DA4EFC582248A12500062E14 /* myButton.m in Sources */,
 				BFE565E421AD17DB00E89202 /* NJPhotoBrowserScrollView.m in Sources */,
