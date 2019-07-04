@@ -167,6 +167,8 @@
 		C814AD9D22B09AE100F46A50 /* HBResetPasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C814AD9B22B09AE100F46A50 /* HBResetPasswordVC.xib */; };
 		C8170DD022CDE70B00CF6921 /* HBUpdateToVIPVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8170DCE22CDE70B00CF6921 /* HBUpdateToVIPVC.xib */; };
 		C8170DD122CDE70B00CF6921 /* HBUpdateToVIPVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C8170DCF22CDE70B00CF6921 /* HBUpdateToVIPVC.m */; };
+		C8170DDA22CDFB9F00CF6921 /* HBChoosePayMethodVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C8170DD822CDFB9F00CF6921 /* HBChoosePayMethodVC.m */; };
+		C8170DDB22CDFB9F00CF6921 /* HBChoosePayMethodVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8170DD922CDFB9F00CF6921 /* HBChoosePayMethodVC.xib */; };
 		C81923CC22C0C8FD00DE9CA3 /* HDHotTaskVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C81923CA22C0C8FD00DE9CA3 /* HDHotTaskVC.m */; };
 		C81923CD22C0C8FD00DE9CA3 /* HDHotTaskVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C81923CB22C0C8FD00DE9CA3 /* HDHotTaskVC.xib */; };
 		C81EF15D22BA1106005F72D7 /* HBBannerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C81EF15C22BA1106005F72D7 /* HBBannerModel.m */; };
@@ -569,6 +571,9 @@
 		C8170DCD22CDE70B00CF6921 /* HBUpdateToVIPVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBUpdateToVIPVC.h; sourceTree = "<group>"; };
 		C8170DCE22CDE70B00CF6921 /* HBUpdateToVIPVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HBUpdateToVIPVC.xib; sourceTree = "<group>"; };
 		C8170DCF22CDE70B00CF6921 /* HBUpdateToVIPVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBUpdateToVIPVC.m; sourceTree = "<group>"; };
+		C8170DD722CDFB9F00CF6921 /* HBChoosePayMethodVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBChoosePayMethodVC.h; sourceTree = "<group>"; };
+		C8170DD822CDFB9F00CF6921 /* HBChoosePayMethodVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HBChoosePayMethodVC.m; sourceTree = "<group>"; };
+		C8170DD922CDFB9F00CF6921 /* HBChoosePayMethodVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HBChoosePayMethodVC.xib; sourceTree = "<group>"; };
 		C81923C922C0C8FD00DE9CA3 /* HDHotTaskVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HDHotTaskVC.h; sourceTree = "<group>"; };
 		C81923CA22C0C8FD00DE9CA3 /* HDHotTaskVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HDHotTaskVC.m; sourceTree = "<group>"; };
 		C81923CB22C0C8FD00DE9CA3 /* HDHotTaskVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HDHotTaskVC.xib; sourceTree = "<group>"; };
@@ -1969,6 +1974,9 @@
 				C8170DCD22CDE70B00CF6921 /* HBUpdateToVIPVC.h */,
 				C8170DCF22CDE70B00CF6921 /* HBUpdateToVIPVC.m */,
 				C8170DCE22CDE70B00CF6921 /* HBUpdateToVIPVC.xib */,
+				C8170DD722CDFB9F00CF6921 /* HBChoosePayMethodVC.h */,
+				C8170DD822CDFB9F00CF6921 /* HBChoosePayMethodVC.m */,
+				C8170DD922CDFB9F00CF6921 /* HBChoosePayMethodVC.xib */,
 			);
 			path = UpdateToVIP;
 			sourceTree = "<group>";
@@ -2220,6 +2228,7 @@
 				C85C377322CAF97A00D4BB62 /* HDMeVC.xib in Resources */,
 				C828D49122C20BF900C030E8 /* 24.png in Resources */,
 				C85C376D22CAF95C00D4BB62 /* HBKindsCardsAuthenticationVC.xib in Resources */,
+				C8170DDB22CDFB9F00CF6921 /* HBChoosePayMethodVC.xib in Resources */,
 				C828D48222C20BF900C030E8 /* 28.png in Resources */,
 				C828D48B22C20BF900C030E8 /* 20.png in Resources */,
 				C828D49222C20BF900C030E8 /* 25.png in Resources */,
@@ -2318,6 +2327,7 @@
 				DA4EFC582248A12500062E14 /* myButton.m in Sources */,
 				BFE565E421AD17DB00E89202 /* NJPhotoBrowserScrollView.m in Sources */,
 				BF958F6021D506E300E0F050 /* NJForceBindPhoneNumberVC.m in Sources */,
+				C8170DDA22CDFB9F00CF6921 /* HBChoosePayMethodVC.m in Sources */,
 				C814AD9C22B09AE100F46A50 /* HBResetPasswordVC.m in Sources */,
 				41C6A6662259D1C6005BF525 /* CCLocationManager.m in Sources */,
 				BFF437232175CE40006EE0A0 /* NJHorizontalMenuView.m in Sources */,

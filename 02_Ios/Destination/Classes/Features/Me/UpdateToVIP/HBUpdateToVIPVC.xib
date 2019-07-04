@@ -63,6 +63,9 @@
                                             <state key="normal" title="立即开通">
                                                 <color key="titleColor" red="0.92082709074020386" green="0.43448728322982788" blue="0.2597440779209137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </state>
+                                            <connections>
+                                                <action selector="touchOpenButton:" destination="-1" eventType="touchUpInside" id="71a-PJ-Wi5"/>
+                                            </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="包月:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g7l-xa-FbM">
                                             <rect key="frame" x="10" y="74" width="50" height="20"/>
@@ -187,24 +190,24 @@
                         </view>
                     </subviews>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="46W-u9-JNO" secondAttribute="bottom" constant="1" id="3Wy-jw-e1b"/>
-                        <constraint firstItem="46W-u9-JNO" firstAttribute="top" secondItem="rgR-sQ-moY" secondAttribute="top" id="44g-u8-gZ2"/>
-                        <constraint firstItem="46W-u9-JNO" firstAttribute="centerX" secondItem="rgR-sQ-moY" secondAttribute="centerX" id="Sr7-DL-Aam"/>
-                        <constraint firstAttribute="trailing" secondItem="46W-u9-JNO" secondAttribute="trailing" id="ZQq-tK-nJf"/>
-                        <constraint firstItem="46W-u9-JNO" firstAttribute="leading" secondItem="rgR-sQ-moY" secondAttribute="leading" id="gEN-1d-VHP"/>
-                        <constraint firstItem="46W-u9-JNO" firstAttribute="width" secondItem="rgR-sQ-moY" secondAttribute="width" id="z83-OX-nIM"/>
+                        <constraint firstAttribute="bottom" secondItem="46W-u9-JNO" secondAttribute="bottom" id="GzK-ZR-9Ab"/>
+                        <constraint firstItem="46W-u9-JNO" firstAttribute="leading" secondItem="rgR-sQ-moY" secondAttribute="leading" id="U8u-4y-cFA"/>
+                        <constraint firstItem="46W-u9-JNO" firstAttribute="centerX" secondItem="rgR-sQ-moY" secondAttribute="centerX" id="ZIf-yl-3sU"/>
+                        <constraint firstAttribute="trailing" secondItem="46W-u9-JNO" secondAttribute="trailing" id="aw9-p9-nid"/>
+                        <constraint firstItem="46W-u9-JNO" firstAttribute="width" secondItem="rgR-sQ-moY" secondAttribute="width" id="fxE-nJ-sVJ"/>
+                        <constraint firstItem="46W-u9-JNO" firstAttribute="top" secondItem="rgR-sQ-moY" secondAttribute="top" id="ldZ-e7-3yn"/>
                     </constraints>
                 </scrollView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="rgR-sQ-moY" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="CTq-RL-f8H"/>
-                <constraint firstItem="rgR-sQ-moY" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="eC0-3z-YJv"/>
-                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="rgR-sQ-moY" secondAttribute="trailing" id="iTP-Ge-SSu"/>
-                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="rgR-sQ-moY" secondAttribute="bottom" id="zLV-lK-jyb"/>
+                <constraint firstItem="m3I-Ym-Wow" firstAttribute="trailing" secondItem="rgR-sQ-moY" secondAttribute="trailing" id="2On-oT-3Ds"/>
+                <constraint firstItem="m3I-Ym-Wow" firstAttribute="bottom" secondItem="rgR-sQ-moY" secondAttribute="bottom" id="Ymr-dj-n7P"/>
+                <constraint firstItem="rgR-sQ-moY" firstAttribute="leading" secondItem="m3I-Ym-Wow" secondAttribute="leading" id="dcy-C7-wSI"/>
+                <constraint firstItem="rgR-sQ-moY" firstAttribute="top" secondItem="m3I-Ym-Wow" secondAttribute="top" id="fQr-7U-WYD"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
-            <point key="canvasLocation" x="137.68115942028987" y="85.714285714285708"/>
+            <viewLayoutGuide key="safeArea" id="m3I-Ym-Wow"/>
+            <point key="canvasLocation" x="139.13043478260872" y="70.982142857142847"/>
         </view>
     </objects>
     <resources>

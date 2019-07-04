@@ -7,6 +7,7 @@
 //
 
 #import "HBUpdateToVIPVC.h"
+#import "HBChoosePayMethodVC.h"
 
 @interface HBUpdateToVIPVC ()
 {
@@ -20,6 +21,8 @@
     IBOutlet NSLayoutConstraint *lcTextviewHeight;
     IBOutlet NSLayoutConstraint *lcContentHeight;
     IBOutlet NSLayoutConstraint *lcForeverTitleWidth;
+    
+    
 
     NSURLSessionTask    *task;
     NSString    *strMemberType;
@@ -42,16 +45,6 @@
     [self setupInit];
     [self httpGetExplainWriting];
     // Do any additional setup after loading the view from its nib.
-}
-
-#pragma mark - ui touch event
-
-- (IBAction)touchOpenButton:(UIButton *)sender
-{
-    if (strMemberType.length == 0) {
-        return;
-    }
-    
 }
 
 #pragma mark - http event
@@ -141,6 +134,17 @@
         lcTextviewHeight.constant   = height+30;
         lcContentHeight.constant    = lcTextviewHeight.constant > 900? lcTextviewHeight.constant : 900;
     }];
+}
+
+#pragma mark - ui touch event
+
+- (IBAction)touchOpenButton:(UIButton *)sender
+{
+    if (strMemberType.length == 0) {
+        return;
+    }
+    [self.navigationController pushViewController:[HBChoosePayMethodVC new] animated:YES];
+    
 }
 
 #pragma mark - setter
