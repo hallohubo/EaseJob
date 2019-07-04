@@ -165,6 +165,8 @@
 		C81232A822B1FBCA00DBFECF /* HBTaskVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C81232A622B1FBCA00DBFECF /* HBTaskVC.xib */; };
 		C814AD9C22B09AE100F46A50 /* HBResetPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C814AD9A22B09AE100F46A50 /* HBResetPasswordVC.m */; };
 		C814AD9D22B09AE100F46A50 /* HBResetPasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C814AD9B22B09AE100F46A50 /* HBResetPasswordVC.xib */; };
+		C8170DD022CDE70B00CF6921 /* HBUpdateToVIPVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8170DCE22CDE70B00CF6921 /* HBUpdateToVIPVC.xib */; };
+		C8170DD122CDE70B00CF6921 /* HBUpdateToVIPVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C8170DCF22CDE70B00CF6921 /* HBUpdateToVIPVC.m */; };
 		C81923CC22C0C8FD00DE9CA3 /* HDHotTaskVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C81923CA22C0C8FD00DE9CA3 /* HDHotTaskVC.m */; };
 		C81923CD22C0C8FD00DE9CA3 /* HDHotTaskVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C81923CB22C0C8FD00DE9CA3 /* HDHotTaskVC.xib */; };
 		C81EF15D22BA1106005F72D7 /* HBBannerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C81EF15C22BA1106005F72D7 /* HBBannerModel.m */; };
@@ -564,6 +566,9 @@
 		C814AD9922B09AE100F46A50 /* HBResetPasswordVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBResetPasswordVC.h; sourceTree = "<group>"; };
 		C814AD9A22B09AE100F46A50 /* HBResetPasswordVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HBResetPasswordVC.m; sourceTree = "<group>"; };
 		C814AD9B22B09AE100F46A50 /* HBResetPasswordVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HBResetPasswordVC.xib; sourceTree = "<group>"; };
+		C8170DCD22CDE70B00CF6921 /* HBUpdateToVIPVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBUpdateToVIPVC.h; sourceTree = "<group>"; };
+		C8170DCE22CDE70B00CF6921 /* HBUpdateToVIPVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HBUpdateToVIPVC.xib; sourceTree = "<group>"; };
+		C8170DCF22CDE70B00CF6921 /* HBUpdateToVIPVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBUpdateToVIPVC.m; sourceTree = "<group>"; };
 		C81923C922C0C8FD00DE9CA3 /* HDHotTaskVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HDHotTaskVC.h; sourceTree = "<group>"; };
 		C81923CA22C0C8FD00DE9CA3 /* HDHotTaskVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HDHotTaskVC.m; sourceTree = "<group>"; };
 		C81923CB22C0C8FD00DE9CA3 /* HDHotTaskVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HDHotTaskVC.xib; sourceTree = "<group>"; };
@@ -1961,6 +1966,9 @@
 		C8670EB922CC5DFA002ADBF8 /* UpdateToVIP */ = {
 			isa = PBXGroup;
 			children = (
+				C8170DCD22CDE70B00CF6921 /* HBUpdateToVIPVC.h */,
+				C8170DCF22CDE70B00CF6921 /* HBUpdateToVIPVC.m */,
+				C8170DCE22CDE70B00CF6921 /* HBUpdateToVIPVC.xib */,
 			);
 			path = UpdateToVIP;
 			sourceTree = "<group>";
@@ -2155,6 +2163,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8170DD022CDE70B00CF6921 /* HBUpdateToVIPVC.xib in Resources */,
 				C828FF8E22A9E3D400CAA10C /* HBDiscoverCell.xib in Resources */,
 				C828D48422C20BF900C030E8 /* 17.png in Resources */,
 				C828D48322C20BF900C030E8 /* 15.png in Resources */,
@@ -2315,6 +2324,7 @@
 				BFA7E70621AF7E2F003F103E /* NJCommentAnimationTransition.m in Sources */,
 				41C6A66D2259D232005BF525 /* HDHUD.m in Sources */,
 				BFB5E48C215A54AC00985F62 /* NJWebVC.m in Sources */,
+				C8170DD122CDE70B00CF6921 /* HBUpdateToVIPVC.m in Sources */,
 				BF3A39C22192D2ED00140143 /* NSDate+NJCommonDate.m in Sources */,
 				BFB5E48B215A54AC00985F62 /* NJRegisterVC.m in Sources */,
 				BFB5E446215A446300985F62 /* XLPaymentLoadingHUD.m in Sources */,
