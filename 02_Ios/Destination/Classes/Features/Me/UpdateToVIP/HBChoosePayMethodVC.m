@@ -30,17 +30,63 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setupInit];
     // Do any additional setup after loading the view from its nib.
 }
 
-/*
-#pragma mark - Navigation
+#pragma mark - setter
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)setupInit
+{
+    self.title = @"选择方式";
+    
+    btnConfirmPay.layer.cornerRadius = 25.f;
+    btnConfirmPay.layer.masksToBounds= YES;
+    [HDHelper changeColor:btnConfirmPay];
+    
+    btnAlipay.selected = NO;
+    btnWechat.selected = NO;
+    btnSelectMonthPay.selected  = NO;
+    btnSelectForeverVIP.selected= NO;
+    [self setImageWhenTouchButton];
 }
-*/
+
+- (IBAction)setImageWhenTouchButton:(UIButton *)sender
+{
+    
+    sender.selected = !sender.selected;
+    
+    switch (sender.tag) {
+        
+        case 0:{
+            btnSelectForeverVIP.selected = !sender.selected;
+            break;
+        }
+        case 1:{
+            btnSelectMonthPay.selected  = !sender.selected;;
+            break;
+        }
+        case 2:{
+            btnWechat.selected = !sender.selected;;
+            break;
+        }
+        case 3:{
+            btnAlipay.selected  = !sender.selected;;
+            break;
+        }
+        default:
+            break;
+    }
+    [self setImageWhenTouchButton];
+}
+
+- (void)setImageWhenTouchButton
+{
+    [imvAlipay setImage:(btnAlipay.selected? HDIMAGE(@"me_selected") : HDIMAGE(@"me_select"))];
+    [imvWechat setImage:(btnWechat.selected? HDIMAGE(@"me_selected") : HDIMAGE(@"me_select"))];
+    [imvMonthFee setImage:(btnSelectMonthPay.selected? HDIMAGE(@"me_selected") : HDIMAGE(@"me_select"))];
+    [imvForeverFee setImage:(btnSelectForeverVIP.selected? HDIMAGE(@"me_selected") : HDIMAGE(@"me_select"))];
+
+}
 
 @end

@@ -16,7 +16,7 @@
                 <outlet property="btnConfirmPay" destination="LLp-Xe-AVS" id="4JO-VX-WQD"/>
                 <outlet property="btnSelectForeverVIP" destination="ucg-nx-iHK" id="62L-Ur-x2r"/>
                 <outlet property="btnSelectMonthPay" destination="1ug-of-3BS" id="trK-sH-xJk"/>
-                <outlet property="btnWechat" destination="eOx-SI-aar" id="G35-7z-tzh"/>
+                <outlet property="btnWechat" destination="g0W-zB-jKK" id="7zq-TF-6CH"/>
                 <outlet property="imvAlipay" destination="5LP-qc-DIt" id="PPR-CB-4ue"/>
                 <outlet property="imvForeverFee" destination="qI3-I7-K29" id="Ymb-y1-gNY"/>
                 <outlet property="imvMonthFee" destination="xlr-9d-j6N" id="YxJ-W3-R8T"/>
@@ -77,8 +77,11 @@
                                 <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ug-of-3BS">
                                     <rect key="frame" x="275" y="5" width="89" height="40"/>
                                     <state key="normal" title="Button"/>
+                                    <connections>
+                                        <action selector="setImageWhenTouchButton:" destination="-1" eventType="touchUpInside" id="DpP-Ib-F3x"/>
+                                    </connections>
                                 </button>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="me_selected" translatesAutoresizingMaskIntoConstraints="NO" id="xlr-9d-j6N">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xlr-9d-j6N">
                                     <rect key="frame" x="348" y="17" width="16" height="16"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="16" id="GOf-PQ-P7x"/>
@@ -123,11 +126,14 @@
                                     <color key="textColor" red="0.97522419689999995" green="0.47904932500000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ucg-nx-iHK">
+                                <button opaque="NO" tag="1" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ucg-nx-iHK">
                                     <rect key="frame" x="275" y="5" width="89" height="40"/>
                                     <state key="normal" title="Button"/>
+                                    <connections>
+                                        <action selector="setImageWhenTouchButton:" destination="-1" eventType="touchUpInside" id="qP5-X4-9ik"/>
+                                    </connections>
                                 </button>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="me_selected" translatesAutoresizingMaskIntoConstraints="NO" id="qI3-I7-K29">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qI3-I7-K29">
                                     <rect key="frame" x="348" y="17" width="16" height="16"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="16" id="git-Pp-WR7"/>
@@ -199,11 +205,14 @@
                                     <color key="textColor" red="0.97522419689999995" green="0.47904932500000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eOx-SI-aar">
+                                <button opaque="NO" tag="2" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eOx-SI-aar">
                                     <rect key="frame" x="275" y="5" width="89" height="40"/>
                                     <state key="normal" title="Button"/>
+                                    <connections>
+                                        <action selector="setImageWhenTouchButton:" destination="-1" eventType="touchUpInside" id="J6I-AU-z5o"/>
+                                    </connections>
                                 </button>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="me_selected" translatesAutoresizingMaskIntoConstraints="NO" id="5LP-qc-DIt">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5LP-qc-DIt">
                                     <rect key="frame" x="348" y="17" width="16" height="16"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="16" id="H34-Ax-fud"/>
@@ -257,11 +266,14 @@
                                     <color key="textColor" red="0.97522419689999995" green="0.47904932500000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g0W-zB-jKK">
+                                <button opaque="NO" tag="3" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g0W-zB-jKK">
                                     <rect key="frame" x="275" y="5" width="89" height="40"/>
                                     <state key="normal" title="Button"/>
+                                    <connections>
+                                        <action selector="setImageWhenTouchButton:" destination="-1" eventType="touchUpInside" id="hpa-Wy-0ps"/>
+                                    </connections>
                                 </button>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="me_selected" translatesAutoresizingMaskIntoConstraints="NO" id="S7R-YE-bJu">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="S7R-YE-bJu">
                                     <rect key="frame" x="348" y="17" width="16" height="16"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="16" id="Fxy-iO-KDe"/>
@@ -340,7 +352,6 @@
     </objects>
     <resources>
         <image name="me_alipay" width="51" height="51"/>
-        <image name="me_selected" width="24" height="24"/>
         <image name="me_wechat" width="51" height="51"/>
     </resources>
 </document>
