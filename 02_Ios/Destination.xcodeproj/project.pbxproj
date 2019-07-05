@@ -246,6 +246,8 @@
 		C8670EB822CC2ED9002ADBF8 /* HBModyfyNicknameVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8670EB622CC2ED9002ADBF8 /* HBModyfyNicknameVC.xib */; };
 		C867A5CA22B08A4C008ACC1A /* HBForgetPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C867A5C822B08A4C008ACC1A /* HBForgetPasswordVC.m */; };
 		C867A5CB22B08A4C008ACC1A /* HBForgetPasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C867A5C922B08A4C008ACC1A /* HBForgetPasswordVC.xib */; };
+		C876F55B22CEF659003CFCF5 /* HBTopUpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C876F55922CEF659003CFCF5 /* HBTopUpVC.m */; };
+		C876F55C22CEF659003CFCF5 /* HBTopUpVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C876F55A22CEF659003CFCF5 /* HBTopUpVC.xib */; };
 		C877655C22BB1F6D00E0C4B3 /* HBAnnouncementVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C877655A22BB1F6D00E0C4B3 /* HBAnnouncementVC.m */; };
 		C877655D22BB1F6D00E0C4B3 /* HBAnnouncementVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C877655B22BB1F6D00E0C4B3 /* HBAnnouncementVC.xib */; };
 		C878650122AD03C80084677F /* HBLoginPageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C87864FF22AD03C80084677F /* HBLoginPageVC.m */; };
@@ -687,6 +689,9 @@
 		C867A5C722B08A4C008ACC1A /* HBForgetPasswordVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBForgetPasswordVC.h; sourceTree = "<group>"; };
 		C867A5C822B08A4C008ACC1A /* HBForgetPasswordVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HBForgetPasswordVC.m; sourceTree = "<group>"; };
 		C867A5C922B08A4C008ACC1A /* HBForgetPasswordVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HBForgetPasswordVC.xib; sourceTree = "<group>"; };
+		C876F55822CEF659003CFCF5 /* HBTopUpVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBTopUpVC.h; sourceTree = "<group>"; };
+		C876F55922CEF659003CFCF5 /* HBTopUpVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HBTopUpVC.m; sourceTree = "<group>"; };
+		C876F55A22CEF659003CFCF5 /* HBTopUpVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HBTopUpVC.xib; sourceTree = "<group>"; };
 		C877655922BB1F6D00E0C4B3 /* HBAnnouncementVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBAnnouncementVC.h; sourceTree = "<group>"; };
 		C877655A22BB1F6D00E0C4B3 /* HBAnnouncementVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HBAnnouncementVC.m; sourceTree = "<group>"; };
 		C877655B22BB1F6D00E0C4B3 /* HBAnnouncementVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HBAnnouncementVC.xib; sourceTree = "<group>"; };
@@ -2002,6 +2007,16 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		C876F55722CEF5E0003CFCF5 /* TopUpWithdrwa */ = {
+			isa = PBXGroup;
+			children = (
+				C876F55822CEF659003CFCF5 /* HBTopUpVC.h */,
+				C876F55922CEF659003CFCF5 /* HBTopUpVC.m */,
+				C876F55A22CEF659003CFCF5 /* HBTopUpVC.xib */,
+			);
+			path = TopUpWithdrwa;
+			sourceTree = "<group>";
+		};
 		C877655522BB1EC400E0C4B3 /* announcement */ = {
 			isa = PBXGroup;
 			children = (
@@ -2077,6 +2092,7 @@
 		C87C720622AF467800E9813F /* Me */ = {
 			isa = PBXGroup;
 			children = (
+				C876F55722CEF5E0003CFCF5 /* TopUpWithdrwa */,
 				C8670EB922CC5DFA002ADBF8 /* UpdateToVIP */,
 				C85C377D22CB362300D4BB62 /* GetAuthentificationStatus */,
 				C85C377622CAF99B00D4BB62 /* Views */,
@@ -2216,6 +2232,7 @@
 				BFB5E38B215A431000985F62 /* Main.storyboard in Resources */,
 				BF0A5CE821E2F2AF00BD1CF4 /* mdd.yqxsy.cn.cer in Resources */,
 				C828D48822C20BF900C030E8 /* 11.png in Resources */,
+				C876F55C22CEF659003CFCF5 /* HBTopUpVC.xib in Resources */,
 				BF675798219ACA3200A74FDB /* ChinaProvince.plist in Resources */,
 				C828D48522C20BF900C030E8 /* 16.png in Resources */,
 				C828D48C22C20BF900C030E8 /* 22.png in Resources */,
@@ -2446,6 +2463,7 @@
 				BF451FF321AD409A00045FA0 /* NJModalPushAnimator.m in Sources */,
 				BFB5E460215A446300985F62 /* AppDelegate.m in Sources */,
 				41C6A6632259D0D0005BF525 /* HDQRCodeCt.m in Sources */,
+				C876F55B22CEF659003CFCF5 /* HBTopUpVC.m in Sources */,
 				BFA7E70921AF7E69003F103E /* NJCommentPushAnimatior.m in Sources */,
 				BF95D75621E47BC6001853D2 /* NJCarouseView.m in Sources */,
 				BFE565E721AD17DB00E89202 /* NJPhotoBrowserImageView.m in Sources */,

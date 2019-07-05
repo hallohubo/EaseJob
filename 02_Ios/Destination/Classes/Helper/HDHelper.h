@@ -122,6 +122,8 @@
 + (NSString*)getMD5WithData:(NSData *)data;
 
 + (void)changeColor:(UIButton *)btn;
++ (void)changeViewColor:(UIView *)btn;
+
 
 //url字符串中具有特殊功能的特殊字符的字符串，或者中文字符,作为参数传递时，需要用encode处理一下
 +(NSString*)encodeString:(NSString*)uncodeString;

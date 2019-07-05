@@ -12,6 +12,7 @@
 #import "HBGetPersonalAuthentificationVC.h"
 #import "HDMeModel.h"
 #import "HBUpdateToVIPVC.h"
+#import "HBTopUpVC.h"
 
 @interface HDMeVC ()<UINavigationControllerDelegate>
 {
@@ -85,7 +86,11 @@
             break;
         }
         case 1:{//充值
-            
+            if (!model) {
+                return;
+            }
+            HBTopUpVC *ctr = [[HBTopUpVC alloc] initWithModel:model];
+            [self.navigationController pushViewController:ctr animated:YES];
             break;
         }
         case 2:{//提现
