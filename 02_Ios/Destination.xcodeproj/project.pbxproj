@@ -246,6 +246,18 @@
 		C8670EB822CC2ED9002ADBF8 /* HBModyfyNicknameVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8670EB622CC2ED9002ADBF8 /* HBModyfyNicknameVC.xib */; };
 		C867A5CA22B08A4C008ACC1A /* HBForgetPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C867A5C822B08A4C008ACC1A /* HBForgetPasswordVC.m */; };
 		C867A5CB22B08A4C008ACC1A /* HBForgetPasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C867A5C922B08A4C008ACC1A /* HBForgetPasswordVC.xib */; };
+		C869D63122D19D2700AD29EA /* HBCommissionBalanceVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C869D62F22D19D2700AD29EA /* HBCommissionBalanceVC.m */; };
+		C869D63222D19D2700AD29EA /* HBCommissionBalanceVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C869D63022D19D2700AD29EA /* HBCommissionBalanceVC.xib */; };
+		C869D63622D19DE900AD29EA /* HBTaskBalanceVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C869D63422D19DE900AD29EA /* HBTaskBalanceVC.m */; };
+		C869D63722D19DE900AD29EA /* HBTaskBalanceVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C869D63522D19DE900AD29EA /* HBTaskBalanceVC.xib */; };
+		C869D63B22D19E8700AD29EA /* HBAmountFrozenVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C869D63922D19E8700AD29EA /* HBAmountFrozenVC.m */; };
+		C869D63C22D19E8700AD29EA /* HBAmountFrozenVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C869D63A22D19E8700AD29EA /* HBAmountFrozenVC.xib */; };
+		C869D64022D19EFD00AD29EA /* HBMarginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C869D63E22D19EFD00AD29EA /* HBMarginVC.m */; };
+		C869D64122D19EFD00AD29EA /* HBMarginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C869D63F22D19EFD00AD29EA /* HBMarginVC.xib */; };
+		C869D64522D19F7F00AD29EA /* HBCommissionBalanceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C869D64322D19F7F00AD29EA /* HBCommissionBalanceCell.m */; };
+		C869D64622D19F7F00AD29EA /* HBCommissionBalanceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C869D64422D19F7F00AD29EA /* HBCommissionBalanceCell.xib */; };
+		C869D64A22D1A24600AD29EA /* HBFrozenAcountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C869D64822D1A24600AD29EA /* HBFrozenAcountCell.m */; };
+		C869D64B22D1A24600AD29EA /* HBFrozenAcountCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C869D64922D1A24600AD29EA /* HBFrozenAcountCell.xib */; };
 		C876F55B22CEF659003CFCF5 /* HBTopUpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C876F55922CEF659003CFCF5 /* HBTopUpVC.m */; };
 		C876F55C22CEF659003CFCF5 /* HBTopUpVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C876F55A22CEF659003CFCF5 /* HBTopUpVC.xib */; };
 		C877655C22BB1F6D00E0C4B3 /* HBAnnouncementVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C877655A22BB1F6D00E0C4B3 /* HBAnnouncementVC.m */; };
@@ -689,6 +701,24 @@
 		C867A5C722B08A4C008ACC1A /* HBForgetPasswordVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBForgetPasswordVC.h; sourceTree = "<group>"; };
 		C867A5C822B08A4C008ACC1A /* HBForgetPasswordVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HBForgetPasswordVC.m; sourceTree = "<group>"; };
 		C867A5C922B08A4C008ACC1A /* HBForgetPasswordVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HBForgetPasswordVC.xib; sourceTree = "<group>"; };
+		C869D62E22D19D2700AD29EA /* HBCommissionBalanceVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBCommissionBalanceVC.h; sourceTree = "<group>"; };
+		C869D62F22D19D2700AD29EA /* HBCommissionBalanceVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HBCommissionBalanceVC.m; sourceTree = "<group>"; };
+		C869D63022D19D2700AD29EA /* HBCommissionBalanceVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HBCommissionBalanceVC.xib; sourceTree = "<group>"; };
+		C869D63322D19DE900AD29EA /* HBTaskBalanceVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBTaskBalanceVC.h; sourceTree = "<group>"; };
+		C869D63422D19DE900AD29EA /* HBTaskBalanceVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HBTaskBalanceVC.m; sourceTree = "<group>"; };
+		C869D63522D19DE900AD29EA /* HBTaskBalanceVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HBTaskBalanceVC.xib; sourceTree = "<group>"; };
+		C869D63822D19E8700AD29EA /* HBAmountFrozenVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBAmountFrozenVC.h; sourceTree = "<group>"; };
+		C869D63922D19E8700AD29EA /* HBAmountFrozenVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HBAmountFrozenVC.m; sourceTree = "<group>"; };
+		C869D63A22D19E8700AD29EA /* HBAmountFrozenVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HBAmountFrozenVC.xib; sourceTree = "<group>"; };
+		C869D63D22D19EFD00AD29EA /* HBMarginVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBMarginVC.h; sourceTree = "<group>"; };
+		C869D63E22D19EFD00AD29EA /* HBMarginVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HBMarginVC.m; sourceTree = "<group>"; };
+		C869D63F22D19EFD00AD29EA /* HBMarginVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HBMarginVC.xib; sourceTree = "<group>"; };
+		C869D64222D19F7F00AD29EA /* HBCommissionBalanceCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBCommissionBalanceCell.h; sourceTree = "<group>"; };
+		C869D64322D19F7F00AD29EA /* HBCommissionBalanceCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HBCommissionBalanceCell.m; sourceTree = "<group>"; };
+		C869D64422D19F7F00AD29EA /* HBCommissionBalanceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HBCommissionBalanceCell.xib; sourceTree = "<group>"; };
+		C869D64722D1A24600AD29EA /* HBFrozenAcountCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBFrozenAcountCell.h; sourceTree = "<group>"; };
+		C869D64822D1A24600AD29EA /* HBFrozenAcountCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HBFrozenAcountCell.m; sourceTree = "<group>"; };
+		C869D64922D1A24600AD29EA /* HBFrozenAcountCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HBFrozenAcountCell.xib; sourceTree = "<group>"; };
 		C876F55822CEF659003CFCF5 /* HBTopUpVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBTopUpVC.h; sourceTree = "<group>"; };
 		C876F55922CEF659003CFCF5 /* HBTopUpVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HBTopUpVC.m; sourceTree = "<group>"; };
 		C876F55A22CEF659003CFCF5 /* HBTopUpVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HBTopUpVC.xib; sourceTree = "<group>"; };
@@ -2007,6 +2037,55 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		C869D62A22D19C4500AD29EA /* paymentDetail */ = {
+			isa = PBXGroup;
+			children = (
+				C869D62D22D19CDC00AD29EA /* Models */,
+				C869D62C22D19CD400AD29EA /* Views */,
+				C869D62B22D19CC600AD29EA /* Controllers */,
+			);
+			path = paymentDetail;
+			sourceTree = "<group>";
+		};
+		C869D62B22D19CC600AD29EA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C869D62E22D19D2700AD29EA /* HBCommissionBalanceVC.h */,
+				C869D62F22D19D2700AD29EA /* HBCommissionBalanceVC.m */,
+				C869D63022D19D2700AD29EA /* HBCommissionBalanceVC.xib */,
+				C869D63322D19DE900AD29EA /* HBTaskBalanceVC.h */,
+				C869D63422D19DE900AD29EA /* HBTaskBalanceVC.m */,
+				C869D63522D19DE900AD29EA /* HBTaskBalanceVC.xib */,
+				C869D63822D19E8700AD29EA /* HBAmountFrozenVC.h */,
+				C869D63922D19E8700AD29EA /* HBAmountFrozenVC.m */,
+				C869D63A22D19E8700AD29EA /* HBAmountFrozenVC.xib */,
+				C869D63D22D19EFD00AD29EA /* HBMarginVC.h */,
+				C869D63E22D19EFD00AD29EA /* HBMarginVC.m */,
+				C869D63F22D19EFD00AD29EA /* HBMarginVC.xib */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C869D62C22D19CD400AD29EA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C869D64222D19F7F00AD29EA /* HBCommissionBalanceCell.h */,
+				C869D64322D19F7F00AD29EA /* HBCommissionBalanceCell.m */,
+				C869D64422D19F7F00AD29EA /* HBCommissionBalanceCell.xib */,
+				C869D64722D1A24600AD29EA /* HBFrozenAcountCell.h */,
+				C869D64822D1A24600AD29EA /* HBFrozenAcountCell.m */,
+				C869D64922D1A24600AD29EA /* HBFrozenAcountCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C869D62D22D19CDC00AD29EA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		C876F55722CEF5E0003CFCF5 /* TopUpWithdrwa */ = {
 			isa = PBXGroup;
 			children = (
@@ -2092,6 +2171,7 @@
 		C87C720622AF467800E9813F /* Me */ = {
 			isa = PBXGroup;
 			children = (
+				C869D62A22D19C4500AD29EA /* paymentDetail */,
 				C876F55722CEF5E0003CFCF5 /* TopUpWithdrwa */,
 				C8670EB922CC5DFA002ADBF8 /* UpdateToVIP */,
 				C85C377D22CB362300D4BB62 /* GetAuthentificationStatus */,
@@ -2195,6 +2275,7 @@
 				C829E42B22A968B5002EEFF8 /* HBRegisterVC.xib in Resources */,
 				C81923CD22C0C8FD00DE9CA3 /* HDHotTaskVC.xib in Resources */,
 				C85A600222AA494B008D54FC /* HDMainVC.xib in Resources */,
+				C869D63722D19DE900AD29EA /* HBTaskBalanceVC.xib in Resources */,
 				C8670EB822CC2ED9002ADBF8 /* HBModyfyNicknameVC.xib in Resources */,
 				C85B8F6822C8B5290002299D /* HDDiscoverVC.xib in Resources */,
 				C85C378222CB372200D4BB62 /* HBGetPersonalAuthentificationVC.xib in Resources */,
@@ -2208,6 +2289,7 @@
 				C81232A322B1F6F400DBFECF /* HDMIssionVC.xib in Resources */,
 				BF578ADA21743D640067591A /* NJAddBankTableFooterView.xib in Resources */,
 				BF5C34D321B7A5CF001EFD9C /* NJSelectLoginMethodVC.xib in Resources */,
+				C869D64122D19EFD00AD29EA /* HBMarginVC.xib in Resources */,
 				C847CBB422AFB2760055EC65 /* HBSystemSettingVC.xib in Resources */,
 				BF958F6121D506E300E0F050 /* NJForceBindPhoneNumberVC.xib in Resources */,
 				C828D48122C20BF900C030E8 /* 14.png in Resources */,
@@ -2227,6 +2309,7 @@
 				BF5EB0A6218012D00051BA80 /* NJShareItemCell.xib in Resources */,
 				C828D48E22C20BF900C030E8 /* 27.png in Resources */,
 				C828D49722C20BF900C030E8 /* 6.png in Resources */,
+				C869D63222D19D2700AD29EA /* HBCommissionBalanceVC.xib in Resources */,
 				4154A6B322A0EE9C00C459BE /* Assets.xcassets in Resources */,
 				BF5B34E121F17D06006F2AE7 /* NJLaunchAdVC.xib in Resources */,
 				BFB5E38B215A431000985F62 /* Main.storyboard in Resources */,
@@ -2243,6 +2326,7 @@
 				C877655D22BB1F6D00E0C4B3 /* HBAnnouncementVC.xib in Resources */,
 				C828D47F22C20BF900C030E8 /* 8.png in Resources */,
 				C85C377322CAF97A00D4BB62 /* HDMeVC.xib in Resources */,
+				C869D63C22D19E8700AD29EA /* HBAmountFrozenVC.xib in Resources */,
 				C828D49122C20BF900C030E8 /* 24.png in Resources */,
 				C85C376D22CAF95C00D4BB62 /* HBKindsCardsAuthenticationVC.xib in Resources */,
 				C8170DDB22CDFB9F00CF6921 /* HBChoosePayMethodVC.xib in Resources */,
@@ -2250,12 +2334,14 @@
 				C828D48B22C20BF900C030E8 /* 20.png in Resources */,
 				C828D49222C20BF900C030E8 /* 25.png in Resources */,
 				C828D48922C20BF900C030E8 /* 10.png in Resources */,
+				C869D64B22D1A24600AD29EA /* HBFrozenAcountCell.xib in Resources */,
 				C828D49322C20BF900C030E8 /* 19.png in Resources */,
 				C85A600622AA4964008D54FC /* HBInformationCell.xib in Resources */,
 				C828D48A22C20BF900C030E8 /* 21.png in Resources */,
 				C828D48F22C20BF900C030E8 /* 26.png in Resources */,
 				BFB2016821E599B200A06FB4 /* NJValidationCodeLoginVC.xib in Resources */,
 				BF5EB0B721805D3A0051BA80 /* NJRewardListView.xib in Resources */,
+				C869D64622D19F7F00AD29EA /* HBCommissionBalanceCell.xib in Resources */,
 				C814AD9D22B09AE100F46A50 /* HBResetPasswordVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2310,6 +2396,7 @@
 				BF5EB0B221805B740051BA80 /* NJRewardView.m in Sources */,
 				411FA6BF22A1DA470071B6A5 /* HDMissionVC.m in Sources */,
 				BFB5E433215A446300985F62 /* UIWindow+LBXHierarchy.m in Sources */,
+				C869D64A22D1A24600AD29EA /* HBFrozenAcountCell.m in Sources */,
 				C81EF16022BA1AE6005F72D7 /* HBNewsModle.m in Sources */,
 				C847CBB322AFB2760055EC65 /* HBSystemSettingVC.m in Sources */,
 				BFB5E466215A446300985F62 /* UIImage+NJImage.m in Sources */,
@@ -2329,10 +2416,12 @@
 				C845CADB22A772AF007379BF /* HDGlobal.m in Sources */,
 				BF578AD0217432D70067591A /* NJModalListView.m in Sources */,
 				BF451FF621AD40AF00045FA0 /* NJModalPopAnimator.m in Sources */,
+				C869D63B22D19E8700AD29EA /* HBAmountFrozenVC.m in Sources */,
 				BF5C34D221B7A5CF001EFD9C /* NJSelectLoginMethodVC.m in Sources */,
 				BF5EB0A9218018B20051BA80 /* NJShareItem.m in Sources */,
 				C83B250B22C4923B00A89DF0 /* JSBadgeView.m in Sources */,
 				BF8805EE21C4A1170076283D /* NJPaymentView.m in Sources */,
+				C869D64522D19F7F00AD29EA /* HBCommissionBalanceCell.m in Sources */,
 				41DF48DC22544E7800ED9E99 /* UIImage+alpha.m in Sources */,
 				BF578AD4217438020067591A /* NJBankCell.m in Sources */,
 				BFE565E321AD17DB00E89202 /* NJPhotoBrowserNaviAnimationTransition.m in Sources */,
@@ -2357,6 +2446,7 @@
 				BFB5E446215A446300985F62 /* XLPaymentLoadingHUD.m in Sources */,
 				BFF437272175E9A7006EE0A0 /* NJHorizontalMenuListView.m in Sources */,
 				C85C377C22CAFB7E00D4BB62 /* HBRealNameAuthenticationModel.m in Sources */,
+				C869D63122D19D2700AD29EA /* HBCommissionBalanceVC.m in Sources */,
 				BF9DEDB821AD226C00C45B33 /* NJPhotoBrowserModalAnimationTransition.m in Sources */,
 				BFF1576B21AE97FB00F4FCF4 /* NJCommentModalAnimationTransition.m in Sources */,
 				C845CAD222A764B5007379BF /* LDCry.m in Sources */,
@@ -2405,6 +2495,7 @@
 				BFB5E462215A446300985F62 /* UITextView+Placeholder.m in Sources */,
 				C845CAD422A764B5007379BF /* NSData+Encryption.m in Sources */,
 				BFB5E442215A446300985F62 /* NJCollectionViewController.m in Sources */,
+				C869D63622D19DE900AD29EA /* HBTaskBalanceVC.m in Sources */,
 				DA4EFC592248A12500062E14 /* myLabel.m in Sources */,
 				C807083C22BF36CD007CCA27 /* HBDiscoverModel.m in Sources */,
 				BFB5E432215A446300985F62 /* LBXAlertAction.m in Sources */,
@@ -2484,6 +2575,7 @@
 				BFE565E521AD17DB00E89202 /* NJPhotoBrowserPushAnimator.m in Sources */,
 				BFB5E469215A446300985F62 /* UITextField+NJPlaceHolder.m in Sources */,
 				BFB5E439215A446300985F62 /* NJTimerTool.m in Sources */,
+				C869D64022D19EFD00AD29EA /* HBMarginVC.m in Sources */,
 				BFB5E46D215A446300985F62 /* NJGlobalConst.m in Sources */,
 				C8555C6A22C4DED800BAB241 /* FourViewController.m in Sources */,
 				C8555C6D22C4EE0500BAB241 /* HBAllTaskTypeModle.m in Sources */,

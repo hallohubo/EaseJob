@@ -18,6 +18,7 @@
                 <outlet property="lbBank" destination="o9s-do-ZOW" id="zf1-Cr-6d2"/>
                 <outlet property="lbBankAddress" destination="rSa-3Q-fvc" id="BV1-In-e1Z"/>
                 <outlet property="lbBankCard" destination="gTD-QX-g41" id="TJz-PM-y7x"/>
+                <outlet property="lbLable" destination="1cR-Od-drY" id="ObC-RQ-Re0"/>
                 <outlet property="lbTaskBalance" destination="5m5-C8-hWn" id="AEO-gw-FhT"/>
                 <outlet property="lbTaskMargin" destination="HmF-C6-se9" id="gNX-CK-nUL"/>
                 <outlet property="lbTopupMount" destination="J6Y-BM-JHd" id="KEx-H1-h7h"/>
@@ -125,7 +126,7 @@
                                         <action selector="touchBalanceOrMarbin:" destination="-1" eventType="touchUpInside" id="6fG-bF-4tO"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vJX-gk-fJf">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vJX-gk-fJf">
                                     <rect key="frame" x="0.0" y="140" width="207" height="50"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
@@ -190,7 +191,7 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="joI-l2-s4l">
                                     <rect key="frame" x="0.0" y="342" width="414" height="40"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1cR-Od-drY">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1cR-Od-drY">
                                             <rect key="frame" x="10" y="11" width="4" height="18"/>
                                             <color key="backgroundColor" red="0.97522419689999995" green="0.47904932500000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>

@@ -22,6 +22,7 @@
     IBOutlet UILabel    *lbTopupMount;
     IBOutlet UILabel    *lbTaskBalance;
     IBOutlet UILabel    *lbTaskMargin;
+    IBOutlet UILabel    *lbLable;
     
     IBOutlet UIButton   *btnTopup;
     IBOutlet UIButton   *btnTaskBalancd;
@@ -53,6 +54,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setInitUI];
+    [self httpGetExplainWriting];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -68,10 +70,10 @@
    
     sender.selected = !sender.selected;
     if ([sender isEqual:btnTaskBalancd]) {
-        btnTaskMarbin.selected = btnTaskBalancd.selected;
+        btnTaskMarbin.selected = !btnTaskBalancd.selected;
        
     }else {
-        btnTaskBalancd.selected = btnTaskMarbin.selected;
+        btnTaskBalancd.selected = !btnTaskMarbin.selected;
     }
     
     vBankContain.hidden = !btnTaskMarbin.selected;
@@ -83,29 +85,49 @@
 
 #pragma mark - http event
 
-//- (void)httpGetParam
-//{
-//    HDHttpHelper *helper = [HDHttpHelper instance];
-//    [NJProgressHUD show];
-//
-//    task = [helper postPath:@"Act117" object:nil finished:^(HDError *error, id object, BOOL isLast, id json) {
-//
-//        [NJProgressHUD dismiss];
-//
-//        if (error) {
-//            [LBXAlertAction sayWithTitle:@"提示" message:error.desc buttons:@[ @"确认"] chooseBlock:nil];
-//            return ;
-//        }
-//        Dlog(@"MeMode:%@", object);
-//
-//    }];
-//}
+- (void)httpGetExplainWriting
+{
+    HDHttpHelper *helper = [HDHttpHelper instance];
+    NSDictionary *dic = @{@"type": HDSTR(@"7")};
+    [helper.parameters addEntriesFromDictionary:dic];
+    
+    [NJProgressHUD show];
+    task = [helper postPath:@"Act005" object:nil finished:^(HDError *error, id object, BOOL isLast, id json) {
+        [NJProgressHUD dismiss];
+        if (error) {
+            [HDHelper say:error.desc];
+            return ;
+        }
+        NSArray *ar = json[@"List"];
+        NSString *priceNote     = nil;
+        for (int i = 0; i < ar.count; i++) {
+            NSDictionary *d = ar[i];
+            NSString *t = HDFORMAT(@"%@", d[@"Type"]);
+            int type = t.intValue;
+            if (type == 7) {
+                priceNote = d[@"Content"];
+            }
+        }
 
+        NSAttributedString *as  = [HDStringHelper htmlString:priceNote];
+        tvExplain.attributedText= as;
+        CGSize size = CGSizeMake(HDDeviceSize.width - 20, 0);
+        CGRect rect = [as boundingRectWithSize:size options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading context:nil];
+        CGFloat height = CGRectGetHeight(rect);
+        height = height + 10;
+
+//        lcDistanceInRoll.constant   = height+30;
+//        lcContentHeight.constant    = lcTextviewHeight.constant > 900? lcTextviewHeight.constant : 900;
+   }];
+}
 #pragma mark - setter and getter
 
 - (void)setInitUI
 {
     self.title = @"充值";
+    
+    btnTaskBalancd.selected = YES;
+    btnTaskMarbin.selected  = NO;
     lcDistanceInRoll.constant = 0.f;
     vBankContain.hidden = YES;
     

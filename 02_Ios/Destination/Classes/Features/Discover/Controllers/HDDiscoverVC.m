@@ -230,12 +230,13 @@
     vPageMenu.bridgeScrollView = scv;
     [self.view addSubview:vPageMenu];
     
-    NSArray *controllerClassNames = [NSArray arrayWithObjects:@"FirstViewController",
+    NSArray *controllerClassNames = [NSArray arrayWithObjects:
+                                     @"FirstViewController",
                                      @"SecondViewController",
-                                     @"ThidViewController", @"FourViewController", nil
+                                     @"ThidViewController",
+                                     @"FourViewController",
+                                     nil
                                      ];
-    
-    
     for (int i = 0; i < self.dataArr.count; i++) {
         if (controllerClassNames.count > i) {
             BaseViewController *baseVc = [[NSClassFromString(controllerClassNames[i]) alloc] init];
@@ -266,20 +267,10 @@
     
 }
 
-- (void)traverseMyChildrenViewControllers
-{
-    for (BaseViewController *ctr in _myChildViewControllers) {
-        if (ctr) {
-            [ctr addObserver:self forKeyPath:@"typeID" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
-        }
-    }
-}
-
 - (NSMutableArray *)myChildViewControllers {
     
     if (!_myChildViewControllers) {
         _myChildViewControllers = [NSMutableArray array];
-        
     }
     return _myChildViewControllers;
 }
