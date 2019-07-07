@@ -258,6 +258,8 @@
 		C869D64622D19F7F00AD29EA /* HBCommissionBalanceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C869D64422D19F7F00AD29EA /* HBCommissionBalanceCell.xib */; };
 		C869D64A22D1A24600AD29EA /* HBFrozenAcountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C869D64822D1A24600AD29EA /* HBFrozenAcountCell.m */; };
 		C869D64B22D1A24600AD29EA /* HBFrozenAcountCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C869D64922D1A24600AD29EA /* HBFrozenAcountCell.xib */; };
+		C869D64F22D1A5BD00AD29EA /* HBPaymentDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C869D64D22D1A5BD00AD29EA /* HBPaymentDetailVC.m */; };
+		C869D65022D1A5BD00AD29EA /* HBPaymentDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C869D64E22D1A5BD00AD29EA /* HBPaymentDetailVC.xib */; };
 		C876F55B22CEF659003CFCF5 /* HBTopUpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C876F55922CEF659003CFCF5 /* HBTopUpVC.m */; };
 		C876F55C22CEF659003CFCF5 /* HBTopUpVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C876F55A22CEF659003CFCF5 /* HBTopUpVC.xib */; };
 		C877655C22BB1F6D00E0C4B3 /* HBAnnouncementVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C877655A22BB1F6D00E0C4B3 /* HBAnnouncementVC.m */; };
@@ -719,6 +721,9 @@
 		C869D64722D1A24600AD29EA /* HBFrozenAcountCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBFrozenAcountCell.h; sourceTree = "<group>"; };
 		C869D64822D1A24600AD29EA /* HBFrozenAcountCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HBFrozenAcountCell.m; sourceTree = "<group>"; };
 		C869D64922D1A24600AD29EA /* HBFrozenAcountCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HBFrozenAcountCell.xib; sourceTree = "<group>"; };
+		C869D64C22D1A5BD00AD29EA /* HBPaymentDetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBPaymentDetailVC.h; sourceTree = "<group>"; };
+		C869D64D22D1A5BD00AD29EA /* HBPaymentDetailVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HBPaymentDetailVC.m; sourceTree = "<group>"; };
+		C869D64E22D1A5BD00AD29EA /* HBPaymentDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HBPaymentDetailVC.xib; sourceTree = "<group>"; };
 		C876F55822CEF659003CFCF5 /* HBTopUpVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBTopUpVC.h; sourceTree = "<group>"; };
 		C876F55922CEF659003CFCF5 /* HBTopUpVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HBTopUpVC.m; sourceTree = "<group>"; };
 		C876F55A22CEF659003CFCF5 /* HBTopUpVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HBTopUpVC.xib; sourceTree = "<group>"; };
@@ -2062,6 +2067,9 @@
 				C869D63D22D19EFD00AD29EA /* HBMarginVC.h */,
 				C869D63E22D19EFD00AD29EA /* HBMarginVC.m */,
 				C869D63F22D19EFD00AD29EA /* HBMarginVC.xib */,
+				C869D64C22D1A5BD00AD29EA /* HBPaymentDetailVC.h */,
+				C869D64D22D1A5BD00AD29EA /* HBPaymentDetailVC.m */,
+				C869D64E22D1A5BD00AD29EA /* HBPaymentDetailVC.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -2303,6 +2311,7 @@
 				C828D49522C20BF900C030E8 /* 5.png in Resources */,
 				C878650222AD03C80084677F /* HBLoginPageVC.xib in Resources */,
 				BFB5E487215A54AC00985F62 /* NJForgetPwdVC.xib in Resources */,
+				C869D65022D1A5BD00AD29EA /* HBPaymentDetailVC.xib in Resources */,
 				C828D49022C20BF900C030E8 /* 18.png in Resources */,
 				C828D49622C20BF900C030E8 /* 7.png in Resources */,
 				BF95102121D3880F003EE1BD /* NJShareImageBottomView.xib in Resources */,
@@ -2549,6 +2558,7 @@
 				BFB5E467215A446300985F62 /* UILabel+NJChangeLineSpaceAndWordSpace.m in Sources */,
 				BF675799219ACA3200A74FDB /* NJAddressPickerView.m in Sources */,
 				BFB5E437215A446300985F62 /* ValuePickerView.m in Sources */,
+				C869D64F22D1A5BD00AD29EA /* HBPaymentDetailVC.m in Sources */,
 				BFB5E447215A446300985F62 /* XLPaymentSuccessHUD.m in Sources */,
 				BF29A9CE215F744800D5E8BB /* UIViewController+NJViewControllerBar.m in Sources */,
 				BF451FF321AD409A00045FA0 /* NJModalPushAnimator.m in Sources */,

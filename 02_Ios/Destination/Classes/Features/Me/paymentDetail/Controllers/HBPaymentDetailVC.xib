@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HBPaymentDetailVC">
+            <connections>
+                <outlet property="scv" destination="Ns0-di-BqH" id="Bhz-Ng-uY6"/>
+                <outlet property="vPageMenu" destination="L39-iX-vYq" id="nST-K8-nrm"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L39-iX-vYq" customClass="SPPageMenu">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                    <color key="backgroundColor" red="0.84994006229999997" green="1" blue="0.85354834300000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="jDL-Zf-YD0"/>
+                    </constraints>
+                </view>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ns0-di-BqH">
+                    <rect key="frame" x="0.0" y="50" width="375" height="617"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="4d4-7K-Lb3"/>
+                    </connections>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="L39-iX-vYq" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="-20" id="04B-Ij-n6t"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="L39-iX-vYq" secondAttribute="trailing" id="0Pc-wx-Nms"/>
+                <constraint firstItem="L39-iX-vYq" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="8E0-xP-fOg"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="Ns0-di-BqH" secondAttribute="bottom" id="LPZ-EM-IKn"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="Ns0-di-BqH" secondAttribute="trailing" id="hQ0-Py-jQQ"/>
+                <constraint firstItem="Ns0-di-BqH" firstAttribute="top" secondItem="L39-iX-vYq" secondAttribute="bottom" id="u4b-HQ-iwz"/>
+                <constraint firstItem="Ns0-di-BqH" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="zT1-gK-KrE"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+        </view>
+    </objects>
+</document>

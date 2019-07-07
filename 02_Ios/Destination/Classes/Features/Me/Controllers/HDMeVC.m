@@ -13,6 +13,7 @@
 #import "HDMeModel.h"
 #import "HBUpdateToVIPVC.h"
 #import "HBTopUpVC.h"
+#import "HBPaymentDetailVC.h"
 
 @interface HDMeVC ()<UINavigationControllerDelegate>
 {
@@ -98,7 +99,7 @@
             break;
         }
         case 3:{//收支明细
-            
+            [self.navigationController pushViewController:[HBPaymentDetailVC new] animated:YES];
             break;
         }
         case 4:{//分享佣金
