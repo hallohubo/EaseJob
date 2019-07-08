@@ -174,6 +174,8 @@
 		C81EF15D22BA1106005F72D7 /* HBBannerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C81EF15C22BA1106005F72D7 /* HBBannerModel.m */; };
 		C81EF16022BA1AE6005F72D7 /* HBNewsModle.m in Sources */ = {isa = PBXBuildFile; fileRef = C81EF15F22BA1AE6005F72D7 /* HBNewsModle.m */; };
 		C81EF16622BA33EC005F72D7 /* LMJScrollTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = C81EF16522BA33EC005F72D7 /* LMJScrollTextView.m */; };
+		C8276B9D22D2CD320090273E /* HBCommissionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C8276B9C22D2CD320090273E /* HBCommissionModel.m */; };
+		C8276BA022D2D5A60090273E /* HBFrozenAmountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C8276B9F22D2D5A60090273E /* HBFrozenAmountModel.m */; };
 		C828D46122C202C800C030E8 /* HLGifHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = C828D46022C202C800C030E8 /* HLGifHeader.m */; };
 		C828D47F22C20BF900C030E8 /* 8.png in Resources */ = {isa = PBXBuildFile; fileRef = C828D46322C20BF900C030E8 /* 8.png */; };
 		C828D48022C20BF900C030E8 /* 9.png in Resources */ = {isa = PBXBuildFile; fileRef = C828D46422C20BF900C030E8 /* 9.png */; };
@@ -599,6 +601,10 @@
 		C81EF15F22BA1AE6005F72D7 /* HBNewsModle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HBNewsModle.m; sourceTree = "<group>"; };
 		C81EF16422BA33EC005F72D7 /* LMJScrollTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJScrollTextView.h; sourceTree = "<group>"; };
 		C81EF16522BA33EC005F72D7 /* LMJScrollTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJScrollTextView.m; sourceTree = "<group>"; };
+		C8276B9B22D2CD320090273E /* HBCommissionModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBCommissionModel.h; sourceTree = "<group>"; };
+		C8276B9C22D2CD320090273E /* HBCommissionModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HBCommissionModel.m; sourceTree = "<group>"; };
+		C8276B9E22D2D5A60090273E /* HBFrozenAmountModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBFrozenAmountModel.h; sourceTree = "<group>"; };
+		C8276B9F22D2D5A60090273E /* HBFrozenAmountModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HBFrozenAmountModel.m; sourceTree = "<group>"; };
 		C828D45F22C202C800C030E8 /* HLGifHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLGifHeader.h; sourceTree = "<group>"; };
 		C828D46022C202C800C030E8 /* HLGifHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLGifHeader.m; sourceTree = "<group>"; };
 		C828D46322C20BF900C030E8 /* 8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8.png; sourceTree = "<group>"; };
@@ -877,6 +883,7 @@
 		4154A6B122A0ECB500C459BE /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				C8276BA122D2DF050090273E /* New Group */,
 				C87C720622AF467800E9813F /* Me */,
 				C829E42222A965BA002EEFF8 /* HBLogin */,
 				BFB5E46F215A54AC00985F62 /* Login */,
@@ -1807,6 +1814,13 @@
 			path = JhtMarquee;
 			sourceTree = "<group>";
 		};
+		C8276BA122D2DF050090273E /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		C828D45E22C2028A00C030E8 /* Others */ = {
 			isa = PBXGroup;
 			children = (
@@ -2090,6 +2104,10 @@
 		C869D62D22D19CDC00AD29EA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C8276B9B22D2CD320090273E /* HBCommissionModel.h */,
+				C8276B9C22D2CD320090273E /* HBCommissionModel.m */,
+				C8276B9E22D2D5A60090273E /* HBFrozenAmountModel.h */,
+				C8276B9F22D2D5A60090273E /* HBFrozenAmountModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -2512,6 +2530,7 @@
 				C8B74D6A22A8E1B600BCA2E6 /* HB3DScrollView.m in Sources */,
 				BFB5E43F215A446300985F62 /* FileCacheTool.m in Sources */,
 				C81EF15D22BA1106005F72D7 /* HBBannerModel.m in Sources */,
+				C8276B9D22D2CD320090273E /* HBCommissionModel.m in Sources */,
 				BF2278F0215B271200FB5504 /* CYLTabBarControllerConfig.m in Sources */,
 				BFB5E463215A446300985F62 /* NSString+LSCore.m in Sources */,
 				C81EF16622BA33EC005F72D7 /* LMJScrollTextView.m in Sources */,
@@ -2546,6 +2565,7 @@
 				C877655C22BB1F6D00E0C4B3 /* HBAnnouncementVC.m in Sources */,
 				BFB5E489215A54AC00985F62 /* NJUserItem.m in Sources */,
 				BFB5E465215A446300985F62 /* UIImageView+NJDownload.m in Sources */,
+				C8276BA022D2D5A60090273E /* HBFrozenAmountModel.m in Sources */,
 				BF41AA03217733AA004D155B /* NJMenuItemView.m in Sources */,
 				415A9EEC2290EF6100D433BE /* HD3DScrollView.m in Sources */,
 				C85C376C22CAF95C00D4BB62 /* HBMobileCodeAuthenticationVC.m in Sources */,

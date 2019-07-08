@@ -7,12 +7,15 @@
 //
 
 #import "HBAmountFrozenVC.h"
-#import "HBCommissionBalanceCell.h"
+#import "HBFrozenAcountCell.h"
+#import "HBFrozenAmountModel.h"
 
 @interface HBAmountFrozenVC ()
 {
     IBOutlet UITableView    *tbv;
     NSURLSessionTask        *task;
+    NSMutableArray          *marDiscoverList;
+    NSUInteger page;
 }
 @end
 
@@ -32,6 +35,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setTableviewRefreshInit];
+    [self loadNewData];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -53,7 +58,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 100.;
+    return 140.;
     
 }
 
@@ -76,66 +81,109 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 10;
+    return marDiscoverList.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *str = @"HBDiscoverCell";
-    HBCommissionBalanceCell *cell = [tableView dequeueReusableCellWithIdentifier:str];
+    static NSString *str = @"HBFrozenAcountCell";
+    HBFrozenAcountCell *cell = [tableView dequeueReusableCellWithIdentifier:str];
     if(!cell){
-        cell = [HBCommissionBalanceCell loadFromNib];
+        cell = [HBFrozenAcountCell loadFromNib];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
-    //    HBDiscoverModel *model = marDiscoverList[indexPath.section];
-    //
-    //    cell.vBackground.layer.cornerRadius = 6.f;
-    //    cell.vBackground.layer.masksToBounds= YES;
-    //
-    //    [cell.imvPhoto setImage:HDIMAGE(@"main_cellHeadImage")];
-    //    cell.lbMainheading.text = model.TaskTitle;
-    //    NSString *strAmount = HDFORMAT(@"%@/%@", model.HasSaleNum, model.Quantity);
-    //    cell.lbSubheading.text  = strAmount;
-    //    cell.lbMoney.text = model.Commission;//@"¥ +1.99元";
+    HBFrozenAmountModel *model  = marDiscoverList[indexPath.row];
     
+    cell.lbSerialNumber.text    = model.TaskNo;
+    cell.lbFrozenAmount.text    = model.FreezingBalance;
+    cell.lbFrozenMargin.text    = model.FreezingDeposit;
+    cell.lbTitle.text   = model.TaskTitle;
+    cell.lbType.text    = model.TaskPayType;
+    [cell.imvPhoto sd_setImageWithURL:[NSURL URLWithString:model.TaskIcon]];
+
     return cell;
+
 }
 
 #pragma mark - http event
 
-- (void)httpGetRecentlyNews:(NSInteger)indexPage  //
+- (void)httpGetFrozenList:(NSInteger)indexPage  //
 {
-    //    HDHttpHelper *helper = [HDHttpHelper instance];
-    //    NSDictionary *dic = @{@"PageSize": @"10",
-    //                          @"PageIndex": @(indexPage),
-    //                          @"type": @"0",
-    //                          };
-    //    [helper.parameters addEntriesFromDictionary:dic];
-    //
-    //    task = [helper postPath:@"Act204" object:[HBDiscoverModel new] finished:^(HDError *error, id object, BOOL isLast, id json)
-    //            {
-    //                if (error) {
-    //                    if (error.code != 0 ) {
-    //                        [HDHelper say:error.desc];
-    //                    }
-    //                    return ;
-    //                }
-    //                if (!object) {
-    //                    return;
-    //                }
-    //                marDiscoverList = object;
-    //
-    //
-    //            }];
-}
-
-#pragma mark - scrollViewDelegate
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    HDHttpHelper *helper = [HDHttpHelper instance];
+    NSDictionary *dic = @{@"PageSize": @"10",
+                          @"PageIndex": @(indexPage),
+                          };
+    [helper.parameters addEntriesFromDictionary:dic];
     
-    //这一步是实现跟踪器时刻跟随scrollView滑动的效果,如果对self.pageMenu.scrollView赋了值，这一步可省
-    //     [vPageMenu moveTrackerFollowScrollView:scrollView];
+    task = [helper postPath:@"Act122" object:[HBFrozenAmountModel new] finished:^(HDError *error, id object, BOOL isLast, id json)
+            {
+                [tbv.mj_footer endRefreshing];
+                [tbv.mj_header endRefreshing];
+                if (error) {
+                    [LBXAlertAction sayWithTitle:@"提示" message:error.desc buttons:@[ @"确认"] chooseBlock:nil];
+                    return ;
+                }
+                
+                NSArray * dataArr = [NSArray array];
+                if ([object isKindOfClass:[NSArray class]] && object) {
+                    dataArr = object;
+                }else {
+                    return;
+                }
+                
+                if (dataArr.count < 1 && page == 1) {
+                    [NJProgressHUD showInfoWithStatus:@"暂时没有资讯！"];
+                    [NJProgressHUD dismissWithDelay:1.2];
+                    return ;
+                }
+                
+                if(page == 1){
+                    marDiscoverList = [NSMutableArray arrayWithArray:dataArr];
+                    [tbv reloadData];
+                    return;
+                }
+                
+                if(page > 1 && (dataArr == nil || dataArr.count == 0)){
+                    page -= 1;
+                    [NJProgressHUD showInfoWithStatus:@"已经到底了"];
+                    [NJProgressHUD dismissWithDelay:1.2];
+                    [marDiscoverList addObjectsFromArray:dataArr];
+                    [tbv reloadData];
+                    return ;
+                }
+                
+                [marDiscoverList addObjectsFromArray:dataArr];
+                [tbv reloadData];
+                
+            }];
 }
 
+#pragma mark - setter and getter
 
+- (void)setupInit
+{
+    
+}
+
+- (void)setTableviewRefreshInit
+{
+    page = 1;
+    
+    tbv.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+    tbv.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
+}
+
+#pragma mark - other
+
+- (void)loadNewData
+{
+    page = 1;
+    [self httpGetFrozenList:page];
+}
+
+- (void)loadMoreData
+{
+    page += 1;
+    [self httpGetFrozenList:page];
+}
 @end

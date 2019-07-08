@@ -503,15 +503,6 @@
             return;
         }
         
-        if(page > 1 && (dataArr == nil || dataArr.count == 0)){
-            page -= 1;
-            [NJProgressHUD showInfoWithStatus:@"已经到底了"];
-            [NJProgressHUD dismissWithDelay:1.2];
-            [marTaskNewsList addObjectsFromArray:dataArr];
-            [tbv reloadData];
-            return ;
-        }
-        
         [marTaskNewsList addObjectsFromArray:dataArr];
         [tbv reloadData];
         
@@ -655,7 +646,7 @@
             [imv setImage:HDIMAGE(@"main_all")];
         }
     }
-    //need to change the tableview's height at view head
+    //need to change the tableview's height at the head part of view
     lcAllTaksHeight.constant = marOrderList.count > 5 ? 210. : 130.;
     [self setTableHead:marOrderList.count > 5 ? 290 : 210];
 }
@@ -670,7 +661,7 @@
 
 - (void)loadMoreData
 {
-    page += 1;
+    page = 1;   //main page only get ten information;
     [self httpGetHotTenTask:page];
 }
 
