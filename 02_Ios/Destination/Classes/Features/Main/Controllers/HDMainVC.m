@@ -366,27 +366,6 @@
     }
 }
 
-- (void)checkAllTaskDetail:(UIButton *)sender
-{
-    HBAllTaskTypeModle *model = marAllTaskList[sender.tag];
-    
-    UILabel *lb = arLables[sender.tag]; //special case when type is all
-    if ([lb.text isEqualToString:@"全部"]) {
-        model.TaskTypeID = @"0";
-    }
-    
-    // in this app cycle the tabBarController  is the global variable, so we can catch its point and don't worry about crashing
-    UITabBarController *tab = self.tabBarController;
-    NSArray *views = self.tabBarController.viewControllers;
-    
-    NJNavigationController *cc = views[1];
-    if ([cc.tabBarItem.title isEqualToString:@"发现"]) {
-        HDDiscoverVC *ctr = cc.childViewControllers[0];
-        HDGI.typeID = model.TaskTypeID;
-        tab.selectedIndex = 1;
-    }
-}
-
 - (IBAction)checkoutAnnouncementsList:(UIButton *)sender
 {
     [self.navigationController pushViewController:[HBAnnouncementVC new] animated:YES];
@@ -528,7 +507,8 @@
     [self setUIObjectHiden:arImgviews];
 }
 
-- (void)setUIObjectHiden:(NSArray *)UIObject{
+- (void)setUIObjectHiden:(NSArray *)UIObject
+{
     for (id object in UIObject) {
         [object setHidden:YES];
     }
@@ -663,6 +643,27 @@
 {
     page = 1;   //main page only get ten information;
     [self httpGetHotTenTask:page];
+}
+
+- (void)checkAllTaskDetail:(UIButton *)sender
+{
+    HBAllTaskTypeModle *model = marAllTaskList[sender.tag];
+    
+    UILabel *lb = arLables[sender.tag]; //special case when type is all
+    if ([lb.text isEqualToString:@"全部"]) {
+        model.TaskTypeID = @"0";
+    }
+    
+    // in this app cycle the tabBarController  is the global variable, so we can catch its point and don't worry about crashing
+    UITabBarController *tab = self.tabBarController;
+    NSArray *views = self.tabBarController.viewControllers;
+    
+    NJNavigationController *cc = views[1];
+    if ([cc.tabBarItem.title isEqualToString:@"发现"]) {
+        HDDiscoverVC *ctr = cc.childViewControllers[0];
+        HDGI.typeID = model.TaskTypeID;
+        tab.selectedIndex = 1;
+    }
 }
 
 @end

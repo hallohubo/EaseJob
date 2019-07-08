@@ -13,6 +13,7 @@
 //#import "NJDiscoveryItem.h"
 #import "NSDate+NJCommonDate.h"
 //#import "NJPostTool.h"
+#import "HBAddNewTaskVC.h"
 
 
 //#import "HLShootPopView.h"
@@ -133,7 +134,11 @@
 #pragma mark - Event Response
 
 - (void)clickPublish {
-    
+    NSLog(@"hububububu");
+    CYLTabBarController *tabBarController = [self cyl_tabBarController];
+    UIViewController *viewController = tabBarController.selectedViewController;
+    HBAddNewTaskVC *ctr = [[HBAddNewTaskVC alloc] init];
+    [viewController presentViewController:ctr animated:YES completion:nil];
 //    HLShootPopView *popView = [[HLShootPopView alloc] initWithTitle:@"" titleList:@[@"发布游记",@"摄影作品"] callBack:^(NSInteger index) {
 ////        UIResponder * objct = self.nextResponder;
 ////        while (objct != nil && ![objct isKindOfClass:[UIViewController class]]) {
@@ -206,9 +211,9 @@
 //        }
 //        }];
 //    [popView show];
-    
-    
-    
+//
+//
+//
 //    CYLTabBarController *tabBarController = [self cyl_tabBarController];
 //    UIViewController *viewController = tabBarController.selectedViewController;
 //
