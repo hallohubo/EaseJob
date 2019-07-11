@@ -120,20 +120,38 @@
     self.title = @"新任务";
     
     arButtons  = @[btn0, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn10, btn11, btn12, btn13, btn14, btn15, btn16, btn17, btn18, btn19];
-    
     [self setUIObjectHiden:arButtons];
 }
 
 - (void)setUIObjectHiden:(NSArray *)UIObject
 {
+    int i=0;
     for (id object in UIObject) {
-        [object setHidden:YES];
+        if ([object isKindOfClass:[UIButton class]]) {
+            UIButton *btn = object;
+            [object setHidden:(btn.titleLabel.text.length > 1)? NO : YES];
+            i = btn.titleLabel.text.length > 0? i++ : i;
+        }
     }
-    
+    if (i/5 > 1) {
+        <#statements#>
+    }else if (i%5 > 0){
+        
+    }else{
+        lcTaskTypeHeight0.constant = 0.f;
+        lcTaskTypeHeight1.constant = 0.f;
+        lcTaskTypeHeight2.constant = 0.f;
+        lcTaskTypeHeight3.constant = 0.f;
+        
+    }
 }
 
 - (void)setScrollviewContainHeight
 {
+    lcTaskTypeContainHeight.constant = lcTaskTypeHeight0.constant+lcTaskTypeHeight1.constant+lcTaskTypeHeight2.constant+lcTaskTypeHeight3.constant;
+    
+    lcTaskPictureContainHeight.constant = lcTaskPictureContain0.constant + lcTaskPictureContain1.constant + lcTaskPictureContain2.constant + lcTaskPictureContain3.constant + lcTaskPictureContain4.constant;
+    
     lcContentHeight.constant = lcTaskTypeContainHeight.constant + lcTaskPictureContainHeight.constant;
     [self.view updateConstraints];
 }
