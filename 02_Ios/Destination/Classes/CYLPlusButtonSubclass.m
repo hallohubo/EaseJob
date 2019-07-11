@@ -138,7 +138,7 @@
     CYLTabBarController *tabBarController = [self cyl_tabBarController];
     UIViewController *viewController = tabBarController.selectedViewController;
     HBAddNewTaskVC *ctr = [[HBAddNewTaskVC alloc] init];
-    [viewController presentViewController:ctr animated:YES completion:nil];
+    [viewController cyl_pushViewController:ctr animated:YES];
 //    HLShootPopView *popView = [[HLShootPopView alloc] initWithTitle:@"" titleList:@[@"发布游记",@"摄影作品"] callBack:^(NSInteger index) {
 ////        UIResponder * objct = self.nextResponder;
 ////        while (objct != nil && ![objct isKindOfClass:[UIViewController class]]) {
