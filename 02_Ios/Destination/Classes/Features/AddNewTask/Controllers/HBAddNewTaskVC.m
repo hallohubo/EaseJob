@@ -9,9 +9,9 @@
 #import "HBAddNewTaskVC.h"
 #import "HBAllTaskTypeModle.h"
 
-@interface HBAddNewTaskVC ()
+@interface HBAddNewTaskVC ()<UITextViewDelegate>
 {
-    IBOutlet NSLayoutConstraint     *lcContentHeight;//scrollview的contentview 总高度
+    NSLayoutConstraint     *lcContentHeight;//scrollview的contentview 总高度
     
     IBOutlet NSLayoutConstraint     *lcTaskTypeContainHeight;
     IBOutlet NSLayoutConstraint     *lcTaskTypeHeight0;//任务类型数量变化时，需要改变
@@ -26,22 +26,23 @@
     IBOutlet NSLayoutConstraint     *lcTaskPictureContain3;
     IBOutlet NSLayoutConstraint     *lcTaskPictureContain4;
     
-    IBOutlet NSLayoutConstraint     *lcImvHeight0;//添加步骤图高度值跟随lable的显示和隐藏变化
-    IBOutlet NSLayoutConstraint     *lcImvHeight1;
-    IBOutlet NSLayoutConstraint     *lcImvHeight2;
-    IBOutlet NSLayoutConstraint     *lcImvHeight3;
-    IBOutlet NSLayoutConstraint     *lcImvHeight4;
-    
     
     IBOutlet UIView         *vPhotoContain0, *vPhotoContain1, *vPhotoContain2,
                             *vPhotoContain3, *vPhotoContain4;
     IBOutlet UIImageView    *imvPhoto0, *imvPhoto1, *imvPhoto2, *imvPhoto3,                                 *imvPhoto4;
     IBOutlet UIImageView    *imvBack0, *imvBack1, *imvBack2, *imvBack3, *imvBack4;
+    
+    IBOutlet UIImageView    *imvValidateBack0, *imvValidateBack1, *imvValidateBack2;
+    IBOutlet UIButton       *btnValidate0, *btnValidate1, *btnValidate2;
+
     IBOutlet UILabel        *lbAddStep0, *lbAddStep1, *lbAddStep2, *lbAddStep3, *lbAddStep4;
     IBOutlet UITextView     *tvphotoDes0, *tvphotoDes1, *tvphotoDes2, *tvphotoDes3, *tvphotoDes4;
+    IBOutlet UIButton       *btnAddStepPhote0, *btnAddStepPhote1, *btnAddStepPhote2, *btnAddStepPhote3, *btnAddStepPhote4;
     
     IBOutlet UIButton       *btn0, *btn1, *btn2, *btn3, *btn4, *btn5, *btn6,
                             *btn7, *btn8, *btn9, *btn10, *btn11, *btn12, *btn13, *btn14, *btn15, *btn16, *btn17, *btn18, *btn19;
+    IBOutlet UIView         *v0, *v1, *v2, *v3;
+    
     IBOutlet UIButton       *btnPaidTask, *btnNotPaidTask;
     IBOutlet UIButton       *btnAll, *btnAndroid, *btnIOS;
     IBOutlet UITextField    *tfTastTitle;
@@ -56,14 +57,27 @@
     IBOutlet UIButton       *btnAgreement;
     IBOutlet UILabel        *lbShowAgreement;
     IBOutlet UIButton       *btnRelease, *btnPreview;
+    IBOutlet UIScrollView   *scv;
 
     NSArray             *arButtons;
+    NSArray             *arViews;
     NSArray             *arButtonsLayoutConstraints;
     
     NSMutableArray      *marAllTaskList;
     NSMutableArray      *marOrderList;
+    
+    
+    NSMutableArray      *arTextviewDescription;
+    NSArray             *arTextviews;
+    NSArray             *arViewsForStep;
+    NSMutableArray      *arImageLinks;
+   
+    NSArray             *arViewLayouConstainss;
+    NSArray             *arLableAddSteps;
+    
 
     NSURLSessionTask    *task;
+    
 
 }
 
@@ -74,11 +88,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupInit];
-//    [self httpGetAllTask];
+    [self httpGetAllTask];
+    
+    [self stepPhotosInit];
     // Do any additional setup after loading the view from its nib.
 }
 
 #pragma mark - UI touch event
+
+
 
 - (void)checkAllTaskDetail:(UIButton *)sender
 {
@@ -107,7 +125,14 @@
         
         marAllTaskList = object;
         Dlog(@"maralltask:%@", marAllTaskList);
-//        [self setAllTaskView];
+        [self setUIObjectText:arButtons];
+        for (int i = 0; i < marAllTaskList.count; i++) {
+            HBAllTaskTypeModle *dic = marAllTaskList[i];
+            
+            UIButton *btn = arButtons[i];
+            NSString *str = dic.TaskType;
+            [btn setTitle:str forState:UIControlStateNormal];        }
+            [self RefreshUIButtonObjectsHiden:arButtons];
     }];
 }
 
@@ -119,56 +144,150 @@
 {
     self.title = @"新任务";
     
-    arButtons  = @[btn0, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn10, btn11, btn12, btn13, btn14, btn15, btn16, btn17, btn18, btn19];
-    [self setUIObjectHiden:arButtons];
+    arButtons   = @[btn0, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn10, btn11, btn12, btn13, btn14, btn15, btn16, btn17, btn18, btn19];
+    arButtonsLayoutConstraints = @[lcTaskTypeHeight0, lcTaskTypeHeight1, lcTaskTypeHeight2, lcTaskTypeHeight3];
+    arViews = @[v0, v1, v2, v3];
+    
+    arTextviewDescription   = [self productStringObject:5 container:arTextviewDescription];
+
+    arViewLayouConstainss   = @[lcTaskPictureContain0, lcTaskPictureContain1, lcTaskPictureContain2, lcTaskPictureContain3, lcTaskPictureContain4];
+    arViewsForStep  = @[vPhotoContain0, vPhotoContain1, vPhotoContain2, vPhotoContain3, vPhotoContain4];
+    arImageLinks    = [self productStringObject:5 container:arImageLinks];
+    arLableAddSteps = @[lbAddStep0, lbAddStep1, lbAddStep2, lbAddStep3, lbAddStep4];
+    arTextviews = @[tvphotoDes0, tvphotoDes1, tvphotoDes2, tvphotoDes3, tvphotoDes4];
+    
+    
+    
+    [self setUIObjectHidden:arButtons];
+    [self setUIObjectHidden:arViews];
+    [self setUIObjectText:arButtons];
+    [self setLayoutConstant:arButtonsLayoutConstraints];
+    [self setScrollviewContainHeight];
 }
 
-- (void)setUIObjectHiden:(NSArray *)UIObject
+- (NSMutableArray *)productStringObject:(int)number container:(NSMutableArray *)arrayObjects
 {
+    arrayObjects = [NSMutableArray array];
+    for (int i ; i < number; i++) {
+        NSString *str = @"";
+        [arrayObjects addObject:str];
+    }
+    return arrayObjects;
+}
+
+- (BOOL)textViewShouldBeginEditing:(UITextView *)textView
+{
+    return  YES;
+}
+
+- (void)stepPhotosInit//步骤图初始化UI
+{
+    [self setupStepPhoteprimaryState];
+    NSString *str = arImageLinks[0];
+    NSLayoutConstraint *lc =  arViewLayouConstainss[0];
+   // UITextView *tv = arTextviews[0];
+   
+    UIView *v = arViewsForStep[0];
+    
+    if (str.length < 1 && arImageLinks.count > 0) {
+        v.hidden    = NO;
+        lc.constant = 130.f;
+        
+        [imvPhoto0 layoutIfNeeded];
+        [self setScrollviewContainHeight];
+    }
+    
+    for (int i = 0; i<arImageLinks.count; i++) {
+        
+    }
+}
+
+- (void)setupStepPhoteprimaryState//步骤图初始化
+{
+    [self setUIObjectHidden:arViewsForStep];
+    [self setLayoutConstant:arViewLayouConstainss];
+    [self setScrollviewContainHeight];
+    
+}
+
+- (void)setUIObjectText:(NSArray *)arObject
+{
+    for (UIButton *btn in arObject) {
+        [btn setTitle:@"" forState:UIControlStateNormal];
+        btn.selected = NO;
+        }
+}
+
+- (void)setUIObjectHidden:(NSArray *)arObject//btn容器
+{
+    for (id object in arObject) {
+        [object setHidden:YES];
+    }
+}
+
+- (void)setLayoutConstant:(NSArray *)arLayOut
+{
+    for (NSLayoutConstraint *lc in arLayOut) {
+        lc.constant = 0.f;
+    }
+}
+
+- (void)RefreshUIButtonObjectsHiden:(NSArray *)UIObject
+{
+    [self setUIObjectHidden:arViews];
+    [self setLayoutConstant:arButtonsLayoutConstraints];
+
     int i=0;
     for (id object in UIObject) {
         if ([object isKindOfClass:[UIButton class]]) {
             UIButton *btn = object;
+            NSString *str = btn.titleLabel.text;
+            Dlog(@"strstr:%@", str);
             [object setHidden:(btn.titleLabel.text.length > 1)? NO : YES];
-            i = btn.titleLabel.text.length > 0? i++ : i;
+            i = btn.titleLabel.text.length > 0? i+1 : i;
         }
     }
-    if (i/5 > 1) {
-        <#statements#>
-    }else if (i%5 > 0){
+    
+    if (i/5 > 0) {
+        int j = i/5;
+        Dlog(@"j:%d", j);
+        j = i%5 > 0? j++ : j;
+        Dlog(@"j:%d", j);
+        for (int k = 0; k < j; k++) {
+            UIView *v = arViews[k];
+            v.hidden = NO;
+            NSLayoutConstraint *lc = arButtonsLayoutConstraints[k];
+            lc.constant = 50.f;
+        }
         
-    }else{
-        lcTaskTypeHeight0.constant = 0.f;
-        lcTaskTypeHeight1.constant = 0.f;
-        lcTaskTypeHeight2.constant = 0.f;
-        lcTaskTypeHeight3.constant = 0.f;
         
+    }else if (i%5 > 0) {
+        UIView *v = arViews[0];
+        NSLayoutConstraint *lc = arButtonsLayoutConstraints[0];
+        v.hidden = NO;
+        lc.constant = 50.f;
+    }else {
+        [self setUIObjectHidden:arButtons];
+        [self setUIObjectHidden:arViews];
+        [self setLayoutConstant:arButtonsLayoutConstraints];
     }
+    [self setScrollviewContainHeight];
 }
 
 - (void)setScrollviewContainHeight
 {
-    lcTaskTypeContainHeight.constant = lcTaskTypeHeight0.constant+lcTaskTypeHeight1.constant+lcTaskTypeHeight2.constant+lcTaskTypeHeight3.constant;
+    lcTaskTypeContainHeight.constant = lcTaskTypeHeight0.constant+lcTaskTypeHeight1.constant+lcTaskTypeHeight2.constant+lcTaskTypeHeight3.constant+50;
     
-    lcTaskPictureContainHeight.constant = lcTaskPictureContain0.constant + lcTaskPictureContain1.constant + lcTaskPictureContain2.constant + lcTaskPictureContain3.constant + lcTaskPictureContain4.constant;
+    lcTaskPictureContainHeight.constant = lcTaskPictureContain0.constant + lcTaskPictureContain1.constant + lcTaskPictureContain2.constant + lcTaskPictureContain3.constant + lcTaskPictureContain4.constant+50;
     
-    lcContentHeight.constant = lcTaskTypeContainHeight.constant + lcTaskPictureContainHeight.constant;
+   lcContentHeight.constant = lcTaskTypeContainHeight.constant + lcTaskPictureContainHeight.constant;
     [self.view updateConstraints];
+    [scv setContentSize:CGSizeMake(kSCREEN_WIDTH, lcContentHeight.constant+2300-50*4-110*5)];
 }
 
 - (void)setAllTaskView  // according the all task case to change task's view
 {
-//    for (int i = 0; i < marAllTaskList.count; i++) {
-//        HBAllTaskTypeModle *model = marAllTaskList[i];
-//        UIButton *btn   = arButtons[i];
-//        btn.hidden  = NO;
-//        btn.tag = i;
-//        [btn addTarget:self action:@selector(checkAllTaskDetail:) forControlEvents:UIControlEventTouchUpInside];
-//        btn.titleLabel.text = model.TaskType;
-//    }
-//    //need to change the tableview's height at the head part of view
-////    lcTaskModelHeight.constant = marOrderList.count > 5 ? 150 : 90;
-//    [self setViewHeight:marOrderList.count > 5 ? 150 : 90];
+
 }
 
 - (void)setViewHeight:(NSInteger)intHeight  //adjust the tableview's head
