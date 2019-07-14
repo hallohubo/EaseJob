@@ -11,7 +11,7 @@
 
 @interface HBAddNewTaskVC ()<UITextViewDelegate>
 {
-    NSLayoutConstraint     *lcContentHeight;//scrollview的contentview 总高度
+    IBOutlet NSLayoutConstraint     *lcContentHeight;//scrollview的contentview 总高度
     
     IBOutlet NSLayoutConstraint     *lcTaskTypeContainHeight;
     IBOutlet NSLayoutConstraint     *lcTaskTypeHeight0;//任务类型数量变化时，需要改变
@@ -182,32 +182,32 @@
 
 - (void)stepPhotosInit//步骤图初始化UI
 {
-    [self setupStepPhoteprimaryState];
-    NSString *str = arImageLinks[0];
-    NSLayoutConstraint *lc =  arViewLayouConstainss[0];
-   // UITextView *tv = arTextviews[0];
-   
-    UIView *v = arViewsForStep[0];
-    
-    if (str.length < 1 && arImageLinks.count > 0) {
-        v.hidden    = NO;
-        lc.constant = 130.f;
-        
-        [imvPhoto0 layoutIfNeeded];
-        [self setScrollviewContainHeight];
+    [self setupStepPhotoprimaryState];
+    for (NSString *str in arImageLinks) {
+        if (str.length < 1 && arImageLinks.count > 0) {
+            NSInteger iPosition=[arImageLinks indexOfObject:str];
+            if (iPosition < 0) {
+                
+                return;
+            }
+            NSLayoutConstraint *lc =  arViewLayouConstainss[iPosition];
+            NSLog(@"lc:%f index:%ld", lc.constant,(long)iPosition);
+            UIView *v = arViewsForStep[iPosition];
+            v.hidden    = NO;
+            lc.constant = 130.f;
+            NSLog(@"lc:%f", lc.constant);
+            [self setScrollviewContainHeight];
+            return;
+        }
     }
     
-    for (int i = 0; i<arImageLinks.count; i++) {
-        
-    }
 }
 
-- (void)setupStepPhoteprimaryState//步骤图初始化
+- (void)setupStepPhotoprimaryState//步骤图初始化
 {
     [self setUIObjectHidden:arViewsForStep];
     [self setLayoutConstant:arViewLayouConstainss];
     [self setScrollviewContainHeight];
-    
 }
 
 - (void)setUIObjectText:(NSArray *)arObject
@@ -232,13 +232,13 @@
     }
 }
 
-- (void)RefreshUIButtonObjectsHiden:(NSArray *)UIObject
+- (void)RefreshUIButtonObjectsHiden:(NSArray *)UIObjects
 {
     [self setUIObjectHidden:arViews];
     [self setLayoutConstant:arButtonsLayoutConstraints];
 
     int i=0;
-    for (id object in UIObject) {
+    for (id object in UIObjects) {
         if ([object isKindOfClass:[UIButton class]]) {
             UIButton *btn = object;
             NSString *str = btn.titleLabel.text;
@@ -276,23 +276,14 @@
 
 - (void)setScrollviewContainHeight
 {
-    lcTaskTypeContainHeight.constant = lcTaskTypeHeight0.constant+lcTaskTypeHeight1.constant+lcTaskTypeHeight2.constant+lcTaskTypeHeight3.constant+50;
+    lcTaskTypeContainHeight.constant = lcTaskTypeHeight0.constant+lcTaskTypeHeight1.constant+lcTaskTypeHeight2.constant+lcTaskTypeHeight3.constant+60;
     
-    lcTaskPictureContainHeight.constant = lcTaskPictureContain0.constant + lcTaskPictureContain1.constant + lcTaskPictureContain2.constant + lcTaskPictureContain3.constant + lcTaskPictureContain4.constant+50;
+    lcTaskPictureContainHeight.constant = lcTaskPictureContain0.constant*(120/110) + lcTaskPictureContain1.constant*(120/110) + lcTaskPictureContain2.constant*(120/110) + lcTaskPictureContain3.constant*(120/110) + lcTaskPictureContain4.constant*(120/110)+60;
     
-   lcContentHeight.constant = lcTaskTypeContainHeight.constant + lcTaskPictureContainHeight.constant;
+   lcContentHeight.constant = lcTaskTypeContainHeight.constant + lcTaskPictureContainHeight.constant+2300-50*4-110*5*(120/110)-150;
+    Dlog(@"llll:%f", lcContentHeight.constant);
     [self.view updateConstraints];
-    [scv setContentSize:CGSizeMake(kSCREEN_WIDTH, lcContentHeight.constant+2300-50*4-110*5)];
-}
-
-- (void)setAllTaskView  // according the all task case to change task's view
-{
-
-}
-
-- (void)setViewHeight:(NSInteger)intHeight  //adjust the tableview's head
-{
-    CGFloat height = intHeight + HDDeviceSize.height;
+    [scv setContentSize:CGSizeMake(kSCREEN_WIDTH, lcContentHeight.constant)];
 }
 
 #pragma mark - other

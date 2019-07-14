@@ -79,6 +79,7 @@
                 <outlet property="lbShowAgreement" destination="nI7-6f-Eum" id="fNw-Zx-bml"/>
                 <outlet property="lbTaskLimit" destination="bMC-xn-1m6" id="vXa-61-L5b"/>
                 <outlet property="lbTaskNumbers" destination="XVD-3X-7Ou" id="8TD-iX-Qs3"/>
+                <outlet property="lcContentHeight" destination="vPd-r7-1H5" id="UqU-XH-K4P"/>
                 <outlet property="lcTaskPictureContain0" destination="18g-XJ-wwG" id="bOl-gl-dCy"/>
                 <outlet property="lcTaskPictureContain1" destination="tfC-FS-o4B" id="z0X-fG-ud4"/>
                 <outlet property="lcTaskPictureContain2" destination="Na1-Pr-2kX" id="NWn-qa-pKR"/>
@@ -116,17 +117,17 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <rect key="frame" x="0.0" y="0.0" width="395" height="2324"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3mv-Sx-nnt">
-                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                    <rect key="frame" x="0.0" y="20" width="395" height="2304"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CVP-jA-WXW">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="2300"/>
+                            <rect key="frame" x="0.0" y="0.0" width="395" height="2300"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LkR-sR-8VT">
-                                    <rect key="frame" x="0.0" y="10" width="375" height="100"/>
+                                    <rect key="frame" x="0.0" y="10" width="395" height="100"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="任务种类" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kxx-df-6HA">
                                             <rect key="frame" x="10" y="10" width="100" height="21"/>
@@ -139,7 +140,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wuG-BH-Zgd">
-                                            <rect key="frame" x="10" y="39" width="355" height="1"/>
+                                            <rect key="frame" x="10" y="39" width="375" height="1"/>
                                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="1" id="zJ6-ep-GUe"/>
@@ -193,7 +194,7 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hbH-xw-TZu">
-                                    <rect key="frame" x="0.0" y="120" width="375" height="250"/>
+                                    <rect key="frame" x="0.0" y="120" width="395" height="250"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="任务类型" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fKh-14-rJl">
                                             <rect key="frame" x="10" y="10" width="100" height="30"/>
@@ -206,7 +207,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GTM-y6-LUs">
-                                            <rect key="frame" x="10" y="50" width="355" height="1"/>
+                                            <rect key="frame" x="10" y="50" width="375" height="1"/>
                                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="1" id="8Bf-iY-ldp"/>
@@ -216,10 +217,10 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aD5-y4-Vlc">
-                                            <rect key="frame" x="0.0" y="56" width="375" height="50"/>
+                                            <rect key="frame" x="0.0" y="56" width="395" height="50"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0un-SW-jrF">
-                                                    <rect key="frame" x="5" y="5" width="69" height="40"/>
+                                                    <rect key="frame" x="5" y="5" width="73" height="40"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="8pl-hW-AlL"/>
@@ -234,7 +235,7 @@
                                                     </state>
                                                 </button>
                                                 <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kBF-Ix-ZDf">
-                                                    <rect key="frame" x="79" y="5" width="69" height="40"/>
+                                                    <rect key="frame" x="83" y="5" width="73" height="40"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <state key="normal" title="垫付" backgroundImage="addNewTask_backUnSelect">
@@ -245,7 +246,7 @@
                                                     </state>
                                                 </button>
                                                 <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hcc-Rn-3St">
-                                                    <rect key="frame" x="153" y="5" width="69" height="40"/>
+                                                    <rect key="frame" x="161" y="5" width="73" height="40"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <state key="normal" title="垫付" backgroundImage="addNewTask_backUnSelect">
@@ -256,7 +257,7 @@
                                                     </state>
                                                 </button>
                                                 <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OW1-01-ahC">
-                                                    <rect key="frame" x="227" y="5" width="69" height="40"/>
+                                                    <rect key="frame" x="239" y="5" width="73" height="40"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <state key="normal" title="垫付" backgroundImage="addNewTask_backUnSelect">
@@ -267,7 +268,7 @@
                                                     </state>
                                                 </button>
                                                 <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pfz-2D-rKD">
-                                                    <rect key="frame" x="301" y="5" width="69" height="40"/>
+                                                    <rect key="frame" x="317" y="5" width="73" height="40"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <state key="normal" title="垫付" backgroundImage="addNewTask_backUnSelect">
@@ -310,10 +311,10 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8IF-CP-2b9">
-                                            <rect key="frame" x="0.0" y="106" width="375" height="50"/>
+                                            <rect key="frame" x="0.0" y="106" width="395" height="50"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wFA-nU-UAS">
-                                                    <rect key="frame" x="5" y="5" width="69" height="40"/>
+                                                    <rect key="frame" x="5" y="5" width="73" height="40"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="6iR-8q-OQc"/>
@@ -328,7 +329,7 @@
                                                     </state>
                                                 </button>
                                                 <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DDD-Rf-eaV">
-                                                    <rect key="frame" x="79" y="5" width="69" height="40"/>
+                                                    <rect key="frame" x="83" y="5" width="73" height="40"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <state key="normal" title="垫付" backgroundImage="addNewTask_backUnSelect">
@@ -339,7 +340,7 @@
                                                     </state>
                                                 </button>
                                                 <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pnH-is-sBS">
-                                                    <rect key="frame" x="153" y="5" width="69" height="40"/>
+                                                    <rect key="frame" x="161" y="5" width="73" height="40"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <state key="normal" title="垫付" backgroundImage="addNewTask_backUnSelect">
@@ -350,7 +351,7 @@
                                                     </state>
                                                 </button>
                                                 <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ygw-i8-0VE">
-                                                    <rect key="frame" x="227" y="5" width="69" height="40"/>
+                                                    <rect key="frame" x="239" y="5" width="73" height="40"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <state key="normal" title="垫付" backgroundImage="addNewTask_backUnSelect">
@@ -361,7 +362,7 @@
                                                     </state>
                                                 </button>
                                                 <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="giQ-2J-CF3">
-                                                    <rect key="frame" x="301" y="5" width="69" height="40"/>
+                                                    <rect key="frame" x="317" y="5" width="73" height="40"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <state key="normal" title="垫付" backgroundImage="addNewTask_backUnSelect">
@@ -404,10 +405,10 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uL4-JV-61J">
-                                            <rect key="frame" x="0.0" y="156" width="375" height="50"/>
+                                            <rect key="frame" x="0.0" y="156" width="395" height="50"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dnO-re-hWu">
-                                                    <rect key="frame" x="5" y="5" width="69" height="40"/>
+                                                    <rect key="frame" x="5" y="5" width="73" height="40"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="LXq-7U-KsH"/>
@@ -422,7 +423,7 @@
                                                     </state>
                                                 </button>
                                                 <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c4s-j2-dLO">
-                                                    <rect key="frame" x="79" y="5" width="69" height="40"/>
+                                                    <rect key="frame" x="83" y="5" width="73" height="40"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <state key="normal" title="垫付" backgroundImage="addNewTask_backUnSelect">
@@ -433,7 +434,7 @@
                                                     </state>
                                                 </button>
                                                 <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Yg-aQ-Qko">
-                                                    <rect key="frame" x="153" y="5" width="69" height="40"/>
+                                                    <rect key="frame" x="161" y="5" width="73" height="40"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <state key="normal" title="垫付" backgroundImage="addNewTask_backUnSelect">
@@ -444,7 +445,7 @@
                                                     </state>
                                                 </button>
                                                 <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uQm-1J-UWU">
-                                                    <rect key="frame" x="227" y="5" width="69" height="40"/>
+                                                    <rect key="frame" x="239" y="5" width="73" height="40"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <state key="normal" title="垫付" backgroundImage="addNewTask_backUnSelect">
@@ -455,7 +456,7 @@
                                                     </state>
                                                 </button>
                                                 <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pMA-Rc-wWA">
-                                                    <rect key="frame" x="301" y="5" width="69" height="40"/>
+                                                    <rect key="frame" x="317" y="5" width="73" height="40"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <state key="normal" title="垫付" backgroundImage="addNewTask_backUnSelect">
@@ -498,10 +499,10 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fjg-iD-qRK">
-                                            <rect key="frame" x="0.0" y="206" width="375" height="50"/>
+                                            <rect key="frame" x="0.0" y="206" width="395" height="50"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BnF-G8-epk">
-                                                    <rect key="frame" x="5" y="5" width="69" height="40"/>
+                                                    <rect key="frame" x="5" y="5" width="73" height="40"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="v9M-42-ETP"/>
@@ -516,7 +517,7 @@
                                                     </state>
                                                 </button>
                                                 <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aow-8g-VWX">
-                                                    <rect key="frame" x="79" y="5" width="69" height="40"/>
+                                                    <rect key="frame" x="83" y="5" width="73" height="40"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <state key="normal" title="垫付" backgroundImage="addNewTask_backUnSelect">
@@ -527,7 +528,7 @@
                                                     </state>
                                                 </button>
                                                 <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7aF-qT-HXf">
-                                                    <rect key="frame" x="153" y="5" width="69" height="40"/>
+                                                    <rect key="frame" x="161" y="5" width="73" height="40"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <state key="normal" title="垫付" backgroundImage="addNewTask_backUnSelect">
@@ -538,7 +539,7 @@
                                                     </state>
                                                 </button>
                                                 <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lee-FV-Ocd">
-                                                    <rect key="frame" x="227" y="5" width="69" height="40"/>
+                                                    <rect key="frame" x="239" y="5" width="73" height="40"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <state key="normal" title="垫付" backgroundImage="addNewTask_backUnSelect">
@@ -549,7 +550,7 @@
                                                     </state>
                                                 </button>
                                                 <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L0r-dE-rWf">
-                                                    <rect key="frame" x="301" y="5" width="69" height="40"/>
+                                                    <rect key="frame" x="317" y="5" width="73" height="40"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <state key="normal" title="垫付" backgroundImage="addNewTask_backUnSelect">
@@ -615,7 +616,7 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MTN-Ui-cdy">
-                                    <rect key="frame" x="0.0" y="380" width="375" height="100"/>
+                                    <rect key="frame" x="0.0" y="380" width="395" height="100"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="支持设备" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMk-88-Bsm">
                                             <rect key="frame" x="10" y="10" width="100" height="21"/>
@@ -628,7 +629,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vAJ-Le-n3w">
-                                            <rect key="frame" x="10" y="39" width="355" height="1"/>
+                                            <rect key="frame" x="10" y="39" width="375" height="1"/>
                                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="1" id="iw2-yl-9Bx"/>
@@ -697,7 +698,7 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NdW-9r-1PN">
-                                    <rect key="frame" x="0.0" y="490" width="375" height="40"/>
+                                    <rect key="frame" x="0.0" y="490" width="395" height="40"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="任务标题:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9kO-bM-0Xp">
                                             <rect key="frame" x="10" y="10" width="80" height="20"/>
@@ -710,7 +711,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入您的任务标题" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lqs-Cp-yY7">
-                                            <rect key="frame" x="95" y="5" width="272" height="30"/>
+                                            <rect key="frame" x="95" y="5" width="292" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="e4W-X7-ov9"/>
                                             </constraints>
@@ -730,7 +731,7 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZpA-Rx-i2w">
-                                    <rect key="frame" x="0.0" y="540" width="375" height="360"/>
+                                    <rect key="frame" x="0.0" y="540" width="395" height="360"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="验证图" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qzr-GY-xt1">
                                             <rect key="frame" x="10" y="10" width="55" height="21"/>
@@ -753,7 +754,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="abY-mj-eEh">
-                                            <rect key="frame" x="10" y="41" width="355" height="1"/>
+                                            <rect key="frame" x="10" y="41" width="375" height="1"/>
                                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="1" id="NRG-m5-Gy1"/>
@@ -763,15 +764,15 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zn2-Pr-NfA">
-                                            <rect key="frame" x="138.5" y="50" width="98" height="98.5"/>
+                                            <rect key="frame" x="145" y="50" width="105" height="105"/>
                                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         </imageView>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zVn-OM-z9A">
-                                            <rect key="frame" x="266.5" y="50" width="98.5" height="98.5"/>
+                                            <rect key="frame" x="280" y="50" width="105" height="105"/>
                                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4bP-uA-Ui9">
-                                            <rect key="frame" x="108.5" y="99" width="30" height="0.0"/>
+                                            <rect key="frame" x="115" y="102.5" width="30" height="0.0"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="30" id="ckW-4X-Zxy"/>
                                             </constraints>
@@ -780,7 +781,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4CK-61-pid">
-                                            <rect key="frame" x="236.5" y="89" width="30" height="20"/>
+                                            <rect key="frame" x="250" y="92.5" width="30" height="20"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="20" id="Tbs-4J-MwA"/>
                                             </constraints>
@@ -789,14 +790,14 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lDn-Nt-SYs">
-                                            <rect key="frame" x="10" y="50" width="98.5" height="98.5"/>
+                                            <rect key="frame" x="10" y="50" width="105" height="105"/>
                                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="lDn-Nt-SYs" secondAttribute="height" multiplier="1:1" id="gc5-qI-qch"/>
                                             </constraints>
                                         </imageView>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入描述" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B3w-5G-kQn">
-                                            <rect key="frame" x="10" y="153.5" width="98.5" height="30"/>
+                                            <rect key="frame" x="10" y="160" width="105" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="tQL-sM-7uA"/>
                                             </constraints>
@@ -805,7 +806,7 @@
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入描述" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NZ1-Pg-bWW">
-                                            <rect key="frame" x="138.5" y="153.5" width="98" height="30"/>
+                                            <rect key="frame" x="145" y="160" width="105" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="lf2-HU-DeC"/>
                                             </constraints>
@@ -814,7 +815,7 @@
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入描述" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7s6-yC-VNv">
-                                            <rect key="frame" x="266.5" y="153.5" width="98.5" height="30"/>
+                                            <rect key="frame" x="280" y="160" width="105" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="TGR-10-qRA"/>
                                             </constraints>
@@ -823,28 +824,28 @@
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addNewTask_Add" translatesAutoresizingMaskIntoConstraints="NO" id="5Ng-cb-HCw">
-                                            <rect key="frame" x="42.5" y="82.5" width="33" height="33"/>
+                                            <rect key="frame" x="46" y="86" width="33" height="33"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="33" id="F9c-Ve-FBs"/>
                                                 <constraint firstAttribute="width" constant="33" id="HGL-pg-Z73"/>
                                             </constraints>
                                         </imageView>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addNewTask_Add" translatesAutoresizingMaskIntoConstraints="NO" id="6Rj-ai-Xtl">
-                                            <rect key="frame" x="171" y="82.5" width="33" height="33"/>
+                                            <rect key="frame" x="181" y="86" width="33" height="33"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="33" id="Wcx-yi-BtU"/>
                                                 <constraint firstAttribute="height" constant="33" id="tXg-kI-zzd"/>
                                             </constraints>
                                         </imageView>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addNewTask_Add" translatesAutoresizingMaskIntoConstraints="NO" id="OvF-zB-S9G">
-                                            <rect key="frame" x="299.5" y="82.5" width="33" height="33"/>
+                                            <rect key="frame" x="316" y="86" width="33" height="33"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="33" id="Jh6-Mj-bme"/>
                                                 <constraint firstAttribute="width" constant="33" id="wYh-fY-Vbg"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="snR-71-jgn">
-                                            <rect key="frame" x="10" y="188.5" width="355" height="1"/>
+                                            <rect key="frame" x="10" y="195" width="375" height="1"/>
                                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="1" id="dr5-7G-glF"/>
@@ -854,7 +855,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="佣金金额" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AX4-sK-z5k">
-                                            <rect key="frame" x="10" y="199.5" width="65" height="21"/>
+                                            <rect key="frame" x="10" y="206" width="65" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="92N-IF-fxV"/>
                                                 <constraint firstAttribute="width" constant="65" id="cSE-Ou-jd6"/>
@@ -864,7 +865,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最低出0.5" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zQb-qy-lxz">
-                                            <rect key="frame" x="80" y="199.5" width="150" height="21"/>
+                                            <rect key="frame" x="80" y="206" width="150" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="SYy-Cr-7e6"/>
                                                 <constraint firstAttribute="width" constant="150" id="ewd-KO-LWM"/>
@@ -874,7 +875,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="glc-nI-Xnt">
-                                            <rect key="frame" x="10" y="230.5" width="355" height="1"/>
+                                            <rect key="frame" x="10" y="237" width="375" height="1"/>
                                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="1" id="f8d-h5-XjC"/>
@@ -884,7 +885,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="任务数量" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pVd-Y3-dly">
-                                            <rect key="frame" x="10" y="241.5" width="65" height="21"/>
+                                            <rect key="frame" x="10" y="248" width="65" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="65" id="8YC-DF-Vjd"/>
                                                 <constraint firstAttribute="height" constant="21" id="Cnn-B5-owY"/>
@@ -894,7 +895,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最少10单" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XVD-3X-7Ou">
-                                            <rect key="frame" x="80" y="241.5" width="150" height="21"/>
+                                            <rect key="frame" x="80" y="248" width="150" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="150" id="685-t1-DIT"/>
                                                 <constraint firstAttribute="height" constant="21" id="RdQ-5D-C91"/>
@@ -904,7 +905,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4gb-5I-ViX">
-                                            <rect key="frame" x="10" y="272.5" width="355" height="1"/>
+                                            <rect key="frame" x="10" y="279" width="375" height="1"/>
                                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="1" id="68x-5Z-xLb"/>
@@ -914,7 +915,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="预计金额" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PAW-z8-gib">
-                                            <rect key="frame" x="10" y="283.5" width="65" height="21"/>
+                                            <rect key="frame" x="10" y="290" width="65" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="jNe-Ow-07i"/>
                                                 <constraint firstAttribute="width" constant="65" id="ufr-I1-7t9"/>
@@ -924,7 +925,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1688元" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1gn-al-cpN">
-                                            <rect key="frame" x="80" y="283.5" width="150" height="21"/>
+                                            <rect key="frame" x="80" y="290" width="150" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="150" id="dlD-Aq-PIM"/>
                                                 <constraint firstAttribute="height" constant="21" id="qlu-In-kB3"/>
@@ -934,42 +935,42 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addNewTask_whiteClose" translatesAutoresizingMaskIntoConstraints="NO" id="1vd-86-2MA">
-                                            <rect key="frame" x="91.5" y="55" width="12" height="12"/>
+                                            <rect key="frame" x="98" y="55" width="12" height="12"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="12" id="i3L-wP-yow"/>
                                                 <constraint firstAttribute="height" constant="12" id="uGZ-f9-sc8"/>
                                             </constraints>
                                         </imageView>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addNewTask_whiteClose" translatesAutoresizingMaskIntoConstraints="NO" id="EwT-mt-jSa">
-                                            <rect key="frame" x="219.5" y="55" width="12" height="12"/>
+                                            <rect key="frame" x="233" y="55" width="12" height="12"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="12" id="VwO-xO-1JT"/>
                                                 <constraint firstAttribute="width" constant="12" id="ZhX-l3-bgV"/>
                                             </constraints>
                                         </imageView>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addNewTask_whiteClose" translatesAutoresizingMaskIntoConstraints="NO" id="qLH-Gl-104">
-                                            <rect key="frame" x="348" y="55" width="12" height="20"/>
+                                            <rect key="frame" x="368" y="55" width="12" height="20"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="12" id="Ecb-cQ-xyg"/>
                                                 <constraint firstAttribute="height" constant="20" id="loU-rj-TVd"/>
                                             </constraints>
                                         </imageView>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Shb-wE-afV">
-                                            <rect key="frame" x="75" y="46" width="45" height="30"/>
+                                            <rect key="frame" x="81.5" y="46" width="45" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="45" id="qHo-xV-Z63"/>
                                                 <constraint firstAttribute="height" constant="30" id="r8X-P2-ZUX"/>
                                             </constraints>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZTI-AG-uOZ">
-                                            <rect key="frame" x="203" y="46" width="45" height="30"/>
+                                            <rect key="frame" x="216.5" y="46" width="45" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="DeG-eR-pBk"/>
                                                 <constraint firstAttribute="width" constant="45" id="f68-c5-t6W"/>
                                             </constraints>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="265-RQ-flt">
-                                            <rect key="frame" x="331.5" y="50" width="45" height="30"/>
+                                            <rect key="frame" x="351.5" y="50" width="45" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="45" id="35S-m7-jIk"/>
                                                 <constraint firstAttribute="height" constant="30" id="o9c-52-82f"/>
@@ -1057,7 +1058,7 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S2G-K4-feC">
-                                    <rect key="frame" x="0.0" y="910" width="375" height="660"/>
+                                    <rect key="frame" x="0.0" y="910" width="395" height="660"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="操作步骤" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kTo-Tf-VQz">
                                             <rect key="frame" x="10" y="10" width="75" height="21"/>
@@ -1080,7 +1081,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ue-14-Zt1">
-                                            <rect key="frame" x="10" y="41" width="355" height="1"/>
+                                            <rect key="frame" x="10" y="41" width="375" height="1"/>
                                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="1" id="L2s-HT-Gkk"/>
@@ -1090,7 +1091,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X7K-cM-kda" userLabel="View0">
-                                            <rect key="frame" x="10" y="52" width="355" height="110"/>
+                                            <rect key="frame" x="10" y="52" width="375" height="110"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FX0-Rk-tCk">
                                                     <rect key="frame" x="8" y="10" width="90" height="90"/>
@@ -1101,7 +1102,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" text="请输入描述" translatesAutoresizingMaskIntoConstraints="NO" id="0tn-MC-aJW">
-                                                    <rect key="frame" x="103" y="10" width="244" height="90"/>
+                                                    <rect key="frame" x="103" y="10" width="264" height="90"/>
                                                     <color key="backgroundColor" red="0.99493736028671265" green="0.97305041551589966" blue="0.95051735639572144" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="11"/>
@@ -1111,7 +1112,7 @@
                                                     </connections>
                                                 </textView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addNewTask_Close" translatesAutoresizingMaskIntoConstraints="NO" id="Ghe-5e-hwU">
-                                                    <rect key="frame" x="328" y="15" width="12" height="12"/>
+                                                    <rect key="frame" x="348" y="15" width="12" height="12"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="12" id="GYp-AS-Lrx"/>
                                                         <constraint firstAttribute="width" constant="12" id="nQo-IL-vsy"/>
@@ -1125,7 +1126,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GJy-G3-LdP">
-                                                    <rect key="frame" x="290" y="6" width="50" height="30"/>
+                                                    <rect key="frame" x="310" y="6" width="50" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="0tn-mw-wW9"/>
                                                         <constraint firstAttribute="width" constant="50" id="7SJ-ov-lBn"/>
@@ -1169,7 +1170,7 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ian-0F-COQ" userLabel="View1">
-                                            <rect key="frame" x="10" y="172" width="355" height="110"/>
+                                            <rect key="frame" x="10" y="172" width="375" height="110"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xYh-he-UDC">
                                                     <rect key="frame" x="8" y="10" width="90" height="90"/>
@@ -1180,7 +1181,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleToFill" text="请输入描述" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="cL8-aa-hOv">
-                                                    <rect key="frame" x="103" y="10" width="244" height="90"/>
+                                                    <rect key="frame" x="103" y="10" width="264" height="90"/>
                                                     <color key="backgroundColor" red="0.99493736030000002" green="0.97305041550000004" blue="0.95051735640000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
@@ -1190,7 +1191,7 @@
                                                     </connections>
                                                 </textView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addNewTask_Close" translatesAutoresizingMaskIntoConstraints="NO" id="GP2-W3-Alq">
-                                                    <rect key="frame" x="328" y="15" width="12" height="12"/>
+                                                    <rect key="frame" x="348" y="15" width="12" height="12"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="12" id="IeU-0E-Flo"/>
                                                         <constraint firstAttribute="width" constant="12" id="lZK-PZ-NL9"/>
@@ -1204,7 +1205,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O4r-ej-e8e">
-                                                    <rect key="frame" x="280" y="6" width="60" height="30"/>
+                                                    <rect key="frame" x="300" y="6" width="60" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="K0U-D4-NRm"/>
                                                         <constraint firstAttribute="width" constant="60" id="mJj-Xa-UIc"/>
@@ -1248,7 +1249,7 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="US3-aa-cAR" userLabel="View2">
-                                            <rect key="frame" x="10" y="292" width="355" height="110"/>
+                                            <rect key="frame" x="10" y="292" width="375" height="110"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LXd-v7-BCY">
                                                     <rect key="frame" x="8" y="10" width="90" height="90"/>
@@ -1259,7 +1260,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="2" contentMode="scaleToFill" text="请输入描述" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="1ko-9N-MBa">
-                                                    <rect key="frame" x="103" y="10" width="244" height="90"/>
+                                                    <rect key="frame" x="103" y="10" width="264" height="90"/>
                                                     <color key="backgroundColor" red="0.99493736030000002" green="0.97305041550000004" blue="0.95051735640000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
@@ -1269,7 +1270,7 @@
                                                     </connections>
                                                 </textView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addNewTask_Close" translatesAutoresizingMaskIntoConstraints="NO" id="JXe-bc-4P1">
-                                                    <rect key="frame" x="328" y="15" width="12" height="12"/>
+                                                    <rect key="frame" x="348" y="15" width="12" height="12"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="12" id="Lt7-Qd-F6s"/>
                                                         <constraint firstAttribute="width" constant="12" id="Zy0-iJ-CHm"/>
@@ -1283,7 +1284,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bze-ei-Aq6">
-                                                    <rect key="frame" x="280" y="6" width="60" height="30"/>
+                                                    <rect key="frame" x="300" y="6" width="60" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="4O5-ZZ-BGW"/>
                                                         <constraint firstAttribute="width" constant="60" id="jVB-rF-ULb"/>
@@ -1327,7 +1328,7 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XgM-FR-pih" userLabel="View3">
-                                            <rect key="frame" x="10" y="412" width="355" height="110"/>
+                                            <rect key="frame" x="10" y="412" width="375" height="110"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="axc-sd-vCL">
                                                     <rect key="frame" x="8" y="10" width="90" height="90"/>
@@ -1338,7 +1339,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="3" contentMode="scaleToFill" text="请输入描述" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="pCZ-Ek-mca">
-                                                    <rect key="frame" x="103" y="10" width="244" height="90"/>
+                                                    <rect key="frame" x="103" y="10" width="264" height="90"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
@@ -1348,7 +1349,7 @@
                                                     </connections>
                                                 </textView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addNewTask_Close" translatesAutoresizingMaskIntoConstraints="NO" id="r20-tL-wQo">
-                                                    <rect key="frame" x="328" y="15" width="12" height="12"/>
+                                                    <rect key="frame" x="348" y="15" width="12" height="12"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="12" id="Anp-73-b9d"/>
                                                         <constraint firstAttribute="height" constant="12" id="xPS-Zv-4AB"/>
@@ -1362,7 +1363,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SWn-c5-9dz">
-                                                    <rect key="frame" x="280" y="6" width="60" height="30"/>
+                                                    <rect key="frame" x="300" y="6" width="60" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="ZlB-oy-Vbl"/>
                                                         <constraint firstAttribute="width" constant="60" id="hcF-n6-q0V"/>
@@ -1406,7 +1407,7 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tTM-KO-4Oq" userLabel="View4">
-                                            <rect key="frame" x="10" y="532" width="355" height="110"/>
+                                            <rect key="frame" x="10" y="532" width="375" height="110"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Grr-ty-eEg">
                                                     <rect key="frame" x="8" y="10" width="90" height="90"/>
@@ -1417,7 +1418,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="4" contentMode="scaleToFill" text="请输入描述" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="FJv-I1-IEZ">
-                                                    <rect key="frame" x="103" y="10" width="244" height="90"/>
+                                                    <rect key="frame" x="103" y="10" width="264" height="90"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
@@ -1427,7 +1428,7 @@
                                                     </connections>
                                                 </textView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addNewTask_Close" translatesAutoresizingMaskIntoConstraints="NO" id="MgS-GD-ux0">
-                                                    <rect key="frame" x="328" y="15" width="12" height="12"/>
+                                                    <rect key="frame" x="348" y="15" width="12" height="12"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="12" id="43b-Mr-KNg"/>
                                                         <constraint firstAttribute="width" constant="12" id="DC5-ix-TOn"/>
@@ -1441,7 +1442,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nNh-DO-RKg">
-                                                    <rect key="frame" x="280" y="6" width="60" height="30"/>
+                                                    <rect key="frame" x="300" y="6" width="60" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="W9c-Xd-uu9"/>
                                                         <constraint firstAttribute="width" constant="60" id="y9f-w3-MLh"/>
@@ -1513,7 +1514,7 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4sB-fF-uXn">
-                                    <rect key="frame" x="0.0" y="1580" width="375" height="160"/>
+                                    <rect key="frame" x="0.0" y="1580" width="395" height="160"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="任务链接" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JQv-q5-5iu">
                                             <rect key="frame" x="10" y="15" width="100" height="21"/>
@@ -1526,7 +1527,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lwl-nm-A4E">
-                                            <rect key="frame" x="10" y="46" width="355" height="1"/>
+                                            <rect key="frame" x="10" y="46" width="375" height="1"/>
                                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="1" id="kG9-RU-4Yf"/>
@@ -1552,7 +1553,7 @@
                                             </state>
                                         </button>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入要链接的URL地址，可不填" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3pt-IN-c8I">
-                                            <rect key="frame" x="81" y="54.5" width="284" height="25"/>
+                                            <rect key="frame" x="81" y="54.5" width="304" height="25"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="25" id="Fc9-tr-Bsx"/>
                                             </constraints>
@@ -1561,7 +1562,7 @@
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P28-Rb-lvW">
-                                            <rect key="frame" x="10" y="89.5" width="355" height="1"/>
+                                            <rect key="frame" x="10" y="89.5" width="375" height="1"/>
                                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="VD7-i4-lUQ"/>
@@ -1629,7 +1630,7 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UzO-5e-Sux">
-                                    <rect key="frame" x="0.0" y="1750" width="375" height="160"/>
+                                    <rect key="frame" x="0.0" y="1750" width="395" height="160"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="任务描述" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tZ0-9w-qca">
                                             <rect key="frame" x="10" y="10" width="100" height="21"/>
@@ -1642,7 +1643,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MWq-MF-7Iq">
-                                            <rect key="frame" x="10" y="39" width="355" height="1"/>
+                                            <rect key="frame" x="10" y="39" width="375" height="1"/>
                                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="1" id="m8V-gq-G5b"/>
@@ -1652,7 +1653,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="请输入补充信息, 100字以内, 可不填。" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="LBM-l7-jXe">
-                                            <rect key="frame" x="10" y="50" width="355" height="100"/>
+                                            <rect key="frame" x="10" y="50" width="375" height="100"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -1674,7 +1675,7 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nia-o2-tiZ">
-                                    <rect key="frame" x="0.0" y="1920" width="375" height="180"/>
+                                    <rect key="frame" x="0.0" y="1920" width="395" height="180"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="接单设置" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oxi-Ka-fkp">
                                             <rect key="frame" x="10" y="10" width="100" height="21"/>
@@ -1687,7 +1688,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UNc-mx-9tS">
-                                            <rect key="frame" x="10" y="39" width="355" height="1"/>
+                                            <rect key="frame" x="10" y="39" width="375" height="1"/>
                                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="1" id="NJ9-YH-9fw"/>
@@ -1713,7 +1714,7 @@
                                             </state>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fBA-ZE-epT">
-                                            <rect key="frame" x="10" y="80" width="355" height="1"/>
+                                            <rect key="frame" x="10" y="80" width="375" height="1"/>
                                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="1" id="r9m-1n-wyE"/>
@@ -1753,7 +1754,7 @@
                                             <state key="selected" backgroundImage="addNewTask_greenBackSelect"/>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bMC-xn-1m6">
-                                            <rect key="frame" x="82" y="50" width="283" height="20"/>
+                                            <rect key="frame" x="82" y="50" width="303" height="20"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="20" id="PZU-tZ-BGB"/>
                                             </constraints>
@@ -1778,7 +1779,7 @@
                                             </state>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c7H-ho-GAt">
-                                            <rect key="frame" x="82" y="91" width="283" height="20"/>
+                                            <rect key="frame" x="82" y="91" width="303" height="20"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="20" id="INC-Xi-DQD"/>
                                             </constraints>
@@ -1787,7 +1788,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SMJ-R5-7GE">
-                                            <rect key="frame" x="10" y="121" width="355" height="1"/>
+                                            <rect key="frame" x="10" y="121" width="375" height="1"/>
                                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="1" id="afu-ni-HdH"/>
@@ -1832,7 +1833,7 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bhg-Ha-BLf">
-                                    <rect key="frame" x="0.0" y="2110" width="375" height="70"/>
+                                    <rect key="frame" x="0.0" y="2110" width="395" height="70"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AddNewTask_selected" translatesAutoresizingMaskIntoConstraints="NO" id="jYl-9O-LsC">
                                             <rect key="frame" x="10" y="27.5" width="15" height="15"/>
@@ -1842,7 +1843,7 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我已阅读并同意《发布规则》的全部内容" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nI7-6f-Eum">
-                                            <rect key="frame" x="35" y="24.5" width="330" height="21"/>
+                                            <rect key="frame" x="35" y="24.5" width="350" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="Zvh-QH-qYu"/>
                                             </constraints>
@@ -1872,14 +1873,14 @@
                                     </constraints>
                                 </view>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jWy-y2-dOg">
-                                    <rect key="frame" x="40" y="2210" width="132.5" height="50"/>
+                                    <rect key="frame" x="40" y="2210" width="142.5" height="50"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="ZAD-8N-o6t"/>
                                     </constraints>
                                     <state key="normal" title="预览" backgroundImage="addNewTask_preview"/>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r3x-ry-jMM">
-                                    <rect key="frame" x="202.5" y="2210" width="132.5" height="50"/>
+                                    <rect key="frame" x="212.5" y="2210" width="142.5" height="50"/>
                                     <state key="normal" title="发布" backgroundImage="addNewTask_release"/>
                                 </button>
                             </subviews>
@@ -1946,8 +1947,9 @@
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="3mv-Sx-nnt" secondAttribute="bottom" id="RA7-0j-KSz"/>
                 <constraint firstItem="3mv-Sx-nnt" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="blu-V1-trE"/>
             </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
-            <point key="canvasLocation" x="245.59999999999999" y="3711.9940029985009"/>
+            <point key="canvasLocation" x="261.60000000000002" y="4456.3718140929541"/>
         </view>
     </objects>
     <resources>
