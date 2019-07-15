@@ -41,6 +41,12 @@
     
     IBOutlet UIButton       *btn0, *btn1, *btn2, *btn3, *btn4, *btn5, *btn6,
                             *btn7, *btn8, *btn9, *btn10, *btn11, *btn12, *btn13, *btn14, *btn15, *btn16, *btn17, *btn18, *btn19;
+    IBOutlet UILabel        *lbShopName;
+    IBOutlet UITextField    *tfShopName;
+    IBOutlet NSLayoutConstraint *lcValidateViewHeight, *lcValidateSubviewsHeight;
+    IBOutlet UILabel        *lbDealAmount, *lbTransportationFee, *lbTotalFee;
+    IBOutlet UIView         *vValidateSubview;
+    
     IBOutlet UIView         *v0, *v1, *v2, *v3;
     
     IBOutlet UIButton       *btnPaidTask, *btnNotPaidTask;
@@ -48,6 +54,7 @@
     IBOutlet UITextField    *tfTastTitle;
     IBOutlet UIImageView    *imvValidate0, *imvValidate1, *imvValidate2;
     IBOutlet UITextField    *tfValidateDes, *tfValidateDes1, *tfValidateDes2;
+    IBOutlet UITextField    *tfCommissionDes, *tfTaskNumbers, *tfExpect;
     IBOutlet UILabel        *lbCommissionDes, *lbTaskNumbers, *lbExpect;
     IBOutlet UITextField    *tfLinkAddress;
     IBOutlet UIButton       *btnShow, *btnHide;
@@ -156,7 +163,9 @@
     arLableAddSteps = @[lbAddStep0, lbAddStep1, lbAddStep2, lbAddStep3, lbAddStep4];
     arTextviews = @[tvphotoDes0, tvphotoDes1, tvphotoDes2, tvphotoDes3, tvphotoDes4];
     
-    
+    lcValidateSubviewsHeight.constant = 0.f;
+    vValidateSubview.hidden = YES;
+    tfShopName.hidden = YES;
     
     [self setUIObjectHidden:arButtons];
     [self setUIObjectHidden:arViews];
@@ -187,7 +196,6 @@
         if (str.length < 1 && arImageLinks.count > 0) {
             NSInteger iPosition=[arImageLinks indexOfObject:str];
             if (iPosition < 0) {
-                
                 return;
             }
             NSLayoutConstraint *lc =  arViewLayouConstainss[iPosition];
@@ -198,6 +206,20 @@
             NSLog(@"lc:%f", lc.constant);
             [self setScrollviewContainHeight];
             return;
+        }else {
+            NSInteger iPosition=[arImageLinks indexOfObject:str];
+            if (iPosition < 0) {
+                return;
+            }
+            NSLayoutConstraint *lc =  arViewLayouConstainss[iPosition];
+            NSLog(@"lc:%f index:%ld", lc.constant,(long)iPosition);
+            UIView *v = arViewsForStep[iPosition];
+            UILabel *lb = arLableAddSteps[iPosition];
+            v.hidden    = NO;
+            lb.hidden   = YES;
+            lc.constant = 110.f;
+            NSLog(@"lc:%f", lc.constant);
+            [self setScrollviewContainHeight];
         }
     }
     
@@ -279,8 +301,9 @@
     lcTaskTypeContainHeight.constant = lcTaskTypeHeight0.constant+lcTaskTypeHeight1.constant+lcTaskTypeHeight2.constant+lcTaskTypeHeight3.constant+60;
     
     lcTaskPictureContainHeight.constant = lcTaskPictureContain0.constant*(120/110) + lcTaskPictureContain1.constant*(120/110) + lcTaskPictureContain2.constant*(120/110) + lcTaskPictureContain3.constant*(120/110) + lcTaskPictureContain4.constant*(120/110)+60;
+    lcValidateViewHeight.constant = lcValidateSubviewsHeight.constant + 325;
     
-   lcContentHeight.constant = lcTaskTypeContainHeight.constant + lcTaskPictureContainHeight.constant+2300-50*4-110*5*(120/110)-150;
+   lcContentHeight.constant = lcTaskTypeContainHeight.constant + lcTaskPictureContainHeight.constant + lcValidateViewHeight.constant +2370-50*4-110*5*(120/110)-150 - 70;
     Dlog(@"llll:%f", lcContentHeight.constant);
     [self.view updateConstraints];
     [scv setContentSize:CGSizeMake(kSCREEN_WIDTH, lcContentHeight.constant)];
