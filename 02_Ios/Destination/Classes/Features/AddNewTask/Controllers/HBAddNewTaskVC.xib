@@ -122,6 +122,7 @@
                 <outlet property="vPhotoContain2" destination="US3-aa-cAR" id="yF3-C1-R5L"/>
                 <outlet property="vPhotoContain3" destination="XgM-FR-pih" id="gJg-Xa-7aJ"/>
                 <outlet property="vPhotoContain4" destination="tTM-KO-4Oq" id="AkZ-XE-rAP"/>
+                <outlet property="vValidateSubview" destination="Y9G-MV-aw5" id="oGx-gm-B0B"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -174,6 +175,9 @@
                                             <state key="selected" backgroundImage="addNewTask_backSelected">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
+                                            <connections>
+                                                <action selector="checkButtonState:" destination="-1" eventType="touchUpInside" id="AwG-ER-UcI"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xZy-cW-qar">
                                             <rect key="frame" x="100" y="50" width="80" height="40"/>
@@ -185,6 +189,9 @@
                                             <state key="selected" backgroundImage="addNewTask_backSelected">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
+                                            <connections>
+                                                <action selector="checkButtonState:" destination="-1" eventType="touchUpInside" id="NHu-Od-wIa"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -229,7 +236,7 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aD5-y4-Vlc">
                                             <rect key="frame" x="0.0" y="56" width="395" height="50"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0un-SW-jrF">
+                                                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0un-SW-jrF">
                                                     <rect key="frame" x="5" y="5" width="73" height="40"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
@@ -243,8 +250,11 @@
                                                     <state key="selected" backgroundImage="addNewTask_backSelected">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="checkButtonState:" destination="-1" eventType="touchUpInside" id="16J-S1-EhH"/>
+                                                    </connections>
                                                 </button>
-                                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kBF-Ix-ZDf">
+                                                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kBF-Ix-ZDf">
                                                     <rect key="frame" x="83" y="5" width="73" height="40"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -254,8 +264,11 @@
                                                     <state key="selected" backgroundImage="addNewTask_backSelected">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="checkButtonState:" destination="-1" eventType="touchUpInside" id="iVp-kR-kpT"/>
+                                                    </connections>
                                                 </button>
-                                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hcc-Rn-3St">
+                                                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hcc-Rn-3St">
                                                     <rect key="frame" x="161" y="5" width="73" height="40"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -265,8 +278,11 @@
                                                     <state key="selected" backgroundImage="addNewTask_backSelected">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="checkButtonState:" destination="-1" eventType="touchUpInside" id="uO6-JT-9ni"/>
+                                                    </connections>
                                                 </button>
-                                                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OW1-01-ahC">
+                                                <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OW1-01-ahC">
                                                     <rect key="frame" x="239" y="5" width="73" height="40"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -276,8 +292,11 @@
                                                     <state key="selected" backgroundImage="addNewTask_backSelected">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="checkButtonState:" destination="-1" eventType="touchUpInside" id="Qu1-ze-ZE6"/>
+                                                    </connections>
                                                 </button>
-                                                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pfz-2D-rKD">
+                                                <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pfz-2D-rKD">
                                                     <rect key="frame" x="317" y="5" width="73" height="40"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -287,6 +306,9 @@
                                                     <state key="selected" backgroundImage="addNewTask_backSelected">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="checkButtonState:" destination="-1" eventType="touchUpInside" id="ECP-65-hu4"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -323,7 +345,7 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8IF-CP-2b9">
                                             <rect key="frame" x="0.0" y="106" width="395" height="50"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wFA-nU-UAS">
+                                                <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wFA-nU-UAS">
                                                     <rect key="frame" x="5" y="5" width="73" height="40"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
@@ -337,8 +359,11 @@
                                                     <state key="selected" backgroundImage="addNewTask_backSelected">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="checkButtonState:" destination="-1" eventType="touchUpInside" id="NGJ-ik-YJ9"/>
+                                                    </connections>
                                                 </button>
-                                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DDD-Rf-eaV">
+                                                <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DDD-Rf-eaV">
                                                     <rect key="frame" x="83" y="5" width="73" height="40"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -348,8 +373,11 @@
                                                     <state key="selected" backgroundImage="addNewTask_backSelected">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="checkButtonState:" destination="-1" eventType="touchUpInside" id="VYj-g4-8Cc"/>
+                                                    </connections>
                                                 </button>
-                                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pnH-is-sBS">
+                                                <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pnH-is-sBS">
                                                     <rect key="frame" x="161" y="5" width="73" height="40"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -359,8 +387,11 @@
                                                     <state key="selected" backgroundImage="addNewTask_backSelected">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="checkButtonState:" destination="-1" eventType="touchUpInside" id="2hM-i3-yQG"/>
+                                                    </connections>
                                                 </button>
-                                                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ygw-i8-0VE">
+                                                <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ygw-i8-0VE">
                                                     <rect key="frame" x="239" y="5" width="73" height="40"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -370,8 +401,11 @@
                                                     <state key="selected" backgroundImage="addNewTask_backSelected">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="checkButtonState:" destination="-1" eventType="touchUpInside" id="sg5-mD-wIl"/>
+                                                    </connections>
                                                 </button>
-                                                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="giQ-2J-CF3">
+                                                <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="giQ-2J-CF3">
                                                     <rect key="frame" x="317" y="5" width="73" height="40"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -381,6 +415,9 @@
                                                     <state key="selected" backgroundImage="addNewTask_backSelected">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="checkButtonState:" destination="-1" eventType="touchUpInside" id="die-I1-hxC"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -417,7 +454,7 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uL4-JV-61J">
                                             <rect key="frame" x="0.0" y="156" width="395" height="50"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dnO-re-hWu">
+                                                <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dnO-re-hWu">
                                                     <rect key="frame" x="5" y="5" width="73" height="40"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
@@ -431,8 +468,11 @@
                                                     <state key="selected" backgroundImage="addNewTask_backSelected">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="checkButtonState:" destination="-1" eventType="touchUpInside" id="goj-bc-zni"/>
+                                                    </connections>
                                                 </button>
-                                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c4s-j2-dLO">
+                                                <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c4s-j2-dLO">
                                                     <rect key="frame" x="83" y="5" width="73" height="40"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -442,8 +482,11 @@
                                                     <state key="selected" backgroundImage="addNewTask_backSelected">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="checkButtonState:" destination="-1" eventType="touchUpInside" id="0Ai-av-JO0"/>
+                                                    </connections>
                                                 </button>
-                                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Yg-aQ-Qko">
+                                                <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Yg-aQ-Qko">
                                                     <rect key="frame" x="161" y="5" width="73" height="40"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -453,8 +496,11 @@
                                                     <state key="selected" backgroundImage="addNewTask_backSelected">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="checkButtonState:" destination="-1" eventType="touchUpInside" id="N2M-gL-TAg"/>
+                                                    </connections>
                                                 </button>
-                                                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uQm-1J-UWU">
+                                                <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uQm-1J-UWU">
                                                     <rect key="frame" x="239" y="5" width="73" height="40"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -464,8 +510,11 @@
                                                     <state key="selected" backgroundImage="addNewTask_backSelected">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="checkButtonState:" destination="-1" eventType="touchUpInside" id="6sU-MT-mpR"/>
+                                                    </connections>
                                                 </button>
-                                                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pMA-Rc-wWA">
+                                                <button opaque="NO" tag="16" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pMA-Rc-wWA">
                                                     <rect key="frame" x="317" y="5" width="73" height="40"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -475,6 +524,9 @@
                                                     <state key="selected" backgroundImage="addNewTask_backSelected">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="checkButtonState:" destination="-1" eventType="touchUpInside" id="tgH-5R-2Zk"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -511,7 +563,7 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fjg-iD-qRK">
                                             <rect key="frame" x="0.0" y="206" width="395" height="50"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BnF-G8-epk">
+                                                <button opaque="NO" tag="17" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BnF-G8-epk">
                                                     <rect key="frame" x="5" y="5" width="73" height="40"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
@@ -525,8 +577,11 @@
                                                     <state key="selected" backgroundImage="addNewTask_backSelected">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="checkButtonState:" destination="-1" eventType="touchUpInside" id="0vU-rL-GVa"/>
+                                                    </connections>
                                                 </button>
-                                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aow-8g-VWX">
+                                                <button opaque="NO" tag="18" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aow-8g-VWX">
                                                     <rect key="frame" x="83" y="5" width="73" height="40"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -536,8 +591,11 @@
                                                     <state key="selected" backgroundImage="addNewTask_backSelected">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="checkButtonState:" destination="-1" eventType="touchUpInside" id="Pbz-ka-Zxt"/>
+                                                    </connections>
                                                 </button>
-                                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7aF-qT-HXf">
+                                                <button opaque="NO" tag="19" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7aF-qT-HXf">
                                                     <rect key="frame" x="161" y="5" width="73" height="40"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -547,8 +605,11 @@
                                                     <state key="selected" backgroundImage="addNewTask_backSelected">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="checkButtonState:" destination="-1" eventType="touchUpInside" id="jKB-TO-chU"/>
+                                                    </connections>
                                                 </button>
-                                                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lee-FV-Ocd">
+                                                <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lee-FV-Ocd">
                                                     <rect key="frame" x="239" y="5" width="73" height="40"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -558,8 +619,11 @@
                                                     <state key="selected" backgroundImage="addNewTask_backSelected">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="checkButtonState:" destination="-1" eventType="touchUpInside" id="cnt-eA-nkY"/>
+                                                    </connections>
                                                 </button>
-                                                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L0r-dE-rWf">
+                                                <button opaque="NO" tag="21" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L0r-dE-rWf">
                                                     <rect key="frame" x="317" y="5" width="73" height="40"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -569,6 +633,9 @@
                                                     <state key="selected" backgroundImage="addNewTask_backSelected">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="checkButtonState:" destination="-1" eventType="touchUpInside" id="UeE-vI-ahr"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -648,7 +715,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HQK-8G-PC5">
+                                        <button opaque="NO" tag="22" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HQK-8G-PC5">
                                             <rect key="frame" x="10" y="50" width="80" height="40"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
@@ -663,8 +730,11 @@
                                             <state key="selected" backgroundImage="addNewTask_backSelected">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
+                                            <connections>
+                                                <action selector="checkButtonState:" destination="-1" eventType="touchUpInside" id="Y1l-RZ-14g"/>
+                                            </connections>
                                         </button>
-                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dMB-M8-AKC">
+                                        <button opaque="NO" tag="23" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dMB-M8-AKC">
                                             <rect key="frame" x="100" y="50" width="80" height="40"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -674,8 +744,11 @@
                                             <state key="selected" backgroundImage="addNewTask_backSelected">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
+                                            <connections>
+                                                <action selector="checkButtonState:" destination="-1" eventType="touchUpInside" id="K6o-jK-VRR"/>
+                                            </connections>
                                         </button>
-                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Sx-DL-jad">
+                                        <button opaque="NO" tag="24" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Sx-DL-jad">
                                             <rect key="frame" x="190" y="50" width="80" height="40"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -685,6 +758,9 @@
                                             <state key="selected" backgroundImage="addNewTask_backSelected">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
+                                            <connections>
+                                                <action selector="checkButtonState:" destination="-1" eventType="touchUpInside" id="tmT-M0-v7c"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -956,20 +1032,10 @@
                                                 <constraint firstAttribute="height" constant="30" id="o9c-52-82f"/>
                                             </constraints>
                                         </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zn3-cy-3LB">
-                                            <rect key="frame" x="10" y="321" width="375" height="1"/>
-                                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="1" id="lhn-uw-8CF"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y9G-MV-aw5">
-                                            <rect key="frame" x="0.0" y="324" width="395" height="70"/>
+                                            <rect key="frame" x="0.0" y="321" width="395" height="70"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n3I-Ws-UeI">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n3I-Ws-UeI">
                                                     <rect key="frame" x="10" y="10" width="111" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="LpI-HG-WHh"/>
@@ -1002,7 +1068,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jwE-fl-IkC">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jwE-fl-IkC">
                                                     <rect key="frame" x="142" y="10" width="111" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="KC3-do-Pq7"/>
@@ -1017,7 +1083,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U0C-kw-aRa">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U0C-kw-aRa">
                                                     <rect key="frame" x="274" y="10" width="111" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="xgm-lE-5Ni"/>
@@ -1029,6 +1095,16 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="总计费用" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I3a-ss-UgL">
                                                     <rect key="frame" x="274" y="40" width="111" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z2m-ed-A5a">
+                                                    <rect key="frame" x="10" y="1" width="375" height="1"/>
+                                                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="1" id="5Nb-M1-E8l"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1045,9 +1121,11 @@
                                                 <constraint firstItem="n3I-Ws-UeI" firstAttribute="leading" secondItem="Y9G-MV-aw5" secondAttribute="leading" constant="10" id="L4I-dE-scp"/>
                                                 <constraint firstItem="TIe-c6-Hbj" firstAttribute="leading" secondItem="n3I-Ws-UeI" secondAttribute="trailing" constant="10" id="MFs-hT-WDH"/>
                                                 <constraint firstItem="xmg-9T-wUq" firstAttribute="top" secondItem="jwE-fl-IkC" secondAttribute="bottom" constant="10" id="OYj-KJ-zz4"/>
+                                                <constraint firstItem="Z2m-ed-A5a" firstAttribute="leading" secondItem="Y9G-MV-aw5" secondAttribute="leading" constant="10" id="OZA-EC-J12"/>
                                                 <constraint firstItem="jwE-fl-IkC" firstAttribute="width" secondItem="n3I-Ws-UeI" secondAttribute="width" id="PmK-tC-ewr"/>
                                                 <constraint firstItem="Ja8-tq-LvN" firstAttribute="width" secondItem="n3I-Ws-UeI" secondAttribute="width" id="QDd-DR-wBq"/>
                                                 <constraint firstAttribute="height" constant="70" id="RJn-ut-gR7"/>
+                                                <constraint firstAttribute="trailing" secondItem="Z2m-ed-A5a" secondAttribute="trailing" constant="10" id="RvV-DK-f29"/>
                                                 <constraint firstItem="jwE-fl-IkC" firstAttribute="centerY" secondItem="n3I-Ws-UeI" secondAttribute="centerY" id="YFy-SC-4Vn"/>
                                                 <constraint firstItem="I3a-ss-UgL" firstAttribute="height" secondItem="U0C-kw-aRa" secondAttribute="height" id="Zuo-QH-fUN"/>
                                                 <constraint firstItem="cIY-lP-tgL" firstAttribute="leading" secondItem="jwE-fl-IkC" secondAttribute="trailing" constant="10" id="bvZ-OC-hOP"/>
@@ -1063,6 +1141,7 @@
                                                 <constraint firstItem="Ja8-tq-LvN" firstAttribute="centerX" secondItem="n3I-Ws-UeI" secondAttribute="centerX" id="u5R-5j-H1H"/>
                                                 <constraint firstAttribute="trailing" secondItem="U0C-kw-aRa" secondAttribute="trailing" constant="10" id="v77-fw-NTi"/>
                                                 <constraint firstItem="cIY-lP-tgL" firstAttribute="height" secondItem="TIe-c6-Hbj" secondAttribute="height" id="x6U-kt-yTP"/>
+                                                <constraint firstItem="Z2m-ed-A5a" firstAttribute="top" secondItem="Y9G-MV-aw5" secondAttribute="top" constant="1" id="yiL-g5-3so"/>
                                             </constraints>
                                         </view>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lTg-pU-7td">
@@ -1120,9 +1199,7 @@
                                         <constraint firstItem="1vd-86-2MA" firstAttribute="trailing" secondItem="lDn-Nt-SYs" secondAttribute="trailing" constant="-5" id="Dy0-fF-tSp"/>
                                         <constraint firstItem="zn2-Pr-NfA" firstAttribute="leading" secondItem="4bP-uA-Ui9" secondAttribute="trailing" id="Fm8-3F-jY4"/>
                                         <constraint firstItem="4CK-61-pid" firstAttribute="width" secondItem="4bP-uA-Ui9" secondAttribute="width" id="G19-2A-TLi"/>
-                                        <constraint firstItem="Zn3-cy-3LB" firstAttribute="top" secondItem="PAW-z8-gib" secondAttribute="bottom" constant="10" id="GQf-WY-fL6"/>
                                         <constraint firstItem="qLH-Gl-104" firstAttribute="trailing" secondItem="zVn-OM-z9A" secondAttribute="trailing" constant="-5" id="Gni-86-Yoc"/>
-                                        <constraint firstItem="Y9G-MV-aw5" firstAttribute="top" secondItem="Zn3-cy-3LB" secondAttribute="bottom" constant="2" id="H2e-KN-V8T"/>
                                         <constraint firstItem="zVn-OM-z9A" firstAttribute="width" secondItem="lDn-Nt-SYs" secondAttribute="width" id="IIE-GP-ndW"/>
                                         <constraint firstItem="AX4-sK-z5k" firstAttribute="leading" secondItem="ZpA-Rx-i2w" secondAttribute="leading" constant="10" id="IZE-xF-Pf0"/>
                                         <constraint firstItem="5Ng-cb-HCw" firstAttribute="centerY" secondItem="lDn-Nt-SYs" secondAttribute="centerY" id="KzC-i7-Up1"/>
@@ -1144,8 +1221,6 @@
                                         <constraint firstItem="1vd-86-2MA" firstAttribute="top" secondItem="lDn-Nt-SYs" secondAttribute="top" constant="5" id="XQI-UF-R2K"/>
                                         <constraint firstItem="qzr-GY-xt1" firstAttribute="top" secondItem="ZpA-Rx-i2w" secondAttribute="top" constant="10" id="XVO-qJ-1hx"/>
                                         <constraint firstItem="pVd-Y3-dly" firstAttribute="leading" secondItem="ZpA-Rx-i2w" secondAttribute="leading" constant="10" id="XrP-P0-axA"/>
-                                        <constraint firstAttribute="trailing" secondItem="Zn3-cy-3LB" secondAttribute="trailing" constant="10" id="aX7-Y0-QQG"/>
-                                        <constraint firstItem="Zn3-cy-3LB" firstAttribute="leading" secondItem="ZpA-Rx-i2w" secondAttribute="leading" constant="10" id="c0F-ME-C26"/>
                                         <constraint firstItem="1vd-86-2MA" firstAttribute="centerX" secondItem="Shb-wE-afV" secondAttribute="centerX" id="cOS-gZ-Sqq"/>
                                         <constraint firstItem="4bP-uA-Ui9" firstAttribute="centerY" secondItem="lDn-Nt-SYs" secondAttribute="centerY" id="cas-BC-IXR"/>
                                         <constraint firstItem="snR-71-jgn" firstAttribute="leading" secondItem="ZpA-Rx-i2w" secondAttribute="leading" constant="10" id="czg-Xc-U6K"/>
@@ -1156,6 +1231,7 @@
                                         <constraint firstItem="qR8-FZ-Wap" firstAttribute="leading" secondItem="PAW-z8-gib" secondAttribute="trailing" constant="5" id="iCY-TB-0eT"/>
                                         <constraint firstItem="7s6-yC-VNv" firstAttribute="width" secondItem="zVn-OM-z9A" secondAttribute="width" id="iFb-WA-tew"/>
                                         <constraint firstItem="qLH-Gl-104" firstAttribute="top" secondItem="zVn-OM-z9A" secondAttribute="top" constant="5" id="ica-NK-l8D"/>
+                                        <constraint firstItem="Y9G-MV-aw5" firstAttribute="top" secondItem="PAW-z8-gib" secondAttribute="bottom" constant="10" id="jbG-gJ-XXT"/>
                                         <constraint firstItem="wqC-Op-6fh" firstAttribute="leading" secondItem="qzr-GY-xt1" secondAttribute="trailing" constant="5" id="lap-5J-0O9"/>
                                         <constraint firstItem="4bP-uA-Ui9" firstAttribute="leading" secondItem="lDn-Nt-SYs" secondAttribute="trailing" id="lmf-3A-iwd"/>
                                         <constraint firstAttribute="trailing" secondItem="4gb-5I-ViX" secondAttribute="trailing" constant="10" id="lvc-EN-HA2"/>
@@ -1697,19 +1773,33 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vuR-SL-daH">
-                                            <rect key="frame" x="90" y="105.5" width="55" height="40"/>
+                                        <button opaque="NO" tag="25" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vuR-SL-daH">
+                                            <rect key="frame" x="90" y="106" width="55" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="DkF-ge-jZy"/>
                                                 <constraint firstAttribute="width" constant="55" id="Lfe-c8-FEC"/>
                                             </constraints>
-                                            <state key="normal" title="是" backgroundImage="addNewTask_greenBackUnSelect"/>
-                                            <state key="selected" backgroundImage="addNewTask_greenBackSelect"/>
+                                            <state key="normal" title="是" backgroundImage="addNewTask_greenBackUnSelect">
+                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                            <state key="selected" backgroundImage="addNewTask_greenBackSelect">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="checkButtonState:" destination="-1" eventType="touchUpInside" id="Hco-eU-Roj"/>
+                                            </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p6b-2h-5IR">
-                                            <rect key="frame" x="165" y="105.5" width="55" height="40"/>
-                                            <state key="normal" title="否" backgroundImage="addNewTask_greenBackUnSelect"/>
-                                            <state key="selected" backgroundImage="addNewTask_greenBackSelect"/>
+                                        <button opaque="NO" tag="26" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p6b-2h-5IR">
+                                            <rect key="frame" x="165" y="106" width="55" height="40"/>
+                                            <state key="normal" title="否" backgroundImage="addNewTask_greenBackUnSelect">
+                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                            <state key="selected" backgroundImage="addNewTask_greenBackSelect">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="checkButtonState:" destination="-1" eventType="touchUpInside" id="43M-1x-cPh"/>
+                                            </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="是否可见" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="epE-Z2-mnL">
                                             <rect key="frame" x="10" y="115.5" width="65" height="21"/>
@@ -1736,10 +1826,12 @@
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
+                                        <constraint firstItem="p6b-2h-5IR" firstAttribute="centerY" secondItem="vuR-SL-daH" secondAttribute="centerY" id="08n-J3-C8v"/>
                                         <constraint firstItem="P28-Rb-lvW" firstAttribute="top" secondItem="3pt-IN-c8I" secondAttribute="bottom" constant="10" id="7Zx-oD-pR1"/>
                                         <constraint firstAttribute="trailing" secondItem="P28-Rb-lvW" secondAttribute="trailing" constant="10" id="CI3-yS-pcQ"/>
                                         <constraint firstItem="epE-Z2-mnL" firstAttribute="leading" secondItem="4sB-fF-uXn" secondAttribute="leading" constant="10" id="DMr-Gf-Nqh"/>
                                         <constraint firstItem="3pt-IN-c8I" firstAttribute="leading" secondItem="gUz-bV-MvL" secondAttribute="trailing" constant="1" id="Ekl-ll-V6V"/>
+                                        <constraint firstItem="vuR-SL-daH" firstAttribute="centerY" secondItem="epE-Z2-mnL" secondAttribute="centerY" id="Gie-43-yYQ"/>
                                         <constraint firstItem="gUz-bV-MvL" firstAttribute="top" secondItem="Lwl-nm-A4E" secondAttribute="bottom" constant="10" id="Nxz-Nr-cgV"/>
                                         <constraint firstItem="p6b-2h-5IR" firstAttribute="width" secondItem="vuR-SL-daH" secondAttribute="width" id="PwX-7z-CEW"/>
                                         <constraint firstItem="pMS-7E-BiC" firstAttribute="centerY" secondItem="epE-Z2-mnL" secondAttribute="centerY" id="S39-Ru-DdJ"/>
@@ -1871,19 +1963,33 @@
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q6P-h5-Dvu">
+                                        <button opaque="NO" tag="27" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q6P-h5-Dvu">
                                             <rect key="frame" x="90" y="132" width="60" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="ElM-dJ-akb"/>
                                                 <constraint firstAttribute="width" constant="60" id="f4w-KM-B13"/>
                                             </constraints>
-                                            <state key="normal" title="是" backgroundImage="addNewTask_greenBackUnSelect"/>
-                                            <state key="selected" backgroundImage="addNewTask_greenBackSelect"/>
+                                            <state key="normal" title="是" backgroundImage="addNewTask_greenBackUnSelect">
+                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                            <state key="selected" backgroundImage="addNewTask_greenBackSelect">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="checkButtonState:" destination="-1" eventType="touchUpInside" id="7Vf-N8-b5f"/>
+                                            </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uFl-rW-kQL">
+                                        <button opaque="NO" tag="28" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uFl-rW-kQL">
                                             <rect key="frame" x="170" y="132" width="60" height="40"/>
-                                            <state key="normal" title="否" backgroundImage="addNewTask_greenBackUnSelect"/>
-                                            <state key="selected" backgroundImage="addNewTask_greenBackSelect"/>
+                                            <state key="normal" title="否" backgroundImage="addNewTask_greenBackUnSelect">
+                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                            <state key="selected" backgroundImage="addNewTask_greenBackSelect">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="checkButtonState:" destination="-1" eventType="touchUpInside" id="oUQ-3Y-kx6"/>
+                                            </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bMC-xn-1m6">
                                             <rect key="frame" x="82" y="50" width="303" height="20"/>
@@ -1983,12 +2089,15 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4MN-eI-g63">
+                                        <button opaque="NO" tag="29" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4MN-eI-g63">
                                             <rect key="frame" x="4.5" y="20" width="46" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="46" id="YcG-wZ-qlv"/>
                                                 <constraint firstAttribute="height" constant="30" id="aes-r2-hvL"/>
                                             </constraints>
+                                            <connections>
+                                                <action selector="checkButtonState:" destination="-1" eventType="touchUpInside" id="IeH-cT-mab"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2004,16 +2113,26 @@
                                         <constraint firstAttribute="trailing" secondItem="nI7-6f-Eum" secondAttribute="trailing" constant="10" id="vYM-6O-8AE"/>
                                     </constraints>
                                 </view>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jWy-y2-dOg">
+                                <button opaque="NO" tag="30" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jWy-y2-dOg">
                                     <rect key="frame" x="40" y="2245" width="142.5" height="50"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="ZAD-8N-o6t"/>
                                     </constraints>
-                                    <state key="normal" title="预览" backgroundImage="addNewTask_preview"/>
+                                    <state key="normal" title="预览" backgroundImage="addNewTask_preview">
+                                        <color key="titleColor" red="0.97700077299999999" green="0.56026762720000001" blue="0.093152172859999993" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="checkButtonState:" destination="-1" eventType="touchUpInside" id="AXb-gO-oo1"/>
+                                    </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r3x-ry-jMM">
+                                <button opaque="NO" tag="31" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r3x-ry-jMM">
                                     <rect key="frame" x="212.5" y="2245" width="142.5" height="50"/>
-                                    <state key="normal" title="发布" backgroundImage="addNewTask_release"/>
+                                    <state key="normal" title="发布" backgroundImage="addNewTask_release">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="checkButtonState:" destination="-1" eventType="touchUpInside" id="7zL-Lu-32X"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>

@@ -78,6 +78,11 @@
     NSArray             *arTextviews;
     NSArray             *arViewsForStep;
     NSMutableArray      *arImageLinks;
+    
+    NSArray             *arIsAdvancesButtons;
+    NSArray             *arPhoneTypeButtons;
+    NSArray             *arIsShowForLinkButtons;
+    NSArray             *arIsRepeatOrderButtons;
    
     NSArray             *arViewLayouConstainss;
     NSArray             *arLableAddSteps;
@@ -103,11 +108,25 @@
 
 #pragma mark - UI touch event
 
-
-
-- (void)checkAllTaskDetail:(UIButton *)sender
+- (IBAction)checkButtonState:(UIButton *)sender
 {
-    
+    if (sender.tag == 0 || sender.tag == 1) {
+        [self changeButtonState:arIsAdvancesButtons touchButton:sender];
+    }else if (sender.tag > 1 && sender.tag < 22) {
+        sender.selected = !sender.selected;
+    }else if (sender.tag > 21 && sender.tag < 25) {
+        [self changeButtonState:arPhoneTypeButtons touchButton:sender];
+    }else if (sender.tag > 24 && sender.tag < 27) {
+        [self changeButtonState:arIsShowForLinkButtons touchButton:sender];
+    }else if(sender.tag > 26 && sender.tag < 29) {
+        [self changeButtonState:arIsRepeatOrderButtons touchButton:sender];
+    }else if (sender.tag == 29) {
+        sender.selected = !sender.selected;
+    }else if (sender.tag == 30) {
+        NSLog(@"预览");
+    }else {
+        NSLog(@"预览");
+    }
 }
 
 #pragma mark - http event
@@ -162,6 +181,14 @@
     arImageLinks    = [self productStringObject:5 container:arImageLinks];
     arLableAddSteps = @[lbAddStep0, lbAddStep1, lbAddStep2, lbAddStep3, lbAddStep4];
     arTextviews = @[tvphotoDes0, tvphotoDes1, tvphotoDes2, tvphotoDes3, tvphotoDes4];
+
+    arIsAdvancesButtons = @[btnPaidTask, btnNotPaidTask];//是否垫付
+    arPhoneTypeButtons  = @[btnAll, btnAndroid, btnIOS];
+    arIsShowForLinkButtons  = @[btnShow, btnHide];
+    arIsRepeatOrderButtons  = @[btnRedoNo, BtnRedoYes];
+    
+    
+    
     
     lcValidateSubviewsHeight.constant = 0.f;
     vValidateSubview.hidden = YES;
@@ -174,20 +201,6 @@
     [self setScrollviewContainHeight];
 }
 
-- (NSMutableArray *)productStringObject:(int)number container:(NSMutableArray *)arrayObjects
-{
-    arrayObjects = [NSMutableArray array];
-    for (int i ; i < number; i++) {
-        NSString *str = @"";
-        [arrayObjects addObject:str];
-    }
-    return arrayObjects;
-}
-
-- (BOOL)textViewShouldBeginEditing:(UITextView *)textView
-{
-    return  YES;
-}
 
 - (void)stepPhotosInit//步骤图初始化UI
 {
@@ -311,7 +324,27 @@
 
 #pragma mark - other
 
+- (NSMutableArray *)productStringObject:(int)number container:(NSMutableArray *)arrayObjects
+{
+    arrayObjects = [NSMutableArray array];
+    for (int i ; i < number; i++) {
+        NSString *str = @"";
+        [arrayObjects addObject:str];
+    }
+    return arrayObjects;
+}
 
+- (void)changeButtonState:(NSArray *)arButtons touchButton:(UIButton *)Touchbutton
+{
+    for (UIButton  *btn in arButtons) {
+        if ([btn isEqual:Touchbutton]) {
+            btn.selected = !btn.selected;
+            for (UIButton *btn in arButtons) {
+                btn.selected = [btn isEqual:Touchbutton]? Touchbutton.selected : !Touchbutton.selected;
+            }
+        }
+    }
+}
 
 
 @end
