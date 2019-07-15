@@ -14,7 +14,7 @@
 #import "NJImageTool.h"
 
 
-@interface HBGetPersonalAuthentificationVC ()
+@interface HBGetPersonalAuthentificationVC ()<UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 {
     IBOutlet UIButton   *btnNickName;
     IBOutlet UIButton   *btnGender;
